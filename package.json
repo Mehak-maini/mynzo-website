@@ -27,5 +27,8 @@
   },
   "overrides": {
     "@payloadcms/ui": "3.84.1"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
