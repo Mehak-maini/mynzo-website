@@ -33,7 +33,6 @@ export const Posts: CollectionConfig = {
     {
       name: 'category',
       type: 'select',
-      required: true,
       options: [
         { label: 'Carbon Markets', value: 'Carbon Markets' },
         { label: 'Agroforestry',   value: 'Agroforestry' },
@@ -75,6 +74,22 @@ export const Posts: CollectionConfig = {
       name: 'author',
       type: 'text',
       admin: { description: 'e.g. Mynzo Team' },
+    },
+    {
+      name: 'tags',
+      type: 'text',
+      admin: { description: 'Comma-separated tags, e.g. climate change,forests,carbon' },
+    },
+    {
+      name: 'featured',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: { description: 'Show this post as featured on the blog page.' },
+    },
+    {
+      name: 'seoTitle',
+      type: 'text',
+      admin: { description: 'SEO title shown in browser tab. Leave blank to use post title.' },
     },
   ],
 }
