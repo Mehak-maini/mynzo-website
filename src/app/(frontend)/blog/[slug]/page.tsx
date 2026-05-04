@@ -21,8 +21,9 @@ async function getPost(slug: string) {
   return null;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const result = await getPost(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const result = await getPost(slug);
   if (!result) return { title: 'Post Not Found – Mynzo' };
   return {
     title: `${result.post.title} – Mynzo Talks`,
@@ -39,8 +40,9 @@ const TAG_STYLES: Record<string, { bg: string; color: string }> = {
   'Research':       { bg: '#F5F5F0', color: '#3A4A1A' },
 };
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const result = await getPost(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const result = await getPost(slug);
   if (!result) notFound();
 
   const { source, post } = result;
