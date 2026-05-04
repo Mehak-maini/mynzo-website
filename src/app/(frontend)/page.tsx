@@ -240,8 +240,8 @@ export default function HomePage() {
 
   // ── Platform constellation canvas ──────────────────────────────────────────
   useEffect(() => {
-    const section = platSecRef.current;
-    const canvas  = platCanvasRef.current;
+    const section = platSecRef.current as HTMLElement;
+    const canvas  = platCanvasRef.current as HTMLCanvasElement;
     if (!section || !canvas) return;
     const ctx = canvas.getContext('2d')!;
     let W = 0, H = 0;
