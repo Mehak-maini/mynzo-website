@@ -1,5 +1,5 @@
 import { RootLayout } from '@payloadcms/next/layouts'
-import '@payloadcms/next/css'
+import '@payloadcms/next/dist/prod/styles.css'
 import config from '@payload-config'
 import React from 'react'
 import { importMap } from './admin/importMap'
