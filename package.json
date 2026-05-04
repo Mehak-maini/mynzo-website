@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "generate:types": "payload generate:types",
-    "payload": "payload"
+    "payload": "payload",
+    "postinstall": "npm dedupe"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.84.1",
