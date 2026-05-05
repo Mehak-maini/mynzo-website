@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -44,6 +44,17 @@ export default function HomePage() {
   const reniSecRef      = useRef<HTMLElement>(null);
   const reniMsgsRef     = useRef<HTMLDivElement>(null);
   const reniInputRef    = useRef<HTMLInputElement>(null);
+
+  // ── Homepage blog posts — fetch latest 3 from CMS, fall back to static ─────
+  const [homePosts, setHomePosts] = useState<any[]>(BLOG_POSTS.slice(0, 3));
+  useEffect(() => {
+    fetch('/api/posts?where[status][equals]=published&sort=-publishedAt&limit=3&depth=1')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (data?.docs?.length > 0) setHomePosts(data.docs);
+      })
+      .catch(() => {});
+  }, []);
 
   // ── Scroll to top on mount (prevent browser scroll-restoration) ───────────
   useEffect(() => {
@@ -1003,22 +1014,38 @@ export default function HomePage() {
             <Link href="/blog" className="blogs2-viewall">View all posts →</Link>
           </div>
           <div className="blogs2-grid" id="blogs-grid">
-            {BLOG_POSTS.map((p, i) => (
-              <Link href={`/blog/${p.slug}`} className="blog2-card" key={i}>
-                <div className="blog2-img">
-                  <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                </div>
-                <div className="blog2-body">
-                  <span className="blog2-tag" style={{ background: p.tagBg, color: p.tagColor }}>{p.tag}</span>
-                  <div className="blog2-title-txt">{p.title}</div>
-                  <div className="blog2-excerpt">{p.excerpt}</div>
-                  <div className="blog2-meta">
-                    <span>{p.date}</span>
-                    <span style={{ color: 'var(--teal)' }}>· {p.readTime}</span>
+            {homePosts.map((p: any, i: number) => {
+              const isCms = !!p.publishedAt;
+              const tag      = isCms ? (p.category || 'Research') : p.tag;
+              const tagBg    = isCms ? '#EBF7F0' : p.tagBg;
+              const tagColor = isCms ? '#1A7A4A' : p.tagColor;
+              const date     = isCms
+                ? new Date(p.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+                : p.date;
+              const readTime = p.readTime;
+              const imgSrc   = isCms
+                ? (typeof p.coverImage === 'object' && p.coverImage ? p.coverImage.url : null)
+                : p.img;
+              return (
+                <Link href={`/blog/${p.slug}`} className="blog2-card" key={i}>
+                  <div className="blog2-img">
+                    {imgSrc
+                      ? <img src={imgSrc} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      : <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg,#d6ebf1,rgba(89,132,147,0.12))' }} />
+                    }
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className="blog2-body">
+                    <span className="blog2-tag" style={{ background: tagBg, color: tagColor }}>{tag}</span>
+                    <div className="blog2-title-txt">{p.title}</div>
+                    <div className="blog2-excerpt">{p.excerpt}</div>
+                    <div className="blog2-meta">
+                      {date && <span>{date}</span>}
+                      {readTime && <span style={{ color: 'var(--teal)' }}>· {readTime}</span>}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
