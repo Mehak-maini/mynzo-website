@@ -1,6 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary'
 import type { Adapter } from '@payloadcms/plugin-cloud-storage/types'
-import fs from 'fs'
 
 function getCloudinary() {
   cloudinary.config({
@@ -18,27 +17,25 @@ export const cloudinaryAdapter = (): Adapter => {
     handleUpload: async ({ file }) => {
       const cld = getCloudinary()
 
-      let result: any
-
-      // Vercel passes tempFilePath; local dev passes buffer
-      if (file.tempFilePath) {
-        result = await cld.uploader.upload(file.tempFilePath, {
-          folder: 'mynzo-blog',
-          resource_type: 'auto',
-          use_filename: true,
-          unique_filename: true,
-        })
-      } else if (file.buffer) {
-        result = await new Promise((resolve, reject) => {
-          const stream = cld.uploader.upload_stream(
-            { folder: 'mynzo-blog', resource_type: 'auto', use_filename: true, unique_filename: true },
-            (error, res) => { if (error) reject(error); else resolve(res) }
-          )
-          stream.end(file.buffer)
-        })
-      } else {
-        throw new Error('No file data received')
-      }
+      const result: any = await new Promise((resolve, reject) => {
+        const stream = cld.uploader.upload_stream(
+          {
+            folder: 'mynzo-blog',
+            resource_type: 'auto',
+            use_filename: true,
+            unique_filename: true,
+          },
+          (error, res) => {
+            if (error) {
+              console.error('Cloudinary upload error:', error)
+              reject(error)
+            } else {
+              resolve(res)
+            }
+          }
+        )
+        stream.end(Buffer.from(file.buffer))
+      })
 
       console.log('Cloudinary upload success:', result.secure_url)
       return { filename: result.public_id }

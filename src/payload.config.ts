@@ -34,10 +34,6 @@ export default buildConfig({
     },
   }),
   sharp,
-  upload: {
-    useTempFiles: true,
-    tempFileDir: '/tmp',
-  },
   plugins: [
     cloudStoragePlugin({
       collections: {
