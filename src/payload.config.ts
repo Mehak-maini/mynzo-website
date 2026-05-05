@@ -1,5 +1,4 @@
 import { buildConfig } from 'payload'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -20,7 +19,6 @@ export default buildConfig({
     },
   },
   collections: [Posts, Media, Users],
-  editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'mynzo-secret-change-me',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

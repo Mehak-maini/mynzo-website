@@ -2,19 +2,23 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { STATIC_POSTS } from '@/data/blogPosts';
 
-// Try Payload CMS first; fall back to static post
+export const dynamic = 'force-dynamic';
+
+const base = process.env.NEXT_PUBLIC_SERVER_URL || 'https://mynzo-website-khaki.vercel.app';
+
+// Fetch from Payload REST API
 async function getPost(slug: string) {
   try {
-    const { getPayload } = await import('payload');
-    const config = (await import('@payload-config')).default;
-    const payload = await getPayload({ config });
-    const { docs } = await payload.find({
-      collection: 'posts',
-      where: { slug: { equals: slug }, status: { equals: 'published' } },
-      limit: 1,
-    });
-    if (docs.length > 0) return { source: 'cms' as const, post: docs[0] };
-  } catch {}
+    const res = await fetch(
+      `${base}/api/posts?where[slug][equals]=${encodeURIComponent(slug)}&where[status][equals]=published&limit=1&depth=1`,
+      { cache: 'no-store' }
+    );
+    if (!res.ok) throw new Error(`API ${res.status}`);
+    const data = await res.json();
+    if (data.docs?.length > 0) return { source: 'cms' as const, post: data.docs[0] };
+  } catch (e) {
+    console.error('Post fetch error:', e);
+  }
 
   const staticPost = STATIC_POSTS.find(p => p.slug === slug);
   if (staticPost) return { source: 'static' as const, post: staticPost };
@@ -48,7 +52,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const { source, post } = result;
 
   // Normalise fields across CMS and static
-  const tag      = source === 'static' ? post.tag      : ((post as any).category || 'research');
+  const tag      = source === 'static' ? post.tag      : ((post as any).category || 'Research');
   const tagBg    = source === 'static' ? post.tagBg    : (TAG_STYLES[tag]?.bg    ?? '#EBF7F0');
   const tagColor = source === 'static' ? post.tagColor : (TAG_STYLES[tag]?.color ?? '#1A7A4A');
   const date     = source === 'static'
@@ -60,7 +64,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const author   = post.author || 'Mynzo Team';
   const imgSrc   = source === 'static'
     ? post.img
-    : (typeof (post as any).coverImage === 'object' ? (post as any).coverImage?.url : null);
+    : (typeof (post as any).coverImage === 'object' && (post as any).coverImage
+        ? (post as any).coverImage.url
+        : null);
   const content  = source === 'static'
     ? post.content
     : (typeof (post as any).content === 'string' ? (post as any).content : '');

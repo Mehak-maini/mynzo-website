@@ -1,24 +1,26 @@
 import Link from 'next/link';
 import { STATIC_POSTS } from '@/data/blogPosts';
 
-export const metadata = { title: 'Mynzo Talks – All Posts' };
+export const dynamic = 'force-dynamic';
 
-// Try Payload CMS first; fall back to static posts
+// Fetch from Payload REST API — much faster than importing Payload directly
 async function getPosts() {
   try {
-    const { getPayload } = await import('payload');
-    const config = (await import('@payload-config')).default;
-    const payload = await getPayload({ config });
-    const { docs } = await payload.find({
-      collection: 'posts',
-      where: { status: { equals: 'published' } },
-      sort: '-publishedAt',
-      limit: 50,
-    });
-    if (docs.length > 0) return { source: 'cms' as const, docs };
-  } catch {}
+    const base = process.env.NEXT_PUBLIC_SERVER_URL || 'https://mynzo-website-khaki.vercel.app';
+    const res = await fetch(
+      `${base}/api/posts?where[status][equals]=published&sort=-publishedAt&limit=50&depth=1`,
+      { cache: 'no-store' }
+    );
+    if (!res.ok) throw new Error(`API ${res.status}`);
+    const data = await res.json();
+    if (data.docs?.length > 0) return { source: 'cms' as const, docs: data.docs };
+  } catch (e) {
+    console.error('Blog fetch error:', e);
+  }
   return { source: 'static' as const, docs: STATIC_POSTS };
 }
+
+export const metadata = { title: 'Mynzo Talks – All Posts' };
 
 export default async function BlogPage() {
   const { source, docs } = await getPosts();
@@ -34,7 +36,7 @@ export default async function BlogPage() {
         <div className="blogs2-grid">
           {docs.map((post: any) => {
             const slug     = post.slug;
-            const tag      = source === 'static' ? post.tag      : (post.category || 'research');
+            const tag      = source === 'static' ? post.tag      : (post.category || 'Research');
             const tagBg    = source === 'static' ? post.tagBg    : '#EBF7F0';
             const tagColor = source === 'static' ? post.tagColor : '#1A7A4A';
             const excerpt  = post.excerpt || '';
@@ -46,7 +48,7 @@ export default async function BlogPage() {
             const readTime = post.readTime;
             const imgSrc   = source === 'static'
               ? post.img
-              : (typeof post.coverImage === 'object' ? post.coverImage?.url : null);
+              : (typeof post.coverImage === 'object' && post.coverImage ? post.coverImage.url : null);
 
             return (
               <Link href={`/blog/${slug}`} className="blog2-card" key={slug}>
