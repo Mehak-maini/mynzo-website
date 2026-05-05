@@ -4,7 +4,7 @@ export const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'category', 'publishedAt', 'status'],
+    defaultColumns: ['title', 'status', 'category'],
   },
   access: { read: () => true },
   fields: [
@@ -62,8 +62,9 @@ export const Posts: CollectionConfig = {
     },
     {
       name: 'publishedAt',
-      type: 'date',
+      type: 'text',
       required: true,
+      admin: { description: 'Publication date (e.g. May 5, 2025)' },
     },
     {
       name: 'readTime',

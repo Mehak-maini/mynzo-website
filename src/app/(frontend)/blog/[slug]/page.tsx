@@ -55,11 +55,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const tag      = source === 'static' ? post.tag      : ((post as any).category || 'Research');
   const tagBg    = source === 'static' ? post.tagBg    : (TAG_STYLES[tag]?.bg    ?? '#EBF7F0');
   const tagColor = source === 'static' ? post.tagColor : (TAG_STYLES[tag]?.color ?? '#1A7A4A');
-  const date     = source === 'static'
-    ? post.date
-    : (post as any).publishedAt
-      ? new Date((post as any).publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-      : '';
+  const date     = source === 'static' ? post.date : ((post as any).publishedAt || '');
   const readTime = post.readTime;
   const author   = post.author || 'Mynzo Team';
   const imgSrc   = source === 'static'

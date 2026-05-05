@@ -40,11 +40,7 @@ export default async function BlogPage() {
             const tagBg    = source === 'static' ? post.tagBg    : '#EBF7F0';
             const tagColor = source === 'static' ? post.tagColor : '#1A7A4A';
             const excerpt  = post.excerpt || '';
-            const date     = source === 'static'
-              ? post.date
-              : post.publishedAt
-                ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-                : '';
+            const date     = source === 'static' ? post.date : (post.publishedAt || '');
             const readTime = post.readTime;
             const imgSrc   = source === 'static'
               ? post.img

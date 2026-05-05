@@ -1019,9 +1019,7 @@ export default function HomePage() {
               const tag      = isCms ? (p.category || 'Research') : p.tag;
               const tagBg    = isCms ? '#EBF7F0' : p.tagBg;
               const tagColor = isCms ? '#1A7A4A' : p.tagColor;
-              const date     = isCms
-                ? new Date(p.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-                : p.date;
+              const date     = isCms ? (p.publishedAt || '') : p.date;
               const readTime = p.readTime;
               const imgSrc   = isCms
                 ? (typeof p.coverImage === 'object' && p.coverImage ? p.coverImage.url : null)
