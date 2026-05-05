@@ -1,5 +1,8 @@
 import { buildConfig } from 'payload'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage'
+import { cloudinaryAdapter } from './cloudinaryAdapter'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
@@ -19,6 +22,7 @@ export default buildConfig({
     },
   },
   collections: [Posts, Media, Users],
+  editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'mynzo-secret-change-me',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -30,5 +34,14 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [],
+  plugins: [
+    cloudStoragePlugin({
+      collections: {
+        media: {
+          adapter: cloudinaryAdapter(),
+          disableLocalStorage: true,
+        },
+      },
+    }),
+  ],
 })
