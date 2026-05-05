@@ -18,7 +18,7 @@ export const Posts: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
-      admin: { description: 'URL-friendly (e.g. my-blog-post). No spaces, use hyphens.' },
+      admin: { description: 'URL-friendly identifier (e.g. my-blog-post). No spaces, use hyphens.' },
     },
     {
       name: 'status',
@@ -55,10 +55,10 @@ export const Posts: CollectionConfig = {
       admin: { description: 'Paste your full blog HTML here, e.g. <p>text</p><h2>heading</h2>' },
     },
     {
-      name: 'coverImage',
-      type: 'upload',
-      relationTo: 'media',
+      name: 'coverImageUrl',
+      type: 'text',
       required: false,
+      admin: { description: 'Paste the full URL of the cover image (e.g. https://...)' },
     },
     {
       name: 'publishedAt',
@@ -69,12 +69,12 @@ export const Posts: CollectionConfig = {
     {
       name: 'readTime',
       type: 'text',
-      admin: { description: 'e.g. 5' },
+      admin: { description: 'Read time in minutes (e.g. 5)' },
     },
     {
       name: 'author',
       type: 'text',
-      admin: { description: 'e.g. Mynzo Team' },
+      admin: { description: 'Author name (e.g. Mynzo Team)' },
     },
   ],
 }

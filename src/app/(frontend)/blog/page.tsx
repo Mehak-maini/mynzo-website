@@ -42,9 +42,7 @@ export default async function BlogPage() {
             const excerpt  = post.excerpt || '';
             const date     = source === 'static' ? post.date : (post.publishedAt || '');
             const readTime = post.readTime;
-            const imgSrc   = source === 'static'
-              ? post.img
-              : (typeof post.coverImage === 'object' && post.coverImage ? post.coverImage.url : null);
+            const imgSrc   = source === 'static' ? post.img : (post.coverImageUrl || null);
 
             return (
               <Link href={`/blog/${slug}`} className="blog2-card" key={slug}>
