@@ -12,6 +12,7 @@ export default function Nav() {
   const isHome                            = pathname === '/';
   const [scrolled, setScrolled]           = useState(!isHome); // solid immediately on sub-pages
   const [activeSection, setActiveSection] = useState<Section>(null);
+  const [menuOpen, setMenuOpen]           = useState(false);
 
   useEffect(() => {
     // On sub-pages the nav is always solid — no scroll listener needed
@@ -57,14 +58,25 @@ export default function Nav() {
     };
   }, [isHome]);
 
+  // Close menu on route change
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   // HOME is active only when on home page and no section is in view (top of page)
-  const homeActive    = isHome && activeSection === null;
+  const homeActive = isHome && activeSection === null;
   const cls = (s: Section) => isHome && activeSection === s ? 'active' : '';
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <header className={`site-nav${scrolled ? ' scrolled' : ''}`} id="site-nav">
+    <header className={`site-nav${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`} id="site-nav">
       {/* Logo — always links back to home */}
-      <Link href="/" className="nav-logo" style={{ textDecoration: 'none' }}>
+      <Link href="/" className="nav-logo" style={{ textDecoration: 'none' }} onClick={closeMenu}>
         <Image
           src="https://www.figma.com/api/mcp/asset/8ca18933-1aaf-4239-a801-40b288202774"
           alt="Mynzo"
@@ -75,6 +87,8 @@ export default function Nav() {
         />
       </Link>
       <div className="nav-sep"></div>
+
+      {/* Desktop nav */}
       <nav className="links">
         <Link href="/"          className={homeActive ? 'active' : ''}>HOME</Link>
         <Link href="/#platform" className={cls('platform')}>PLATFORM</Link>
@@ -84,6 +98,31 @@ export default function Nav() {
       <Link href="/get-started" className="nav-cta" style={{ textDecoration: 'none' }}>
         Get Started
       </Link>
+
+      {/* Hamburger button — only visible on mobile */}
+      <button
+        className="nav-hamburger"
+        onClick={() => setMenuOpen(o => !o)}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+      >
+        <span className={`ham-bar${menuOpen ? ' open' : ''}`}></span>
+        <span className={`ham-bar${menuOpen ? ' open' : ''}`}></span>
+        <span className={`ham-bar${menuOpen ? ' open' : ''}`}></span>
+      </button>
+
+      {/* Mobile menu overlay */}
+      {menuOpen && (
+        <div className="mobile-menu">
+          <nav className="mobile-links">
+            <Link href="/"          className={homeActive ? 'active' : ''} onClick={closeMenu}>HOME</Link>
+            <Link href="/#platform" className={cls('platform')}            onClick={closeMenu}>PLATFORM</Link>
+            <Link href="/#reni-sec" className={cls('reni')}                onClick={closeMenu}>RENI</Link>
+            <Link href="/#blogs"    className={cls('blogs')}               onClick={closeMenu}>BLOGS</Link>
+            <Link href="/get-started" className="mobile-cta"               onClick={closeMenu}>Get Started</Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
