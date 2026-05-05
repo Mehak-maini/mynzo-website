@@ -55,10 +55,23 @@ export const Posts: CollectionConfig = {
       admin: { description: 'Paste your full blog HTML here, e.g. <p>text</p><h2>heading</h2>' },
     },
     {
+      name: 'coverImage',
+      type: 'relationship',
+      relationTo: 'media',
+      required: false,
+      admin: {
+        description: 'Upload an image in the Media section first, then select it here.',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'coverImageUrl',
       type: 'text',
       required: false,
-      admin: { description: 'Paste the full URL of the cover image (e.g. https://...)' },
+      admin: {
+        description: 'Fallback: paste a direct image URL if not using the Media library above.',
+        position: 'sidebar',
+      },
     },
     {
       name: 'publishedAt',

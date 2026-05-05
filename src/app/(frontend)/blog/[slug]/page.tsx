@@ -58,7 +58,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const date     = source === 'static' ? post.date : ((post as any).publishedAt || '');
   const readTime = post.readTime;
   const author   = post.author || 'Mynzo Team';
-  const imgSrc   = source === 'static' ? post.img : ((post as any).coverImageUrl || null);
+  // coverImage is a Media relationship — prefer its url, fall back to plain URL field
+  const imgSrc   = source === 'static'
+    ? post.img
+    : ((post as any).coverImage?.url || (post as any).coverImageUrl || null);
   const content  = source === 'static'
     ? post.content
     : (typeof (post as any).content === 'string' ? (post as any).content : '');
