@@ -604,20 +604,25 @@ export default function HomePage() {
     const section  = document.getElementById('team');
     if (!track || !viewport || !dotsWrap) return;
 
-    const VISIBLE = 3, GAP = 20, AUTO_MS = 4000;
+    const GAP = 20, AUTO_MS = 4000;
     const cards   = Array.from(track.children) as HTMLElement[];
     const total   = cards.length;
-    const pages   = Math.ceil(total / VISIBLE);
-    let current   = 0;
+    const getVisible = () => window.innerWidth <= 600 ? 1 : 3;
+    let VISIBLE = getVisible();
+    let pages   = Math.ceil(total / VISIBLE);
+    let current = 0;
     let autoTimer: ReturnType<typeof setInterval> | null = null;
 
-    dotsWrap.innerHTML = '';
-    for (let i = 0; i < pages; i++) {
-      const d = document.createElement('button');
-      d.className = 'team-dot' + (i === 0 ? ' active' : '');
-      d.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(d);
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < pages; i++) {
+        const d = document.createElement('button');
+        d.className = 'team-dot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      }
     }
+    buildDots();
 
     function cardWidth() { return (viewport.offsetWidth - GAP * (VISIBLE - 1)) / VISIBLE; }
     function goTo(page: number) {
@@ -637,6 +642,13 @@ export default function HomePage() {
     nextBtn?.addEventListener('click', nextHandler);
 
     function layout() {
+      const newVisible = getVisible();
+      if (newVisible !== VISIBLE) {
+        VISIBLE = newVisible;
+        pages   = Math.ceil(total / VISIBLE);
+        current = 0;
+        buildDots();
+      }
       const w = cardWidth();
       cards.forEach(c => { c.style.flex = `0 0 ${w}px`; });
       goTo(current);

@@ -451,21 +451,35 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
   header.site-nav { background: #061729 !important; }
 
   /* Stats: clean vertical stack, hide odd dividers */
-  .stats { flex-direction: column; padding: 20px 24px; gap: 0; min-height: unset; }
-  .stat  { padding: 14px 0; width: 100%; flex-direction: row; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .stat:last-child { border-bottom: none; }
-  .stat-div { display: none; }
-  .stat-num { font-size: 22px; letter-spacing: -0.5px; }
-  .stat-lbl { font-size: 12px; }
+  .stats {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    padding: 0 20px !important;
+    min-height: unset !important;
+    gap: 0 !important;
+  }
+  .stat {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 16px 0 !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  }
+  .stat:last-child { border-bottom: none !important; }
+  .stat-div { display: none !important; }
+  .stat-num { font-size: 20px !important; letter-spacing: -0.5px !important; }
+  .stat-lbl { font-size: 12px !important; white-space: normal !important; text-align: right; max-width: 50%; }
 
   /* Platform on small phones */
   .plat-strip-text { padding: 24px 20px 12px; }
   .plat-strip-img  { padding: 8px 20px 24px; }
 
-  /* Team carousel: 1 card at a time, hide bio text */
-  .team-track .team2-card { flex: 0 0 calc(100vw - 160px); min-width: 0; }
-  .team2-bio { display: none; }
-  .team2-div { display: none; }
+  /* Team carousel: 1 card at a time — !important beats JS inline styles */
+  .team-track .team2-card { flex: 0 0 calc(100vw - 112px) !important; min-width: 0 !important; width: calc(100vw - 112px) !important; }
+  .team2-bio { display: none !important; }
+  .team2-div { display: none !important; }
   .team2-sec { padding: 64px 0 56px; }
   .team2-inner { padding: 0 16px; }
 
