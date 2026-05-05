@@ -431,8 +431,8 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
   .plat-strip-img img { max-height: 220px; max-width: 100%; }
   .plat-sec-hdr { padding: 0 24px; margin-bottom: 40px; }
 
-  /* Team carousel: show 1 card at a time */
-  .team-track .team2-card { flex: 0 0 calc(100% - 20px); }
+  /* Team carousel: show 1 card at a time on tablet */
+  .team-track .team2-card { flex: 0 0 calc(100vw - 176px); min-width: 0; }
 }
 @media (max-width: 600px) {
   .hero-title { font-size: 28px; }
@@ -447,16 +447,27 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
   .nav-sep  { display: none; }
   .nav-cta  { display: none; }
   .nav-hamburger { display: flex; }
-  /* Ensure header is scrolled-style on mobile so hamburger is visible */
-  header.site-nav:not(.scrolled) { background: rgba(6,23,41,0.85); }
+  /* Ensure header is always dark on mobile so hamburger stays visible */
+  header.site-nav { background: #061729 !important; }
+
+  /* Stats: clean vertical stack, hide odd dividers */
+  .stats { flex-direction: column; padding: 20px 24px; gap: 0; min-height: unset; }
+  .stat  { padding: 14px 0; width: 100%; flex-direction: row; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-bottom: none; }
+  .stat-div { display: none; }
+  .stat-num { font-size: 22px; letter-spacing: -0.5px; }
+  .stat-lbl { font-size: 12px; }
 
   /* Platform on small phones */
   .plat-strip-text { padding: 24px 20px 12px; }
   .plat-strip-img  { padding: 8px 20px 24px; }
 
-  /* Team carousel: full width card */
-  .team-track .team2-card { flex: 0 0 100%; }
+  /* Team carousel: 1 card at a time, hide bio text */
+  .team-track .team2-card { flex: 0 0 calc(100vw - 160px); min-width: 0; }
+  .team2-bio { display: none; }
+  .team2-div { display: none; }
   .team2-sec { padding: 64px 0 56px; }
+  .team2-inner { padding: 0 16px; }
 
   /* Blog section */
   .blogs2-toprow { flex-direction: column; align-items: flex-start; }

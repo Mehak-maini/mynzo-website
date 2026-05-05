@@ -30,3 +30,4 @@ src/payload-types.ts
 
 # Vercel
 .vercel
+.env*.local

@@ -10,15 +10,22 @@ function getCloudinary() {
   return cloudinary
 }
 
+const CLOUD_NAME = () => process.env.CLOUDINARY_CLOUD_NAME ?? ''
+
 export const cloudinaryAdapter = (): Adapter => {
   return () => ({
     name: 'cloudinary',
 
-    handleUpload: async ({ file }) => {
+    handleUpload: async ({ data, file }) => {
       const cld = getCloudinary()
 
+      // Safely convert whatever buffer type Payload provides
+      const buf = Buffer.isBuffer(file.buffer)
+        ? file.buffer
+        : Buffer.from(file.buffer as ArrayBuffer)
+
       const result: any = await new Promise((resolve, reject) => {
-        const stream = cld.uploader.upload_stream(
+        cld.uploader.upload_stream(
           {
             folder: 'mynzo-blog',
             resource_type: 'auto',
@@ -27,38 +34,39 @@ export const cloudinaryAdapter = (): Adapter => {
           },
           (error, res) => {
             if (error) {
-              console.error('Cloudinary upload error:', error)
+              console.error('[Cloudinary] Upload error:', error)
               reject(error)
             } else {
               resolve(res)
             }
           }
-        )
-        stream.end(Buffer.from(file.buffer))
+        ).end(buf)
       })
 
-      console.log('Cloudinary upload success:', result.secure_url)
-      return { filename: result.public_id }
+      console.log('[Cloudinary] Upload success:', result.secure_url, '| public_id:', result.public_id)
+
+      // Store the full public_id (e.g. "mynzo-blog/image-abc123") as the filename.
+      // generateURL reads this same value to build the correct Cloudinary URL.
+      data.filename = result.public_id
     },
 
     handleDelete: async ({ filename }) => {
       const cld = getCloudinary()
       try {
         await cld.uploader.destroy(filename, { resource_type: 'auto' })
+        console.log('[Cloudinary] Deleted:', filename)
       } catch (e) {
-        console.warn('Cloudinary delete failed:', e)
+        console.warn('[Cloudinary] Delete failed:', e)
       }
     },
 
     staticHandler: async (_req, { params: { filename } }) => {
-      const cloudName = process.env.CLOUDINARY_CLOUD_NAME
-      const url = `https://res.cloudinary.com/${cloudName}/image/upload/${filename}`
+      const url = `https://res.cloudinary.com/${CLOUD_NAME()}/image/upload/${filename}`
       return Response.redirect(url, 302)
     },
 
     generateURL: ({ filename }) => {
-      const cloudName = process.env.CLOUDINARY_CLOUD_NAME
-      return `https://res.cloudinary.com/${cloudName}/image/upload/${filename}`
+      return `https://res.cloudinary.com/${CLOUD_NAME()}/image/upload/${filename}`
     },
   })
 }
