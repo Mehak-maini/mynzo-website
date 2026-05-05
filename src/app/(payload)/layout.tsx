@@ -3,7 +3,7 @@ import '@payloadcms/next/css'
 import config from '@payload-config'
 import React from 'react'
 import { importMap } from './admin/importMap'
-import { handleServerFunctions } from './serverFunctions'
+import { serverFunction } from './serverFunctions'
 
 type Args = {
   children: React.ReactNode
@@ -14,7 +14,7 @@ const Layout = ({ children }: Args) =>
     config,
     children,
     importMap,
-    serverFunction: handleServerFunctions,
+    serverFunction,
   })
 
 export default Layout
