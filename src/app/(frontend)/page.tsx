@@ -1033,7 +1033,7 @@ export default function HomePage() {
               const tagColor = isCms ? '#1A7A4A' : p.tagColor;
               const date     = isCms ? (p.publishedAt || '') : p.date;
               const readTime = p.readTime;
-              const imgSrc   = isCms ? (p.coverImageUrl || null) : p.img;
+              const imgSrc   = isCms ? (p.coverImage?.url || p.coverImageUrl || null) : p.img;
               return (
                 <Link href={`/blog/${p.slug}`} className="blog2-card" key={i}>
                   <div className="blog2-img">

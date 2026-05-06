@@ -1,8 +1,7 @@
 import { buildConfig } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
-import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage'
-import { cloudinaryAdapter } from './cloudinaryAdapter'
+import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
@@ -35,12 +34,21 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    cloudStoragePlugin({
+    s3Storage({
       collections: {
         media: {
-          adapter: cloudinaryAdapter(),
           disableLocalStorage: true,
+          generateFileURL: ({ filename }) =>
+            `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/${filename}`,
         },
+      },
+      bucket: process.env.S3_BUCKET ?? '',
+      config: {
+        credentials: {
+          accessKeyId: process.env.AWS_ACCESS_KEY ?? '',
+          secretAccessKey: process.env.AWS_SECRET_KEY ?? '',
+        },
+        region: process.env.S3_REGION ?? 'us-east-1',
       },
     }),
   ],

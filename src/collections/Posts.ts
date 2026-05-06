@@ -45,7 +45,7 @@ export const Posts: CollectionConfig = {
     {
       name: 'excerpt',
       type: 'textarea',
-      required: true,
+      required: false,
       admin: { description: '1-2 sentence summary shown on the blog listing card.' },
     },
     {
@@ -76,7 +76,7 @@ export const Posts: CollectionConfig = {
     {
       name: 'publishedAt',
       type: 'text',
-      required: true,
+      required: false,
       admin: { description: 'Publication date (e.g. May 5, 2025)' },
     },
     {

@@ -10,6 +10,7 @@ function getCloudinary() {
   return cloudinary
 }
 
+const FOLDER = 'mynzo-blog'
 const CLOUD_NAME = () => process.env.CLOUDINARY_CLOUD_NAME ?? ''
 
 export const cloudinaryAdapter = (): Adapter => {
@@ -19,7 +20,6 @@ export const cloudinaryAdapter = (): Adapter => {
     handleUpload: async ({ data, file }) => {
       const cld = getCloudinary()
 
-      // Safely convert whatever buffer type Payload provides
       const buf = Buffer.isBuffer(file.buffer)
         ? file.buffer
         : Buffer.from(file.buffer as ArrayBuffer)
@@ -27,7 +27,7 @@ export const cloudinaryAdapter = (): Adapter => {
       const result: any = await new Promise((resolve, reject) => {
         cld.uploader.upload_stream(
           {
-            folder: 'mynzo-blog',
+            folder: FOLDER,
             resource_type: 'auto',
             use_filename: true,
             unique_filename: true,
@@ -45,28 +45,34 @@ export const cloudinaryAdapter = (): Adapter => {
 
       console.log('[Cloudinary] Upload success:', result.secure_url, '| public_id:', result.public_id)
 
-      // Store the full public_id (e.g. "mynzo-blog/image-abc123") as the filename.
-      // generateURL reads this same value to build the correct Cloudinary URL.
-      data.filename = result.public_id
+      // Store only the filename part (without folder prefix) so it works as a
+      // single path segment in Payload's /api/media/file/[filename] route.
+      // e.g. public_id "mynzo-blog/image-abc123" → stored as "image-abc123"
+      const publicId = result.public_id as string
+      data.filename = publicId.startsWith(`${FOLDER}/`)
+        ? publicId.slice(FOLDER.length + 1)
+        : publicId
     },
 
     handleDelete: async ({ filename }) => {
       const cld = getCloudinary()
+      // Reconstruct the full public_id with the folder prefix for deletion
+      const publicId = `${FOLDER}/${filename}`
       try {
-        await cld.uploader.destroy(filename, { resource_type: 'auto' })
-        console.log('[Cloudinary] Deleted:', filename)
+        await cld.uploader.destroy(publicId, { resource_type: 'auto' })
+        console.log('[Cloudinary] Deleted:', publicId)
       } catch (e) {
         console.warn('[Cloudinary] Delete failed:', e)
       }
     },
 
     staticHandler: async (_req, { params: { filename } }) => {
-      const url = `https://res.cloudinary.com/${CLOUD_NAME()}/image/upload/${filename}`
+      const url = `https://res.cloudinary.com/${CLOUD_NAME()}/image/upload/${FOLDER}/${filename}`
       return Response.redirect(url, 302)
     },
 
     generateURL: ({ filename }) => {
-      return `https://res.cloudinary.com/${CLOUD_NAME()}/image/upload/${filename}`
+      return `https://res.cloudinary.com/${CLOUD_NAME()}/image/upload/${FOLDER}/${filename}`
     },
   })
 }
