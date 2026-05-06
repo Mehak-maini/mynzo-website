@@ -45,8 +45,8 @@ export default buildConfig({
       bucket: process.env.S3_BUCKET ?? '',
       config: {
         credentials: {
-          accessKeyId: process.env.AWS_ACCESS_KEY ?? '',
-          secretAccessKey: process.env.AWS_SECRET_KEY ?? '',
+          accessKeyId: process.env.S3_AWS_ACCESS_KEY ?? '',
+          secretAccessKey: process.env.S3_AWS_SECRET_KEY ?? '',
         },
         region: process.env.S3_REGION ?? 'us-east-1',
       },
