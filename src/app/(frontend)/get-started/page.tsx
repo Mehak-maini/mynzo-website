@@ -7,7 +7,7 @@ export default function GetStartedPage() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div style={{ minHeight: 'calc(100vh - 68px)', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', background: 'linear-gradient(160deg,#f0f7f9 0%,#e8f4f7 40%,#f5fafb 100%)', padding: '64px 24px 80px' }}>
+    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', background: 'linear-gradient(160deg,#f0f7f9 0%,#e8f4f7 40%,#f5fafb 100%)', padding: '108px 24px 80px' }}>
       <div className="form-card">
         {!submitted ? (
           <>
