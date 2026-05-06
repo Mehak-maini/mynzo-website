@@ -5,20 +5,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // ─── Team data ───────────────────────────────────────────────────────────────
+const S3 = 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com';
 const TEAM = [
-  { name: 'James Abraham',    role: 'Founder',               img: 'James_abraham.png',       bio: "Saving our planet from the brink of a climate catastrophe is a responsibility that falls on all of us." },
-  { name: 'Tanya Singhal',    role: 'Advisor',               img: 'Tanya_singhal.png',        bio: "Climate change is a crisis now. Our platform empowers you to cut your carbon footprint and build a sustainable future—one action at a time." },
-  { name: 'Jagmal Singh',     role: 'Advisor',               img: 'Jagmal_singh.png',         bio: "AI isn't a silver bullet, but it will accelerate net zero goals. Harnessed responsibly, it helps optimize resources and shape a sustainable future." },
-  { name: 'Konark Murarka',   role: 'Chief of Staff',        img: 'Konark_murarka.png',       bio: "Strategic operations leader driving organizational excellence and cross-functional coordination across Mynzo's initiatives." },
-  { name: 'R. Ravi Kiran',    role: 'Product Lead',          img: 'r_ravi_kiran.png',         bio: "Product strategy expert leading the development of innovative forest monitoring solutions and user experience design." },
-  { name: 'Amit Gupta',       role: 'Head of Technology',    img: 'amit_gupta.png',           bio: "Technology leader designing robust AI systems and satellite data processing frameworks to power Mynzo's forest intelligence platform." },
-  { name: 'Jitendra Gadhwal', role: 'Tech Lead',             img: 'jitendra_gadhwal.png',     bio: "Engineering leader overseeing architecture and delivery of scalable systems at the core of Mynzo's platform." },
-  { name: 'Ayush Chandrakar', role: 'Senior Data Scientist', img: 'ayush_chandrakar.png',     bio: "Data science expert building the models and pipelines that turn satellite signals into actionable forest insights." },
-  { name: 'Shivang Tripathi', role: 'Full Stack Engineer',   img: 'shivang_tripathi.png',     bio: "Full-stack engineer crafting seamless end-to-end experiences across Mynzo's web platform and data interfaces." },
-  { name: 'Abhishek Tripathi',role: 'Full Stack Engineer',   img: 'abhishek_tripathi.png',    bio: "Versatile engineer bridging front-end and back-end development to deliver robust, performant features at scale." },
-  { name: 'Srishti Purohit',  role: 'QA Engineer',           img: 'srishti_purohit.png',      bio: "Quality assurance engineer ensuring every feature meets the highest standards of reliability and precision before it reaches our users." },
-  { name: 'Mehak Maini',      role: 'UX/UI Designer',        img: 'mehak_maini.png',          bio: "Designer translating complex environmental data into intuitive, elegant interfaces that make forest intelligence accessible to all." },
-  { name: 'Ahilya Dang',      role: 'Storyteller',           img: 'ahilya_dang.png',          bio: "Communicator and narrative strategist bringing Mynzo's climate mission to life through compelling stories and purposeful content." },
+  { name: 'James Abraham',    role: 'Founder',               img: `${S3}/James_abraham.png`,       bio: "Saving our planet from the brink of a climate catastrophe is a responsibility that falls on all of us." },
+  { name: 'Tanya Singhal',    role: 'Advisor',               img: `${S3}/Tanya_singhal.png`,        bio: "Climate change is a crisis now. Our platform empowers you to cut your carbon footprint and build a sustainable future—one action at a time." },
+  { name: 'Jagmal Singh',     role: 'Advisor',               img: `${S3}/Jagmal_singh.png`,         bio: "AI isn't a silver bullet, but it will accelerate net zero goals. Harnessed responsibly, it helps optimize resources and shape a sustainable future." },
+  { name: 'Konark Murarka',   role: 'Chief of Staff',        img: `${S3}/Konark_murarka.png`,       bio: "Strategic operations leader driving organizational excellence and cross-functional coordination across Mynzo's initiatives." },
+  { name: 'R. Ravi Kiran',    role: 'Product Lead',          img: `${S3}/r_ravi_kiran.png`,         bio: "Product strategy expert leading the development of innovative forest monitoring solutions and user experience design." },
+  { name: 'Amit Gupta',       role: 'Head of Technology',    img: `${S3}/amit_gupta.png`,           bio: "Technology leader designing robust AI systems and satellite data processing frameworks to power Mynzo's forest intelligence platform." },
+  { name: 'Jitendra Gadhwal', role: 'Tech Lead',             img: `${S3}/jitendra_gadhwal.png`,     bio: "Engineering leader overseeing architecture and delivery of scalable systems at the core of Mynzo's platform." },
+  { name: 'Ayush Chandrakar', role: 'Senior Data Scientist', img: `${S3}/ayush_chandrakar.png`,     bio: "Data science expert building the models and pipelines that turn satellite signals into actionable forest insights." },
+  { name: 'Shivang Tripathi', role: 'Full Stack Engineer',   img: `${S3}/shivang_tripathi.png`,     bio: "Full-stack engineer crafting seamless end-to-end experiences across Mynzo's web platform and data interfaces." },
+  { name: 'Abhishek Tripathi',role: 'Full Stack Engineer',   img: `${S3}/abhishek_tripathi.png`,    bio: "Versatile engineer bridging front-end and back-end development to deliver robust, performant features at scale." },
+  { name: 'Srishti Purohit',  role: 'QA Engineer',           img: `${S3}/srishti_purohit.png`,      bio: "Quality assurance engineer ensuring every feature meets the highest standards of reliability and precision before it reaches our users." },
+  { name: 'Mehak Maini',      role: 'UX/UI Designer',        img: `${S3}/mehak_maini.png`,          bio: "Designer translating complex environmental data into intuitive, elegant interfaces that make forest intelligence accessible to all." },
+  { name: 'Ahilya Dang',      role: 'Storyteller',           img: `${S3}/ahilya_dang.png`,          bio: "Communicator and narrative strategist bringing Mynzo's climate mission to life through compelling stories and purposeful content." },
 ];
 
 // ─── Blog posts — imported from shared data so slugs stay in sync ────────────
@@ -785,13 +786,13 @@ export default function HomePage() {
           </div>
           <div className="plat-strip-img plat-strip-img-right">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/Asset_analysis.png" alt="Asset Analysis" />
+            <img src={`${S3}/Asset_analysis.png`} alt="Asset Analysis" />
           </div>
         </div>
         <div className="plat-strip plat-strip-b">
           <div className="plat-strip-img plat-strip-img-left">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/asset_control.png" alt="Asset Control" />
+            <img src={`${S3}/asset_control.png`} alt="Asset Control" />
           </div>
           <div className="plat-strip-text plat-strip-text-right">
             <p className="plat-strip-label">Asset Control</p>
@@ -815,7 +816,7 @@ export default function HomePage() {
           </div>
           <div className="plat-strip-img plat-strip-img-right">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/Asset_management.png" alt="Asset Management" />
+            <img src={`${S3}/Asset_management.png`} alt="Asset Management" />
           </div>
         </div>
       </section>
@@ -941,7 +942,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="serve-img-col">
-            <Image src="/solutions_for_stakeholders.png" alt="Solutions for every stakeholder" width={640} height={640} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <Image src={`${S3}/solutions_for_stakeholders.png`} alt="Solutions for every stakeholder" width={640} height={640} unoptimized style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
         </div>
       </section>
@@ -967,7 +968,7 @@ export default function HomePage() {
               <div className="reni-avatar">
                 <div className="reni-ring"></div>
                 <div className="reni-avatar-inner" style={{ background: 'transparent', boxShadow: 'none', overflow: 'hidden', padding: '0' }}>
-                  <img src="/reni_logo.JPG" alt="Reni" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', display: 'block' }} />
+                  <img src={`${S3}/reni_logo.JPG`} alt="Reni" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', display: 'block' }} />
                 </div>
               </div>
             </div>
@@ -999,7 +1000,7 @@ export default function HomePage() {
                   <div className="team2-card" key={i}>
                     <div className="team2-card-bar"></div>
                     <div className="team2-avatar">
-                      <img src={`/${member.img}`} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }} />
+                      <img src={member.img} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }} />
                     </div>
                     <div className="team2-name">{member.name}</div>
                     <div className="team2-role">{member.role}</div>

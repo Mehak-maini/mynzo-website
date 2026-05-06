@@ -22,7 +22,7 @@ export const STATIC_POSTS: StaticPost[] = [
     excerpt: 'Machine learning and satellite imagery are transforming the way we measure and verify carbon sequestration in forests around the world.',
     date: 'April 12, 2025',
     readTime: '5',
-    img: '/height_tree_jpg.jpeg',
+    img: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/height_tree_jpg.jpeg',
     author: 'Mynzo Team',
     content: `
       <h2>The Problem with Traditional Carbon Measurement</h2>
@@ -51,7 +51,7 @@ export const STATIC_POSTS: StaticPost[] = [
     excerpt: "Blending native trees with crops isn't just good for the planet — it's transforming farmer livelihoods across India's most vulnerable regions.",
     date: 'March 28, 2025',
     readTime: '7',
-    img: '/leaf_tree_jpg.jpeg',
+    img: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/leaf_tree_jpg.jpeg',
     author: 'Mynzo Team',
     content: `
       <h2>What is Agroforestry?</h2>
@@ -80,7 +80,7 @@ export const STATIC_POSTS: StaticPost[] = [
     excerpt: "Soil holds more carbon than the atmosphere and all plants combined. Here's why measuring it accurately matters most.",
     date: 'March 10, 2025',
     readTime: '6',
-    img: '/tree_trunk_jpg.jpeg',
+    img: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/tree_trunk_jpg.jpeg',
     author: 'Mynzo Team',
     content: `
       <h2>The World Beneath Our Feet</h2>

@@ -15,6 +15,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.figma.com' },
       { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'https', hostname: 'mynzocarbon-website.s3.ap-south-1.amazonaws.com' },
     ],
   },
 }

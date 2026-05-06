@@ -9,7 +9,7 @@ export default function Footer() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}>
             <Image
               className="foot-logo"
-              src="/mynzo_logo.png"
+              src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/mynzo_logo.png"
               alt="Mynzo"
               width={90}
               height={15}
