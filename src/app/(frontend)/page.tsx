@@ -492,8 +492,8 @@ export default function HomePage() {
         reply: 'Hello! I\'m Reni, your nature asset intelligence analyst. Ask me about survivability, tree growth, carbon sequestration, plantation health, land coverage, or carbon credits. How can I help?',
       },
       {
-        keywords: ['how are you', 'how r u', 'how do you do', 'are you ok', 'are you good', 'how\'s it going'],
-        reply: 'All systems operational. Satellite feeds live, ground sensors synced, models running at 99.2% uptime. Ready to analyse your portfolio — what would you like to explore?',
+        keywords: ['how are you', 'how r u', 'how do you do', 'are you ok', 'are you good', 'how\'s it going', 'hows it going'],
+        reply: 'All systems operational 🟢 Satellite feeds live, ground sensors synced, models running at 99.2% uptime. Ready to analyse your nature asset portfolio — what would you like to explore?',
       },
       {
         keywords: ['plantation', 'planting', 'planted', 'plant'],
@@ -520,16 +520,16 @@ export default function HomePage() {
         reply: 'Total trees planted: 284,000. Verified survivors: 247,800 (87.3% survivability). Species breakdown — 42% Teak, 28% Bamboo, 18% Melia dubia, 12% mixed native species.',
       },
       {
-        keywords: ['survivability', 'survival', 'survive', 'survival rate'],
+        keywords: ['survivability', 'survival', 'survive', 'survival rate', 'survivability across my sites'],
         reply: 'Avg survivability across sites: 87.4%. ⚠ Site B (mangroves) at 74% — recommend ground validation sweep in Q2. Site A: 93.2%. Site C: 88.7%. All sites tracked via bi-weekly satellite passes.',
       },
       {
-        keywords: ['credit', 'credits', 'carbon credit', 'issue', 'issuable', 'offset'],
-        reply: 'Models project 4,200 verified carbon credits issuable in FY2025 at 95% confidence. Site B credits are on hold pending MRV validation. Estimated credit value at $18/tCO₂e: ~$75,600.',
+        keywords: ['credit', 'credits', 'carbon credit', 'issuable', 'offset', 'credits i can issue'],
+        reply: 'Models project 4,200 verified carbon credits issuable in FY2025 at 95% confidence. Site B credits on hold pending MRV validation. Estimated credit value at $18/tCO₂e: ~$75,600.',
       },
       {
-        keywords: ['underperform', 'risk', 'alert', 'warning', 'problem', 'issue', 'concern', 'flag'],
-        reply: 'Boundary leakage risk flagged in 2 zones. Satellite encroachment activity detected. Site B mangrove survivability below 80% threshold. Both escalated — field inspection recommended within 30 days.',
+        keywords: ['underperform', 'underperforming', 'assets are underperforming', 'risk', 'alert', 'warning', 'problem', 'concern', 'flag'],
+        reply: 'Underperforming assets flagged: Site B (mangroves) — survivability at 74%, below 80% threshold. Boundary leakage risk in 2 eastern zones. Satellite encroachment activity detected. Field inspection recommended within 30 days.',
       },
       {
         keywords: ['portfolio', 'overview', 'overall', 'summary', 'glance', 'snapshot', 'dashboard'],
@@ -563,10 +563,12 @@ export default function HomePage() {
 
     function getReniReply(userText: string): string {
       const lower = userText.toLowerCase();
+      // Use word-boundary matching so 'hi' doesn't fire inside 'which', 'this', etc.
+      const wordMatch = (kw: string) => new RegExp('(?:^|\\s|[^a-z])' + kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:$|\\s|[^a-z])').test(' ' + lower + ' ');
       for (const { keywords, reply } of KEYWORD_REPLIES) {
-        if (keywords.some(kw => lower.includes(kw))) return reply;
+        if (keywords.some(kw => wordMatch(kw))) return reply;
       }
-      return 'I\'m processing your query. For precise portfolio data, connect your Mynzo dashboard. I can currently answer questions about survivability, tree growth, sequestration, sampling, land area, carbon credits, and plantation health.';
+      return 'I\'m processing your query. For precise portfolio data, connect your Mynzo dashboard. I can answer questions about survivability, growth, sequestration, species, land area, carbon credits, plantation health, and more.';
     }
 
     const msgsEl = reniMsgsRef.current;
