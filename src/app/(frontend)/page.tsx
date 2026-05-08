@@ -492,6 +492,14 @@ export default function HomePage() {
         reply: 'Hello! I\'m Reni, your nature asset intelligence analyst. Ask me about survivability, tree growth, carbon sequestration, plantation health, land coverage, or carbon credits. How can I help?',
       },
       {
+        keywords: ['who are you', 'what are you', 'who is reni', 'what is reni', 'tell me about yourself', 'introduce yourself', 'your name', 'what do you do', 'are you an ai', 'are you a bot', 'are you human'],
+        reply: 'I\'m Reni — Mynzo\'s nature asset intelligence analyst. I process satellite imagery, ground sensor data, and Mynzo\'s proprietary models to deliver real-time insights on forest health, carbon sequestration, survivability, and credit projections. Think of me as your always-on analyst for your nature portfolio.',
+      },
+      {
+        keywords: ['how can you help', 'how will you help', 'how do you help', 'can you help me', 'what can you do', 'what can reni do', 'how is it useful', 'how is this useful', 'useful to me', 'how does this help', 'what is the use', 'why should i use', 'benefit', 'benefits'],
+        reply: 'I can help you track forest survivability, monitor tree growth and biomass, calculate carbon sequestration, flag boundary risks, project carbon credit issuance, and analyse species performance — all in real time using satellite data. For corporates, I turn nature assets into audit-ready carbon intelligence. For project developers, I replace costly field surveys with continuous monitoring.',
+      },
+      {
         keywords: ['how are you', 'how r u', 'how do you do', 'are you ok', 'are you good', 'how\'s it going', 'hows it going'],
         reply: 'All systems operational 🟢 Satellite feeds live, ground sensors synced, models running at 99.2% uptime. Ready to analyse your nature asset portfolio — what would you like to explore?',
       },
@@ -556,11 +564,11 @@ export default function HomePage() {
         reply: 'Getting started with Mynzo is easy — visit the Get Started page on our website, fill in your details, and our team will reach out within 24 hours. You can also email us directly at support@mynzocarbon.com.',
       },
       {
-        keywords: ['which data', 'what data', 'is this real', 'real data', 'is this accurate', 'where is this data', 'source of data', 'data source'],
+        keywords: ['which data', 'what data', 'sort of data', 'kind of data', 'type of data', 'what is this data', 'is this real', 'real data', 'is this accurate', 'where is this data', 'source of data', 'data source', 'what information', 'what numbers', 'whose data', 'whose data is this', 'who does this data belong', 'where does this data come from', 'where is the data from'],
         reply: 'The data shown here is illustrative — it represents the kind of real-time insights Mynzo generates for live projects. Actual metrics (survivability, sequestration, species mix, credit projections) are pulled from satellite feeds and ground sensors specific to each client\'s forest or agroforestry project.',
       },
       {
-        keywords: ['what project', 'which project', 'what forest', 'which forest', 'which site', 'what site', 'which plantation'],
+        keywords: ['what project', 'which project', 'what forest', 'which forest', 'which site', 'what site', 'which plantation', 'what is this project', 'whose project', 'which project is this', 'what does this show', 'what is this showing', 'what is being shown', 'where is this project', 'where is this forest', 'where is this site', 'where is the project', 'location of this project'],
         reply: 'This is a sample portfolio built to demonstrate Mynzo\'s capabilities. Our live platform monitors real forests across India — from mangrove restoration in coastal zones to agroforestry on smallholder farmland. Want to see what your project would look like? Head to Get Started and our team will set up a demo with your actual sites.',
       },
       {
@@ -579,12 +587,30 @@ export default function HomePage() {
 
     function getReniReply(userText: string): string {
       const lower = userText.toLowerCase();
-      // Use word-boundary matching so 'hi' doesn't fire inside 'which', 'this', etc.
+      // Tier 1: exact word-boundary matching
       const wordMatch = (kw: string) => new RegExp('(?:^|\\s|[^a-z])' + kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:$|\\s|[^a-z])').test(' ' + lower + ' ');
       for (const { keywords, reply } of KEYWORD_REPLIES) {
         if (keywords.some(kw => wordMatch(kw))) return reply;
       }
-      return 'I\'m processing your query. For precise portfolio data, connect your Mynzo dashboard. I can answer questions about survivability, growth, sequestration, species, land area, carbon credits, plantation health, and more.';
+      // Tier 2: intent + topic word pairing — catches varied natural language
+      const has = (...words: string[]) => words.some(w => lower.includes(w));
+      const INTENT = has('what', 'where', 'whose', 'how', 'which', 'who', 'tell me', 'show me', 'can you', 'are you', 'is this', 'does this', 'do you', 'will you', 'why');
+      if (INTENT) {
+        if (has('data', 'numbers', 'figures', 'stats', 'information', 'metrics', 'belong', 'owner', 'source'))
+          return 'The data shown here is illustrative — it represents the kind of real-time insights Mynzo generates for live projects. Actual metrics are pulled from satellite feeds and ground sensors specific to each client\'s forest or agroforestry project.';
+        if (has('project', 'forest', 'site', 'plantation', 'location', 'located', 'based', 'india', 'region', 'place', 'area', 'this showing'))
+          return 'This is a sample portfolio built to demonstrate Mynzo\'s capabilities. Our live platform monitors real forests across India — from mangrove restoration to agroforestry on smallholder farmland. Head to Get Started to see what your project would look like.';
+        if (has('help', 'useful', 'use', 'benefit', 'assist', 'do for me', 'work', 'function', 'purpose', 'value'))
+          return 'I can help you track forest survivability, monitor tree growth and biomass, calculate carbon sequestration, flag boundary risks, project carbon credit issuance, and analyse species performance — all in real time. For corporates I turn nature assets into audit-ready carbon intelligence. For project developers I replace costly field surveys with continuous satellite monitoring.';
+        if (has('you', 'reni', 'yourself', 'bot', 'ai', 'analyst', 'name', 'built', 'made', 'created', 'developed'))
+          return 'I\'m Reni — Mynzo\'s nature asset intelligence analyst. I process satellite imagery, ground sensor data, and Mynzo\'s proprietary models to deliver real-time insights on forest health, carbon sequestration, survivability, and credit projections.';
+        if (has('start', 'begin', 'onboard', 'sign', 'contact', 'reach', 'try', 'use mynzo', 'work with mynzo'))
+          return 'Getting started is easy — visit the Get Started page, fill in your details, and our team will reach out within 24 hours. You can also email support@mynzocarbon.com directly.';
+        if (has('office', 'address', 'gurgaon', 'gurugram', 'headquarter', 'find you', 'visit'))
+          return 'Mynzo\'s office is at Park Centra, Sector 30, Gurugram, Haryana. You can also reach the team at support@mynzocarbon.com.';
+      }
+      // Tier 3: generic fallback
+      return 'I can answer questions about survivability, tree growth, sequestration, species, land area, carbon credits, plantation health, Mynzo\'s platform, and more. Try asking something like "how can you help me?" or "what is survivability?"';
     }
 
     const msgsEl = reniMsgsRef.current;
