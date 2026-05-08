@@ -486,11 +486,89 @@ export default function HomePage() {
       { role: 'user', text: 'What is survivability across my sites?' },
       { role: 'reni', text: 'Scanning 3 active sites… Avg survivability: 87.4%. ⚠ Site B (mangroves) at 74% — recommend ground validation sweep in Q2.' },
     ];
-    const REPLIES = [
-      'Site Alpha: −12% survivability over 90 days. Probable cause: drought stress in northern quadrant.',
-      'Current models project 4,200 verified carbon credits issuable in FY2024 at 95% confidence.',
-      'Boundary leakage risk flagged in 2 zones. Satellite encroachment activity detected. Escalating for review.',
+    const KEYWORD_REPLIES: { keywords: string[]; reply: string }[] = [
+      {
+        keywords: ['hi', 'hello', 'hey', 'namaste', 'good morning', 'good afternoon', 'good evening', 'greetings'],
+        reply: 'Hello! I\'m Reni, your nature asset intelligence analyst. Ask me about survivability, tree growth, carbon sequestration, plantation health, land coverage, or carbon credits. How can I help?',
+      },
+      {
+        keywords: ['how are you', 'how r u', 'how do you do', 'are you ok', 'are you good', 'how\'s it going'],
+        reply: 'All systems operational. Satellite feeds live, ground sensors synced, models running at 99.2% uptime. Ready to analyse your portfolio — what would you like to explore?',
+      },
+      {
+        keywords: ['plantation', 'planting', 'planted', 'plant'],
+        reply: 'Plantation monitoring across active sites shows avg canopy closure at 68%. Site A (Teak & Eucalyptus) leads at 82%. Seasonal planting cycles are on track for Q3 targets. 284,000 trees planted to date.',
+      },
+      {
+        keywords: ['sampling', 'sample', 'ground truth', 'field survey', 'field sample'],
+        reply: 'Last field sampling campaign: Feb 2025. 124 sample plots validated across 3 sites. Satellite-predicted biomass vs field measurements: R² = 0.94. Next recommended campaign: Q2 2025 for mangrove validation at Site B.',
+      },
+      {
+        keywords: ['growth', 'grow', 'growth rate', 'biomass'],
+        reply: 'Current avg Above Ground Biomass growth rate: 4.3 t/ha/yr. Site C (Bamboo-Agroforestry) leads at 6.1 t/ha/yr. Projected trajectory is 9% above baseline model estimates — strong performance.',
+      },
+      {
+        keywords: ['land', 'area', 'hectare', 'coverage', 'land area', 'how much land'],
+        reply: 'Total monitored land: 2,840 ha across 3 active sites. Effective forested cover: 2,210 ha (77.8%). Buffer zones: 630 ha. Land-use change risk index: Low (0.12 on a 0–1 scale).',
+      },
+      {
+        keywords: ['sequestration', 'sequester', 'co2', 'carbon capture', 'carbon removal'],
+        reply: 'Cumulative carbon sequestration: 38,420 tCO₂e. Annual rate: 12,640 tCO₂e/yr. At current trajectory, portfolio hits 50,000 tCO₂e by Q4 2025. All figures are MRV-ready for Verra VCS submission.',
+      },
+      {
+        keywords: ['trees', 'total trees', 'how many trees', 'tree count', 'trees planted'],
+        reply: 'Total trees planted: 284,000. Verified survivors: 247,800 (87.3% survivability). Species breakdown — 42% Teak, 28% Bamboo, 18% Melia dubia, 12% mixed native species.',
+      },
+      {
+        keywords: ['survivability', 'survival', 'survive', 'survival rate'],
+        reply: 'Avg survivability across sites: 87.4%. ⚠ Site B (mangroves) at 74% — recommend ground validation sweep in Q2. Site A: 93.2%. Site C: 88.7%. All sites tracked via bi-weekly satellite passes.',
+      },
+      {
+        keywords: ['credit', 'credits', 'carbon credit', 'issue', 'issuable', 'offset'],
+        reply: 'Models project 4,200 verified carbon credits issuable in FY2025 at 95% confidence. Site B credits are on hold pending MRV validation. Estimated credit value at $18/tCO₂e: ~$75,600.',
+      },
+      {
+        keywords: ['underperform', 'risk', 'alert', 'warning', 'problem', 'issue', 'concern', 'flag'],
+        reply: 'Boundary leakage risk flagged in 2 zones. Satellite encroachment activity detected. Site B mangrove survivability below 80% threshold. Both escalated — field inspection recommended within 30 days.',
+      },
+      {
+        keywords: ['portfolio', 'overview', 'overall', 'summary', 'glance', 'snapshot', 'dashboard'],
+        reply: 'Portfolio snapshot — 3 active sites | 2,840 ha monitored | 284,000 trees planted | 247,800 verified survivors (87.3%) | 38,420 tCO₂e sequestered | 4,200 credits issuable in FY2025. Site A & C performing above baseline. Site B (mangroves) flagged for review.',
+      },
+      {
+        keywords: ['best performing', 'top performing', 'best forest', 'best project', 'top project', 'best site', 'performing well', 'highest'],
+        reply: 'Top performer: Site A (Teak & Eucalyptus) — 93.2% survivability, 82% canopy closure, biomass growth at 5.1 t/ha/yr, zero boundary alerts. Site C (Bamboo-Agroforestry) is close behind with the fastest growth rate at 6.1 t/ha/yr. Both are on track for Q4 credit issuance.',
+      },
+      {
+        keywords: ['boundary', 'boundaries', 'encroachment', 'border', 'perimeter', 'leakage'],
+        reply: 'Boundary integrity report: Site A — secure, no alerts. Site C — secure, minor buffer zone activity (low risk). Site B — ⚠ leakage risk flagged in 2 eastern zones, encroachment activity detected via satellite. Field inspection recommended within 30 days.',
+      },
+      {
+        keywords: ['what is mynzo', 'what does mynzo do', 'about mynzo', 'who is mynzo', 'mynzo do', 'what mynzo'],
+        reply: 'Mynzo Carbon is a precision forest monitoring company. We use AI-powered satellite technology and ground sensor data to measure, verify, and monitor carbon sequestration in forests and agroforestry projects — delivering audit-ready carbon credits for corporates, project developers, and governments.',
+      },
+      {
+        keywords: ['office', 'location', 'address', 'where are you', 'where is mynzo', 'headquarter', 'based'],
+        reply: 'Mynzo\'s office is located at Park Centra, Sector 30, Gurugram, Haryana. You can also reach the team at support@mynzocarbon.com.',
+      },
+      {
+        keywords: ['get started', 'start', 'contact', 'reach out', 'sign up', 'how to begin', 'onboard', 'join'],
+        reply: 'Getting started with Mynzo is easy — visit the Get Started page on our website, fill in your details, and our team will reach out within 24 hours. You can also email us directly at support@mynzocarbon.com.',
+      },
+      {
+        keywords: ['species', 'tree species', 'what trees', 'which trees', 'species mix', 'native species', 'teak', 'bamboo', 'melia'],
+        reply: 'Current species mix across monitored sites: 42% Teak (high commercial value, excellent carbon density), 28% Bamboo (fastest growth, strong SOC contribution), 18% Melia dubia (rapid canopy closure), 12% mixed native species (biodiversity buffer). Species selection is optimised for regional climate resilience.',
+      },
     ];
+
+    function getReniReply(userText: string): string {
+      const lower = userText.toLowerCase();
+      for (const { keywords, reply } of KEYWORD_REPLIES) {
+        if (keywords.some(kw => lower.includes(kw))) return reply;
+      }
+      return 'I\'m processing your query. For precise portfolio data, connect your Mynzo dashboard. I can currently answer questions about survivability, tree growth, sequestration, sampling, land area, carbon credits, and plantation health.';
+    }
+
     const msgsEl = reniMsgsRef.current;
     const inputEl = reniInputRef.current;
     const sendBtn = document.getElementById('reni-send');
@@ -516,7 +594,7 @@ export default function HomePage() {
       msgsEl.scrollTop = msgsEl.scrollHeight;
       setTimeout(() => {
         document.getElementById('reni-typing-el')?.remove();
-        MSGS.push({ role: 'reni', text: REPLIES[Math.floor(Math.random() * REPLIES.length)] });
+        MSGS.push({ role: 'reni', text: getReniReply(text) });
         render();
       }, 1100);
     }

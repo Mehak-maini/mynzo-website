@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: 'Mynzo Carbon – Precision Forest Monitoring',
   description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/favicon.png',
+    apple: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/favicon.png',
   },
 }
 
