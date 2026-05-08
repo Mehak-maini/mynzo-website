@@ -5,6 +5,25 @@ import Link from 'next/link';
 
 export default function GetStartedPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    try {
+      await fetch('https://formsubmit.co/ajax/support@mynzocarbon.com', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      });
+    } catch (_) {
+      // best-effort — show success regardless so UX isn't broken
+    }
+    setLoading(false);
+    setSubmitted(true);
+  }
 
   return (
     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', background: 'linear-gradient(160deg,#f0f7f9 0%,#e8f4f7 40%,#f5fafb 100%)', padding: '108px 24px 80px' }}>
@@ -15,14 +34,9 @@ export default function GetStartedPage() {
             <h1 className="form-title">Get Started with Mynzo</h1>
             <p className="form-sub">Tell us about your project and we will get back to you within 24 hours.</p>
 
-            <form
-              action="https://formsubmit.co/support@mynzocarbon.com"
-              method="POST"
-              onSubmit={() => setSubmitted(true)}
-            >
+            <form onSubmit={handleSubmit}>
               <input type="hidden" name="_subject" value="New Mynzo Get Started Request" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{ display: 'none' }} />
 
               <div className="form-row">
@@ -64,12 +78,18 @@ export default function GetStartedPage() {
                 <textarea id="message" name="message" placeholder="Brief description of your project or goals…"></textarea>
               </div>
 
-              <button type="submit" className="submit-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-                Send Request
+              <button type="submit" className="submit-btn" disabled={loading}>
+                {loading ? (
+                  <span style={{ opacity: 0.8 }}>Sending…</span>
+                ) : (
+                  <>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    Send Request
+                  </>
+                )}
               </button>
             </form>
 

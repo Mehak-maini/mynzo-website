@@ -17,6 +17,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Mynzo Carbon – Precision Forest Monitoring',
   description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
