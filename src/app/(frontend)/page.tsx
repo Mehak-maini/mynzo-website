@@ -556,6 +556,22 @@ export default function HomePage() {
         reply: 'Getting started with Mynzo is easy — visit the Get Started page on our website, fill in your details, and our team will reach out within 24 hours. You can also email us directly at support@mynzocarbon.com.',
       },
       {
+        keywords: ['which data', 'what data', 'is this real', 'real data', 'is this accurate', 'where is this data', 'source of data', 'data source'],
+        reply: 'The data shown here is illustrative — it represents the kind of real-time insights Mynzo generates for live projects. Actual metrics (survivability, sequestration, species mix, credit projections) are pulled from satellite feeds and ground sensors specific to each client\'s forest or agroforestry project.',
+      },
+      {
+        keywords: ['what project', 'which project', 'what forest', 'which forest', 'which site', 'what site', 'which plantation'],
+        reply: 'This is a sample portfolio built to demonstrate Mynzo\'s capabilities. Our live platform monitors real forests across India — from mangrove restoration in coastal zones to agroforestry on smallholder farmland. Want to see what your project would look like? Head to Get Started and our team will set up a demo with your actual sites.',
+      },
+      {
+        keywords: ['my data', 'is this my', 'my project', 'my forest', 'my portfolio', 'my site'],
+        reply: 'Not yet! This is a demo environment. Once you onboard with Mynzo, RENI will pull live satellite data, survivability metrics, and carbon projections specific to your forests and projects — updated continuously. Visit Get Started to kick things off.',
+      },
+      {
+        keywords: ['i am a project developer', 'i\'m a project developer', 'project developer', 'i am a developer', 'i develop projects', 'i have a forest project', 'i have a carbon project', 'i am a corporate', 'i\'m a corporate', 'corporate sustainability', 'i am an investor', 'i\'m an investor', 'fund manager', 'i am a researcher', 'i\'m a researcher', 'government', 'institution', 'ngo', 'i work in sustainability'],
+        reply: 'Great to have you here! Whatever your role — project developer, corporate, investor, or institution — Mynzo can help you monitor, verify, and maximise your nature assets. Head to the Get Started page on our website, fill in your details, and our team will reach out within 24 hours to understand your needs. You can also write directly to support@mynzocarbon.com.',
+      },
+      {
         keywords: ['species', 'tree species', 'what trees', 'which trees', 'species mix', 'native species', 'teak', 'bamboo', 'melia'],
         reply: 'Current species mix across monitored sites: 42% Teak (high commercial value, excellent carbon density), 28% Bamboo (fastest growth, strong SOC contribution), 18% Melia dubia (rapid canopy closure), 12% mixed native species (biodiversity buffer). Species selection is optimised for regional climate resilience.',
       },
