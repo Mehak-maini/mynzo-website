@@ -952,13 +952,13 @@ export default function HomePage() {
         <div className="process-inner">
           <div className="process-video-wrap">
             <video autoPlay muted loop playsInline crossOrigin="anonymous">
-              <source src="https://res.cloudinary.com/drkkt7nh3/video/upload/q_auto/updated_process_video_p6tp8o.mp4" type="video/mp4" />
+              <source src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/process_from_land_to_verified_credits.mp4" type="video/mp4" />
             </video>
           </div>
           <div>
             <div className="process-steps">
               <div className="process-steps-line"></div>
-              {['Satellite data capture & AI-based analysis of species, growth, and carbon', 'Continuous monitoring over asset lifecycle', 'Ground-truth validation workflows', 'Standards-aligned reporting and audit trails', 'Credit verification and issuance'].map((text, i) => (
+              {['Satellite-Based Forest Mapping', 'Ground-Truth Ecological Sampling', 'Ground-Truth Calibrated AI Modelling', 'Continuous Monitoring & Recalibration', 'Standards-Aligned Verification'].map((text, i) => (
                 <div className="process-step" key={i}>
                   <div className="process-step-num">{i + 1}</div>
                   <div className="process-step-text">{text}</div>
