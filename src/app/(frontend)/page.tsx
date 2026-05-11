@@ -233,16 +233,7 @@ export default function HomePage() {
       started = false;
       if (video) video.pause();
     }
-    if (video) {
-      video.addEventListener('seeked', () => {
-        if (video.currentTime < 0.5 && started) {
-          if (stepTimer) clearTimeout(stepTimer);
-          currentStep = -1;
-          setActive(0);
-          stepTimer = setTimeout(advance, DURATIONS[0]);
-        }
-      });
-    }
+    // Steps cycle on their own timer — not tied to video seek/loop events
     const procObs = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) startCycle(); else stopCycle();
     }, { threshold: 0.35 });
@@ -827,7 +818,7 @@ export default function HomePage() {
       {/* ── STATS ── */}
       <div className="stats">
         <div className="stat">
-          <span className="stat-num">20189121</span>
+          <span className="stat-num">21075370</span>
           <div className="stat-lbl">
             <Image src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/trees_planted.png" alt="" width={20} height={18} unoptimized />
             Trees Planted
@@ -835,7 +826,7 @@ export default function HomePage() {
         </div>
         <div className="stat-div"></div>
         <div className="stat">
-          <span className="stat-num">306</span>
+          <span className="stat-num">31379</span>
           <div className="stat-lbl">
             <Image src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/hectares_covered.png" alt="" width={20} height={18} unoptimized />
             Hectares Covered
@@ -843,7 +834,7 @@ export default function HomePage() {
         </div>
         <div className="stat-div"></div>
         <div className="stat">
-          <span className="stat-num">584871</span>
+          <span className="stat-num">373112</span>
           <div className="stat-lbl">
             <Image src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/tons_co2_sequestered.png" alt="" width={20} height={18} unoptimized />
             Tons CO₂ Sequestered
