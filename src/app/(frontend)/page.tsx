@@ -216,7 +216,7 @@ export default function HomePage() {
     }
 
     // Point 2 gets double weight; others get 1 unit each → total 6 units
-    const WEIGHTS = [1, 2, 1, 1, 1];
+    const WEIGHTS = [1, 2, 1.5, 1, 1];
     const totalWeight = WEIGHTS.reduce((a, b) => a + b, 0);
     const thresholds = WEIGHTS.reduce<number[]>((acc, w) => {
       acc.push((acc.length ? acc[acc.length - 1] : 0) + w / totalWeight);
