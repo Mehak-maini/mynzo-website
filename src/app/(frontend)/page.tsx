@@ -617,9 +617,7 @@ export default function HomePage() {
     }
 
     const msgsEl = reniMsgsRef.current;
-    const inputEl = reniInputRef.current;
-    const sendBtn = document.getElementById('reni-send');
-    if (!msgsEl || !inputEl) return;
+    if (!msgsEl) return;
 
     function msgHTML(m: { role: string; text: string }) {
       if (m.role === 'reni') return `<div class="reni-msg-reni"><div class="reni-msg-sender">RENI · AI ANALYST</div><div class="reni-bubble-reni">${m.text}</div></div>`;
@@ -635,7 +633,6 @@ export default function HomePage() {
     function send(text: string) {
       if (!text.trim()) return;
       MSGS.push({ role: 'user', text });
-      inputEl.value = '';
       render();
       msgsEl.insertAdjacentHTML('beforeend', typingHTML());
       msgsEl.scrollTop = msgsEl.scrollHeight;
@@ -646,16 +643,9 @@ export default function HomePage() {
       }, 1100);
     }
     render();
-    const sendHandler = () => send(inputEl.value);
-    const keyHandler = (e: KeyboardEvent) => { if (e.key === 'Enter') send(inputEl.value); };
-    sendBtn?.addEventListener('click', sendHandler);
-    inputEl.addEventListener('keydown', keyHandler);
     const chips = document.querySelectorAll<HTMLButtonElement>('.reni-chip');
     chips.forEach(c => c.addEventListener('click', () => send(c.dataset.query || '')));
-    return () => {
-      sendBtn?.removeEventListener('click', sendHandler);
-      inputEl.removeEventListener('keydown', keyHandler);
-    };
+    return () => {};
   }, []);
 
   // ── Typewriter for Reni heading ────────────────────────────────────────────
@@ -1099,13 +1089,14 @@ export default function HomePage() {
             </div>
             <div className="reni-msgs" id="reni-messages" ref={reniMsgsRef}></div>
             <div className="reni-chips">
-              <button className="reni-chip" data-query="Survivability across my sites?">Survivability across my sites?</button>
+              <button className="reni-chip" data-query="What is Reni?">What is Reni?</button>
+              <button className="reni-chip" data-query="What does Mynzo do?">What does Mynzo do?</button>
+              <button className="reni-chip" data-query="Survivability across my sites?">Survivability across sites?</button>
               <button className="reni-chip" data-query="Which assets are underperforming?">Which assets are underperforming?</button>
-              <button className="reni-chip" data-query="Credits I can issue this year?">Credits I can issue this year?</button>
-            </div>
-            <div className="reni-input-row">
-              <input className="reni-input" id="reni-input" ref={reniInputRef} placeholder="Ask Reni about your portfolio…" />
-              <button className="reni-send" id="reni-send">↑</button>
+              <button className="reni-chip" data-query="Credits I can issue this year?">Credits I can issue?</button>
+              <button className="reni-chip" data-query="Total trees planted?">Total trees planted?</button>
+              <button className="reni-chip" data-query="How can you help me?">How can Reni help me?</button>
+              <button className="reni-chip" data-query="What is sequestration?">Carbon sequestration?</button>
             </div>
           </div>
         </div>
