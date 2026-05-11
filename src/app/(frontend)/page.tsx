@@ -216,7 +216,7 @@ export default function HomePage() {
     }
 
     // Point 2 gets double weight; others get 1 unit each → total 6 units
-    const WEIGHTS = [1, 2, 1.5, 1, 1];
+    const WEIGHTS = [1, 2, 1.5, 1];
     const totalWeight = WEIGHTS.reduce((a, b) => a + b, 0);
     const thresholds = WEIGHTS.reduce<number[]>((acc, w) => {
       acc.push((acc.length ? acc[acc.length - 1] : 0) + w / totalWeight);
@@ -961,7 +961,7 @@ export default function HomePage() {
           <div>
             <div className="process-steps">
               <div className="process-steps-line"></div>
-              {['Satellite-Based Forest Mapping', 'Ground-Truth Ecological Sampling', 'Ground-Truth Calibrated AI Modelling', 'Continuous Monitoring & Recalibration', 'Standards-Aligned Verification'].map((text, i) => (
+              {['Satellite-Based Forest Mapping', 'Ground-Truth Ecological Sampling', 'AI-Driven Monitoring & Recalibration', 'Standards-Aligned Verification'].map((text, i) => (
                 <div className="process-step" key={i}>
                   <div className="process-step-num">{i + 1}</div>
                   <div className="process-step-text">{text}</div>
