@@ -951,7 +951,7 @@ export default function HomePage() {
         </div>
         <div className="process-inner">
           <div className="process-video-wrap">
-            <video autoPlay muted loop playsInline crossOrigin="anonymous">
+            <video autoPlay muted loop playsInline>
               <source src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/process_from_land_to_verified_credits.mp4" type="video/mp4" />
             </video>
           </div>
