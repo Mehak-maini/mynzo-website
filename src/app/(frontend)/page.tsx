@@ -196,49 +196,52 @@ export default function HomePage() {
     });
   }, []);
 
-  // ── Process step highlight ─────────────────────────────────────────────────
+  // ── Process step highlight — synced to video currentTime ──────────────────
   useEffect(() => {
     const section = document.querySelector<HTMLElement>('.process-sec');
     const video = document.querySelector<HTMLVideoElement>('.process-video-wrap video');
     const steps = document.querySelectorAll<HTMLElement>('.process-step');
     if (!section || !steps.length) return;
-    const DURATIONS = [4000, 4000, 5500, 4000, 4000];
-    let currentStep = -1;
-    let stepTimer: ReturnType<typeof setTimeout> | null = null;
-    let started = false;
+
+    const NUM_STEPS = steps.length; // 5
+    let lastStep = -1;
 
     function setActive(i: number) {
-      if (i === currentStep) return;
-      currentStep = i;
+      if (i === lastStep) return;
+      lastStep = i;
       steps.forEach((s, j) => {
         s.querySelector('.process-step-num')?.classList.toggle('active', j === i);
         s.querySelector('.process-step-text')?.classList.toggle('active', j === i);
       });
     }
-    function advance() {
-      const next = (currentStep + 1) % steps.length;
-      setActive(next);
-      stepTimer = setTimeout(advance, DURATIONS[next]);
+
+    function onTimeUpdate() {
+      if (!video || !video.duration || isNaN(video.duration)) return;
+      const stepDuration = video.duration / NUM_STEPS;
+      const idx = Math.min(Math.floor(video.currentTime / stepDuration), NUM_STEPS - 1);
+      setActive(idx);
     }
-    function startCycle() {
-      if (stepTimer) clearTimeout(stepTimer);
-      currentStep = -1;
-      started = true;
-      if (video) { video.currentTime = 0; video.play().catch(() => { }); }
+
+    function startVideo() {
+      if (video) { video.currentTime = 0; video.play().catch(() => {}); }
       setActive(0);
-      stepTimer = setTimeout(advance, DURATIONS[0]);
     }
-    function stopCycle() {
-      if (stepTimer) clearTimeout(stepTimer);
-      started = false;
+
+    function stopVideo() {
       if (video) video.pause();
     }
-    // Steps cycle on their own timer — not tied to video seek/loop events
+
+    video?.addEventListener('timeupdate', onTimeUpdate);
+
     const procObs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) startCycle(); else stopCycle();
+      if (entries[0].isIntersecting) startVideo(); else stopVideo();
     }, { threshold: 0.35 });
     procObs.observe(section);
-    return () => { procObs.disconnect(); if (stepTimer) clearTimeout(stepTimer); };
+
+    return () => {
+      procObs.disconnect();
+      video?.removeEventListener('timeupdate', onTimeUpdate);
+    };
   }, []);
 
   // ── Platform constellation canvas ──────────────────────────────────────────
