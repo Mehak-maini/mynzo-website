@@ -1089,13 +1089,12 @@ export default function HomePage() {
             </div>
             <div className="reni-msgs" id="reni-messages" ref={reniMsgsRef}></div>
             <div className="reni-chips">
-              <button className="reni-chip" data-query="What is Reni?">What is Reni?</button>
-              <button className="reni-chip" data-query="What does Mynzo do?">What does Mynzo do?</button>
-              <button className="reni-chip" data-query="Survivability across my sites?">Survivability across sites?</button>
+              <button className="reni-chip" data-query="Survivability across my sites?">Survivability across my sites?</button>
               <button className="reni-chip" data-query="Which assets are underperforming?">Which assets are underperforming?</button>
-              <button className="reni-chip" data-query="Credits I can issue this year?">Credits I can issue?</button>
+              <button className="reni-chip" data-query="Credits I can issue this year?">Credits I can issue this year?</button>
+              <button className="reni-chip" data-query="What does Mynzo do?">What does Mynzo do?</button>
               <button className="reni-chip" data-query="Total trees planted?">Total trees planted?</button>
-              <button className="reni-chip" data-query="How can you help me?">How can Reni help me?</button>
+              <button className="reni-chip" data-query="How can you help me?">How can Reni help?</button>
               <button className="reni-chip" data-query="What is sequestration?">Carbon sequestration?</button>
             </div>
           </div>
