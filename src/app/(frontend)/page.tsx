@@ -1067,7 +1067,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="serve-img-col">
-            <Image src={`${S3}/solutions_for_stakeholders.png`} alt="Solutions for every stakeholder" width={640} height={640} unoptimized style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <Image src={`${S3}/who_we_serve.png`} alt="Solutions for every stakeholder" width={640} height={640} unoptimized style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
         </div>
       </section>
@@ -1188,7 +1188,7 @@ export default function HomePage() {
       <section className="cta-sec" id="cta-sec">
         <div className="cta-card">
           <div className="cta-img">
-            <Image src="https://www.figma.com/api/mcp/asset/b319259e-d0a6-4155-b9c9-bfe8460fdd27" alt="Transform Forest Monitoring" width={160} height={200} unoptimized style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <Image src="https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/transform_forest_monitoring.png" alt="Transform Forest Monitoring" width={160} height={200} unoptimized style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div className="cta-body">
             <h3 className="cta-title">Transform Forest Monitoring</h3>
