@@ -215,10 +215,19 @@ export default function HomePage() {
       });
     }
 
+    // Point 2 gets double weight; others get 1 unit each → total 6 units
+    const WEIGHTS = [1, 2, 1, 1, 1];
+    const totalWeight = WEIGHTS.reduce((a, b) => a + b, 0);
+    const thresholds = WEIGHTS.reduce<number[]>((acc, w) => {
+      acc.push((acc.length ? acc[acc.length - 1] : 0) + w / totalWeight);
+      return acc;
+    }, []);
+
     function onTimeUpdate() {
       if (!video || !video.duration || isNaN(video.duration)) return;
-      const stepDuration = video.duration / NUM_STEPS;
-      const idx = Math.min(Math.floor(video.currentTime / stepDuration), NUM_STEPS - 1);
+      const progress = video.currentTime / video.duration;
+      let idx = thresholds.findIndex(t => progress < t);
+      if (idx === -1) idx = NUM_STEPS - 1;
       setActive(idx);
     }
 
