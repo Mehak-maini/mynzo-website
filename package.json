@@ -22,7 +22,6 @@
     "payload": "3.84.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@sendgrid/mail": "^8.1.4",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
