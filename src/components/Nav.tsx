@@ -93,7 +93,7 @@ export default function Nav() {
         <Link href="/" className={homeActive ? 'active' : ''}>HOME</Link>
         <Link href="/#platform" className={cls('platform')}>PLATFORM</Link>
         <Link href="/#reni-sec" className={cls('reni')}>RENI</Link>
-        <Link href="/teams">TEAMS</Link>
+        <Link href="/#team">TEAM</Link>
         <Link href="/#blogs" className={cls('blogs')}>BLOGS</Link>
       </nav>
       <Link href="/get-started" className="nav-cta" style={{ textDecoration: 'none' }}>
@@ -125,7 +125,7 @@ export default function Nav() {
             <Link href="/" className={homeActive ? 'active' : ''} onClick={closeMenu}>HOME</Link>
             <Link href="/#platform" className={cls('platform')} onClick={closeMenu}>PLATFORM</Link>
             <Link href="/#reni-sec" className={cls('reni')} onClick={closeMenu}>RENI</Link>
-            <Link href="/teams" onClick={closeMenu}>TEAMS</Link>
+            <Link href="/#team" onClick={closeMenu}>TEAM</Link>
             <Link href="/#blogs" className={cls('blogs')} onClick={closeMenu}>BLOGS</Link>
             <Link href="/get-started" className="mobile-cta" onClick={closeMenu}>Get Started</Link>
           </nav>
