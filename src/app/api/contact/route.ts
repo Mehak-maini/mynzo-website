@@ -7,8 +7,8 @@ export async function POST(req: Request) {
 
     const params = {
       Action: 'SendEmail',
-      'Source': 'support@mynzocarbon.com',
-      'Destination.ToAddresses.member.1': 'support@mynzocarbon.com',
+      'Source': 'admin@mynzocarbon.com',
+      'Destination.ToAddresses.member.1': 'admin@mynzocarbon.com',
       'ReplyToAddresses.member.1': email,
       'Message.Subject.Data': 'New Mynzo Get Started Request',
       'Message.Subject.Charset': 'UTF-8',
