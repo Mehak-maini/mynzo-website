@@ -93,6 +93,7 @@ export default function Nav() {
         <Link href="/" className={homeActive ? 'active' : ''}>HOME</Link>
         <Link href="/#platform" className={cls('platform')}>PLATFORM</Link>
         <Link href="/#reni-sec" className={cls('reni')}>RENI</Link>
+        <Link href="/teams">TEAMS</Link>
         <Link href="/#blogs" className={cls('blogs')}>BLOGS</Link>
       </nav>
       <Link href="/get-started" className="nav-cta" style={{ textDecoration: 'none' }}>
@@ -114,10 +115,17 @@ export default function Nav() {
       {/* Mobile menu overlay */}
       {menuOpen && (
         <div className="mobile-menu">
+          <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
           <nav className="mobile-links">
             <Link href="/" className={homeActive ? 'active' : ''} onClick={closeMenu}>HOME</Link>
             <Link href="/#platform" className={cls('platform')} onClick={closeMenu}>PLATFORM</Link>
             <Link href="/#reni-sec" className={cls('reni')} onClick={closeMenu}>RENI</Link>
+            <Link href="/teams" onClick={closeMenu}>TEAMS</Link>
             <Link href="/#blogs" className={cls('blogs')} onClick={closeMenu}>BLOGS</Link>
             <Link href="/get-started" className="mobile-cta" onClick={closeMenu}>Get Started</Link>
           </nav>
