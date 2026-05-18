@@ -6,27 +6,35 @@ import Link from 'next/link';
 export default function GetStartedPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     const form = e.currentTarget;
     const data = new FormData(form);
+
     try {
-      await fetch('https://formsubmit.co/ajax/support@mynzocarbon.com', {
+      const res = await fetch('https://formsubmit.co/ajax/support@mynzocarbon.com', {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: data,
       });
+      const json = await res.json();
+      if (json.success === 'true' || json.success === true) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
     } catch (_) {
-      // best-effort — show success regardless so UX isn't broken
+      setError(true);
     }
     setLoading(false);
-    setSubmitted(true);
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', background: 'linear-gradient(160deg,#f0f7f9 0%,#e8f4f7 40%,#f5fafb 100%)', padding: '108px 24px 80px' }}>
+    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', background: 'linear-gradient(160deg,#f0f7f9 0%,#e8f4f7 40%,#f5fafb 100%)', padding: '108px 24px 80px', minHeight: '100%', flex: 1 }}>
       <div className="form-card">
         {!submitted ? (
           <>
@@ -37,6 +45,7 @@ export default function GetStartedPage() {
             <form onSubmit={handleSubmit}>
               <input type="hidden" name="_subject" value="New Mynzo Get Started Request" />
               <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{ display: 'none' }} />
 
               <div className="form-row">
@@ -77,6 +86,12 @@ export default function GetStartedPage() {
                 <label htmlFor="message">What are you looking to achieve?</label>
                 <textarea id="message" name="message" placeholder="Brief description of your project or goals…"></textarea>
               </div>
+
+              {error && (
+                <p style={{ color: '#c0392b', fontSize: '13px', marginBottom: '12px' }}>
+                  Something went wrong. Please try again or email us directly at support@mynzocarbon.com.
+                </p>
+              )}
 
               <button type="submit" className="submit-btn" disabled={loading}>
                 {loading ? (
