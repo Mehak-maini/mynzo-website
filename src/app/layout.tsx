@@ -18,11 +18,24 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mynzocarbon.com'),
   title: 'Mynzo Carbon – Precision Forest Monitoring',
   description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
   icons: {
     icon: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/favicon.png',
     apple: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/favicon.png',
+  },
+  openGraph: {
+    title: 'Mynzo Carbon – Precision Forest Monitoring',
+    description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
+    url: 'https://www.mynzocarbon.com',
+    siteName: 'Mynzo Carbon',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mynzo Carbon – Precision Forest Monitoring',
+    description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
   },
 }
 
