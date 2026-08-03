@@ -3,7 +3,7 @@ import { readFile } from 'fs/promises'
 import { join } from 'path'
 
 export const alt = 'Mynzo Carbon – Precision Forest Monitoring'
-export const size = { width: 1200, height: 630 }
+export const size = { width: 2400, height: 1260 }
 export const contentType = 'image/png'
 
 export default async function Image() {
@@ -36,16 +36,16 @@ export default async function Image() {
         />
         <img
           src={logoSrc}
-          width={280}
-          style={{ marginBottom: 44, position: 'relative' }}
+          width={560}
+          style={{ marginBottom: 88, position: 'relative' }}
         />
         <div
           style={{
             display: 'flex',
-            fontSize: 58,
+            fontSize: 116,
             fontWeight: 700,
             color: '#061729',
-            letterSpacing: '-1.5px',
+            letterSpacing: '-3px',
             textAlign: 'center',
             position: 'relative',
           }}
@@ -55,11 +55,11 @@ export default async function Image() {
         <div
           style={{
             display: 'flex',
-            fontSize: 26,
+            fontSize: 52,
             fontWeight: 500,
             color: '#3D5A70',
-            marginTop: 22,
-            maxWidth: 820,
+            marginTop: 44,
+            maxWidth: 1640,
             textAlign: 'center',
             position: 'relative',
           }}
