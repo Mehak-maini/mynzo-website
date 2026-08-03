@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { Nunito, Inter } from 'next/font/google'
+import Script from 'next/script'
+
+const GA_MEASUREMENT_ID = 'G-WQW0T7W18B'
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -26,6 +29,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+      </head>
       <body className={`${nunito.variable} ${inter.variable}`}>{children}</body>
     </html>
   )
