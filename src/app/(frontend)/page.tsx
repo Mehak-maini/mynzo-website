@@ -11,7 +11,7 @@ const TEAM = [
   { name: 'Tanya Singhal', role: 'Advisor', img: `${S3}/Tanya_singhal.png`, bio: "Climate change is a crisis now. Our platform empowers you to cut your carbon footprint and build a sustainable future—one action at a time." },
   { name: 'Jagmal Singh', role: 'Advisor', img: `${S3}/Jagmal_singh.png`, bio: "AI isn't a silver bullet, but it will accelerate net zero goals. Harnessed responsibly, it helps optimize resources and shape a sustainable future." },
   { name: 'Konark Murarka', role: 'Chief of Staff', img: `${S3}/Konark_murarka.png`, bio: "Strategic operations leader driving organizational excellence and cross-functional coordination across Mynzo's initiatives." },
-  { name: 'R. Ravi Kiran', role: 'Product Lead', img: `${S3}/r_ravi_kiran.png`, bio: "Product strategy expert leading the development of innovative forest monitoring solutions and user experience design." },
+  { name: 'R. Ravi Kiran', role: 'Head of Product', img: `${S3}/r_ravi_kiran.png`, bio: "Product strategy expert leading the development of innovative forest monitoring solutions and user experience design." },
   { name: 'Amit Gupta', role: 'Head of Technology', img: `${S3}/amit_gupta.png`, bio: "Technology leader designing robust AI systems and satellite data processing frameworks to power Mynzo's forest intelligence platform." },
   { name: 'Jitendra Gadhwal', role: 'Tech Lead', img: `${S3}/jitendra_gadhwal.png`, bio: "Engineering leader overseeing architecture and delivery of scalable systems at the core of Mynzo's platform." },
   { name: 'Ayush Chandrakar', role: 'Senior Data Scientist', img: `${S3}/ayush_chandrakar.png`, bio: "Data science expert building the models and pipelines that turn satellite signals into actionable forest insights." },
