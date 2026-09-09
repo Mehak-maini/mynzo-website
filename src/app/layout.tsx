@@ -25,18 +25,7 @@ export const metadata: Metadata = {
     icon: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/favicon.png',
     apple: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/favicon.png',
   },
-  openGraph: {
-    title: 'Mynzo Carbon – Precision Forest Monitoring',
-    description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
-    url: 'https://www.mynzocarbon.com',
-    siteName: 'Mynzo Carbon',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Mynzo Carbon – Precision Forest Monitoring',
-    description: 'Revolutionizing forest monitoring with AI-powered satellite technology.',
-  },
+
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -51,8 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            if (['www.mynzocarbon.com', 'mynzocarbon.com'].includes(window.location.hostname)) {
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+            }
           `}
         </Script>
       </head>

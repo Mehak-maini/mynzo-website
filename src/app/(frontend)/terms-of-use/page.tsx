@@ -1,6 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import LegalPage from '@/components/LegalPage';
 
-export const metadata = { title: 'Terms of Use – Mynzo' };
+export const metadata = pageMetadata('/terms-of-use', 'Terms of Use – Mynzo', 'Read the terms governing access to and use of the Mynzo Carbon website and services.');
 
 export default function TermsOfUsePage() {
   return (

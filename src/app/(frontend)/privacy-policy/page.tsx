@@ -1,6 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import LegalPage from '@/components/LegalPage';
 
-export const metadata = { title: 'Privacy Policy – Mynzo' };
+export const metadata = pageMetadata('/privacy-policy', 'Privacy Policy – Mynzo', 'Learn how Mynzo Carbon collects, uses and protects personal information, and how to contact us about privacy.');
 
 export default function PrivacyPolicyPage() {
   return (

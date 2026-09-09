@@ -8,7 +8,9 @@
     "start": "next start",
     "generate:types": "payload generate:types",
     "payload": "payload",
-    "postinstall": "npm dedupe"
+    "postinstall": "npm dedupe",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit --incremental false"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.84.1",
@@ -28,6 +30,7 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "tsx": "4.21.0",
     "typescript": "^5"
   },
   "overrides": {

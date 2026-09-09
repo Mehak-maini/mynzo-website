@@ -1,15 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
+import { trackLead } from '@/lib/analytics';
 
 export default function GetStartedPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
+  const submitting = useRef(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting.current || submitted) return;
+    submitting.current = true;
     setSending(true);
     setError('');
 
@@ -30,14 +34,17 @@ export default function GetStartedPage() {
         body: JSON.stringify(data),
       });
 
-      if (res.ok) {
+      const result = await res.json();
+      if (res.ok && result.ok === true) {
         setSubmitted(true);
+        trackLead();
       } else {
         setError('Something went wrong. Please email us directly at support@mynzocarbon.com.');
       }
     } catch {
       setError('Something went wrong. Please email us directly at support@mynzocarbon.com.');
     } finally {
+      submitting.current = false;
       setSending(false);
     }
   }

@@ -1,29 +1,12 @@
 import Link from 'next/link';
-import { STATIC_POSTS } from '@/data/blogPosts';
+import { getPublishedPosts } from '@/lib/posts';
+import { pageMetadata } from '@/lib/seo';
 
-export const dynamic = 'force-dynamic';
-
-// Fetch from Payload REST API — much faster than importing Payload directly
-async function getPosts() {
-  try {
-    const base = process.env.NEXT_PUBLIC_SERVER_URL || 'https://mynzo-website-khaki.vercel.app';
-    const res = await fetch(
-      `${base}/api/posts?where[status][equals]=published&sort=-publishedAt&limit=50&depth=1`,
-      { cache: 'no-store' }
-    );
-    if (!res.ok) throw new Error(`API ${res.status}`);
-    const data = await res.json();
-    if (data.docs?.length > 0) return { source: 'cms' as const, docs: data.docs };
-  } catch (e) {
-    console.error('Blog fetch error:', e);
-  }
-  return { source: 'static' as const, docs: STATIC_POSTS };
-}
-
-export const metadata = { title: 'Mynzo Talks – All Posts' };
+export const revalidate = 300;
+export const metadata = pageMetadata('/blog', 'Forest Monitoring & Carbon Insights | Mynzo Talks', 'Explore Mynzo insights on forest monitoring, carbon accounting, agroforestry, soil carbon and climate action.');
 
 export default async function BlogPage() {
-  const { source, docs } = await getPosts();
+  const docs = await getPublishedPosts();
 
   return (
     <div style={{ background: '#fff' }}>
@@ -34,24 +17,14 @@ export default async function BlogPage() {
 
       <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '64px 64px 100px' }}>
         <div className="blogs2-grid">
-          {docs.map((post: any) => {
-            const slug     = post.slug;
-            const tag      = source === 'static' ? post.tag      : (post.category || 'Research');
-            const tagBg    = source === 'static' ? post.tagBg    : '#EBF7F0';
-            const tagColor = source === 'static' ? post.tagColor : '#1A7A4A';
-            const excerpt  = post.excerpt || '';
-            const date     = source === 'static' ? post.date : (post.publishedAt || '');
-            const readTime = post.readTime;
-            // coverImage is a relationship to Media — use its url if populated, fall back to plain URL field
-            const imgSrc   = source === 'static'
-              ? post.img
-              : (post.coverImage?.url || post.coverImageUrl || null);
+          {docs.map(post => {
+            const { slug, tag, tagBg, tagColor, excerpt, date, readTime, img: imgSrc } = post;
 
             return (
               <Link href={`/blog/${slug}`} className="blog2-card" key={slug}>
                 <div className="blog2-img">
                   {imgSrc
-                    ? <img src={imgSrc} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    ? <img loading="lazy" decoding="async" src={imgSrc} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                     : <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg,#d6ebf1,rgba(89,132,147,0.12))' }} />
                   }
                 </div>
