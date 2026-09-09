@@ -1,73 +1,35 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { STATIC_POSTS } from '@/data/blogPosts';
+import { getPost } from '@/lib/posts';
+import { pageMetadata, SITE_URL, organization } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 
-export const dynamic = 'force-dynamic';
-
-const base = process.env.NEXT_PUBLIC_SERVER_URL || 'https://mynzo-website-khaki.vercel.app';
-
-// Fetch from Payload REST API
-async function getPost(slug: string) {
-  try {
-    const res = await fetch(
-      `${base}/api/posts?where[slug][equals]=${encodeURIComponent(slug)}&where[status][equals]=published&limit=1&depth=1`,
-      { cache: 'no-store' }
-    );
-    if (!res.ok) throw new Error(`API ${res.status}`);
-    const data = await res.json();
-    if (data.docs?.length > 0) return { source: 'cms' as const, post: data.docs[0] };
-  } catch (e) {
-    console.error('Post fetch error:', e);
-  }
-
-  const staticPost = STATIC_POSTS.find(p => p.slug === slug);
-  if (staticPost) return { source: 'static' as const, post: staticPost };
-  return null;
-}
+export const revalidate = 300;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const result = await getPost(slug);
-  if (!result) return { title: 'Post Not Found – Mynzo' };
-  return {
-    title: `${result.post.title} – Mynzo Talks`,
-    description: result.post.excerpt,
-  };
+  const post = await getPost(slug);
+  if (!post) notFound();
+  const metadata = pageMetadata(`/blog/${encodeURIComponent(slug)}`, `${post.title} – Mynzo Talks`, post.excerpt || `Read ${post.title} on Mynzo Talks.`, post.img || undefined);
+  return { ...metadata, openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.publishedAt, modifiedTime: post.updatedAt, authors: [post.author] } };
 }
-
-const TAG_STYLES: Record<string, { bg: string; color: string }> = {
-  'Carbon Markets': { bg: '#EBF7F0', color: '#1A7A4A' },
-  'Agroforestry':   { bg: '#E8F3FA', color: '#1A5A7A' },
-  'Soil Science':   { bg: '#F5F0FF', color: '#5A1A7A' },
-  'Technology':     { bg: '#FFF3E8', color: '#7A4A1A' },
-  'Policy':         { bg: '#F0F5FF', color: '#1A3A7A' },
-  'Research':       { bg: '#F5F5F0', color: '#3A4A1A' },
-};
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const result = await getPost(slug);
-  if (!result) notFound();
-
-  const { source, post } = result;
-
-  // Normalise fields across CMS and static
-  const tag      = source === 'static' ? post.tag      : ((post as any).category || 'Research');
-  const tagBg    = source === 'static' ? post.tagBg    : (TAG_STYLES[tag]?.bg    ?? '#EBF7F0');
-  const tagColor = source === 'static' ? post.tagColor : (TAG_STYLES[tag]?.color ?? '#1A7A4A');
-  const date     = source === 'static' ? post.date : ((post as any).publishedAt || '');
-  const readTime = post.readTime;
-  const author   = post.author || 'Mynzo Team';
-  // coverImage is a Media relationship — prefer its url, fall back to plain URL field
-  const imgSrc   = source === 'static'
-    ? post.img
-    : ((post as any).coverImage?.url || (post as any).coverImageUrl || null);
-  const content  = source === 'static'
-    ? post.content
-    : (typeof (post as any).content === 'string' ? (post as any).content : '');
+  const post = await getPost(slug);
+  if (!post) notFound();
+  const { tag, tagBg, tagColor, date, readTime, author, img: imgSrc, content } = post;
+  const url = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
 
   return (
     <div style={{ background: '#fff' }}>
+      <JsonLd data={{ '@context': 'https://schema.org', '@graph': [organization, {
+        '@type': 'BlogPosting', '@id': `${url}#article`, mainEntityOfPage: url, url,
+        headline: post.title, description: post.excerpt || undefined,
+        image: imgSrc || undefined, datePublished: post.publishedAt, dateModified: post.updatedAt,
+        author: author === 'Mynzo Team' ? { '@id': `${SITE_URL}/#organization` } : { '@type': 'Person', name: author },
+        publisher: { '@id': `${SITE_URL}/#organization` },
+      }] }} />
 
       {/* Cover image */}
       {imgSrc && (
@@ -97,7 +59,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Meta */}
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap', fontSize: '14px', color: '#7A96A8', fontFamily: 'var(--font-nunito)', marginBottom: '40px', paddingBottom: '32px', borderBottom: '1px solid #E2EAF0' }}>
           {author   && <span>By <strong style={{ color: '#3D5A70' }}>{author}</strong></span>}
-          {date     && <span>{date}</span>}
+          {date     && <time dateTime={post.publishedAt}>{date}</time>}
           {readTime && <span style={{ color: 'var(--teal)', fontWeight: 600 }}>{readTime} min read</span>}
         </div>
 

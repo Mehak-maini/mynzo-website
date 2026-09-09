@@ -1,6 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import LegalPage from '@/components/LegalPage';
 
-export const metadata = { title: 'Data Processing Agreement – Mynzo' };
+export const metadata = pageMetadata('/data-processing', 'Data Processing Agreement – Mynzo', 'Review Mynzo Carbon’s data processing agreement, including data handling responsibilities and safeguards.');
 
 export default function DataProcessingPage() {
   return (

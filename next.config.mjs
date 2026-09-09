@@ -2,8 +2,16 @@ import { withPayload } from '@payloadcms/next/withPayload'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    const noindex = [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }];
+    return [
+      { source: '/admin/:path*', headers: noindex },
+      { source: '/api/:path*', headers: noindex },
+      ...(process.env.VERCEL_ENV === 'preview' ? [{ source: '/:path*', headers: noindex }] : []),
+    ];
+  },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
     ignoreDuringBuilds: true,

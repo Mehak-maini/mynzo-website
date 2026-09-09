@@ -1,4 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
+
+export const metadata = { ...pageMetadata('/thank-you', 'Request Received | Mynzo Carbon', 'Your enquiry has been received by Mynzo Carbon.'), robots: { index: false, follow: true } };
 
 export default function ThankYouPage() {
   return (
@@ -9,7 +12,7 @@ export default function ThankYouPage() {
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </div>
-        <h2 style={{ fontFamily: 'var(--font-nunito)', fontSize: '26px', fontWeight: 700, color: '#101828', margin: 0 }}>Request sent!</h2>
+        <h1 style={{ fontFamily: 'var(--font-nunito)', fontSize: '26px', fontWeight: 700, color: '#101828', margin: 0 }}>Request sent!</h1>
         <p style={{ fontSize: '16px', color: '#4a5565', maxWidth: '320px', lineHeight: 1.6, margin: 0 }}>Thank you! Our team will reach out to you at your email address within 24 hours.</p>
         <Link href="/" style={{ marginTop: '8px', color: '#598493', textDecoration: 'underline', fontSize: '14px' }}>← Back to Home</Link>
       </div>

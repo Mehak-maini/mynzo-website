@@ -1,6 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import LegalPage from '@/components/LegalPage';
 
-export const metadata = { title: 'Cookie Policy – Mynzo' };
+export const metadata = pageMetadata('/cookie-policy', 'Cookie Policy – Mynzo', 'Learn how Mynzo Carbon uses cookies and similar technologies on its website.');
 
 export default function CookiePolicyPage() {
   return (
