@@ -490,7 +490,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       },
       {
         keywords: ['how can you help', 'how will you help', 'how do you help', 'can you help me', 'what can you do', 'what can reni do', 'how is it useful', 'how is this useful', 'useful to me', 'how does this help', 'what is the use', 'why should i use', 'benefit', 'benefits'],
-        reply: 'I can help you track forest survivability, monitor tree growth and biomass, calculate carbon sequestration, flag boundary risks, project carbon credit issuance, and analyse species performance — all in real time using satellite data. For corporates, I turn nature assets into audit-ready carbon intelligence. For project developers, I replace costly field surveys with continuous monitoring.',
+        reply: 'This demo shows how questions about forest condition, field records and carbon estimates can be explored. Mynzo connects satellite observations with targeted field checks and reporting. The data available for your project determines which questions can be answered.',
       },
       {
         keywords: ['how are you', 'how r u', 'how do you do', 'are you ok', 'are you good', 'how\'s it going', 'hows it going'],
@@ -546,7 +546,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       },
       {
         keywords: ['what is mynzo', 'what does mynzo do', 'about mynzo', 'who is mynzo', 'mynzo do', 'what mynzo'],
-        reply: 'Mynzo Carbon is a precision forest monitoring company. We use AI-powered satellite technology and ground sensor data to measure, verify, and monitor carbon sequestration in forests and agroforestry projects — delivering audit-ready carbon credits for corporates, project developers, and governments.',
+        reply: 'Mynzo Carbon provides forest monitoring technology. Satellite observations, field records and models support forest assessment and carbon reporting for forest and agroforestry projects. Project verification and credit issuance follow the applicable programme requirements.',
       },
       {
         keywords: ['office', 'location', 'address', 'where are you', 'where is mynzo', 'headquarter', 'based'],
@@ -594,7 +594,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
         if (has('project', 'forest', 'site', 'plantation', 'location', 'located', 'based', 'india', 'region', 'place', 'area', 'this showing'))
           return 'This is a sample portfolio built to demonstrate Mynzo\'s capabilities. Our live platform monitors real forests across India — from mangrove restoration to agroforestry on smallholder farmland. Head to Get Started to see what your project would look like.';
         if (has('help', 'useful', 'use', 'benefit', 'assist', 'do for me', 'work', 'function', 'purpose', 'value'))
-          return 'I can help you track forest survivability, monitor tree growth and biomass, calculate carbon sequestration, flag boundary risks, project carbon credit issuance, and analyse species performance — all in real time. For corporates I turn nature assets into audit-ready carbon intelligence. For project developers I replace costly field surveys with continuous satellite monitoring.';
+          return 'This demo shows how questions about forest condition, field records and carbon estimates can be explored. Mynzo connects satellite observations with targeted field checks and reporting. The data available for your project determines which questions can be answered.';
         if (has('you', 'reni', 'yourself', 'bot', 'ai', 'analyst', 'name', 'built', 'made', 'created', 'developed'))
           return 'I\'m Reni — Mynzo\'s nature asset intelligence analyst. I process satellite imagery, ground sensor data, and Mynzo\'s proprietary models to deliver real-time insights on forest health, carbon sequestration, survivability, and credit projections.';
         if (has('start', 'begin', 'onboard', 'sign', 'contact', 'reach', 'try', 'use mynzo', 'work with mynzo'))
@@ -841,7 +841,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
         <div className="why-cards">
           {[
             { title: 'Satellite Remote Sensing', desc: 'Multi-spectral imagery aids forest health assessment.', vid: '/satellite_remote_sensing.mp4', radar: true },
-            { title: 'Machine Learning Models', desc: 'Deep learning detects deforestation with 98.5% accuracy.', vid: '/machine_learning_models.mp4' },
+            { title: 'Machine Learning Models', desc: 'Machine learning helps identify changes in forest cover.', vid: '/machine_learning_models.mp4' },
             { title: 'Carbon Sequestration Analysis', desc: 'Algorithms convert forest data into carbon metrics.', vid: '/tree_analysis.mp4' },
             { title: 'Temporal Insights', desc: 'Analyze ecosystem shifts, disturbances, and long-term environmental changes across time.', vid: '/temporal_insight.mp4' },
           ].map((c, i) => (
@@ -886,6 +886,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
               <li>Forest change and temporal monitoring</li>
               <li>Ground-truth validation through field data</li>
             </ul>
+            <Link href="/platform/forest-monitoring" className="plat-detail-link">Explore forest monitoring <span aria-hidden="true">↗</span></Link>
           </div>
           <div className="plat-strip-img plat-strip-img-right">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -913,7 +914,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             <h3 className="plat-strip-title">Turn natural assets into actionable portfolios</h3>
             <ul className="plat-strip-list">
               <li>Portfolio design and forecasting</li>
-              <li>Carbon credit validation and verification</li>
+              <li>Monitoring evidence for carbon project review</li>
               <li>Marketplace for projects and credits</li>
             </ul>
           </div>
@@ -927,8 +928,9 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       {/* ── PROCESS ── */}
       <section className="process-sec">
         <div className="process-hdr">
-          <h2 className="sec-title">From Land to Verified Credits</h2>
-          <p className="sec-sub">A rigorous, transparent pipeline that turns raw forest data into auditable carbon credits.</p>
+          <h2 className="sec-title">From Forest Data to Carbon Reporting</h2>
+          <p className="sec-sub">Connect satellite observations and field measurements to the evidence a carbon project needs.</p>
+          <Link href="/platform/digital-mrv" className="plat-detail-link">Explore digital MRV <span aria-hidden="true">↗</span></Link>
         </div>
         <div className="process-inner">
           <div className="process-video-wrap">
@@ -937,7 +939,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
           <div>
             <div className="process-steps">
               <div className="process-steps-line"></div>
-              {['Satellite-Based Forest Mapping', 'Ground-Truth Ecological Sampling', 'AI-Driven Monitoring & Recalibration', 'Standards-Aligned Verification'].map((text, i) => (
+              {['Satellite-Based Forest Mapping', 'Ground-Truth Ecological Sampling', 'AI-Driven Monitoring & Recalibration', 'Evidence for Independent Review'].map((text, i) => (
                 <div className="process-step" key={i}>
                   <div className="process-step-num">{i + 1}</div>
                   <div className="process-step-text">{text}</div>
@@ -1056,7 +1058,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
         <div className="reni-content">
           <div className="reni-text-backdrop">
             <h2 className="reni-title"></h2>
-            <p className="reni-sub">Reni processes live satellite feeds, ground sensor data, and Mynzo&apos;s proprietary models to deliver audit-ready intelligence — in seconds.</p>
+            <p className="reni-sub">Explore questions about forest condition, site records and carbon estimates with Reni.</p>
           </div>
           <div className="reni-chat">
             <div className="reni-titlebar">
@@ -1065,7 +1067,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
                 <div className="reni-dot-mac" style={{ background: '#febc2e' }}></div>
                 <div className="reni-dot-mac" style={{ background: '#28c840' }}></div>
               </div>
-              <div className="reni-window-title">reni — nature asset analyst</div>
+              <div className="reni-window-title">reni · nature asset analyst</div>
               <div className="reni-avatar">
                 <div className="reni-ring"></div>
                 <div className="reni-avatar-inner" style={{ background: 'transparent', boxShadow: 'none', overflow: 'hidden', padding: '0' }}>
@@ -1073,6 +1075,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
                 </div>
               </div>
             </div>
+            <p className="reni-demo-note">Interactive demo. Responses and portfolio figures are illustrative.</p>
             <div className="reni-msgs" id="reni-messages" ref={reniMsgsRef}></div>
             <div className="reni-chips">
               <button className="reni-chip" data-query="Survivability across my sites?">Survivability across my sites?</button>
