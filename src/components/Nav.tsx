@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,6 +13,9 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(!isHome); // solid immediately on sub-pages
   const [activeSection, setActiveSection] = useState<Section>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [platformOpen, setPlatformOpen] = useState(false);
+  const platformRef = useRef<HTMLDivElement>(null);
+  const platformButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     // On sub-pages the nav is always solid — no scroll listener needed
@@ -59,7 +62,26 @@ export default function Nav() {
   }, [isHome]);
 
   // Close menu on route change
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  useEffect(() => { setMenuOpen(false); setPlatformOpen(false); }, [pathname]);
+
+  useEffect(() => {
+    if (!platformOpen) return;
+    const outside = (event: PointerEvent) => {
+      if (!platformRef.current?.contains(event.target as Node)) setPlatformOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setPlatformOpen(false);
+        platformButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', outside);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', outside);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [platformOpen]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -71,7 +93,7 @@ export default function Nav() {
   const homeActive = isHome && activeSection === null;
   const cls = (s: Section) => isHome && activeSection === s ? 'active' : '';
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => { setMenuOpen(false); setPlatformOpen(false); };
 
   return (
     <header className={`site-nav${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`} id="site-nav">
@@ -89,9 +111,20 @@ export default function Nav() {
       <div className="nav-sep"></div>
 
       {/* Desktop nav */}
-      <nav className="links">
+      <nav className="links" aria-label="Main navigation">
         <Link href="/" className={homeActive ? 'active' : ''}>HOME</Link>
-        <Link href="/#platform" className={cls('platform')}>PLATFORM</Link>
+        <div className="nav-platform" ref={platformRef} onBlur={event => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPlatformOpen(false);
+        }}>
+          <button ref={platformButtonRef} className={`nav-platform-toggle ${pathname.startsWith('/platform/') ? 'active' : cls('platform')}`} aria-expanded={platformOpen} aria-controls="platform-navigation" onClick={() => setPlatformOpen(open => !open)}>
+            PLATFORM <span aria-hidden="true">⌄</span>
+          </button>
+          <div className="nav-platform-panel" id="platform-navigation" hidden={!platformOpen}>
+            <Link href="/#platform" onClick={closeMenu}>Platform overview</Link>
+            <Link href="/platform/forest-monitoring" onClick={closeMenu} aria-current={pathname === '/platform/forest-monitoring' ? 'page' : undefined}>Forest monitoring</Link>
+            <Link href="/platform/digital-mrv" onClick={closeMenu} aria-current={pathname === '/platform/digital-mrv' ? 'page' : undefined}>Digital MRV</Link>
+          </div>
+        </div>
         <Link href="/#reni-sec" className={cls('reni')}>RENI</Link>
         <Link href="/#team">TEAM</Link>
         <Link href="/#blogs" className={cls('blogs')}>BLOGS</Link>
@@ -124,6 +157,8 @@ export default function Nav() {
           <nav className="mobile-links">
             <Link href="/" className={homeActive ? 'active' : ''} onClick={closeMenu}>HOME</Link>
             <Link href="/#platform" className={cls('platform')} onClick={closeMenu}>PLATFORM</Link>
+            <Link href="/platform/forest-monitoring" className="mobile-platform-link" onClick={closeMenu}>Forest monitoring</Link>
+            <Link href="/platform/digital-mrv" className="mobile-platform-link" onClick={closeMenu}>Digital MRV</Link>
             <Link href="/#reni-sec" className={cls('reni')} onClick={closeMenu}>RENI</Link>
             <Link href="/#team" onClick={closeMenu}>TEAM</Link>
             <Link href="/#blogs" className={cls('blogs')} onClick={closeMenu}>BLOGS</Link>

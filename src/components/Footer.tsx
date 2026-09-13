@@ -22,6 +22,13 @@ export default function Footer() {
           <p className="foot-copy">© 2025 mynzo. All rights reserved.</p>
         </div>
         <div className="foot-nav">
+          <nav className="foot-col" aria-label="Platform and insights">
+            <p className="foot-col-h">Explore Mynzo</p>
+            <Link href="/platform/forest-monitoring">Forest monitoring</Link>
+            <Link href="/platform/digital-mrv">Digital MRV</Link>
+            <Link href="/blog">Mynzo Talks</Link>
+            <Link href="/get-started">Discuss your project</Link>
+          </nav>
           <nav className="foot-col">
             <p className="foot-col-h">Learn More</p>
             <Link href="/privacy-policy">Privacy Policy</Link>

@@ -8,15 +8,17 @@ canonical_base = 'https://www.mynzocarbon.com'
 
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.canonical=[]; self.meta={}; self.links=[]; self.schemas=[]; self.collect=False; self.buffer=''
+        super().__init__(); self.canonical=[]; self.meta={}; self.links=[]; self.schemas=[]; self.collect=False; self.buffer=''; self.text=[]; self.h1_count=0
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag=='link' and a.get('rel')=='canonical': self.canonical.append(a['href'])
         if tag=='meta': self.meta[a.get('name',a.get('property'))]=a.get('content')
         if tag=='a': self.links.append(a.get('href',''))
+        if tag=='h1': self.h1_count+=1
         if tag=='script' and a.get('type')=='application/ld+json': self.collect=True; self.buffer=''
     def handle_data(self,data):
         if self.collect:self.buffer+=data
+        else:self.text.append(data)
     def handle_endtag(self,tag):
         if tag=='script' and self.collect:self.schemas.append(json.loads(self.buffer));self.collect=False
 
@@ -44,10 +46,30 @@ for url in urls:
     if path.startswith('/blog/'):
         graph=page.schemas[0]['@graph'];article=next(x for x in graph if x['@type']=='BlogPosting')
         assert article['url']==url and article['headline'] and article['publisher']
+        if path=='/blog/how-ai-is-revolutionising-forest-carbon-accounting':
+            assert article['datePublished']=='2025-04-12'
+            assert article['dateModified']=='2026-09-13'
+            assert '/platform/forest-monitoring' in page.links and '/platform/digital-mrv' in page.links
+            assert not any(claim in html for claim in ['IPCC\'s 2023 guidelines', 'across every forest on the planet'])
+    if path.startswith('/platform/'):
+        assert page.h1_count==1,(path,page.h1_count)
+        graph=page.schemas[0]['@graph']
+        assert next(x for x in graph if x['@type']=='WebPage')['url']==url
+        crumbs=next(x for x in graph if x['@type']=='BreadcrumbList')['itemListElement']
+        assert crumbs[-1]['item']==url
+        faqs=next(x for x in graph if x['@type']=='FAQPage')['mainEntity']
+        content=' '.join(' '.join(page.text).split())
+        for faq in faqs:
+            assert faq['name'] in content,(path,faq['name'])
+            assert faq['acceptedAnswer']['text'] in content,(path,faq['name'])
+        assert '\u2014' not in content,path
+        assert '/get-started' in page.links
     if path=='/blog':
         archive={canonical_base+u for u in page.links if u.startswith('/blog/')}
         assert archive=={u for u in urls if '/blog/' in u}
     results.append({'path':path,'status':status,'canonical':url,'schema_blocks':len(page.schemas)})
+assert canonical_base+'/platform/forest-monitoring' in urls
+assert canonical_base+'/platform/digital-mrv' in urls
 status,robots,_=fetch('/robots.txt');assert status==200 and canonical_base+'/sitemap.xml' in robots
 status,html,_=fetch('/thank-you');page=Page();page.feed(html);assert status==200 and 'noindex' in page.meta.get('robots','')
 for missing in ['/seo-foundation-missing-page','/blog/seo-foundation-missing-page']:

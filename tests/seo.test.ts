@@ -59,7 +59,9 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   assert.equal((await getPublishedPosts()).length, 3);
   assert.equal(await getPost('does-not-exist'), null);
   const entries = await sitemap();
-  assert.equal(entries.length, 10);
+  assert.equal(entries.length, 12);
+  assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/forest-monitoring`));
+  assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/digital-mrv`));
   assert.ok(entries.every(p => p.url.startsWith(SITE_URL)));
   assert.ok(entries.every(p => !/thank-you|\/admin|\/api/.test(p.url)));
   assert.equal(entries[0].lastModified, undefined);
