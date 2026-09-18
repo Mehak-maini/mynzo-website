@@ -51,7 +51,14 @@ for url in urls:
             assert article['dateModified']=='2026-09-13'
             assert '/platform/forest-monitoring' in page.links and '/platform/digital-mrv' in page.links
             assert not any(claim in html for claim in ['IPCC\'s 2023 guidelines', 'across every forest on the planet'])
-    if path.startswith('/platform/'):
+        if path=='/blog/biodiversity-metrics-for-restoration-projects':
+            assert article['datePublished']=='2026-09-18'
+            assert article['dateModified']=='2026-09-18'
+            assert page.h1_count==1
+            assert '/platform/biodiversity-monitoring' in page.links
+            assert page.links.count('/get-started?interest=biodiversity-monitoring&source=biodiversity-guide')==2
+            assert not any('\u2014' in text for text in page.text)
+    if path.startswith(('/platform/', '/solutions/')):
         assert page.h1_count==1,(path,page.h1_count)
         graph=page.schemas[0]['@graph']
         assert next(x for x in graph if x['@type']=='WebPage')['url']==url
@@ -64,12 +71,27 @@ for url in urls:
             assert faq['acceptedAnswer']['text'] in content,(path,faq['name'])
         assert '\u2014' not in content,path
         assert '/get-started' in page.links
+        if path in ['/platform/biodiversity-monitoring', '/solutions/project-developers']:
+            assert next(x for x in graph if x['@type']=='WebPage')['dateModified']=='2026-09-18'
+            assert '/blog/biodiversity-metrics-for-restoration-projects' in page.links
+            interest,source=('biodiversity-monitoring','biodiversity-monitoring') if path.startswith('/platform/') else ('forest-monitoring','project-developers')
+            assert page.links.count(f'/get-started?interest={interest}&source={source}')==2
+        if path=='/solutions/project-developers':
+            assert crumbs[1]['item']==canonical_base+'/#who-we-serve'
+    if path=='/':
+        assert 'id="who-we-serve"' in html
+        assert '/platform/biodiversity-monitoring' in page.links
+        assert '/solutions/project-developers' in page.links
     if path=='/blog':
         archive={canonical_base+u for u in page.links if u.startswith('/blog/')}
         assert archive=={u for u in urls if '/blog/' in u}
     results.append({'path':path,'status':status,'canonical':url,'schema_blocks':len(page.schemas)})
 assert canonical_base+'/platform/forest-monitoring' in urls
 assert canonical_base+'/platform/digital-mrv' in urls
+assert canonical_base+'/platform/biodiversity-monitoring' in urls
+assert canonical_base+'/solutions/project-developers' in urls
+assert canonical_base+'/blog/biodiversity-metrics-for-restoration-projects' in urls
+status,brief,_=fetch('/resources/biodiversity-monitoring-brief.txt');assert status==200 and 'biodiversity' in brief.lower()
 status,robots,_=fetch('/robots.txt');assert status==200 and canonical_base+'/sitemap.xml' in robots
 status,html,_=fetch('/thank-you');page=Page();page.feed(html);assert status==200 and 'noindex' in page.meta.get('robots','')
 for missing in ['/seo-foundation-missing-page','/blog/seo-foundation-missing-page']:

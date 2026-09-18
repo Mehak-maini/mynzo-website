@@ -7,9 +7,15 @@ import '@/styles/platform.css';
 
 export default function PlatformPage({ data }: { data: PlatformPageData }) {
   const url = `${SITE_URL}${data.path}`;
+  const updatedAt = data.updatedAt ?? '2026-09-13';
+  const updatedLabel = new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
+  }).format(new Date(updatedAt));
+  const parent = data.breadcrumbParent ?? { name: 'Platform', href: '/#platform' };
+  const enquiryHref = data.cta.href ?? '/get-started';
   const breadcrumbs = [
     { name: 'Home', item: SITE_URL },
-    { name: 'Platform', item: `${SITE_URL}/#platform` },
+    { name: parent.name, item: `${SITE_URL}${parent.href}` },
     { name: data.eyebrow, item: url },
   ];
   const schema = {
@@ -19,7 +25,7 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
       {
         '@type': 'WebPage', '@id': `${url}#webpage`, url,
         name: data.title, description: data.description,
-        dateModified: '2026-09-13', inLanguage: 'en',
+        dateModified: updatedAt, inLanguage: 'en',
         publisher: { '@id': `${SITE_URL}/#organization` },
         breadcrumb: { '@id': `${url}#breadcrumbs` },
         mainEntity: { '@id': `${url}#service` },
@@ -51,7 +57,7 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
       <div className="platform-shell">
         <nav className="platform-breadcrumbs" aria-label="Breadcrumb">
           <Link href="/">Home</Link><span aria-hidden="true">/</span>
-          <Link href="/#platform">Platform</Link><span aria-hidden="true">/</span>
+          <Link href={parent.href}>{parent.name}</Link><span aria-hidden="true">/</span>
           <span aria-current="page">{data.eyebrow}</span>
         </nav>
         <header className="platform-hero">
@@ -60,7 +66,7 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
             <h1>{data.title}</h1>
             <p className="platform-summary">{data.summary}</p>
             <div className="platform-actions">
-              <Link href="/get-started" className="platform-button">{data.cta.label}<span aria-hidden="true">↗</span></Link>
+              <Link href={enquiryHref} className="platform-button">{data.cta.label}<span aria-hidden="true">↗</span></Link>
               <a href="#overview" className="platform-text-link">Explore the approach <span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -80,7 +86,7 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
               {data.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}
               <a href="#questions">Questions and answers</a>
             </nav>
-            <p className="platform-byline">By Mynzo Team<br />Updated <time dateTime="2026-09-13">13 September 2026</time></p>
+            <p className="platform-byline">By Mynzo Team<br />Updated <time dateTime={updatedAt}>{updatedLabel}</time></p>
           </aside>
           <div className="platform-body">
             {data.sections.map((section, index) => (
@@ -114,7 +120,7 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
         </section>
         <section className="platform-final-cta">
           <div><h2>{data.cta.title}</h2><p>{data.cta.text}</p></div>
-          <Link href="/get-started" className="platform-button">{data.cta.label}<span aria-hidden="true">↗</span></Link>
+          <Link href={enquiryHref} className="platform-button">{data.cta.label}<span aria-hidden="true">↗</span></Link>
         </section>
       </div>
     </article>

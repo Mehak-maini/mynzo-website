@@ -131,11 +131,12 @@ export const forestMonitoringPage: PlatformPageData = {
   relatedLinks: [
     { href: '/platform/digital-mrv', title: 'Digital MRV for forest projects', description: 'Follow monitoring evidence through measurement, reporting and independent review.' },
     { href: '/blog/how-ai-is-revolutionising-forest-carbon-accounting', title: 'Forest carbon accounting', description: 'Read about biomass, carbon estimates and the role of satellite analysis.' },
-    { href: '/blog/agroforestry-the-future-of-sustainable-land-use', title: 'Agroforestry and land use', description: 'Explore the role of trees within agricultural landscapes.' },
+    { href: '/platform/biodiversity-monitoring', title: 'Biodiversity monitoring', description: 'Connect forest habitat observations with ecological evidence.' },
   ],
   cta: {
     title: 'Discuss your forest monitoring project',
     text: 'Tell us where your sites are and what you need to measure. We can discuss the data, field work and reporting needed to assess the project.',
     label: 'Discuss your project',
+    href: '/get-started?interest=forest-monitoring&source=forest-monitoring',
   },
 };

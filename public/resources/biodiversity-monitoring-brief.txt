@@ -1,0 +1,72 @@
+MYNZO | BIODIVERSITY MONITORING BRIEF
+Version: 18 September 2026
+
+Use this editable brief to prepare a discussion with your monitoring and ecology teams.
+It is a planning aid, not a survey protocol, certification or regulatory assessment.
+You can leave unknown items marked UNKNOWN. Do not invent baseline values.
+
+1. PROJECT AND DECISION
+Project name:
+Organisation:
+Country and location:
+Approximate area and number of sites:
+Habitat or ecosystem types:
+Land use and management history:
+Decision the monitoring must inform:
+Person responsible for that decision:
+Reporting purpose and review date:
+
+2. BOUNDARY AND STARTING CONDITION
+Boundary file, map reference and version:
+Restoration start date, if applicable:
+Baseline observation period:
+Existing ecological surveys and their methods:
+Available imagery and dates, if known:
+Known disturbances, invasive species or other pressures:
+Missing baseline information:
+Reference ecosystem or model and its evidence:
+Local ecological knowledge to include and agreed permissions:
+
+3. METRIC RECORD (COPY FOR EACH PROPOSED METRIC)
+Metric name:
+Ecological question:
+Definition and unit:
+Species groups, habitats and area covered:
+Exclusions:
+Baseline value, date and evidence source:
+Observed or modelled:
+Field or remote observation method:
+Sampling area, number of visits and effort per visit:
+Season and proposed repeat schedule:
+Person or team collecting the data:
+Quality and identification checks:
+Uncertainty and known limits:
+Target, if justified, and evidence supporting it:
+Finding that would trigger action:
+Management action and owner:
+
+4. COMPARABILITY AND REVIEW
+Are boundaries, definitions and units consistent between periods?
+Is survey effort comparable, and are seasonal differences recorded?
+Are missing records separate from measured zero values?
+Are non-detections labelled without assuming proven absence?
+Are model estimates separate from direct observations?
+Are native species and invasive species distinguishable in the results?
+Are habitat extent and ecological condition reported separately?
+Could weather, disturbance or method changes explain the result?
+Who will review the ecological interpretation?
+
+5. DELIVERY AND USE
+Required maps, tables and supporting records:
+Preferred file formats:
+Data ownership and access arrangements:
+Sensitive species locations or community information requiring restricted access:
+Applicable reporting framework, jurisdiction and version, if any:
+Specialist ecological work still required:
+Open decisions before work starts:
+
+No single metric in this brief establishes biodiversity gain or a nature-positive outcome.
+Review the methods with the ecological team responsible for the project.
+
+Guide: https://www.mynzocarbon.com/blog/biodiversity-metrics-for-restoration-projects
+Project discussion: https://www.mynzocarbon.com/get-started?interest=biodiversity-monitoring&source=biodiversity-guide

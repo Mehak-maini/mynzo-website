@@ -47,9 +47,9 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
   const reniMsgsRef = useRef<HTMLDivElement>(null);
   const reniInputRef = useRef<HTMLInputElement>(null);
 
-  // ── Scroll to top on mount (prevent browser scroll-restoration) ───────────
+  // Keep section links intact when entering from another page.
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    if (!window.location.hash) window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, []);
 
   // ── Stats count-up — replays every time the bar enters view ───────────────
@@ -886,7 +886,10 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
               <li>Forest change and temporal monitoring</li>
               <li>Ground-truth validation through field data</li>
             </ul>
-            <Link href="/platform/forest-monitoring" className="plat-detail-link">Explore forest monitoring <span aria-hidden="true">↗</span></Link>
+            <div className="plat-detail-links">
+              <Link href="/platform/forest-monitoring" className="plat-detail-link">Explore forest monitoring <span aria-hidden="true">↗</span></Link>
+              <Link href="/platform/biodiversity-monitoring" className="plat-detail-link">Explore biodiversity monitoring <span aria-hidden="true">↗</span></Link>
+            </div>
           </div>
           <div className="plat-strip-img plat-strip-img-right">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -992,7 +995,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
                 </svg>
               </div>
               <div className="accuracy-label">High-Resolution<br />Monitoring</div>
-              <p className="accuracy-desc">Tree-level and species-level insights delivered at scale across your entire portfolio.</p>
+              <p className="accuracy-desc">Forest structure and change observations, checked against suitable field data for your sites.</p>
             </div>
             <div className="accuracy-item">
               <div className="accuracy-icon">
@@ -1020,7 +1023,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       </section>
 
       {/* ── WHO WE SERVE ── */}
-      <section className="serve-sec">
+      <section className="serve-sec" id="who-we-serve">
         <div className="serve-inner">
           <div className="serve-content-col">
             <div className="serve-label">Who We Serve</div>
@@ -1028,13 +1031,13 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             <div className="serve-items">
               {[
                 { idx: '01', title: 'Corporates', desc: 'Manage net-zero portfolios with full visibility and control' },
-                { idx: '02', title: 'Project Developers', desc: 'Monitor, verify, and scale nature-based projects' },
+                { idx: '02', title: 'Project Developers', desc: 'Plan forest monitoring and prepare evidence for project review', href: '/solutions/project-developers' },
                 { idx: '03', title: 'Governments & Institutions', desc: 'Track biodiversity and carbon across large ecosystems' },
               ].map((item, i) => (
                 <div className="serve-item" key={i}>
                   <div className="serve-item-idx">{item.idx}</div>
                   <div className="serve-item-body">
-                    <div className="serve-item-title">{item.title}</div>
+                    <div className="serve-item-title">{item.href ? <Link href={item.href}>{item.title}</Link> : item.title}</div>
                     <p className="serve-item-desc">{item.desc}</p>
                   </div>
                   <svg className="serve-item-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

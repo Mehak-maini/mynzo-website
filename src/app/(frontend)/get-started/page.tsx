@@ -1,14 +1,27 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { trackLead } from '@/lib/analytics';
+import {
+  ENQUIRY_LIMITS, PROJECT_FOCUS_OPTIONS, enquiryContextFromSearch, isAcceptedEnquiry,
+  type EnquirySource, type ProjectFocus,
+} from '@/lib/enquiry-context';
 
 export default function GetStartedPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
+  const [projectFocus, setProjectFocus] = useState<ProjectFocus | ''>('');
+  const [enquirySource, setEnquirySource] = useState<EnquirySource>();
   const submitting = useRef(false);
+  const focusEdited = useRef(false);
+
+  useEffect(() => {
+    const context = enquiryContextFromSearch(window.location.search);
+    if (!focusEdited.current) setProjectFocus(current => current || context.project_focus || '');
+    setEnquirySource(context.enquiry_source);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,6 +38,8 @@ export default function GetStartedPage() {
       company: (form.elements.namedItem('company') as HTMLInputElement).value,
       role: (form.elements.namedItem('role') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      project_focus: projectFocus || undefined,
+      enquiry_source: enquirySource,
     };
 
     try {
@@ -35,9 +50,9 @@ export default function GetStartedPage() {
       });
 
       const result = await res.json();
-      if (res.ok && result.ok === true) {
+      if (isAcceptedEnquiry(res.ok, result)) {
         setSubmitted(true);
-        trackLead();
+        trackLead({ project_focus: projectFocus || undefined, enquiry_source: enquirySource });
       } else {
         setError('Something went wrong. Please email us directly at support@mynzocarbon.com.');
       }
@@ -56,28 +71,28 @@ export default function GetStartedPage() {
           <>
             <div className="form-accent"></div>
             <h1 className="form-title">Get Started with Mynzo</h1>
-            <p className="form-sub">Tell us about your project and we will get back to you within 24 hours.</p>
+          <p className="form-sub">Tell us where your sites are, what records you have and what you need to measure.</p>
 
             <form onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="first_name">First Name</label>
-                  <input id="first_name" name="first_name" type="text" placeholder="Priya" required />
+                  <input id="first_name" name="first_name" type="text" placeholder="Priya" maxLength={ENQUIRY_LIMITS.first_name} required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="last_name">Last Name</label>
-                  <input id="last_name" name="last_name" type="text" placeholder="Sharma" required />
+                  <input id="last_name" name="last_name" type="text" placeholder="Sharma" maxLength={ENQUIRY_LIMITS.last_name} required />
                 </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="email">Work Email</label>
-                <input id="email" name="email" type="email" placeholder="priya@company.com" required />
+                <input id="email" name="email" type="email" placeholder="priya@company.com" maxLength={ENQUIRY_LIMITS.email} required />
               </div>
 
               <div className="form-group">
                 <label htmlFor="company">Company / Organisation</label>
-                <input id="company" name="company" type="text" placeholder="GreenEarth Corp" required />
+                <input id="company" name="company" type="text" placeholder="GreenEarth Corp" maxLength={ENQUIRY_LIMITS.company} required />
               </div>
 
               <div className="form-group">
@@ -94,8 +109,19 @@ export default function GetStartedPage() {
               </div>
 
               <div className="form-group">
+                <label htmlFor="project_focus">Project focus (optional)</label>
+                <select id="project_focus" name="project_focus" value={projectFocus} onChange={event => {
+                  focusEdited.current = true;
+                  setProjectFocus(event.target.value as ProjectFocus | '');
+                }}>
+                  <option value="">Select a project focus</option>
+                  {PROJECT_FOCUS_OPTIONS.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
+                </select>
+              </div>
+
+              <div className="form-group">
                 <label htmlFor="message">What are you looking to achieve?</label>
-                <textarea id="message" name="message" placeholder="Brief description of your project or goals…"></textarea>
+                <textarea id="message" name="message" maxLength={ENQUIRY_LIMITS.message} placeholder="For example: site location, area, habitat type and what you need to measure."></textarea>
               </div>
 
               {error && (

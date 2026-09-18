@@ -15,7 +15,7 @@ export function pageMetadata(path: string, title: string, description: string, i
   };
 }
 
-export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digital-mrv', '/blog', '/get-started', '/privacy-policy', '/terms-of-use', '/data-processing', '/cookie-policy'];
+export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digital-mrv', '/platform/biodiversity-monitoring', '/solutions/project-developers', '/blog', '/get-started', '/privacy-policy', '/terms-of-use', '/data-processing', '/cookie-policy'];
 
 export function serializeJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, '\\u003c');

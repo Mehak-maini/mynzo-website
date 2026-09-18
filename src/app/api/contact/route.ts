@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server';
+import { buildEnquiryEmail, validateEnquiry } from '@/lib/enquiry-context';
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { first_name, last_name, email, company, role, message } = body;
+    const body = await req.json().catch(() => null);
+    const enquiry = validateEnquiry(body);
+    if (!enquiry) {
+      return NextResponse.json({ ok: false, error: 'Please check the form fields and try again.' }, { status: 400 });
+    }
+    const { email } = enquiry;
+    const content = buildEnquiryEmail(enquiry);
 
     const params = {
       Action: 'SendEmail',
@@ -12,18 +18,9 @@ export async function POST(req: Request) {
       'ReplyToAddresses.member.1': email,
       'Message.Subject.Data': 'New Mynzo Get Started Request',
       'Message.Subject.Charset': 'UTF-8',
-      'Message.Body.Html.Data': `
-        <table style="font-family:sans-serif;font-size:15px;color:#222;border-collapse:collapse;width:100%;max-width:540px">
-          <tr><td colspan="2" style="padding:0 0 16px"><strong>New Get Started request from mynzocarbon.com</strong></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;color:#555;width:160px">Name</td><td style="padding:6px 0">${first_name} ${last_name}</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;color:#555">Email</td><td style="padding:6px 0"><a href="mailto:${email}">${email}</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;color:#555">Company</td><td style="padding:6px 0">${company}</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;color:#555">Role</td><td style="padding:6px 0">${role}</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;color:#555;vertical-align:top">Message</td><td style="padding:6px 0">${message || '—'}</td></tr>
-        </table>
-      `,
+      'Message.Body.Html.Data': content.html,
       'Message.Body.Html.Charset': 'UTF-8',
-      'Message.Body.Text.Data': `Name: ${first_name} ${last_name}\nEmail: ${email}\nCompany: ${company}\nRole: ${role}\nMessage: ${message || '—'}`,
+      'Message.Body.Text.Data': content.text,
       'Message.Body.Text.Charset': 'UTF-8',
     };
 
