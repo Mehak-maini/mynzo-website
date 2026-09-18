@@ -1,3 +1,5 @@
+import { biodiversityMetricsPost } from './biodiversityMetricsPost';
+
 export interface StaticPost {
   slug: string;
   tag: string;
@@ -14,6 +16,7 @@ export interface StaticPost {
 }
 
 export const STATIC_POSTS: StaticPost[] = [
+  biodiversityMetricsPost,
   {
     slug: 'how-ai-is-revolutionising-forest-carbon-accounting',
     tag: 'Carbon Markets',

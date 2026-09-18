@@ -11,9 +11,11 @@ export type PlatformPageData = {
   heroImageFit?: 'cover' | 'contain';
   heroAlt: string;
   heroCaption: string;
+  updatedAt?: string;
+  breadcrumbParent?: { name: string; href: string };
   overview: { title: string; text: string };
   sections: { id: string; title: string; body: ReactNode }[];
   faqs: { question: string; answer: string }[];
   relatedLinks: { href: string; title: string; description: string }[];
-  cta: { title: string; text: string; label: string };
+  cta: { title: string; text: string; label: string; href?: string };
 };

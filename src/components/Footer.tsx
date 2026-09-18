@@ -26,6 +26,8 @@ export default function Footer() {
             <p className="foot-col-h">Explore Mynzo</p>
             <Link href="/platform/forest-monitoring">Forest monitoring</Link>
             <Link href="/platform/digital-mrv">Digital MRV</Link>
+            <Link href="/platform/biodiversity-monitoring">Biodiversity monitoring</Link>
+            <Link href="/solutions/project-developers">For project developers</Link>
             <Link href="/blog">Mynzo Talks</Link>
             <Link href="/get-started">Discuss your project</Link>
           </nav>

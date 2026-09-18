@@ -109,10 +109,12 @@ export const digitalMrvPage: PlatformPageData = {
   relatedLinks: [
     { href: '/platform/forest-monitoring', title: 'Satellite forest monitoring', description: 'Explore the observations that inform a forest monitoring programme.' },
     { href: '/blog/how-ai-is-revolutionising-forest-carbon-accounting', title: 'Forest carbon accounting', description: 'Read how biomass, carbon stocks and changes over time are connected.' },
+    { href: '/solutions/project-developers', title: 'For project developers', description: 'Define monitoring scope, evidence handover and project responsibilities.' },
   ],
   cta: {
     title: 'Define the evidence your project needs',
     text: 'Share your project location, available data and reporting requirements. Discuss the analysis and field evidence needed with Mynzo.',
     label: 'Discuss your MRV requirements',
+    href: '/get-started?interest=digital-mrv&source=digital-mrv',
   },
 };

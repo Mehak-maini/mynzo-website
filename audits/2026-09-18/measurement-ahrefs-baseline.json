@@ -1,0 +1,94 @@
+{
+  "retrieved_date": "2026-09-18",
+  "target": "mynzocarbon.com",
+  "scope": "subdomains",
+  "management_projects": {
+    "matching_count": 0,
+    "matching_projects": [],
+    "total_projects": 18,
+    "sensitive_fields_retained": false
+  },
+  "gsc": {
+    "status": "not_accessible_via_this_connector",
+    "reason": "No matching Mynzo project returned by management-projects. gsc-performance-history requires project_id or portfolio_id. No project created.",
+    "metrics": null
+  },
+  "rankings": [
+    {
+      "request": {
+        "date": "2026-09-18",
+        "target": "mynzocarbon.com",
+        "mode": "subdomains",
+        "limit": 100,
+        "order_by": "sum_traffic:desc",
+        "select": "keyword,keyword_country,best_position,best_position_url,volume,sum_traffic,last_update",
+        "volume_mode": "monthly",
+        "output": "json"
+      },
+      "data": {
+        "keywords": [
+          {
+            "keyword": "mynzo carbon",
+            "keyword_country": "IN",
+            "best_position": 1,
+            "best_position_url": "https://www.mynzocarbon.com/",
+            "volume": 0,
+            "sum_traffic": 1,
+            "last_update": "2026-09-12T22:16:54Z"
+          }
+        ]
+      },
+      "usage": {
+        "apiUsageCosts": {
+          "rows": 1,
+          "units-cost-row": 25,
+          "units-cost-total-actual": 50,
+          "units-cost-total": 50,
+          "cache": "miss"
+        }
+      }
+    },
+    {
+      "request": {
+        "date": "2026-09-18",
+        "target": "mynzocarbon.com",
+        "mode": "subdomains",
+        "limit": 100,
+        "order_by": "sum_traffic:desc",
+        "select": "keyword,keyword_country,best_position,best_position_url,volume,sum_traffic,last_update",
+        "volume_mode": "monthly",
+        "output": "json",
+        "country": "IN"
+      },
+      "data": {
+        "keywords": [
+          {
+            "keyword": "mynzo carbon",
+            "keyword_country": "IN",
+            "best_position": 1,
+            "best_position_url": "https://www.mynzocarbon.com/",
+            "volume": 0,
+            "sum_traffic": 1,
+            "last_update": "2026-09-12T22:16:54Z"
+          }
+        ]
+      },
+      "usage": {
+        "apiUsageCosts": {
+          "rows": 1,
+          "units-cost-row": 25,
+          "units-cost-total-actual": 50,
+          "units-cost-total": 50,
+          "cache": "miss"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Ahrefs keyword/traffic estimates are not Search Console impressions, clicks, analytics sessions, leads, or index counts.",
+    "Current API requests use 2026-09-18, but returned keyword SERP last_update is 2026-09-12T22:16:54Z.",
+    "Only one brand keyword is observed in the returned data, not a definitive claim about all actual rankings.",
+    "No observed non-brand keywords or non-India rows in this bounded query. No access to actual post-release performance.",
+    "Project owner emails, analytics keys, and unrelated project details were not retained."
+  ]
+}

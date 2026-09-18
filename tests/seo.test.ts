@@ -5,6 +5,8 @@ import { getPublishedPosts, getPost } from '../src/lib/posts';
 import { pageMetadata, serializeJsonLd, SITE_URL } from '../src/lib/seo';
 import { trackLead } from '../src/lib/analytics';
 import sitemap from '../src/app/sitemap';
+import { STATIC_POSTS } from '../src/data/blogPosts';
+import { PUBLIC_PATHS } from '../src/lib/seo';
 
 test('normalizes live legacy date formats and rejects impossible/ambiguous dates', () => {
   for (const [input, expected] of [['aug 5, 2026', '2026-08-05'], ['Sep 2, 2026', '2026-09-02'], ['June 24,2026', '2026-06-24'], ['July 8,2026', '2026-07-08'], ['2026-09-02T12:30:00Z', '2026-09-02']]) {
@@ -39,7 +41,7 @@ test('fetches every CMS page with published-only query and deduplicates', async 
   };
   const posts = await getPublishedPosts();
   assert.deepEqual(pages, ['1', '2']);
-  assert.equal(posts.length, 5);
+  assert.equal(posts.length, STATIC_POSTS.length + 2);
   assert.ok(posts.some(p => p.slug === 'how-ai-is-revolutionising-forest-carbon-accounting'));
 });
 
@@ -56,12 +58,15 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   const original = globalThis.fetch;
   t.after(() => { globalThis.fetch = original; });
   globalThis.fetch = async () => Response.json({ docs: [], hasNextPage: false });
-  assert.equal((await getPublishedPosts()).length, 3);
+  assert.equal((await getPublishedPosts()).length, STATIC_POSTS.length);
   assert.equal(await getPost('does-not-exist'), null);
   const entries = await sitemap();
-  assert.equal(entries.length, 12);
+  assert.equal(entries.length, PUBLIC_PATHS.length + STATIC_POSTS.length);
   assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/forest-monitoring`));
   assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/digital-mrv`));
+  assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/biodiversity-monitoring`));
+  assert.ok(entries.some(p => p.url === `${SITE_URL}/solutions/project-developers`));
+  assert.ok(entries.some(p => p.url === `${SITE_URL}/blog/biodiversity-metrics-for-restoration-projects`));
   assert.ok(entries.every(p => p.url.startsWith(SITE_URL)));
   assert.ok(entries.every(p => !/thank-you|\/admin|\/api/.test(p.url)));
   assert.equal(entries[0].lastModified, undefined);

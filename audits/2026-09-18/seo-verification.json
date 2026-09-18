@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "sitemap_urls": 29,
+  "articles": 18,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/platform/forest-monitoring",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/platform/forest-monitoring",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/platform/digital-mrv",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/platform/digital-mrv",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/platform/biodiversity-monitoring",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/platform/biodiversity-monitoring",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/solutions/project-developers",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/solutions/project-developers",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog",
+      "schema_blocks": 0
+    },
+    {
+      "path": "/get-started",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/get-started",
+      "schema_blocks": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/privacy-policy",
+      "schema_blocks": 0
+    },
+    {
+      "path": "/terms-of-use",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/terms-of-use",
+      "schema_blocks": 0
+    },
+    {
+      "path": "/data-processing",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/data-processing",
+      "schema_blocks": 0
+    },
+    {
+      "path": "/cookie-policy",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/cookie-policy",
+      "schema_blocks": 0
+    },
+    {
+      "path": "/blog/biodiversity-metrics-for-restoration-projects",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/biodiversity-metrics-for-restoration-projects",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-future-we-choose",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-future-we-choose",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/nature-the-original-innovator",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/nature-the-original-innovator",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/cities-that-forgot-how-to-breathe",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/cities-that-forgot-how-to-breathe",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-illisuion-of-clean",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-illisuion-of-clean",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-imprint-of-everyday-choices",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-imprint-of-everyday-choices",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-last-tree-in-the-city",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-last-tree-in-the-city",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/life-without-trees",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/life-without-trees",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/rethinking-water-in-cities",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/rethinking-water-in-cities",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-hidden-life-of-soil",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-hidden-life-of-soil",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-power-of-urban-forests",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-power-of-urban-forests",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/why-pop-culture-still-cant-face-climate-change",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/why-pop-culture-still-cant-face-climate-change",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/the-hidden-climate-costs-of-convenience",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/the-hidden-climate-costs-of-convenience",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/a-new-climate-narrative",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/a-new-climate-narrative",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/how-ai-is-revolutionising-forest-carbon-accounting",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/how-ai-is-revolutionising-forest-carbon-accounting",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/averting-our-eyes",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/averting-our-eyes",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/agroforestry-the-future-of-sustainable-land-use",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/agroforestry-the-future-of-sustainable-land-use",
+      "schema_blocks": 1
+    },
+    {
+      "path": "/blog/understanding-soil-carbon-the-hidden-climate-solution",
+      "status": 200,
+      "canonical": "https://www.mynzocarbon.com/blog/understanding-soil-carbon-the-hidden-climate-solution",
+      "schema_blocks": 1
+    }
+  ]
+}
