@@ -13,6 +13,15 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
   }).format(new Date(updatedAt));
   const parent = data.breadcrumbParent ?? { name: 'Platform', href: '/#platform' };
   const enquiryHref = data.cta.href ?? '/get-started';
+  const faqs = data.faqs.map(faq => ({
+    ...faq,
+    id: `answer-${(faq.id ?? faq.question)
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')}`,
+  }));
   const breadcrumbs = [
     { name: 'Home', item: SITE_URL },
     { name: parent.name, item: `${SITE_URL}${parent.href}` },
@@ -43,8 +52,8 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
       },
       {
         '@type': 'FAQPage', '@id': `${url}#questions`,
-        mainEntity: data.faqs.map(faq => ({
-          '@type': 'Question', name: faq.question,
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question', '@id': `${url}#${faq.id}`, url: `${url}#${faq.id}`, name: faq.question,
           acceptedAnswer: { '@type': 'Answer', text: faq.answer },
         })),
       },
@@ -86,7 +95,7 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
               {data.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}
               <a href="#questions">Questions and answers</a>
             </nav>
-            <p className="platform-byline">By Mynzo Team<br />Updated <time dateTime={updatedAt}>{updatedLabel}</time></p>
+            <p className="platform-byline">By <Link href="/#team">Mynzo Team</Link><br />Updated <time dateTime={updatedAt}>{updatedLabel}</time></p>
           </aside>
           <div className="platform-body">
             {data.sections.map((section, index) => (
@@ -98,10 +107,14 @@ export default function PlatformPage({ data }: { data: PlatformPageData }) {
             ))}
             <section className="platform-section platform-faq" id="questions" aria-labelledby="questions-title">
               <h2 id="questions-title">Questions and answers</h2>
-              {data.faqs.map(faq => (
-                <details key={faq.question}>
+              {faqs.map(faq => (
+                <details key={faq.id}>
                   <summary>{faq.question}<span aria-hidden="true">+</span></summary>
-                  <p>{faq.answer}</p>
+                  {/* A fragment inside details lets the browser reveal its collapsed answer. */}
+                  <div id={faq.id} className="platform-faq-answer">
+                    <p>{faq.answer}</p>
+                    <a href={`#${faq.id}`} className="platform-faq-permalink" aria-label={`Link to answer: ${faq.question}`}>Link to answer</a>
+                  </div>
                 </details>
               ))}
             </section>

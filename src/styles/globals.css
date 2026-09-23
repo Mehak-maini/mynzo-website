@@ -575,6 +575,9 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
 .policy-card p { font-size: 15px; color: #334155; line-height: 1.75; }
 
 /* ══════════════ BLOG PROSE ══════════════ */
+.blog-prose [id], #team { scroll-margin-top: 100px; }
+.blog-prose nav { padding: 20px 24px; background: #f4f7fa; border-radius: 12px; margin: 28px 0; }
+.blog-prose nav ul { margin-bottom: 0; }
 .blog-prose h2 { font-family: var(--font-nunito); font-size: 28px; font-weight: 700; color: #0D1F2D; margin: 36px 0 16px; letter-spacing: -0.5px; }
 .blog-prose h3 { font-family: var(--font-nunito); font-size: 22px; font-weight: 700; color: #0D1F2D; margin: 28px 0 12px; }
 .blog-prose p  { margin-bottom: 20px; }

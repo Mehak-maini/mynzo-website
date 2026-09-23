@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-09-23",
+  "environment": "Local production build at http://127.0.0.1:3100",
+  "checks": {
+    "restorationDesktop": {
+      "viewportWidth": 884,
+      "documentWidth": 884,
+      "heroImageLoaded": true,
+      "titleAndBylineVisible": true
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "restoration": {
+        "documentWidth": 390,
+        "tableContainerWidth": 324,
+        "tableScrollWidth": 650,
+        "fragment": "revisit-record",
+        "settledHeadingTop": 99.890625,
+        "navBottom": 65
+      },
+      "agroforestry": {
+        "documentWidth": 390,
+        "tableContainerWidth": 324,
+        "tableScrollWidth": 650,
+        "fragment": "measure-agroforestry-outcomes",
+        "settledHeadingTop": 99.890625,
+        "navBottom": 65
+      },
+      "forestFaq": {
+        "fragment": "answer-can-satellite-monitoring-replace-field-visits",
+        "openAnswers": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "targetQuestionTop": 106.0859375,
+        "navBottom": 65,
+        "documentWidth": 390
+      }
+    },
+    "enquiries": {
+      "restoration": {
+        "query": "interest=restoration-monitoring&source=restoration-guide",
+        "prefill": "restoration-monitoring",
+        "userEdit": "biodiversity-monitoring"
+      },
+      "agroforestry": {
+        "query": "interest=forest-monitoring&source=agroforestry-guide",
+        "prefill": "forest-monitoring"
+      },
+      "formsSubmitted": 0
+    },
+    "viewportReset": true,
+    "agroforestryDesktop": {
+      "viewportWidth": 884,
+      "documentWidth": 884,
+      "heroImageLoaded": true,
+      "publishedDate": "2025-03-28",
+      "modifiedDate": "2026-09-23",
+      "titleAndBylineVisible": true
+    }
+  },
+  "limits": [
+    "Initial immediate fragment samples were taken during smooth scroll; settled positions are recorded here.",
+    "Desktop FAQ interaction/keyboard checks are in faq-browser-verification.json.",
+    "No live emails, analytics receipt or production deployment were tested."
+  ]
+}

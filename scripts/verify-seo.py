@@ -8,9 +8,10 @@ canonical_base = 'https://www.mynzocarbon.com'
 
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.canonical=[]; self.meta={}; self.links=[]; self.schemas=[]; self.collect=False; self.buffer=''; self.text=[]; self.h1_count=0
+        super().__init__(); self.canonical=[]; self.meta={}; self.links=[]; self.schemas=[]; self.collect=False; self.buffer=''; self.text=[]; self.h1_count=0; self.ids=[]
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
+        if a.get('id'): self.ids.append(a['id'])
         if tag=='link' and a.get('rel')=='canonical': self.canonical.append(a['href'])
         if tag=='meta': self.meta[a.get('name',a.get('property'))]=a.get('content')
         if tag=='a': self.links.append(a.get('href',''))
@@ -58,6 +59,17 @@ for url in urls:
             assert '/platform/biodiversity-monitoring' in page.links
             assert page.links.count('/get-started?interest=biodiversity-monitoring&source=biodiversity-guide')==2
             assert not any('\u2014' in text for text in page.text)
+        if path in ['/blog/restoration-monitoring-plan', '/blog/agroforestry-the-future-of-sustainable-land-use']:
+            is_restoration=path.endswith('/restoration-monitoring-plan')
+            assert article['datePublished']==('2026-09-23' if is_restoration else '2025-03-28')
+            assert article['dateModified']=='2026-09-23'
+            interest,source=('restoration-monitoring','restoration-guide') if is_restoration else ('forest-monitoring','agroforestry-guide')
+            assert page.links.count(f'/get-started?interest={interest}&source={source}')==2
+            assert page.h1_count==1 and '/#team' in page.links
+            assert len(page.ids)==len(set(page.ids)),path
+            assert not any('\u2014' in text for text in page.text)
+            for link in page.links:
+                if link.startswith('#'): assert link[1:] in page.ids,(path,link)
     if path.startswith(('/platform/', '/solutions/')):
         assert page.h1_count==1,(path,page.h1_count)
         graph=page.schemas[0]['@graph']
@@ -69,6 +81,9 @@ for url in urls:
         for faq in faqs:
             assert faq['name'] in content,(path,faq['name'])
             assert faq['acceptedAnswer']['text'] in content,(path,faq['name'])
+            assert faq['url']==faq['@id'] and faq['url'].startswith(url+'#answer-')
+            anchor=urllib.parse.urlsplit(faq['url']).fragment
+            assert anchor in page.ids and '#'+anchor in page.links,(path,anchor)
         assert '\u2014' not in content,path
         assert '/get-started' in page.links
         if path in ['/platform/biodiversity-monitoring', '/solutions/project-developers']:
@@ -91,6 +106,8 @@ assert canonical_base+'/platform/digital-mrv' in urls
 assert canonical_base+'/platform/biodiversity-monitoring' in urls
 assert canonical_base+'/solutions/project-developers' in urls
 assert canonical_base+'/blog/biodiversity-metrics-for-restoration-projects' in urls
+assert canonical_base+'/blog/restoration-monitoring-plan' in urls
+status,checklist,_=fetch('/resources/restoration-monitoring-plan.txt');assert status==200 and 'source=restoration-guide' in checklist
 status,brief,_=fetch('/resources/biodiversity-monitoring-brief.txt');assert status==200 and 'biodiversity' in brief.lower()
 status,robots,_=fetch('/robots.txt');assert status==200 and canonical_base+'/sitemap.xml' in robots
 status,html,_=fetch('/thank-you');page=Page();page.feed(html);assert status==200 and 'noindex' in page.meta.get('robots','')

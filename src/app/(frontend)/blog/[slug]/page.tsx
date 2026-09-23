@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { getPost } from '@/lib/posts';
 import { pageMetadata, SITE_URL, organization } from '@/lib/seo';
 import JsonLd from '@/components/JsonLd';
+import { articleEnquiry } from '@/lib/article-enquiry';
 
 export const revalidate = 300;
 
@@ -21,10 +22,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
   const { tag, tagBg, tagColor, date, readTime, author, img: imgSrc, content } = post;
   const url = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
-  const isBiodiversityGuide = post.slug === 'biodiversity-metrics-for-restoration-projects';
-  const enquiryHref = isBiodiversityGuide
-    ? '/get-started?interest=biodiversity-monitoring&source=biodiversity-guide'
-    : '/get-started';
+  const enquiry = articleEnquiry(post.slug);
 
   return (
     <div style={{ background: '#fff' }}>
@@ -67,7 +65,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* Meta */}
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap', fontSize: '14px', color: '#7A96A8', fontFamily: 'var(--font-nunito)', marginBottom: '40px', paddingBottom: '32px', borderBottom: '1px solid #E2EAF0' }}>
-          {author   && <span>By <strong style={{ color: '#3D5A70' }}>{author}</strong></span>}
+          {author && <span>By {author === 'Mynzo Team' ? <Link href="/#team" style={{ color: '#3D5A70', fontWeight: 700 }}>{author}</Link> : <strong style={{ color: '#3D5A70' }}>{author}</strong>}</span>}
           {date     && <time dateTime={post.publishedAt}>{date}</time>}
           {post.updatedAt && post.updatedAt !== post.publishedAt && <span>Updated <time dateTime={post.updatedAt}>{new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${post.updatedAt}T00:00:00Z`))}</time></span>}
           {readTime && <span style={{ color: 'var(--teal)', fontWeight: 600 }}>{readTime} min read</span>}
@@ -90,10 +88,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* CTA footer */}
         <div style={{ marginTop: '64px', padding: '36px', background: 'linear-gradient(135deg,#eaf4f7,#dff0f5)', borderRadius: '16px', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-nunito)', fontSize: '20px', fontWeight: 700, color: '#0D1F2D', marginBottom: '8px' }}>{isBiodiversityGuide ? 'Define your biodiversity monitoring scope' : 'Ready to monitor your forest assets?'}</p>
-          <p style={{ fontSize: '14px', color: '#3D5A70', marginBottom: '20px', fontFamily: 'var(--font-nunito)' }}>{isBiodiversityGuide ? 'Share your sites, ecological questions and existing field evidence.' : 'Discuss satellite monitoring, field validation and reporting for your project.'}</p>
-          <Link href={enquiryHref} style={{ display: 'inline-block', background: 'var(--teal)', color: '#fff', padding: '12px 32px', borderRadius: '28px', textDecoration: 'none', fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '14px', letterSpacing: '0.5px' }}>
-            {isBiodiversityGuide ? 'Discuss biodiversity monitoring' : 'Get Started'}
+          <p style={{ fontFamily: 'var(--font-nunito)', fontSize: '20px', fontWeight: 700, color: '#0D1F2D', marginBottom: '8px' }}>{enquiry.title}</p>
+          <p style={{ fontSize: '14px', color: '#3D5A70', marginBottom: '20px', fontFamily: 'var(--font-nunito)' }}>{enquiry.text}</p>
+          <Link href={enquiry.href} style={{ display: 'inline-block', background: 'var(--teal)', color: '#fff', padding: '12px 32px', borderRadius: '28px', textDecoration: 'none', fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '14px', letterSpacing: '0.5px' }}>
+            {enquiry.label}
           </Link>
         </div>
 

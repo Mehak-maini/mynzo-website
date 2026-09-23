@@ -11,6 +11,9 @@ const ENQUIRY_SOURCES = {
   'restoration-monitoring': 'Restoration monitoring page',
   'project-developers': 'Project developers page',
   'biodiversity-guide': 'Biodiversity monitoring guide',
+  'restoration-guide': 'Restoration monitoring plan guide',
+  'agroforestry-guide': 'Agroforestry guide',
+  'forest-carbon-guide': 'Forest carbon accounting guide',
   'forest-monitoring': 'Forest monitoring page',
   'digital-mrv': 'Digital MRV page',
 } as const;
