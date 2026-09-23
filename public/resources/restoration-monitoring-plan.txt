@@ -1,0 +1,83 @@
+RESTORATION MONITORING PLAN: VISIT AND ACTION CHECKLIST
+Mynzo Carbon | 23 September 2026
+
+Use this editable record with the team responsible for the site's ecology and
+management. It is a planning aid, not a survey protocol, certification or
+regulatory assessment. Select measurements and targets for the actual project.
+
+BEFORE A VISIT
+[ ] Confirm the ecological question and decision the visit should support.
+[ ] Identify the site, treatment area and boundary version.
+[ ] Make previous intervention and visit records available to the field team.
+[ ] Confirm the method, sampling design, seasonal window and access arrangements.
+[ ] Check who will review the evidence and who can authorise a management action.
+[ ] Identify sensitive data and agree appropriate access and sharing.
+
+INTERVENTION RECORD
+Project and site:
+Intervention ID:
+Treatment area or plot IDs:
+Boundary/map version:
+Intervention type and dates:
+Responsible team:
+Expected response and review question:
+Relevant ecological objective:
+Evidence needed and method reference:
+Planned revisit window and reason:
+
+PLANTING COHORT RECORD, IF RELEVANT
+Cohort ID and planting date:
+Species and provenance records:
+Original planting count and evidence:
+Assessment scope: complete count / sample / other:
+Sampling method and coverage, if applicable:
+Living original individuals:
+Confirmed dead original individuals:
+Unassessed or unresolved individuals:
+Replacement planting IDs, dates and counts:
+Natural recruits recorded separately:
+Unknown origin or identity:
+Applicable reporting definition and calculation:
+
+Keep original cohort survival, replacement planting and natural recruitment
+distinguishable. Do not count an unassessed individual as a confirmed death.
+Where sampling is used, retain the design, uncertainty and extrapolation method.
+
+REVISIT RECORD: COPY FOR EACH VISIT
+Visit ID and linked intervention ID:
+Actual date and observers:
+Method and any departure from the planned method:
+Locations assessed and locations missed:
+Reason for missed checks:
+Season, weather or disturbance context:
+Evidence file references and photo-point directions:
+Observed response:
+Data quality checks:
+Interpretation and alternative explanations:
+Unresolved questions or evidence needed:
+
+DECISION AND HANDOVER
+Finding reviewed by and date:
+Agreed action, or reason for taking no action yet:
+Person authorised to approve the action:
+Action owner and due date:
+Completion date and evidence:
+Next review question and visit window:
+Next responsible team:
+Where the full record is stored:
+Record version and correction history:
+
+BEFORE REPORTING
+[ ] Distinguish work completed, establishment and ecological recovery.
+[ ] Show observation dates, coverage and missing checks.
+[ ] Keep original cohorts, replacements and recruits distinguishable.
+[ ] Distinguish observations from interpretations and modelled estimates.
+[ ] Check that units, boundaries and methods support the comparison made.
+[ ] Record the evidence behind any management change.
+[ ] Carry unresolved findings into the next team's handover.
+
+Guide:
+https://www.mynzocarbon.com/blog/restoration-monitoring-plan
+
+Discuss a monitoring scope:
+https://www.mynzocarbon.com/get-started?interest=restoration-monitoring&source=restoration-guide

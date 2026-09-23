@@ -6,11 +6,32 @@ import {
 } from '../src/lib/enquiry-context';
 import { trackLead } from '../src/lib/analytics';
 import { POST } from '../src/app/api/contact/route';
+import { articleEnquiry } from '../src/lib/article-enquiry';
 
 const validEnquiry = {
   first_name: 'Test', last_name: 'Visitor', email: 'visitor@example.com',
   company: 'Example organisation', role: 'Project Developer', message: '',
 };
+
+test('guide links retain their subject through form parsing and the enquiry email', () => {
+  for (const [slug, focus, label] of [
+    ['restoration-monitoring-plan', 'restoration-monitoring', 'Restoration monitoring plan guide'],
+    ['agroforestry-the-future-of-sustainable-land-use', 'forest-monitoring', 'Agroforestry guide'],
+    ['how-ai-is-revolutionising-forest-carbon-accounting', 'digital-mrv', 'Forest carbon accounting guide'],
+    ['biodiversity-metrics-for-restoration-projects', 'biodiversity-monitoring', 'Biodiversity monitoring guide'],
+  ]) {
+    const link = new URL(articleEnquiry(slug).href, 'https://www.mynzocarbon.com');
+    const context = enquiryContextFromSearch(link.search);
+    assert.equal(context.project_focus, focus);
+    assert.ok(context.enquiry_source);
+    const enquiry = validateEnquiry({ ...validEnquiry, ...context });
+    assert.ok(enquiry);
+    for (const body of Object.values(buildEnquiryEmail(enquiry))) assert.ok(body.includes(label));
+  }
+  for (const unknown of ['unrelated-cms-post', 'constructor', '__proto__']) {
+    assert.equal(articleEnquiry(unknown).href, '/get-started');
+  }
+});
 
 test('page-to-form context accepts only known interests and entry pages', () => {
   for (const value of ['biodiversity-monitoring', 'forest-monitoring', 'digital-mrv', 'restoration-monitoring']) {

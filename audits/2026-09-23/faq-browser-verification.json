@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-23",
+  "scope": "Local production build at http://127.0.0.1:3100, desktop only",
+  "browser": "Chrome",
+  "browserNote": "IAB was unavailable to the delegated agent. Root authorized a new temporary Chrome tab as fallback.",
+  "viewport": { "width": 1512, "height": 767, "changed": false },
+  "directFragmentLoad": {
+    "url": "http://127.0.0.1:3100/platform/forest-monitoring#answer-can-satellite-monitoring-replace-field-visits",
+    "openFaqs": ["Can satellite monitoring replace field visits?"],
+    "otherFaqsClosed": 4,
+    "navigationBottomPx": 68,
+    "targetQuestionTopPx": 129.203125,
+    "targetAnswerTopPx": 180.203125,
+    "visuallyVerifiedQuestionAnswerAndPermalinkBelowNavigation": true,
+    "passed": true
+  },
+  "anotherAnswerPermalink": {
+    "action": "Expand the first question with Enter, then click its visible Link to answer link.",
+    "url": "http://127.0.0.1:3100/platform/forest-monitoring#answer-what-is-forest-tracking",
+    "openFaqs": ["What is forest tracking?", "Can satellite monitoring replace field visits?"],
+    "otherFaqsClosed": 3,
+    "navigationBottomPx": 68,
+    "targetQuestionTopPx": 129.203125,
+    "targetAnswerTopPx": 180.203125,
+    "existingDisclosureStatePreserved": true,
+    "passed": true
+  },
+  "keyboard": {
+    "enterExpandedFirstQuestion": true,
+    "focusRemainedOnSummary": true,
+    "spaceCollapsedFirstQuestion": true,
+    "secondQuestionRemainedOpen": true,
+    "passed": true
+  },
+  "platformNavigation": {
+    "route": "/platform/forest-monitoring -> /platform/digital-mrv -> /platform/forest-monitoring",
+    "method": "Clicked existing related-content Next.js links.",
+    "forestFaqsInitiallyClosedOnReturn": 5,
+    "action": "Expanded second answer and clicked its permalink after returning.",
+    "resultUrl": "http://127.0.0.1:3100/platform/forest-monitoring#answer-can-satellite-monitoring-replace-field-visits",
+    "onlySecondAnswerOpen": true,
+    "navigationBottomPx": 68,
+    "targetQuestionTopPx": 129.203125,
+    "targetAnswerTopPx": 180.203125,
+    "passed": true
+  },
+  "crossPageFragmentNavigation": {
+    "status": "Not tested",
+    "reason": "Digital MRV's existing forest links have no fragment. No invented link or DOM mutation was used to simulate a cross-page Next.js Link with an answer fragment."
+  },
+  "result": "All exercised checks passed. No defect found.",
+  "applicationFilesChanged": false,
+  "externalSubmissions": false,
+  "temporaryTabClosedAfterChecks": true
+}

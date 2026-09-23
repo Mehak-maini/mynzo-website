@@ -124,6 +124,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
     },
   ],
   relatedLinks: [
+    { href: '/blog/restoration-monitoring-plan', title: 'Plan restoration monitoring', description: 'Connect intervention records, field visits and management decisions.' },
     { href: '/blog/biodiversity-metrics-for-restoration-projects', title: 'Choose biodiversity metrics', description: 'Match restoration goals to measurements, baselines and evidence.' },
     { href: '/solutions/project-developers', title: 'Monitoring for project developers', description: 'Plan the site evidence and reporting a project needs.' },
     { href: '/platform/forest-monitoring', title: 'Satellite forest monitoring', description: 'Understand canopy observations, forest change and field validation.' },

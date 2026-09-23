@@ -54,6 +54,8 @@
 .platform-faq summary span { font-weight: 400; font-size: 24px; }
 .platform-faq details[open] summary span { transform: rotate(45deg); }
 .platform-faq details p { margin-top: 15px; font-size: 16px; line-height: 1.85; color: #304b57; }
+.platform-faq-answer { scroll-margin-top: 180px; }
+.platform-faq-permalink { display: inline-block; margin-top: 10px; padding: 4px 0; font-size: 13px; line-height: 1.6; font-weight: 700; color: #215c6a; }
 .platform-related { padding: 20px 0 48px; }
 .platform-related > h2 { font-size: 23px; color: var(--navy); margin-bottom: 24px; }
 .platform-related > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }

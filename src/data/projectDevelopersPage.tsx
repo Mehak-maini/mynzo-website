@@ -117,6 +117,7 @@ export const projectDevelopersPage: PlatformPageData = {
     },
   ],
   relatedLinks: [
+    { href: '/blog/restoration-monitoring-plan', title: 'Build a restoration monitoring plan', description: 'Prepare visit records and handovers your field team can use.' },
     { href: '/platform/forest-monitoring', title: 'Forest monitoring', description: 'Understand the observations and checks available for your sites.' },
     { href: '/platform/digital-mrv', title: 'Digital MRV', description: 'Follow the evidence from measurement through reporting and independent review.' },
     { href: '/platform/biodiversity-monitoring', title: 'Biodiversity monitoring', description: 'Connect habitat observations with the ecological questions your project asks.' },

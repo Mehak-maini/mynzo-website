@@ -1,0 +1,195 @@
+{
+  "retrievedAt": "2026-09-23T08:43:56.863Z",
+  "notes": [
+    "Country volumes are separate estimates, global volume is not additive.",
+    "Missing rows and null difficulty mean unavailable, not zero or easy.",
+    "SERP snapshots are dated; habitat mapping US snapshot is 2023 and is not a current competitive assessment.",
+    "Restoration monitoring is selected for buyer usefulness, not demonstrated search volume."
+  ],
+  "requests": [
+    {
+      "args": {
+        "country": "in",
+        "keywords": "restoration monitoring,ecosystem restoration monitoring,ecological restoration monitoring,restoration monitoring plan,forest restoration monitoring,restoration success indicators,tree survival rate,tree survival monitoring,reforestation monitoring,afforestation monitoring,habitat mapping,habitat mapping remote sensing,habitat mapping software,satellite habitat mapping,habitat classification,land cover mapping,habitat condition assessment,agroforestry,agroforestry benefits,agroforestry carbon sequestration,agroforestry carbon credits,agroforestry monitoring,trees outside forests,tree cover monitoring,agroforestry india,mangrove monitoring,mangrove restoration monitoring,blue carbon monitoring",
+        "select": "keyword,volume,global_volume,difficulty,cpc,intents,serp_last_update,parent_topic",
+        "limit": 100,
+        "output": "json"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"keywords\": [\n    {\n      \"keyword\": \"trees outside forests\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry carbon sequestration\",\n      \"volume\": 10,\n      \"global_volume\": 30,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat classification\",\n      \"volume\": 10,\n      \"global_volume\": 100,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat condition assessment\",\n      \"volume\": 0,\n      \"global_volume\": 10,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry benefits\",\n      \"volume\": 60,\n      \"global_volume\": 350,\n      \"difficulty\": 3,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": \"2026-08-07T00:00:32Z\",\n      \"parent_topic\": \"what is agroforestry\"\n    },\n    {\n      \"keyword\": \"agroforestry india\",\n      \"volume\": 70,\n      \"global_volume\": 90,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat mapping software\",\n      \"volume\": 0,\n      \"global_volume\": 80,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"land cover mapping\",\n      \"volume\": 0,\n      \"global_volume\": 80,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry carbon credits\",\n      \"volume\": 10,\n      \"global_volume\": 30,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"mangrove monitoring\",\n      \"volume\": 0,\n      \"global_volume\": 10,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry\",\n      \"volume\": 5100,\n      \"global_volume\": 20000,\n      \"difficulty\": 48,\n      \"cpc\": 3,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": \"2026-09-17T05:55:55Z\",\n      \"parent_topic\": \"agroforestry meaning\"\n    },\n    {\n      \"keyword\": \"tree survival rate\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat mapping\",\n      \"volume\": 20,\n      \"global_volume\": 400,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    }\n  ]\n}",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"keywords-explorer-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":13,\"units-cost-row\":44,\"units-cost-total-actual\":572,\"units-cost-total\":572,\"cache\":\"no_cache\"}}"
+          }
+        ]
+      },
+      "tool": "keywords-explorer-overview"
+    },
+    {
+      "args": {
+        "country": "us",
+        "keywords": "restoration monitoring,ecosystem restoration monitoring,ecological restoration monitoring,restoration monitoring plan,forest restoration monitoring,restoration success indicators,tree survival rate,tree survival monitoring,reforestation monitoring,afforestation monitoring,habitat mapping,habitat mapping remote sensing,habitat mapping software,satellite habitat mapping,habitat classification,land cover mapping,habitat condition assessment,agroforestry,agroforestry benefits,agroforestry carbon sequestration,agroforestry carbon credits,agroforestry monitoring,trees outside forests,tree cover monitoring,agroforestry india,mangrove monitoring,mangrove restoration monitoring,blue carbon monitoring",
+        "select": "keyword,volume,global_volume,difficulty,cpc,intents,serp_last_update,parent_topic",
+        "limit": 100,
+        "output": "json"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"keywords\": [\n    {\n      \"keyword\": \"habitat classification\",\n      \"volume\": 50,\n      \"global_volume\": 100,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat mapping software\",\n      \"volume\": 0,\n      \"global_volume\": 80,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat mapping\",\n      \"volume\": 40,\n      \"global_volume\": 400,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry benefits\",\n      \"volume\": 90,\n      \"global_volume\": 350,\n      \"difficulty\": 1,\n      \"cpc\": 3000,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": \"2026-09-05T23:26:25Z\",\n      \"parent_topic\": \"agroforestry advantages\"\n    },\n    {\n      \"keyword\": \"agroforestry carbon credits\",\n      \"volume\": 10,\n      \"global_volume\": 30,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"tree survival rate\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"land cover mapping\",\n      \"volume\": 60,\n      \"global_volume\": 80,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"mangrove restoration monitoring\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"mangrove monitoring\",\n      \"volume\": 0,\n      \"global_volume\": 10,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry carbon sequestration\",\n      \"volume\": 10,\n      \"global_volume\": 30,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry india\",\n      \"volume\": 20,\n      \"global_volume\": 90,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"ecosystem restoration monitoring\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"habitat condition assessment\",\n      \"volume\": 0,\n      \"global_volume\": 10,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"restoration monitoring\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {},\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"trees outside forests\",\n      \"volume\": 0,\n      \"global_volume\": 0,\n      \"difficulty\": null,\n      \"cpc\": null,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry\",\n      \"volume\": 3300,\n      \"global_volume\": 20000,\n      \"difficulty\": 46,\n      \"cpc\": 60,\n      \"intents\": {\n        \"informational\": true,\n        \"navigational\": false,\n        \"commercial\": false,\n        \"transactional\": false,\n        \"branded\": false,\n        \"local\": false\n      },\n      \"serp_last_update\": \"2026-09-17T23:32:40Z\",\n      \"parent_topic\": \"agroforestry\"\n    }\n  ]\n}",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"keywords-explorer-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":16,\"units-cost-row\":44,\"units-cost-total-actual\":704,\"units-cost-total\":704,\"cache\":\"no_cache\"}}"
+          }
+        ]
+      },
+      "tool": "keywords-explorer-overview"
+    },
+    {
+      "args": {
+        "country": "gb",
+        "keywords": "agroforestry benefits,agroforestry carbon sequestration,agroforestry carbon credits,restoration monitoring,restoration monitoring plan,habitat mapping",
+        "select": "keyword,volume,global_volume,difficulty,serp_last_update,parent_topic",
+        "limit": 20
+      },
+      "tool": "keywords-explorer-overview",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"keywords\": [\n    {\n      \"keyword\": \"habitat mapping\",\n      \"volume\": 100,\n      \"global_volume\": 400,\n      \"difficulty\": 2,\n      \"serp_last_update\": \"2026-09-19T14:31:21Z\",\n      \"parent_topic\": \"habitat mapping\"\n    },\n    {\n      \"keyword\": \"agroforestry benefits\",\n      \"volume\": 70,\n      \"global_volume\": 350,\n      \"difficulty\": null,\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry carbon sequestration\",\n      \"volume\": 0,\n      \"global_volume\": 30,\n      \"difficulty\": null,\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    },\n    {\n      \"keyword\": \"agroforestry carbon credits\",\n      \"volume\": 0,\n      \"global_volume\": 30,\n      \"difficulty\": null,\n      \"serp_last_update\": null,\n      \"parent_topic\": null\n    }\n  ]\n}",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"keywords-explorer-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":4,\"units-cost-row\":33,\"units-cost-total-actual\":132,\"units-cost-total\":132,\"cache\":\"no_cache\"}}"
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "in",
+        "keyword": "agroforestry benefits",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "tool": "serp-overview",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"positions\": [\n    {\n      \"position\": 1,\n      \"title\": null,\n      \"url\": null,\n      \"type\": [ \"ai_overview\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 1,\n      \"title\": \"Soil Association\",\n      \"url\": \"https://www.soilassociation.org/causes-campaigns/agroforestry/what-is-agroforestry/\",\n      \"type\": [ \"ai_overview_sitelink\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 1,\n      \"title\": \"MDPI\",\n      \"url\": \"https://www.mdpi.com/2071-1050/18/1/5\",\n      \"type\": [ \"ai_overview_sitelink\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"Who is the father of agroforestry?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"What is agroforestry and what are its benefits and scope?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"What are the three objectives of agroforestry?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"What are the benefits of agro farming?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": null,\n      \"url\": \"https://www.justonetree.life/blog-its-a-tree-its-a-farm-its-afgroforestry.html\",\n      \"type\": [ \"image\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": null,\n      \"url\": \"https://www.drishtiias.com/daily-updates/daily-news-analysis/rules-for-promotion-of-agroforestry\",\n      \"type\": [ \"image\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": null,\n      \"url\": \"https://www.youtube.com/watch?v=uAhYmOxD6xo\",\n      \"type\": [ \"image\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 4,\n      \"title\": \"Agroforestry\",\n      \"url\": \"https://www.soilassociation.org/causes-campaigns/agroforestry/what-is-agroforestry/\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 5,\n      \"title\": \"Agroforestry: a key land use system for sustainable food ...\",\n      \"url\": \"https://www.sciencedirect.com/science/article/pii/S2666719325000743\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 6,\n      \"title\": \"Forestry :: Agroforestry\",\n      \"url\": \"https://agritech.tnau.ac.in/forestry/agroforestry_index.html\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Article,/Article/Definitions\",\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 7,\n      \"title\": \"Why Agroforestry?\",\n      \"url\": \"https://www.fs.usda.gov/nac/about/why-agroforestry.php\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Core_Page,/Core_Page/About_Page\",\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 8,\n      \"title\": \"Socio-Economic and Environmental Benefits of ...\",\n      \"url\": \"https://www.mdpi.com/2071-1050/18/1/5\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Article,/Article/Study_or_Research_Findings\",\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 9,\n      \"title\": \"Benefits of agroforestry over conventional agriculture\",\n      \"url\": \"https://www.viagroforestry.org/app/uploads/2022/04/benefits-of-agroforestry.pdf\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    },\n    {\n      \"position\": 10,\n      \"title\": \"The benefits of trees in agroforestry\",\n      \"url\": \"https://www.green.earth/blog/agroforestry-benefits\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Article,/Article/Thought_Leadership\",\n      \"update_date\": \"2026-08-07T00:00:32Z\"\n    }\n  ]\n}",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"serp-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":17,\"units-cost-row\":6,\"units-cost-total-actual\":102,\"units-cost-total\":102,\"cache\":\"miss\"}}"
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "us",
+        "keyword": "agroforestry benefits",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "tool": "serp-overview",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"positions\": [\n    {\n      \"position\": 1,\n      \"title\": null,\n      \"url\": null,\n      \"type\": [ \"ai_overview\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 1,\n      \"title\": \"Forrest Keeling Nursery\",\n      \"url\": \"https://fknursery.com/the-major-environmental-benefits-of-agroforestry/\",\n      \"type\": [ \"ai_overview_sitelink\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 1,\n      \"title\": \"US Forest Service (.gov)\",\n      \"url\": \"https://www.fs.usda.gov/nac/about/why-agroforestry.php\",\n      \"type\": [ \"ai_overview_sitelink\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 1,\n      \"title\": \"YouTube·The Woodland Trust\",\n      \"url\": \"https://www.google.com/goto?url=CAESZwHrOzAV2N_KWNHcArQ5uIewvom-1q7irbwXGTNhcb4_hLx3eFuRe3hwVv0tQOVLqPwPz2e53YCCs49-AbYo94KYa7-CgZZga6dHVLOSpRA04JlKYFf9JQfGKOJjRB-vYlWDdEyRLI4\",\n      \"type\": [ \"ai_overview_sitelink\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"The Major Environmental Benefits of Agroforestry\",\n      \"url\": \"https://fknursery.com/the-major-environmental-benefits-of-agroforestry/\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Article,/Article/Thought_Leadership\",\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": \"What are the downsides of agroforestry?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": \"Is agroforestry more profitable?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": \"What is the future of agroforestry?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": \"What are the challenges of implementing agroforestry?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 4,\n      \"title\": \"Agroforestry\",\n      \"url\": \"https://www.soilassociation.org/what-we-do/farming-and-forestry/agroforestry/\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Article,/Article/Tutorial_or_Guide\",\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 5,\n      \"title\": \"Agroforestry: a key land use system for sustainable food ...\",\n      \"url\": \"https://www.sciencedirect.com/science/article/pii/S2666719325000743\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 6,\n      \"title\": \"Why Agroforestry?\",\n      \"url\": \"https://www.fs.usda.gov/nac/about/why-agroforestry.php\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Core_Page,/Core_Page/About_Page\",\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 7,\n      \"title\": \"Key Benefits of Agroforestry\",\n      \"url\": \"https://digitaf.eu/key-benefits/\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 8,\n      \"title\": \"Socio-Economic and Environmental Benefits of ...\",\n      \"url\": \"https://www.mdpi.com/2071-1050/18/1/5\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": \"/Article,/Article/Study_or_Research_Findings\",\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 9,\n      \"title\": \"Agroforestry for Ecosystem Services and Environmental Benefits\",\n      \"url\": \"https://restoration.elti.yale.edu/resource/agroforestry-ecosystem-services-and-environmental-benefits-overview\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 10,\n      \"title\": \"Can farmers make agroforestry pay?\",\n      \"url\": \"https://www.google.com/goto?url=CAESjQEB6zswFb1dFrltcLcnrHajmpndP5sUfd4a3DNd5DkAdtPvu2waUOOi397YazSR33214EKL55VH6OXb1u3Y8F02Ifnr1Ny47-h_hbrNZLGDULaMcoh1NirKBtyEWAZHmjozRhiStXQF4IVCQFhZZ3rdJpFXTsOnhzINec5cGcbC8WC_NBpwXItqFznYE0A\",\n      \"type\": [ \"news\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 10,\n      \"title\": \"How Combining Trees and Animals Can Make Farms Resilient\",\n      \"url\": \"https://www.google.com/goto?url=CAESYwHrOzAVv9holt34FG8bUBZOW0ouNiDKydCTFgJOQp8N-2l0pAJHOhMcHkSqyYufoIIWhfb1oolH66mtEZgjOcYTvgbB89wLTg14cES-Uhonmd_vADnpm2xGecDO4uPQGSd3KQ\",\n      \"type\": [ \"news\", \"video_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    },\n    {\n      \"position\": 10,\n      \"title\": \"Discover the benefits of agroforestry in action with three farmers\",\n      \"url\": \"https://www.google.com/goto?url=CAESYwHrOzAVMAix04OoSXfWO4Cb52I8Ovg9kdAZnJUlXrDlEXuwnlV2sNCMD0Ohggn6SgK-uddFBBB0_WJZ-JF6oUxi8aPKF6cjCx8jJjGwYiJGGflsuXbOLFGzaAnCCo3tj_8bsw\",\n      \"type\": [ \"news\", \"video_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2026-09-05T23:26:25Z\"\n    }\n  ]\n}",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"serp-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":18,\"units-cost-row\":6,\"units-cost-total-actual\":108,\"units-cost-total\":108,\"cache\":\"miss\"}}"
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "us",
+        "keyword": "restoration monitoring",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "tool": "serp-overview",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{ \"positions\": [] }",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"serp-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":0,\"units-cost-row\":6,\"units-cost-total-actual\":50,\"units-cost-total\":50,\"cache\":\"no_cache\"}}"
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "us",
+        "keyword": "habitat mapping",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "tool": "serp-overview",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"positions\": [\n    {\n      \"position\": 1,\n      \"title\": \"Habitat Mapping and Modeling | U.S. Geological Survey\",\n      \"url\": \"https://www.usgs.gov/centers/forest-and-rangeland-ecosystem-science-center/science/habitat-mapping-and-modeling\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"How do you map a habitat?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"What is the meaning of habitat map?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"What is marine habitat mapping?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 2,\n      \"title\": \"What is the essential habitat mapper?\",\n      \"url\": null,\n      \"type\": [ \"question\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 3,\n      \"title\": \"Habitat Mapping\",\n      \"url\": \"https://sustainablecitycode.org/brief/habitat-mapping/\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 4,\n      \"title\": \"Habitat mapping\",\n      \"url\": \"https://greenschoolsireland.org/wp-content/uploads/2016/08/Habitat_mapping.pdf\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 5,\n      \"title\": \"Mapping habitats to describe ecosystems\",\n      \"url\": \"https://www.eea.europa.eu/highlights/mapping-habitats-to-describe-ecosystems\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 6,\n      \"title\": \"Habitat Mapping and Characterization - nccos - NOAA\",\n      \"url\": \"https://coastalscience.noaa.gov/science-areas/habitat-mapping-and-characterization/\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 7,\n      \"title\": \"A global map of terrestrial habitat types - Nature\",\n      \"url\": \"https://www.nature.com/articles/s41597-020-00599-8\",\n      \"type\": [ \"organic\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 8,\n      \"title\": \"What is a Benthic Habitat Map? – C-SCAMP\",\n      \"url\": \"https://www.marine.usf.edu/scamp/about/what-is-a-benthic-habitat-map/\",\n      \"type\": [ \"organic\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 9,\n      \"title\": \"Habitat Mapping of Ocean Floor Using GIS\",\n      \"url\": \"https://www.livingoceansfoundation.org/science/habitat-mapping/\",\n      \"type\": [ \"organic\", \"image_th\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    },\n    {\n      \"position\": 10,\n      \"title\": \"What is a benthic habitat map? - National Ocean Service - NOAA\",\n      \"url\": \"https://oceanservice.noaa.gov/facts/benthic.html\",\n      \"type\": [ \"organic\" ],\n      \"page_type\": null,\n      \"update_date\": \"2023-12-26T01:13:33Z\"\n    }\n  ]\n}",
+            "annotations": {}
+          },
+          {
+            "type": "text",
+            "text": "Display these results with `render-data-table`. Pass `source` with tool=\"serp-overview\" and the params you used."
+          },
+          {
+            "type": "text",
+            "text": "{\"apiUsageCosts\":{\"rows\":13,\"units-cost-row\":6,\"units-cost-total-actual\":78,\"units-cost-total\":78,\"cache\":\"miss\"}}"
+          }
+        ]
+      }
+    }
+  ]
+}

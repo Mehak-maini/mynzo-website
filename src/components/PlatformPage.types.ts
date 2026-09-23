@@ -15,7 +15,12 @@ export type PlatformPageData = {
   breadcrumbParent?: { name: string; href: string };
   overview: { title: string; text: string };
   sections: { id: string; title: string; body: ReactNode }[];
-  faqs: { question: string; answer: string }[];
+  faqs: {
+    /** Unique URL slug, without the answer- prefix. Preserve it when editing a published question. */
+    id?: string;
+    question: string;
+    answer: string;
+  }[];
   relatedLinks: { href: string; title: string; description: string }[];
   cta: { title: string; text: string; label: string; href?: string };
 };
