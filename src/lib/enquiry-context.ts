@@ -57,10 +57,13 @@ export type Enquiry = EnquiryContext & {
   first_name: string;
   last_name: string;
   email: string;
+  phone?: string;
   company: string;
   role: string;
   message: string;
 };
+
+export const PHONE_LIMIT = 30;
 
 export const ENQUIRY_LIMITS = {
   first_name: 100,
@@ -83,10 +86,13 @@ export function validateEnquiry(input: unknown): Enquiry | null {
     fields[key] = trimmed;
   }
   if (!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(fields.email)) return null;
+  const phoneValue = values.phone ?? '';
+  if (typeof phoneValue !== 'string' || phoneValue.length > PHONE_LIMIT || /[\r\n]/.test(phoneValue.trim())) return null;
+  const phone = phoneValue.trim() || undefined;
   const context = normaliseEnquiryContext(values);
   if (values.project_focus && !context.project_focus) return null;
   if (values.enquiry_source && !context.enquiry_source) return null;
-  return { ...fields, ...context } as Enquiry;
+  return { ...fields, phone, ...context } as Enquiry;
 }
 
 export function escapeEmailHtml(value: string): string {
@@ -101,6 +107,7 @@ export function buildEnquiryEmail(enquiry: Enquiry): { html: string; text: strin
   const rows = [
     ['Name', `${enquiry.first_name} ${enquiry.last_name}`],
     ['Email', enquiry.email],
+    ['Phone', enquiry.phone || 'Not provided'],
     ['Company', enquiry.company],
     ['Role', enquiry.role],
     ['Project focus', focus],

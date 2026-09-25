@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { trackLead } from '@/lib/analytics';
 import {
-  ENQUIRY_LIMITS, PROJECT_FOCUS_OPTIONS, enquiryContextFromSearch, isAcceptedEnquiry,
+  ENQUIRY_LIMITS, PHONE_LIMIT, PROJECT_FOCUS_OPTIONS, enquiryContextFromSearch, isAcceptedEnquiry,
   type EnquirySource, type ProjectFocus,
 } from '@/lib/enquiry-context';
 
@@ -35,6 +35,7 @@ export default function GetStartedPage() {
       first_name: (form.elements.namedItem('first_name') as HTMLInputElement).value,
       last_name: (form.elements.namedItem('last_name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       company: (form.elements.namedItem('company') as HTMLInputElement).value,
       role: (form.elements.namedItem('role') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
@@ -88,6 +89,11 @@ export default function GetStartedPage() {
               <div className="form-group">
                 <label htmlFor="email">Work Email</label>
                 <input id="email" name="email" type="email" placeholder="priya@company.com" maxLength={ENQUIRY_LIMITS.email} required />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="phone">Contact Number (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" maxLength={PHONE_LIMIT} />
               </div>
 
               <div className="form-group">
