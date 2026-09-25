@@ -92,7 +92,7 @@ export default function GetStartedPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">Contact Number (optional)</label>
+                <label htmlFor="phone" className="label-optional-row"><span>Contact Number</span><span className="optional-tag">Optional</span></label>
                 <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" maxLength={PHONE_LIMIT} />
               </div>
 
@@ -115,7 +115,7 @@ export default function GetStartedPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="project_focus">Project focus (optional)</label>
+                <label htmlFor="project_focus" className="label-optional-row"><span>Project focus</span><span className="optional-tag">Optional</span></label>
                 <select id="project_focus" name="project_focus" value={projectFocus} onChange={event => {
                   focusEdited.current = true;
                   setProjectFocus(event.target.value as ProjectFocus | '');

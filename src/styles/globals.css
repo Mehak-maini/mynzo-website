@@ -596,3 +596,7 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
   border-left: 3px solid var(--teal); padding-left: 20px; margin: 24px 0;
   font-style: italic; color: #598493;
 }
+
+/* Get Started form: label with a right-aligned "Optional" tag */
+.form-group label.label-optional-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; width: 100%; }
+.form-group label.label-optional-row .optional-tag { font-weight: 400; font-size: 13px; color: #9aa4b2; letter-spacing: 0; }
