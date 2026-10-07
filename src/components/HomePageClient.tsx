@@ -866,7 +866,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             { title: 'Satellite Remote Sensing', desc: 'Multi-spectral imagery aids forest health assessment.', vid: '/satellite_remote_sensing.mp4', radar: true },
             { title: 'Machine Learning Models', desc: 'Machine learning helps identify changes in forest cover.', vid: '/machine_learning_models.mp4' },
             { title: 'Carbon Sequestration Analysis', desc: 'Algorithms convert forest data into carbon metrics.', vid: '/tree_analysis.mp4' },
-            { title: 'Biodiversity Assessment', desc: 'Satellite imagery and field sampling track habitat, species, soil and water health.', icon: true },
+            { title: 'Biodiversity Assessment', desc: 'Satellite imagery and field sampling track habitat, species, soil and water health.', vid: '/biodiversity_assessment.mp4' },
             { title: 'Temporal Insights', desc: 'Analyze ecosystem shifts, disturbances, and long-term environmental changes across time.', vid: '/temporal_insight.mp4' },
           ].map((c, i) => (
             <article className="why-card" key={i}>
@@ -875,19 +875,9 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
                 <p className="why-card-desc">{c.desc}</p>
               </div>
               <div className="why-card-media">
-                {c.vid ? (
-                  <div className="card-vid-wrap">
-                    <BackgroundVideo src={c.vid} poster={c.vid.replace('.mp4', '.webp')} />
-                  </div>
-                ) : (
-                  <div className="card-vid-wrap card-icon-wrap" aria-hidden="true">
-                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14z" />
-                      <path d="M5 19c3-4 6-7 10-9" />
-                      <circle cx="18" cy="17" r="1.3" /><circle cx="6.5" cy="7" r="1" /><circle cx="14.5" cy="19.5" r=".8" />
-                    </svg>
-                  </div>
-                )}
+                <div className="card-vid-wrap">
+                  <BackgroundVideo src={c.vid} poster={c.vid.replace('.mp4', '.webp')} />
+                </div>
                 {c.radar && (
                   <div className="radar-wrap">
                     <div className="radar-ring"></div>
