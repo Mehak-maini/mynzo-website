@@ -22,18 +22,19 @@ const TEAM = [
 ];
 
 // ─── Biodiversity section data ─────────────────────────────────
-const BIO_ICON = { width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+const BIO_ICON = { width: 32, height: 32, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+const SOFT = { fill: 'currentColor', fillOpacity: 0.16 };
 const BIO_ITEMS = [
   { title: 'Land Use & Land Cover (LULC)', desc: 'See how land use and habitat cover change over time, mapped from satellite imagery.',
-    icon: <svg {...BIO_ICON}><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z" /><path d="M9 4v14M15 6v14" /></svg> },
+    icon: <svg {...BIO_ICON}><path d="M12 3l9 4.5-9 4.5-9-4.5z" {...SOFT} /><path d="M3 12l9 4.5 9-4.5" /><path d="M3 16.5L12 21l9-4.5" /></svg> },
   { title: 'Flora', desc: 'Record plant species across your sites and see how they change over time.',
-    icon: <svg {...BIO_ICON}><path d="M12 21v-9" /><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z" /><path d="M12 14c0-3 2.5-5 6-5 0 3-2.5 5-6 5z" /></svg> },
+    icon: <svg {...BIO_ICON}><path d="M5 20C5 11 10 5 20 4c0 10-6 16-15 16z" {...SOFT} /><path d="M5 20C8.5 15 12 11.5 16 8.5" /><path d="M11 14.5l.5-3.5M14 11.5l2.8-.8" /></svg> },
   { title: 'Fauna', desc: 'Capture wildlife through geo-tagged photos, videos and audio recorded in the field.',
-    icon: <svg {...BIO_ICON}><circle cx="5" cy="11" r="1.7" /><circle cx="9" cy="6.5" r="1.7" /><circle cx="15" cy="6.5" r="1.7" /><circle cx="19" cy="11" r="1.7" /><path d="M12 12c-3 0-5 3-5 5.2 0 1.8 1.4 2.8 3 2.8 1 0 1.4-.4 2-.4s1 .4 2 .4c1.6 0 3-1 3-2.8 0-2.2-2-5.2-5-5.2z" /></svg> },
+    icon: <svg {...BIO_ICON}><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20" {...SOFT} /><path d="M16 7h.01" strokeWidth={2.2} /><path d="m20 7 2 .5-2 .5" /><path d="M10 18v3" /><path d="M14 17.75V21" /><path d="M7 18a6 6 0 0 0 3.84-10.61" /></svg> },
   { title: 'Soil', desc: 'Track soil health through lab-tested samples collected across the project life.',
-    icon: <svg {...BIO_ICON}><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 10h18M3 15h18" /><path d="M8 7.2h.01M15 7.2h.01M11 12.6h.01M17 12.6h.01M7 17.6h.01M13 17.6h.01" /></svg> },
+    icon: <svg {...BIO_ICON}><path d="M12 10.5V6.5" /><path d="M12 7.5c0-2.2-1.6-3.6-4.5-3.6 0 2.2 1.6 3.6 4.5 3.6z" {...SOFT} /><path d="M12 8.5c0-1.7 1.2-2.9 3.6-2.9 0 1.7-1.2 2.9-3.6 2.9z" {...SOFT} /><path d="M3 11.5h18" /><path d="M3 15.5h18M3 19.5h18" /><path d="M7 13.5h.01M14 13.5h.01M18 17.5h.01M9 17.5h.01M5.5 21h.01M15 21h.01" strokeWidth={2} /></svg> },
   { title: 'Water', desc: 'Monitor water quality through lab-tested samples from your sites.',
-    icon: <svg {...BIO_ICON}><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" /></svg> },
+    icon: <svg {...BIO_ICON}><path d="M12 3s6.5 6.6 6.5 11.2A6.5 6.5 0 0 1 5.5 14.2C5.5 9.6 12 3 12 3z" {...SOFT} /><path d="M8.8 14.6a3.3 3.3 0 0 0 3.2 3.2" /></svg> },
 ];
 
 // ─── Blog posts — imported from shared data so slugs stay in sync ────────────
@@ -966,8 +967,8 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       <section id="biodiversity" className="bio-sec">
         <div className="bio-inner">
           <p className="bio-label">Biodiversity</p>
-          <h2 className="sec-title">Trees are the start. Biodiversity is the proof.</h2>
-          <p className="sec-sub">A growing forest is not always a thriving one. Alongside carbon, Mynzo runs a dedicated biodiversity assessment to show how the whole ecosystem is changing.</p>
+          <h2 className="sec-title">Biodiversity, measured alongside carbon</h2>
+          <p className="sec-sub">Mynzo runs a dedicated biodiversity assessment next to carbon monitoring, combining satellite imagery with field samples to show how the whole ecosystem is changing.</p>
           <div className="bio-cards">
             {BIO_ITEMS.map((item, i) => (
               <article className="bio-card" key={i}>
@@ -1135,14 +1136,11 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             <div className="reni-msgs" id="reni-messages" ref={reniMsgsRef}></div>
             <div className="reni-chips">
               <button className="reni-chip" data-query="Survivability across my sites?">Survivability across my sites?</button>
-              <button className="reni-chip" data-query="Which assets are underperforming?">Which assets are underperforming?</button>
-              <button className="reni-chip" data-query="Credits I can issue this year?">Credits I can issue this year?</button>
               <button className="reni-chip" data-query="Which fauna were recorded this quarter?">Which fauna were recorded this quarter?</button>
               <button className="reni-chip" data-query="How has land cover changed at my sites?">How has land cover changed at my sites?</button>
               <button className="reni-chip" data-query="What does Mynzo do?">What does Mynzo do?</button>
               <button className="reni-chip" data-query="Total trees planted?">Total trees planted?</button>
               <button className="reni-chip" data-query="How can you help me?">How can Reni help?</button>
-              <button className="reni-chip" data-query="What is sequestration?">Carbon sequestration?</button>
             </div>
           </div>
         </div>
