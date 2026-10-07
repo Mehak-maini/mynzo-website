@@ -16,7 +16,7 @@ export default function Footer() {
               style={{ height: '15px', width: 'auto', display: 'block', margin: '0' }}
             />
             <p className="foot-tag">
-              Revolutionizing forest monitoring with AI-powered satellite technology to create a more transparent and sustainable future.
+              Revolutionizing forest and biodiversity monitoring with AI-powered satellite and field technology to create a more transparent and sustainable future.
             </p>
           </div>
           <p className="foot-copy">© 2025 mynzo. All rights reserved.</p>
@@ -26,7 +26,7 @@ export default function Footer() {
             <p className="foot-col-h">Explore Mynzo</p>
             <Link href="/platform/forest-monitoring">Forest monitoring</Link>
             <Link href="/platform/digital-mrv">Digital MRV</Link>
-            <Link href="/platform/biodiversity-monitoring">Biodiversity monitoring</Link>
+            <Link href="/#biodiversity">Biodiversity monitoring</Link>
             <Link href="/solutions/project-developers">For project developers</Link>
             <Link href="/blog">Mynzo Talks</Link>
             <Link href="/get-started">Discuss your project</Link>

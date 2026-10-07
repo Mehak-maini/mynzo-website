@@ -600,3 +600,22 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
 /* Get Started form: label with a right-aligned "Optional" tag */
 .form-group label.label-optional-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; width: 100%; }
 .form-group label.label-optional-row .optional-tag { font-weight: 400; font-size: 13px; color: #9aa4b2; letter-spacing: 0; }
+
+/* ══ BIODIVERSITY (homepage) ══ */
+.hero-sub { font-family: var(--font-nunito); font-weight: 500; font-size: 20px; line-height: 1.5; color: rgba(255,255,255,0.9); max-width: 560px; margin: -4px 0 4px; }
+.card-icon-wrap { display: flex; align-items: center; justify-content: center; color: #92d3e1; background: radial-gradient(circle at 50% 38%, rgba(146,211,225,0.30), rgba(51,103,130,0.40) 72%); border: 1px solid rgba(146,211,225,0.35); }
+.bio-sec { scroll-margin-top: 72px; background: linear-gradient(160deg, #061729 0%, #0f2b3d 55%, #17435a 100%); padding: 88px 64px; }
+.bio-inner { max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.bio-label { font-family: var(--font-nunito); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: #92d3e1; margin: 0; }
+.bio-sec .sec-title { color: #fff; }
+.bio-sec .sec-sub { color: #c9d8df; }
+.bio-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; width: 100%; margin-top: 28px; text-align: left; }
+.bio-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(146,211,225,0.18); border-radius: 16px; padding: 26px 22px 28px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+.bio-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(146,211,225,0.5); transform: translateY(-3px); }
+.bio-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #92d3e1; background: rgba(146,211,225,0.12); border: 1px solid rgba(146,211,225,0.28); }
+.bio-card-title { font-family: var(--font-inter); font-weight: 700; font-size: 17px; line-height: 1.25; color: #fff; margin: 4px 0 0; }
+.bio-card-desc { font-family: var(--font-nunito); font-weight: 500; font-size: 14px; line-height: 1.6; color: #c2d0d8; margin: 0; }
+.bio-sec .plat-detail-link { color: #92d3e1; margin-top: 28px; }
+@media (max-width: 1100px) { .bio-cards { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .bio-sec { padding: 64px 32px; } .hero-sub { font-size: 18px; } }
+@media (max-width: 600px) { .bio-sec { padding: 56px 20px; } .bio-cards { grid-template-columns: 1fr; } .hero-sub { font-size: 16px; } }

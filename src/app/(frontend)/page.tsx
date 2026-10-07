@@ -4,7 +4,7 @@ import { getPublishedPosts } from '@/lib/posts';
 import { pageMetadata, organization, SITE_URL, SITE_NAME, SITE_DESCRIPTION } from '@/lib/seo';
 
 export const revalidate = 300;
-export const metadata = pageMetadata('/', 'Forest Monitoring & Carbon Intelligence | Mynzo Carbon', SITE_DESCRIPTION);
+export const metadata = pageMetadata('/', 'Forest, Carbon & Biodiversity Monitoring | Mynzo Carbon', SITE_DESCRIPTION);
 
 export default async function HomePage() {
   const posts = await getPublishedPosts();

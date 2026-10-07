@@ -123,7 +123,7 @@ export default function Nav() {
             <Link href="/#platform" onClick={closeMenu}>Platform overview</Link>
             <Link href="/platform/forest-monitoring" onClick={closeMenu} aria-current={pathname === '/platform/forest-monitoring' ? 'page' : undefined}>Forest monitoring</Link>
             <Link href="/platform/digital-mrv" onClick={closeMenu} aria-current={pathname === '/platform/digital-mrv' ? 'page' : undefined}>Digital MRV</Link>
-            <Link href="/platform/biodiversity-monitoring" onClick={closeMenu} aria-current={pathname === '/platform/biodiversity-monitoring' ? 'page' : undefined}>Biodiversity monitoring</Link>
+            <Link href="/#biodiversity" onClick={closeMenu}>Biodiversity monitoring</Link>
             <Link href="/solutions/project-developers" onClick={closeMenu} aria-current={pathname === '/solutions/project-developers' ? 'page' : undefined}>For project developers</Link>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function Nav() {
             <Link href="/#platform" className={cls('platform')} onClick={closeMenu}>PLATFORM</Link>
             <Link href="/platform/forest-monitoring" className="mobile-platform-link" onClick={closeMenu}>Forest monitoring</Link>
             <Link href="/platform/digital-mrv" className="mobile-platform-link" onClick={closeMenu}>Digital MRV</Link>
-            <Link href="/platform/biodiversity-monitoring" className="mobile-platform-link" onClick={closeMenu}>Biodiversity monitoring</Link>
+            <Link href="/#biodiversity" className="mobile-platform-link" onClick={closeMenu}>Biodiversity monitoring</Link>
             <Link href="/solutions/project-developers" className="mobile-platform-link" onClick={closeMenu}>For project developers</Link>
             <Link href="/#reni-sec" className={cls('reni')} onClick={closeMenu}>RENI</Link>
             <Link href="/#team" onClick={closeMenu}>TEAM</Link>

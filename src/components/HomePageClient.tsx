@@ -21,6 +21,21 @@ const TEAM = [
   { name: 'Mehak Maini', role: 'UX/UI Designer', img: `${S3}/mehak_maini.png`, bio: "Designer translating complex environmental data into intuitive, elegant interfaces that make forest intelligence accessible to all." },
 ];
 
+// ─── Biodiversity section data ─────────────────────────────────
+const BIO_ICON = { width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+const BIO_ITEMS = [
+  { title: 'Land Use & Land Cover (LULC)', desc: 'See how land use and habitat cover change over time, mapped from satellite imagery.',
+    icon: <svg {...BIO_ICON}><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z" /><path d="M9 4v14M15 6v14" /></svg> },
+  { title: 'Flora', desc: 'Record plant species across your sites and see how they change over time.',
+    icon: <svg {...BIO_ICON}><path d="M12 21v-9" /><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z" /><path d="M12 14c0-3 2.5-5 6-5 0 3-2.5 5-6 5z" /></svg> },
+  { title: 'Fauna', desc: 'Capture wildlife through geo-tagged photos, videos and audio recorded in the field.',
+    icon: <svg {...BIO_ICON}><circle cx="5" cy="11" r="1.7" /><circle cx="9" cy="6.5" r="1.7" /><circle cx="15" cy="6.5" r="1.7" /><circle cx="19" cy="11" r="1.7" /><path d="M12 12c-3 0-5 3-5 5.2 0 1.8 1.4 2.8 3 2.8 1 0 1.4-.4 2-.4s1 .4 2 .4c1.6 0 3-1 3-2.8 0-2.2-2-5.2-5-5.2z" /></svg> },
+  { title: 'Soil', desc: 'Track soil health through lab-tested samples collected across the project life.',
+    icon: <svg {...BIO_ICON}><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 10h18M3 15h18" /><path d="M8 7.2h.01M15 7.2h.01M11 12.6h.01M17 12.6h.01M7 17.6h.01M13 17.6h.01" /></svg> },
+  { title: 'Water', desc: 'Monitor water quality through lab-tested samples from your sites.',
+    icon: <svg {...BIO_ICON}><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" /></svg> },
+];
+
 // ─── Blog posts — imported from shared data so slugs stay in sync ────────────
 import type { PostCard } from '@/lib/post-data';
 
@@ -479,6 +494,14 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
     ];
     const KEYWORD_REPLIES: { keywords: string[]; reply: string }[] = [
       {
+        keywords: ['fauna', 'wildlife', 'sightings', 'birds', 'mammals', 'reptiles'],
+        reply: 'Scanning 3 active sites… 46 fauna sightings logged this quarter across 18 species: 11 birds, 4 mammals, 3 reptiles. ⚠ Site C has no mammal records since Q1 — recommend a targeted field survey.',
+      },
+      {
+        keywords: ['land cover', 'lulc', 'land use', 'habitat cover'],
+        reply: 'Comparing 2024 and 2026 imagery across 3 sites… Tree cover up 12.6% (+38 ha), grassland down 9.1%. ⚠ Site A: 2.3 ha of bare land expanding along the eastern boundary — recommend a field check.',
+      },
+      {
         keywords: ['hi', 'hello', 'hey', 'namaste', 'good morning', 'good afternoon', 'good evening', 'greetings'],
         reply: 'Hello! I\'m Reni, your nature asset intelligence analyst. Ask me about survivability, tree growth, carbon sequestration, plantation health, land coverage, or carbon credits. How can I help?',
       },
@@ -794,6 +817,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1 className="hero-title">Precision Forest <span>Monitoring</span></h1>
+          <p className="hero-sub">Carbon and biodiversity, measured from space and on the ground.</p>
           <Link href="/get-started" className="btn-hero" style={{ textDecoration: 'none' }}>
             Get Started
             <svg width="10" height="10" viewBox="0 0 10 14" xmlns="http://www.w3.org/2000/svg">
@@ -834,13 +858,14 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       <section className="why">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
           <h2 className="sec-title">Why it matters ?</h2>
-          <p className="sec-sub">Forests are crucial for climate stability and biodiversity, but monitoring them has been challenging. Mynzo uses precision AI and satellite intelligence to provide real-time insights into global ecosystems.</p>
+          <p className="sec-sub">Forests are crucial for climate stability and biodiversity, but monitoring them has been challenging. Mynzo uses precision AI, satellite intelligence and field data to provide real-time insights into global ecosystems.</p>
         </div>
         <div className="why-cards">
           {[
             { title: 'Satellite Remote Sensing', desc: 'Multi-spectral imagery aids forest health assessment.', vid: '/satellite_remote_sensing.mp4', radar: true },
             { title: 'Machine Learning Models', desc: 'Machine learning helps identify changes in forest cover.', vid: '/machine_learning_models.mp4' },
             { title: 'Carbon Sequestration Analysis', desc: 'Algorithms convert forest data into carbon metrics.', vid: '/tree_analysis.mp4' },
+            { title: 'Biodiversity Assessment', desc: 'Track land use, flora, fauna, soil and water to see how the whole ecosystem changes.', icon: true },
             { title: 'Temporal Insights', desc: 'Analyze ecosystem shifts, disturbances, and long-term environmental changes across time.', vid: '/temporal_insight.mp4' },
           ].map((c, i) => (
             <article className="why-card" key={i}>
@@ -849,9 +874,19 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
                 <p className="why-card-desc">{c.desc}</p>
               </div>
               <div className="why-card-media">
-                <div className="card-vid-wrap">
-                  <BackgroundVideo src={c.vid} poster={c.vid.replace('.mp4', '.webp')} />
-                </div>
+                {c.vid ? (
+                  <div className="card-vid-wrap">
+                    <BackgroundVideo src={c.vid} poster={c.vid.replace('.mp4', '.webp')} />
+                  </div>
+                ) : (
+                  <div className="card-vid-wrap card-icon-wrap" aria-hidden="true">
+                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14z" />
+                      <path d="M5 19c3-4 6-7 10-9" />
+                      <circle cx="18" cy="17" r="1.3" /><circle cx="6.5" cy="7" r="1" /><circle cx="14.5" cy="19.5" r=".8" />
+                    </svg>
+                  </div>
+                )}
                 {c.radar && (
                   <div className="radar-wrap">
                     <div className="radar-ring"></div>
@@ -880,13 +915,14 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             <ul className="plat-strip-list">
               <li>Forest health, density, growth, and risk insights</li>
               <li>Carbon stock and sequestration tracking</li>
+              <li>Biodiversity assessment across land use, flora, fauna, soil and water</li>
               <li>Soil carbon and land health analysis</li>
               <li>Forest change and temporal monitoring</li>
               <li>Ground-truth validation through field data</li>
             </ul>
             <div className="plat-detail-links">
               <Link href="/platform/forest-monitoring" className="plat-detail-link">Explore forest monitoring <span aria-hidden="true">↗</span></Link>
-              <Link href="/platform/biodiversity-monitoring" className="plat-detail-link">Explore biodiversity monitoring <span aria-hidden="true">↗</span></Link>
+              <Link href="/#biodiversity" className="plat-detail-link">Explore biodiversity monitoring <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
           <div className="plat-strip-img plat-strip-img-right">
@@ -926,11 +962,30 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
         </div>
       </section>
 
+      {/* ── BIODIVERSITY ── */}
+      <section id="biodiversity" className="bio-sec">
+        <div className="bio-inner">
+          <p className="bio-label">Biodiversity</p>
+          <h2 className="sec-title">Trees are the start. Biodiversity is the proof.</h2>
+          <p className="sec-sub">A growing forest is not always a thriving one. Alongside carbon, Mynzo runs a dedicated biodiversity assessment to show how the whole ecosystem is changing.</p>
+          <div className="bio-cards">
+            {BIO_ITEMS.map((item, i) => (
+              <article className="bio-card" key={i}>
+                <div className="bio-card-icon" aria-hidden="true">{item.icon}</div>
+                <h3 className="bio-card-title">{item.title}</h3>
+                <p className="bio-card-desc">{item.desc}</p>
+              </article>
+            ))}
+          </div>
+          <Link href="/get-started" className="plat-detail-link">Discuss your project <span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
+
       {/* ── PROCESS ── */}
       <section className="process-sec">
         <div className="process-hdr">
-          <h2 className="sec-title">From Forest Data to Carbon Reporting</h2>
-          <p className="sec-sub">Connect satellite observations and field measurements to the evidence a carbon project needs.</p>
+          <h2 className="sec-title">From Forest Data to Carbon and Biodiversity Reporting</h2>
+          <p className="sec-sub">Connect satellite observations and field measurements to the evidence your carbon and biodiversity reporting needs.</p>
           <Link href="/platform/digital-mrv" className="plat-detail-link">Explore digital MRV <span aria-hidden="true">↗</span></Link>
         </div>
         <div className="process-inner">
@@ -940,7 +995,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
           <div>
             <div className="process-steps">
               <div className="process-steps-line"></div>
-              {['Satellite-Based Forest Mapping', 'Ground-Truth Ecological Sampling', 'AI-Driven Monitoring & Recalibration', 'Evidence for Independent Review'].map((text, i) => (
+              {['Satellite-Based Forest Mapping and Land Cover Analysis', 'Ground-Truth Ecological and Biodiversity Sampling', 'AI-Driven Monitoring & Recalibration', 'Evidence for Independent Review'].map((text, i) => (
                 <div className="process-step" key={i}>
                   <div className="process-step-num">{i + 1}</div>
                   <div className="process-step-text">{text}</div>
@@ -1028,8 +1083,8 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             <h2 className="serve-title">Built for Every Stakeholder</h2>
             <div className="serve-items">
               {[
-                { idx: '01', title: 'Corporates', desc: 'Manage net-zero portfolios with full visibility and control' },
-                { idx: '02', title: 'Project Developers', desc: 'Plan forest monitoring and prepare evidence for project review', href: '/solutions/project-developers' },
+                { idx: '01', title: 'Corporates', desc: 'Manage net-zero and nature portfolios with full visibility and control' },
+                { idx: '02', title: 'Project Developers', desc: 'Plan forest and biodiversity monitoring and prepare evidence for project review', href: '/solutions/project-developers' },
                 { idx: '03', title: 'Governments & Institutions', desc: 'Track biodiversity and carbon across large ecosystems' },
               ].map((item, i) => (
                 <div className="serve-item" key={i}>
@@ -1059,7 +1114,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
         <div className="reni-content">
           <div className="reni-text-backdrop">
             <h2 className="reni-title"></h2>
-            <p className="reni-sub">Explore questions about forest condition, site records and carbon estimates with Reni.</p>
+            <p className="reni-sub">Explore questions about forest condition, site records, biodiversity and carbon estimates with Reni.</p>
           </div>
           <div className="reni-chat">
             <div className="reni-titlebar">
@@ -1082,6 +1137,8 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
               <button className="reni-chip" data-query="Survivability across my sites?">Survivability across my sites?</button>
               <button className="reni-chip" data-query="Which assets are underperforming?">Which assets are underperforming?</button>
               <button className="reni-chip" data-query="Credits I can issue this year?">Credits I can issue this year?</button>
+              <button className="reni-chip" data-query="Which fauna were recorded this quarter?">Which fauna were recorded this quarter?</button>
+              <button className="reni-chip" data-query="How has land cover changed at my sites?">How has land cover changed at my sites?</button>
               <button className="reni-chip" data-query="What does Mynzo do?">What does Mynzo do?</button>
               <button className="reni-chip" data-query="Total trees planted?">Total trees planted?</button>
               <button className="reni-chip" data-query="How can you help me?">How can Reni help?</button>
@@ -1166,7 +1223,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
           </div>
           <div className="cta-body">
             <h3 className="cta-title">Transform Forest Monitoring</h3>
-            <p className="cta-desc">Schedule a demo to see how mynzo revolutionizes forest intelligence.</p>
+            <p className="cta-desc">Schedule a demo to see how mynzo revolutionizes forest and biodiversity intelligence.</p>
             <Link href="/get-started" className="btn-cta" style={{ textDecoration: 'none' }}>Get Started</Link>
           </div>
         </div>
