@@ -27,13 +27,13 @@ const BIO_ICON = { width: 32, height: 32, viewBox: '0 0 24 24', fill: 'none', st
 const BIO_ITEMS = [
   { title: 'Land Use & Land Cover (LULC)', desc: 'See how land use and habitat cover change over time, mapped from satellite imagery.',
     icon: <svg {...BIO_ICON}><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></svg> },
-  { title: 'Flora', desc: 'Record plant species across your sites and see how they change over time.',
+  { title: 'Flora', desc: 'Record vegetation type, structure, canopy cover and disturbance on the mobile app across your sites.',
     icon: <svg {...BIO_ICON}><path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1" /><circle cx="12" cy="8" r="2" /><path d="M12 10v12" /><path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" /><path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" /></svg> },
   { title: 'Fauna', desc: 'Capture wildlife through geo-tagged photos, videos and audio recorded in the field.',
     icon: <svg {...BIO_ICON}><path d="M16 7h.01" /><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20" /><path d="m20 7 2 .5-2 .5" /><path d="M10 18v3" /><path d="M14 17.75V21" /><path d="M7 18a6 6 0 0 0 3.84-10.61" /></svg> },
-  { title: 'Soil', desc: 'Track soil health through lab-tested samples collected across the project life.',
+  { title: 'Soil', desc: 'Track soil health through lab-tested samples and ground-collected data across the project life.',
     icon: <svg {...BIO_ICON}><path d="M21.56 4.56a1.5 1.5 0 0 1 0 2.122l-.47.47a3 3 0 0 1-4.212-.03 3 3 0 0 1 0-4.243l.44-.44a1.5 1.5 0 0 1 2.121 0z" /><path d="M3 22a1 1 0 0 1-1-1v-3.586a1 1 0 0 1 .293-.707l3.355-3.355a1.205 1.205 0 0 1 1.704 0l3.296 3.296a1.205 1.205 0 0 1 0 1.704l-3.355 3.355a1 1 0 0 1-.707.293z" /><path d="m9 15 7.879-7.878" /></svg> },
-  { title: 'Water', desc: 'Monitor water quality through lab-tested samples from your sites.',
+  { title: 'Water', desc: 'Monitor water quality through lab-tested samples and ground-collected data from your sites.',
     icon: <svg {...BIO_ICON}><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" /><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" /></svg> },
 ];
 
