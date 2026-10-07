@@ -15,12 +15,10 @@ const TEAM = [
   { name: 'R. Ravi Kiran', role: 'Head of Product', img: `${S3}/r_ravi_kiran.png`, bio: "Product strategy expert leading the development of innovative forest monitoring solutions and user experience design." },
   { name: 'Amit Gupta', role: 'Head of Technology', img: `${S3}/amit_gupta.png`, bio: "Technology leader designing robust AI systems and satellite data processing frameworks to power Mynzo's forest intelligence platform." },
   { name: 'Jitendra Gadhwal', role: 'Tech Lead', img: `${S3}/jitendra_gadhwal.png`, bio: "Engineering leader overseeing architecture and delivery of scalable systems at the core of Mynzo's platform." },
-  { name: 'Ayush Chandrakar', role: 'Senior Data Scientist', img: `${S3}/ayush_chandrakar.png`, bio: "Data science expert building the models and pipelines that turn satellite signals into actionable forest insights." },
   { name: 'Shivang Tripathi', role: 'Full Stack Engineer', img: `${S3}/shivang_tripathi.png`, bio: "Full-stack engineer crafting seamless end-to-end experiences across Mynzo's web platform and data interfaces." },
   { name: 'Abhishek Tripathi', role: 'Full Stack Engineer', img: `${S3}/abhishek_tripathi.png`, bio: "Versatile engineer bridging front-end and back-end development to deliver robust, performant features at scale." },
   { name: 'Srishti Purohit', role: 'QA Engineer', img: `${S3}/srishti_purohit.png`, bio: "Quality assurance engineer ensuring every feature meets the highest standards of reliability and precision before it reaches our users." },
   { name: 'Mehak Maini', role: 'UX/UI Designer', img: `${S3}/mehak_maini.png`, bio: "Designer translating complex environmental data into intuitive, elegant interfaces that make forest intelligence accessible to all." },
-  { name: 'Ahilya Dang', role: 'Storyteller', img: `${S3}/ahilya_dang.png`, bio: "Communicator and narrative strategist bringing Mynzo's climate mission to life through compelling stories and purposeful content." },
 ];
 
 // ─── Blog posts — imported from shared data so slugs stay in sync ────────────
