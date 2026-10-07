@@ -866,7 +866,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
             { title: 'Satellite Remote Sensing', desc: 'Multi-spectral imagery aids forest health assessment.', vid: '/satellite_remote_sensing.mp4', radar: true },
             { title: 'Machine Learning Models', desc: 'Machine learning helps identify changes in forest cover.', vid: '/machine_learning_models.mp4' },
             { title: 'Carbon Sequestration Analysis', desc: 'Algorithms convert forest data into carbon metrics.', vid: '/tree_analysis.mp4' },
-            { title: 'Biodiversity Assessment', desc: 'Track land use, flora, fauna, soil and water to see how the whole ecosystem changes.', icon: true },
+            { title: 'Biodiversity Assessment', desc: 'Satellite imagery and field sampling track habitat, species, soil and water health.', icon: true },
             { title: 'Temporal Insights', desc: 'Analyze ecosystem shifts, disturbances, and long-term environmental changes across time.', vid: '/temporal_insight.mp4' },
           ].map((c, i) => (
             <article className="why-card" key={i}>
@@ -967,7 +967,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
       <section id="biodiversity" className="bio-sec">
         <div className="bio-inner">
           <p className="bio-label">Biodiversity</p>
-          <h2 className="sec-title">Biodiversity, measured alongside carbon</h2>
+          <h2 className="sec-title">Beyond Carbon: Measuring Biodiversity</h2>
           <p className="sec-sub">Mynzo runs a dedicated biodiversity assessment next to carbon monitoring, combining satellite imagery with field samples to show how the whole ecosystem is changing.</p>
           <div className="bio-cards">
             {BIO_ITEMS.map((item, i) => (
