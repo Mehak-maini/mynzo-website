@@ -83,6 +83,7 @@ export const biodiversityMetricsPost: StaticPost = {
 
     <h2 id="monitoring-brief">A brief your monitoring team can work from</h2>
     <p>For each proposed metric, complete one row with: the decision, ecological objective, definition, unit, baseline, method, timing, responsible person, quality check and action threshold. Mark anything unknown instead of filling the gap with an assumption. Have the ecological team review the design before setting targets.</p>
+    <p>If a selected metric depends on habitat area, first agree how that habitat will be mapped. Use the <a href="/blog/habitat-mapping">habitat mapping guide</a> to define classes, observation dates and independent checks before interpreting mapped change.</p>
     <p><a href="/resources/biodiversity-monitoring-brief.txt" download>Download the biodiversity monitoring brief</a>. It is an editable text template with no registration required.</p>
     <p>Explore <a href="/platform/biodiversity-monitoring">biodiversity monitoring with Mynzo</a>, the underlying <a href="/platform/forest-monitoring">forest monitoring approach</a>, or our work with <a href="/solutions/project-developers">project developers</a>. To discuss a site, <a href="/get-started?interest=biodiversity-monitoring&amp;source=biodiversity-guide">share your monitoring question and available evidence</a>.</p>
     <p><em>Sources checked on 18 September 2026. This guide separates general ecological methods from Mynzo's product scope and from framework-specific requirements.</em></p>

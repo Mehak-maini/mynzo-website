@@ -1,6 +1,7 @@
 import { biodiversityMetricsPost } from './biodiversityMetricsPost';
 import { agroforestryPost } from './agroforestryPost';
 import { restorationMonitoringPost } from './restorationMonitoringPost';
+import { habitatMappingPost } from './habitatMappingPost';
 
 export interface StaticPost {
   slug: string;
@@ -18,6 +19,7 @@ export interface StaticPost {
 }
 
 export const STATIC_POSTS: StaticPost[] = [
+  habitatMappingPost,
   restorationMonitoringPost,
   biodiversityMetricsPost,
   {

@@ -47,6 +47,16 @@ for url in urls:
     if path.startswith('/blog/'):
         graph=page.schemas[0]['@graph'];article=next(x for x in graph if x['@type']=='BlogPosting')
         assert article['url']==url and article['headline'] and article['publisher']
+        if path=='/blog/habitat-mapping':
+            assert article['datePublished']=='2026-10-08' and article['dateModified']=='2026-10-08'
+            assert page.h1_count==1 and '/#team' in page.links
+            assert '/resources/habitat-mapping-brief.txt' in page.links
+            assert '/platform/biodiversity-monitoring' in page.links
+            assert page.links.count('/get-started?interest=biodiversity-monitoring&source=habitat-mapping-guide')==2
+            assert len(page.ids)==len(set(page.ids))
+            assert not any('\u2014' in text for text in page.text)
+            for link in page.links:
+                if link.startswith('#'): assert link[1:] in page.ids,(path,link)
         if path=='/blog/how-ai-is-revolutionising-forest-carbon-accounting':
             assert article['datePublished']=='2025-04-12'
             assert article['dateModified']=='2026-09-13'
@@ -87,6 +97,7 @@ for url in urls:
         assert '\u2014' not in content,path
         assert '/get-started' in page.links
         if path in ['/platform/biodiversity-monitoring', '/solutions/project-developers']:
+            assert '/blog/habitat-mapping' in page.links
             assert next(x for x in graph if x['@type']=='WebPage')['dateModified']=='2026-09-18'
             assert '/blog/biodiversity-metrics-for-restoration-projects' in page.links
             interest,source=('biodiversity-monitoring','biodiversity-monitoring') if path.startswith('/platform/') else ('forest-monitoring','project-developers')
@@ -107,6 +118,8 @@ assert canonical_base+'/platform/biodiversity-monitoring' in urls
 assert canonical_base+'/solutions/project-developers' in urls
 assert canonical_base+'/blog/biodiversity-metrics-for-restoration-projects' in urls
 assert canonical_base+'/blog/restoration-monitoring-plan' in urls
+assert canonical_base+'/blog/habitat-mapping' in urls
+status,habitat_brief,_=fetch('/resources/habitat-mapping-brief.txt');assert status==200 and 'source=habitat-mapping-guide' in habitat_brief
 status,checklist,_=fetch('/resources/restoration-monitoring-plan.txt');assert status==200 and 'source=restoration-guide' in checklist
 status,brief,_=fetch('/resources/biodiversity-monitoring-brief.txt');assert status==200 and 'biodiversity' in brief.lower()
 status,robots,_=fetch('/robots.txt');assert status==200 and canonical_base+'/sitemap.xml' in robots

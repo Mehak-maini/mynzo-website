@@ -48,6 +48,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
           </div>
           <p><a href="https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Four_ways_that_space_is_changing_ecosystem_monitoring">ESA&apos;s ecosystem-monitoring projects</a> demonstrate satellite measures such as habitat fragmentation, vegetation seasonality and canopy chlorophyll. These describe particular ecosystem characteristics. They are not interchangeable with a count of species living at a site.</p>
           <p>More tree cover can be useful evidence for a forest project, but it does not by itself show that native species have returned. Assess the ecological outcome against the project&apos;s stated goal.</p>
+          <p>Before commissioning a baseline, use our <a href="/blog/habitat-mapping">habitat mapping guide</a> to define the map classes, observation dates and field checks. It includes an editable brief for agreeing what the delivered map needs to show.</p>
         </>
       ),
     },

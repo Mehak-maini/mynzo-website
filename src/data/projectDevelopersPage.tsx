@@ -71,6 +71,7 @@ export const projectDevelopersPage: PlatformPageData = {
       body: <>
         <p>If your project reports habitat recovery as well as carbon, define both sets of questions at the start. A growing canopy does not, by itself, demonstrate recovery of native species or habitat quality. Agree which habitat observations can inform the assessment and which species questions require ecological surveys.</p>
         <p>Use the <a href="/blog/biodiversity-metrics-for-restoration-projects">restoration metrics guide</a> to prepare a discussion with your ecological team, then explore <a href="/platform/biodiversity-monitoring">biodiversity monitoring</a> with Mynzo. Confirm the indicators, field responsibilities and geographic suitability before committing to a reporting claim.</p>
+        <p>If the project needs a habitat baseline, our <a href="/blog/habitat-mapping">habitat mapping guide and commissioning brief</a> cover classification, mapping scale, field validation and the records to request with the map.</p>
         <p><a href="https://globalgoals.goldstandard.org/nature-activities-hub/">Gold Standard’s Nature Activities Hub</a> lists methodology, safeguarding and stakeholder requirements separately. A monitoring contract should identify the evidence it supplies and the wider project obligations that remain with the developer.</p>
       </>,
     },

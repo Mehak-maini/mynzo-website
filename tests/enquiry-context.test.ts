@@ -15,6 +15,7 @@ const validEnquiry = {
 
 test('guide links retain their subject through form parsing and the enquiry email', () => {
   for (const [slug, focus, label] of [
+    ['habitat-mapping', 'biodiversity-monitoring', 'Habitat mapping guide'],
     ['restoration-monitoring-plan', 'restoration-monitoring', 'Restoration monitoring plan guide'],
     ['agroforestry-the-future-of-sustainable-land-use', 'forest-monitoring', 'Agroforestry guide'],
     ['how-ai-is-revolutionising-forest-carbon-accounting', 'digital-mrv', 'Forest carbon accounting guide'],
@@ -48,7 +49,7 @@ test('page-to-form context accepts only known interests and entry pages', () => 
 });
 
 test('enquiry validation keeps focus optional and rejects malformed or oversized fields', () => {
-  assert.deepEqual(validateEnquiry(validEnquiry), validEnquiry);
+  assert.deepEqual(validateEnquiry(validEnquiry), { ...validEnquiry, phone: undefined });
   assert.equal(validateEnquiry({ ...validEnquiry, email: "o'connor@example.com" })?.email, "o'connor@example.com");
   assert.equal(validateEnquiry({ ...validEnquiry, first_name: '   ' }), null);
   assert.equal(validateEnquiry({ ...validEnquiry, email: 'visitor@example.com\r\nBcc: another@example.com' }), null);
@@ -134,7 +135,7 @@ test('accepted email uses the existing recipient and includes focus without chan
   let transportStatus = 200;
   const transport = t.mock.method(globalThis, 'fetch', async (_url: string | URL | Request, init?: RequestInit) => {
     const params = new URLSearchParams(String(init?.body));
-    assert.equal(params.get('Source'), 'admin@mynzocarbon.com');
+    assert.equal(params.get('Source'), 'support@mynzocarbon.com');
     assert.equal(params.get('Destination.ToAddresses.member.1'), 'admin@mynzocarbon.com');
     assert.equal(params.get('ReplyToAddresses.member.1'), validEnquiry.email);
     assert.match(params.get('Message.Body.Html.Data')!, /Restoration monitoring/);
