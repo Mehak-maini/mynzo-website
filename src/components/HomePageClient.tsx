@@ -1138,7 +1138,7 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
                 <Link href={`/blog/${p.slug}`} className="blog2-card" key={i}>
                   <div className="blog2-img">
                     {imgSrc
-                      ? <img loading="lazy" decoding="async" src={imgSrc} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      ? <img loading="lazy" decoding="async" src={imgSrc} alt={p.imgAlt || p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                       : <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg,#d6ebf1,rgba(89,132,147,0.12))' }} />
                     }
                   </div>

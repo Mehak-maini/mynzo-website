@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { getPublishedPosts } from '@/lib/posts';
 import { pageMetadata } from '@/lib/seo';
+import { EDUCATION_TOPICS } from '@/lib/education-guides';
 
 export const revalidate = 300;
-export const metadata = pageMetadata('/blog', 'Forest Monitoring & Carbon Insights | Mynzo Talks', 'Explore Mynzo insights on forest monitoring, carbon accounting, agroforestry, soil carbon and climate action.');
+export const metadata = pageMetadata('/blog', 'Forests, Biodiversity & Climate Guides | Mynzo Talks', 'Learn about biodiversity, forests, soil carbon, farming, wetlands and climate terms, with practical examples and sources from India and around the world.');
 
 export default async function BlogPage() {
   const docs = await getPublishedPosts();
@@ -12,10 +13,17 @@ export default async function BlogPage() {
     <div style={{ background: '#fff' }}>
       <div className="hero-banner">
         <h1>Mynzo Talks</h1>
-        <p>Insights on forests, carbon markets, and precision monitoring</p>
+        <p>Clear guides to forests, biodiversity, soil and climate</p>
       </div>
 
       <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '64px 64px 100px' }}>
+        <nav aria-label="Explore educational topics" style={{ marginBottom: '36px', display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+          {EDUCATION_TOPICS.map(topic => (
+            <Link key={topic.href} href={topic.href} style={{ color: '#3D5A70', background: '#eaf4f7', padding: '10px 16px', borderRadius: '24px', fontFamily: 'var(--font-nunito)', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
+              {topic.label}
+            </Link>
+          ))}
+        </nav>
         <div className="blogs2-grid">
           {docs.map(post => {
             const { slug, tag, tagBg, tagColor, excerpt, date, readTime, img: imgSrc } = post;
@@ -24,7 +32,7 @@ export default async function BlogPage() {
               <Link href={`/blog/${slug}`} className="blog2-card" key={slug}>
                 <div className="blog2-img">
                   {imgSrc
-                    ? <img loading="lazy" decoding="async" src={imgSrc} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    ? <img loading="lazy" decoding="async" src={imgSrc} alt={post.imgAlt || post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                     : <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg,#d6ebf1,rgba(89,132,147,0.12))' }} />
                   }
                 </div>

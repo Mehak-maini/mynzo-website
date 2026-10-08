@@ -5,6 +5,7 @@ import { getPost } from '@/lib/posts';
 import { pageMetadata, SITE_URL, organization } from '@/lib/seo';
 import JsonLd from '@/components/JsonLd';
 import { articleEnquiry } from '@/lib/article-enquiry';
+import { educationReading } from '@/lib/education-guides';
 
 export const revalidate = 300;
 
@@ -22,7 +23,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
   const { tag, tagBg, tagColor, date, readTime, author, img: imgSrc, content } = post;
   const url = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
-  const enquiry = articleEnquiry(post.slug);
+  const enquiry = educationReading(post.slug) || articleEnquiry(post.slug);
 
   return (
     <div style={{ background: '#fff' }}>
@@ -38,15 +39,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {imgSrc && (
         <div style={{ width: '100%', height: '420px', overflow: 'hidden', position: 'relative' }}>
           {imgSrc.startsWith('/') ? (
-            <Image src={imgSrc} alt={post.title} fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
+            <Image src={imgSrc} alt={post.imgAlt || post.title} fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
           ) : (
-            <img src={imgSrc} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
+            <img src={imgSrc} alt={post.imgAlt || post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
           )}
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.45))' }} />
         </div>
       )}
 
-      <div style={{ maxWidth: '760px', margin: '0 auto', padding: '56px 32px 100px' }}>
+      <div style={{ maxWidth: '760px', margin: '0 auto', padding: `${imgSrc ? '56px' : '120px'} 32px 100px` }}>
 
         {/* Back link */}
         <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--teal)', textDecoration: 'none', fontSize: '14px', fontFamily: 'var(--font-nunito)', fontWeight: 600, marginBottom: '32px' }}>

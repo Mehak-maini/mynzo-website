@@ -9,6 +9,7 @@ export interface Post {
   updatedAt?: string;
   readTime: string;
   img: string | null;
+  imgAlt?: string;
   tag: string;
   tagBg: string;
   tagColor: string;
@@ -48,6 +49,7 @@ export function normalizePost(raw: Record<string, any>, source: 'cms' | 'static'
     author: raw.author || 'Mynzo Team', date: displayDate(publishedAt, originalDate), publishedAt,
     updatedAt: normalizeDate(raw.updatedAt), readTime: raw.readTime || '',
     img: source === 'static' ? raw.img : raw.coverImage?.url || raw.coverImageUrl || null,
+    imgAlt: source === 'static' ? raw.imgAlt : raw.coverImage?.alt,
     tag: source === 'static' ? raw.tag : raw.category || 'Research',
     tagBg: raw.tagBg || '#EBF7F0', tagColor: raw.tagColor || '#1A7A4A',
   };

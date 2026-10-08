@@ -2,6 +2,9 @@ import { biodiversityMetricsPost } from './biodiversityMetricsPost';
 import { agroforestryPost } from './agroforestryPost';
 import { restorationMonitoringPost } from './restorationMonitoringPost';
 import { habitatMappingPost } from './habitatMappingPost';
+import { educationForestPosts } from './educationForestPosts';
+import { educationSoilPosts } from './educationSoilPosts';
+import { educationCoastPosts } from './educationCoastPosts';
 
 export interface StaticPost {
   slug: string;
@@ -14,11 +17,15 @@ export interface StaticPost {
   updatedAt?: string;
   readTime: string;
   img: string;
+  imgAlt?: string;
   author: string;
   content: string;
 }
 
 export const STATIC_POSTS: StaticPost[] = [
+  ...educationForestPosts,
+  ...educationSoilPosts,
+  ...educationCoastPosts,
   habitatMappingPost,
   restorationMonitoringPost,
   biodiversityMetricsPost,
@@ -99,33 +106,4 @@ export const STATIC_POSTS: StaticPost[] = [
     `,
   },
   agroforestryPost,
-  {
-    slug: 'understanding-soil-carbon-the-hidden-climate-solution',
-    tag: 'Soil Science',
-    tagBg: '#F5F0FF',
-    tagColor: '#5A1A7A',
-    title: 'Understanding Soil Carbon: The Hidden Climate Solution',
-    excerpt: "Soil holds more carbon than the atmosphere and all plants combined. Here's why measuring it accurately matters most.",
-    date: 'March 10, 2025',
-    readTime: '6',
-    img: 'https://mynzocarbon-website.s3.ap-south-1.amazonaws.com/tree_trunk_jpg.jpeg',
-    author: 'Mynzo Team',
-    content: `
-      <h2>The World Beneath Our Feet</h2>
-      <p>Soil is the planet's largest terrestrial carbon reservoir. Global soils store an estimated 1,500–2,400 gigatonnes of organic carbon — roughly three times the amount in the atmosphere and four times the amount in all living vegetation combined. Yet soil carbon receives a fraction of the attention given to forests in climate policy discussions.</p>
-      <p>This is beginning to change. As the scientific community deepens its understanding of soil carbon dynamics, and as measurement technologies improve, soil organic carbon (SOC) is emerging as one of the most promising — and complex — frontiers in carbon markets.</p>
-
-      <h2>How Soil Stores Carbon</h2>
-      <p>Plants draw CO₂ from the atmosphere through photosynthesis and convert it to organic matter. When plant material dies and decomposes, a portion of that carbon is incorporated into the soil by microbial activity, where it can persist for decades to millennia depending on soil type, climate, and land management practices.</p>
-      <p>Healthy soils with high organic matter content are darker, more crumbly, and more biologically active. They retain water better, require less fertiliser, and support higher crop yields. The relationship between soil health and agricultural productivity is direct — which is why improving SOC is simultaneously a climate intervention and a farming intervention.</p>
-
-      <h2>The Measurement Challenge</h2>
-      <p>Unlike above-ground biomass, which can be estimated from satellite imagery of tree canopies, soil carbon is invisible from space. Traditional measurement requires collecting soil cores at multiple depths, drying and grinding samples, and running laboratory analyses — a process that costs hundreds of dollars per hectare and cannot be done at the landscape scale required for carbon markets.</p>
-      <p>Several approaches are emerging to address this. Proximal sensing using near-infrared spectroscopy can analyse dozens of samples per hour in the field. Satellite-derived soil reflectance data, combined with machine learning models trained on laboratory reference datasets, can predict SOC across large areas. And emerging environmental DNA techniques can characterise the microbial communities that mediate carbon storage.</p>
-
-      <h2>Why It Matters for Carbon Markets</h2>
-      <p>Soil carbon projects face a fundamental credibility challenge: permanence. Unlike a standing forest, which provides a visible, monitorable carbon store, soil carbon can be released rapidly if land management changes. A farmer who switches from regenerative practices back to tillage can lose years of accumulated SOC in a single season.</p>
-      <p>Rigorous monitoring, reporting, and verification protocols are essential to ensure that soil carbon credits represent genuine, durable removals. This requires not just accurate baseline measurement, but ongoing monitoring using the same methods — creating a data infrastructure that must be maintained for decades. Getting this right is one of the most important challenges in building a credible voluntary carbon market for the agricultural sector.</p>
-    `,
-  },
 ];
