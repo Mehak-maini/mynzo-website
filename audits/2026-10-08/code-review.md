@@ -1,0 +1,14 @@
+# Code review, 8 October 2026
+
+Reviewed the current unstaged diff against main `32d183a421f99b3940b9d6ed7ed914eab53e5691`. Read-only review; no tests, build, forms or network requests run.
+
+**Actionable bugs found in the reviewed changes: none.**
+
+- Enquiry context: the `habitat-mapping` article CTA and downloadable brief both use `interest=biodiversity-monitoring&source=habitat-mapping-guide`. The source is added to the shared allowlist. The existing parser, API validation, HTML/text email builder and analytics normalizer retain this allowlisted context. The new test follows the article link through parsing, validation and both email formats.
+- Existing contact behavior is preserved: the get-started page and contact API have no diff against main. The optional `phone` input, 30-character bound, submitted value and email row remain. The only change in `enquiry-context.ts` is the new source entry. The sender remains `support@mynzocarbon.com`, recipient `admin@mynzocarbon.com`, and reply-to the submitted email.
+- Test expectation corrections are accurate: main already returns an explicit `phone: undefined` when omitted and already uses the support sender. Updating these expectations does not alter or weaken the production behavior being asserted.
+- SEO verifier additions are consistent with the existing page template and parser: they require the new canonical sitemap URL, publication/update dates, one H1, team attribution link, resource link, biodiversity platform link, two contextual enquiry links, unique IDs, valid fragment targets and no em dashes. Python's HTML parser decodes `&amp;` in attributes, so the exact enquiry href comparison is appropriate. The added platform backlinks are also asserted. Existing root canonical equivalence is retained.
+- The new guide's static registration is present, but `src/data/habitatMappingPost.ts` was not yet on disk during this review. Its body, metadata, image, CTA count, fragment targets and compatibility with these assertions were not reviewed. Treat this as the known pending agent dependency, not a completed article check. The CMS can override a matching static slug; the root's rendered verification remains necessary.
+- Privacy boundary: nothing is staged, and no `audits/*/*gsc*` or `audits/*/*local*` file is tracked at review time. Keep `audits/2026-10-08/gsc-comparison.local.json`, `measurement.local.json`, `findings.local.md`, prior private baseline files and other account evidence outside the PR. They are untracked, not protected by a general ignore rule. Recommended application staging is the eight explicitly changed code/test/verifier files, the completed article file and the public habitat brief; review any public research or planning document separately. Do not stage the entire audits directory.
+
+This review does not establish passing tests, a successful build, production deployment, form delivery, indexing or measured growth.

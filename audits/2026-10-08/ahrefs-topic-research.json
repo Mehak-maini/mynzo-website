@@ -1,0 +1,764 @@
+{
+  "date": "2026-10-08",
+  "keywords": [
+    {
+      "args": {
+        "country": "in",
+        "keywords": "habitat mapping,habitat mapping methods,habitat mapping remote sensing,biodiversity mapping,soil carbon measurement,soil carbon testing,soil carbon sequestration",
+        "select": "keyword,volume,global_volume,difficulty,cpc,intents,serp_last_update,parent_topic",
+        "limit": 30,
+        "output": "json"
+      },
+      "data": {
+        "keywords": [
+          {
+            "keyword": "soil carbon sequestration",
+            "volume": 150,
+            "global_volume": 800,
+            "difficulty": 31,
+            "cpc": 10,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": "2026-09-15T13:07:02Z",
+            "parent_topic": "soil carbon sequestration"
+          },
+          {
+            "keyword": "biodiversity mapping",
+            "volume": 60,
+            "global_volume": 150,
+            "difficulty": 0,
+            "cpc": 6,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": "2026-10-01T01:12:16Z",
+            "parent_topic": "biodiversity mapping"
+          },
+          {
+            "keyword": "soil carbon measurement",
+            "volume": 0,
+            "global_volume": 20,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {},
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "habitat mapping",
+            "volume": 20,
+            "global_volume": 450,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {},
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "soil carbon testing",
+            "volume": 0,
+            "global_volume": 60,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {},
+            "serp_last_update": null,
+            "parent_topic": null
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "us",
+        "keywords": "habitat mapping,habitat mapping methods,habitat mapping remote sensing,biodiversity mapping,soil carbon measurement,soil carbon testing,soil carbon sequestration",
+        "select": "keyword,volume,global_volume,difficulty,cpc,intents,serp_last_update,parent_topic",
+        "limit": 30,
+        "output": "json"
+      },
+      "data": {
+        "keywords": [
+          {
+            "keyword": "soil carbon sequestration",
+            "volume": 300,
+            "global_volume": 800,
+            "difficulty": 40,
+            "cpc": 40,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": "2026-10-06T22:38:52Z",
+            "parent_topic": "soil carbon sequestration"
+          },
+          {
+            "keyword": "habitat mapping",
+            "volume": 40,
+            "global_volume": 450,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "soil carbon measurement",
+            "volume": 20,
+            "global_volume": 20,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "soil carbon testing",
+            "volume": 10,
+            "global_volume": 60,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {},
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "biodiversity mapping",
+            "volume": 30,
+            "global_volume": 150,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": null,
+            "parent_topic": null
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "gb",
+        "keywords": "habitat mapping,habitat mapping methods,habitat mapping remote sensing,biodiversity mapping,soil carbon measurement,soil carbon testing,soil carbon sequestration",
+        "select": "keyword,volume,global_volume,difficulty,cpc,intents,serp_last_update,parent_topic",
+        "limit": 30,
+        "output": "json"
+      },
+      "data": {
+        "keywords": [
+          {
+            "keyword": "habitat mapping",
+            "volume": 100,
+            "global_volume": 450,
+            "difficulty": 2,
+            "cpc": null,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": "2026-09-19T14:31:21Z",
+            "parent_topic": "habitat mapping"
+          },
+          {
+            "keyword": "biodiversity mapping",
+            "volume": 50,
+            "global_volume": 150,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "soil carbon sequestration",
+            "volume": 30,
+            "global_volume": 800,
+            "difficulty": 19,
+            "cpc": 25,
+            "intents": {
+              "informational": true,
+              "navigational": false,
+              "commercial": false,
+              "transactional": false,
+              "branded": false,
+              "local": false
+            },
+            "serp_last_update": "2026-09-17T19:06:23Z",
+            "parent_topic": "carbon sequestration meaning"
+          },
+          {
+            "keyword": "soil carbon measurement",
+            "volume": 0,
+            "global_volume": 20,
+            "difficulty": null,
+            "cpc": null,
+            "intents": {},
+            "serp_last_update": null,
+            "parent_topic": null
+          },
+          {
+            "keyword": "soil carbon testing",
+            "volume": 0,
+            "global_volume": 60,
+            "difficulty": null,
+            "cpc": 190,
+            "intents": {},
+            "serp_last_update": null,
+            "parent_topic": null
+          }
+        ]
+      }
+    }
+  ],
+  "serps": [
+    {
+      "args": {
+        "country": "in",
+        "keyword": "biodiversity mapping",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "data": {
+        "positions": [
+          {
+            "position": 1,
+            "title": null,
+            "url": null,
+            "type": [
+              "ai_overview"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 1,
+            "title": "Mapping the World's Biodiversity",
+            "url": "https://biodiversitymapping.org/",
+            "type": [
+              "ai_overview_sitelink",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 1,
+            "title": "Map of Biodiversity Importance - NatureServe",
+            "url": "https://www.natureserve.org/map-biodiversity-importance",
+            "type": [
+              "ai_overview_sitelink",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 1,
+            "title": "Biodiversity Mapping - Definitions & FAQs - Atlas",
+            "url": "https://atlas.co/glossary/biodiversity-mapping/",
+            "type": [
+              "ai_overview_sitelink"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 2,
+            "title": "Mapping biodiversity conservation priorities for ...",
+            "url": "https://www.springerprofessional.de/mapping-biodiversity-conservation-priorities-for-threatened-plan/25283120",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": "/Article,/Article/Study_or_Research_Findings",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 3,
+            "title": "Mapping Biodiversity",
+            "url": "https://www.ateliergapont.li/research/mapping-biodiversity",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": "/Article,/Article/Study_or_Research_Findings",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 4,
+            "title": "What are biodiversity 3 types?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 4,
+            "title": "What is mapping with an example?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 4,
+            "title": "Who is called the father of biodiversity?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 4,
+            "title": "How to make a biodiversity map?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 5,
+            "title": "Mumbai's biodiversity map is now interactive",
+            "url": "https://www.mid-day.com/lifestyle/culture/article/mumbai-biodiversity-map-is-now-interactive-23181036",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": "/Article,/Article/News_Update",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 6,
+            "title": "Mapping the biodiversity corridor between Amazonian and ...",
+            "url": "https://cobracollective.org/projects/mapping-the-biodiversity-corridor-between-amazonian-and-guiana-shield-watersheds.php",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Article,/Article/Study_or_Research_Findings",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 7,
+            "title": "Mapping-of-Microbial-bioresources-and-their-biopotential. ...",
+            "url": "https://www.odishabiodiversityboard.in/assets/Ongoing-Research-projects/Mapping-of-Microbial-bioresources-and-their-biopotential.pdf",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Document,/Document/Research_Paper",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 8,
+            "title": "Ministry of Mumbai's Magic creates unique, interactive ...",
+            "url": "https://www.moneycontrol.com/news/environment/ministry-of-mumbais-magic-creates-unique-interactive-biodiversity-map-of-city-7113771.html",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Article,/Article/News_Update",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 9,
+            "title": "MAPPING ST HELENA'S BIODIVERSITY AND NATURAL ...",
+            "url": "https://www.sainthelena.gov.sh/mapping-st-helenas-biodiversity-and-natural-environment/",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Article,/Article/Study_or_Research_Findings",
+            "update_date": "2026-10-01T01:12:16Z"
+          },
+          {
+            "position": 10,
+            "title": "Biodiversity Map",
+            "url": "https://saintlucianationaltrust.com/biodiversity-map-2/",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Image,/Image/Mapographic",
+            "update_date": "2026-10-01T01:12:16Z"
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "us",
+        "keyword": "habitat mapping",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "data": {
+        "positions": [
+          {
+            "position": 1,
+            "title": "Habitat Mapping and Modeling | U.S. Geological Survey",
+            "url": "https://www.usgs.gov/centers/forest-and-rangeland-ecosystem-science-center/science/habitat-mapping-and-modeling",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 2,
+            "title": "How do you map a habitat?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 2,
+            "title": "What is the meaning of habitat map?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 2,
+            "title": "What is marine habitat mapping?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 2,
+            "title": "What is the essential habitat mapper?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 3,
+            "title": "Habitat Mapping",
+            "url": "https://sustainablecitycode.org/brief/habitat-mapping/",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 4,
+            "title": "Habitat mapping",
+            "url": "https://greenschoolsireland.org/wp-content/uploads/2016/08/Habitat_mapping.pdf",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 5,
+            "title": "Mapping habitats to describe ecosystems",
+            "url": "https://www.eea.europa.eu/highlights/mapping-habitats-to-describe-ecosystems",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 6,
+            "title": "Habitat Mapping and Characterization - nccos - NOAA",
+            "url": "https://coastalscience.noaa.gov/science-areas/habitat-mapping-and-characterization/",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 7,
+            "title": "A global map of terrestrial habitat types - Nature",
+            "url": "https://www.nature.com/articles/s41597-020-00599-8",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 8,
+            "title": "What is a Benthic Habitat Map? \u2013 C-SCAMP",
+            "url": "https://www.marine.usf.edu/scamp/about/what-is-a-benthic-habitat-map/",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 9,
+            "title": "Habitat Mapping of Ocean Floor Using GIS",
+            "url": "https://www.livingoceansfoundation.org/science/habitat-mapping/",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": "/Article,/Article/Tutorial_or_Guide",
+            "update_date": "2023-12-26T01:13:33Z"
+          },
+          {
+            "position": 10,
+            "title": "What is a benthic habitat map? - National Ocean Service - NOAA",
+            "url": "https://oceanservice.noaa.gov/facts/benthic.html",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2023-12-26T01:13:33Z"
+          }
+        ]
+      }
+    },
+    {
+      "args": {
+        "country": "gb",
+        "keyword": "habitat mapping",
+        "select": "position,title,url,type,page_type,update_date",
+        "top_positions": 10
+      },
+      "data": {
+        "positions": [
+          {
+            "position": 1,
+            "title": null,
+            "url": null,
+            "type": [
+              "ai_overview"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 1,
+            "title": "Education Nature Park",
+            "url": "https://www.educationnaturepark.org.uk/resource/habitat-mapping-a-nature-park-guide",
+            "type": [
+              "ai_overview_sitelink",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 1,
+            "title": "GOV.UK blogs",
+            "url": "https://defraenvironment.blog.gov.uk/2024/12/18/living-england-a-national-habitat-map-for-everyone/",
+            "type": [
+              "ai_overview_sitelink",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 1,
+            "title": "Gentian.io",
+            "url": "https://gentian.io/services/habitat-mapping/",
+            "type": [
+              "ai_overview_sitelink",
+              "image_th"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 2,
+            "title": "Habitat mapping: a Nature Park guide",
+            "url": "https://www.educationnaturepark.org.uk/resource/habitat-mapping-a-nature-park-guide",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Article,/Article/Tutorial_or_Guide",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 3,
+            "title": "Habitat Mapping",
+            "url": "https://gentian.io/services/habitat-mapping/",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Landing_Page,/Landing_Page/Service_Page",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 4,
+            "title": "What are the 5 types of habitats and examples?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 4,
+            "title": "What is environment mapping?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 4,
+            "title": "What is UK habitat classification?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 4,
+            "title": "What does mapping mean in geography?",
+            "url": null,
+            "type": [
+              "question"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 5,
+            "title": "Living England: a national habitat map for everyone",
+            "url": "https://defraenvironment.blog.gov.uk/2024/12/18/living-england-a-national-habitat-map-for-everyone/",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": "/Article,/Article/News_Update",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 6,
+            "title": "Habitat Mapping - Southwest Coastal Monitoring",
+            "url": "https://southwest.coastalmonitoring.org/data/habitat-mapping/",
+            "type": [
+              "organic",
+              "image_th"
+            ],
+            "page_type": "/Article,/Article/Study_or_Research_Findings",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 7,
+            "title": "Living England Habitat Map (Phase 4)",
+            "url": "https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::living-england-habitat-map-phase-4/about",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Document,/Document/Report",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 8,
+            "title": "Habitat map of Scotland - Scotland's environment web",
+            "url": "https://www.environment.gov.scot/our-environment/habitats-and-species/habitat-map-of-scotland/",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Interactive_Tools,/Interactive_Tools/Map",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 9,
+            "title": "Marine Habitat Mapping",
+            "url": "https://jncc.gov.uk/our-work/marine-habitat-mapping/",
+            "type": [
+              "organic"
+            ],
+            "page_type": "/Article,/Article/Tutorial_or_Guide",
+            "update_date": "2026-09-19T14:31:21Z"
+          },
+          {
+            "position": 10,
+            "title": "UK Habitat Classification: ukhab",
+            "url": "https://www.ukhab.org/",
+            "type": [
+              "organic"
+            ],
+            "page_type": null,
+            "update_date": "2026-09-19T14:31:21Z"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Ahrefs monthly volume estimates, not observed Mynzo traffic. Country counts are included in global volume.",
+    "Missing rows and null metrics are not measured zero demand. CPC values are USD cents.",
+    "US habitat mapping SERP is dated 2023-12-26 and is not current ranking evidence. India biodiversity mapping is 2026-10-01; UK habitat mapping is 2026-09-19.",
+    "Live primary-source searches supplement intent review; they do not supply localized Google rank positions."
+  ]
+}

@@ -11,6 +11,7 @@ const ENQUIRY_SOURCES = {
   'restoration-monitoring': 'Restoration monitoring page',
   'project-developers': 'Project developers page',
   'biodiversity-guide': 'Biodiversity monitoring guide',
+  'habitat-mapping-guide': 'Habitat mapping guide',
   'restoration-guide': 'Restoration monitoring plan guide',
   'agroforestry-guide': 'Agroforestry guide',
   'forest-carbon-guide': 'Forest carbon accounting guide',

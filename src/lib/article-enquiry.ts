@@ -9,6 +9,12 @@ type ArticleEnquiry = {
 };
 
 const ARTICLE_ENQUIRIES: Record<string, ArticleEnquiry> = {
+  'habitat-mapping': {
+    title: 'Scope the monitoring behind your habitat map',
+    text: 'Share your site boundaries, existing maps and surveys, and the decision your team needs to make.',
+    label: 'Discuss your habitat monitoring needs',
+    interest: 'biodiversity-monitoring', source: 'habitat-mapping-guide',
+  },
   'biodiversity-metrics-for-restoration-projects': {
     title: 'Define your biodiversity monitoring scope',
     text: 'Share your sites, ecological questions and existing field evidence.',

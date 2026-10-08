@@ -5,6 +5,14 @@ import sys
 
 base = sys.argv[1] if len(sys.argv) > 1 else 'http://127.0.0.1:3100'
 canonical_base = 'https://www.mynzocarbon.com'
+education_slugs = {
+    'miyawaki-forest-method', 'what-is-biodiversity',
+    'biodiversity-hotspots-in-india', 'ecosystem-services-types-examples',
+    'understanding-soil-carbon-the-hidden-climate-solution',
+    'what-is-regenerative-agriculture', 'how-to-increase-organic-carbon-in-soil',
+    'urban-rewilding', 'mangroves-in-india', 'carbon-neutral-vs-net-zero',
+    'what-are-wetlands', 'afforestation-vs-reforestation',
+}
 
 class Page(HTMLParser):
     def __init__(self):
@@ -33,6 +41,7 @@ root=ET.fromstring(xml); urls=[e.text for e in root.findall('{*}url/{*}loc')]
 assert len(urls)==len(set(urls))
 assert not any('/thank-you' in u or '/admin' in u or '/api/' in u for u in urls)
 results=[]
+educational_links=[]
 for url in urls:
     assert url.startswith(canonical_base+'/')
     path=urllib.parse.urlsplit(url).path
@@ -47,6 +56,32 @@ for url in urls:
     if path.startswith('/blog/'):
         graph=page.schemas[0]['@graph'];article=next(x for x in graph if x['@type']=='BlogPosting')
         assert article['url']==url and article['headline'] and article['publisher']
+        if path.removeprefix('/blog/') in education_slugs:
+            expected_published = '2025-03-10' if path.endswith('/understanding-soil-carbon-the-hidden-climate-solution') else '2026-10-08'
+            assert article['datePublished']==expected_published and article['dateModified']=='2026-10-08',path
+            assert page.h1_count==1 and '/#team' in page.links,path
+            assert len(page.ids)==len(set(page.ids)),path
+            assert not any('\u2014' in text for text in page.text),path
+            assert 'Ready to monitor your forest assets?' not in html,path
+            assert sum(link.startswith('https://') and not link.startswith(canonical_base) for link in page.links)>=4,path
+            assert any(link.startswith('#') for link in page.links),path
+            for link in page.links:
+                if link.startswith('#'): assert link[1:] in page.ids,(path,link)
+                if link.startswith('/blog/'):
+                    assert canonical_base+link.split('#')[0] in urls,(path,link)
+                if link.startswith('/') and '#' in link: educational_links.append((path,link))
+            entry=next(e for e in root.findall('{*}url') if e.findtext('{*}loc')==url)
+            assert entry.findtext('{*}lastmod').startswith('2026-10-08'),path
+        if path=='/blog/habitat-mapping':
+            assert article['datePublished']=='2026-10-08' and article['dateModified']=='2026-10-08'
+            assert page.h1_count==1 and '/#team' in page.links
+            assert '/resources/habitat-mapping-brief.txt' in page.links
+            assert '/platform/biodiversity-monitoring' in page.links
+            assert page.links.count('/get-started?interest=biodiversity-monitoring&source=habitat-mapping-guide')==2
+            assert len(page.ids)==len(set(page.ids))
+            assert not any('\u2014' in text for text in page.text)
+            for link in page.links:
+                if link.startswith('#'): assert link[1:] in page.ids,(path,link)
         if path=='/blog/how-ai-is-revolutionising-forest-carbon-accounting':
             assert article['datePublished']=='2025-04-12'
             assert article['dateModified']=='2026-09-13'
@@ -87,6 +122,7 @@ for url in urls:
         assert '\u2014' not in content,path
         assert '/get-started' in page.links
         if path in ['/platform/biodiversity-monitoring', '/solutions/project-developers']:
+            assert '/blog/habitat-mapping' in page.links
             assert next(x for x in graph if x['@type']=='WebPage')['dateModified']=='2026-09-18'
             assert '/blog/biodiversity-metrics-for-restoration-projects' in page.links
             interest,source=('biodiversity-monitoring','biodiversity-monitoring') if path.startswith('/platform/') else ('forest-monitoring','project-developers')
@@ -107,6 +143,14 @@ assert canonical_base+'/platform/biodiversity-monitoring' in urls
 assert canonical_base+'/solutions/project-developers' in urls
 assert canonical_base+'/blog/biodiversity-metrics-for-restoration-projects' in urls
 assert canonical_base+'/blog/restoration-monitoring-plan' in urls
+assert canonical_base+'/blog/habitat-mapping' in urls
+assert {canonical_base+'/blog/'+slug for slug in education_slugs} <= set(urls)
+# Check cross-page section references rather than accepting a valid page alone.
+for source,link in set(educational_links):
+    target=urllib.parse.urlsplit(link)
+    status,html,_=fetch(target.path);page=Page();page.feed(html)
+    assert status==200 and target.fragment in page.ids,(source,link)
+status,habitat_brief,_=fetch('/resources/habitat-mapping-brief.txt');assert status==200 and 'source=habitat-mapping-guide' in habitat_brief
 status,checklist,_=fetch('/resources/restoration-monitoring-plan.txt');assert status==200 and 'source=restoration-guide' in checklist
 status,brief,_=fetch('/resources/biodiversity-monitoring-brief.txt');assert status==200 and 'biodiversity' in brief.lower()
 status,robots,_=fetch('/robots.txt');assert status==200 and canonical_base+'/sitemap.xml' in robots

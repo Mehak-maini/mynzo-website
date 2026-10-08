@@ -1,0 +1,75 @@
+HABITAT MAPPING: PROJECT BRIEF
+Mynzo Carbon | 8 October 2026
+
+Use this editable brief to prepare a discussion with your mapping and ecology
+teams. It is a planning aid, not a survey protocol or a statement of services
+Mynzo will deliver. Confirm the method, responsibilities and outputs for your
+project. Mark unknown items UNKNOWN rather than inventing an answer.
+
+1. PURPOSE AND AREA
+Project and organisation:
+Country, region and site names:
+Approximate area and number of sites:
+Decision the map needs to support:
+Who will use and review the result:
+Reporting or management deadline:
+Boundary file, coordinate reference system and version, if known:
+Areas to include and exclude:
+Land-use history, management and known disturbances:
+
+2. WHAT NEEDS TO BE MAPPED?
+Habitats or vegetation types of interest:
+Classification system and version, if one is required:
+Definitions for each proposed class:
+Classes likely to be difficult to distinguish:
+Small patches or narrow features that matter to the decision:
+Minimum feature size the map needs to represent, and why:
+Required map scale or intended viewing scale:
+Separate field assessments needed for habitat condition or species:
+Local ecological knowledge and existing habitat descriptions:
+
+3. DATES AND AVAILABLE EVIDENCE
+Required baseline period:
+Required comparison period, if assessing change:
+Relevant seasons and access constraints:
+Existing maps, their dates, methods and limitations:
+Available imagery and acquisition dates, if known:
+Existing field records, locations, dates and survey methods:
+Permission to use the available records:
+Known gaps, outdated records or uncertain boundaries:
+
+4. FIELD CHECKS AND MAP REVIEW
+Who will define and review the habitat classes:
+Who will collect or supply field reference records:
+Proposed field visits and seasonal window:
+How reference locations will be selected and recorded:
+Which reference records may be used to build the map:
+Which separate records will be used to evaluate the result:
+How inaccessible or unassessed areas will be identified:
+How mixed, uncertain or unclassified areas will be shown:
+Class-specific errors and other uncertainty the team needs reported:
+Checks needed before interpreting a mapped difference as real change:
+Who will investigate disputed classifications:
+
+5. DELIVERABLES AND ACCEPTANCE
+Required map layers, tables and file formats:
+Required fields, such as class, area, date, source and confidence:
+Supporting method notes and classification definitions:
+Validation records and limitations needed with the map:
+Boundary, imagery, model and classification versions to retain:
+How corrections and updates will be recorded:
+Review criteria and person responsible for accepting the delivery:
+Data ownership, access and handover arrangements:
+Sensitive locations or community information requiring restricted access:
+Specialist input, cost and timetable to confirm:
+Open decisions before commissioning:
+
+Keep mapped habitat extent separate from habitat condition and species
+observations. Confirm which findings the evidence can support before using
+the map in a biodiversity or restoration claim.
+
+Guide:
+https://www.mynzocarbon.com/blog/habitat-mapping
+
+Discuss the monitoring evidence your project needs:
+https://www.mynzocarbon.com/get-started?interest=biodiversity-monitoring&source=habitat-mapping-guide
