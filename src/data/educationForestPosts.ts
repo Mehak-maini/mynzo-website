@@ -84,17 +84,17 @@ export const educationForestPosts: StaticPost[] = [
     tag: 'Biodiversity',
     tagBg: '#EBF7F0',
     tagColor: '#1A7A4A',
-    title: 'Types of Biodiversity: Genetic, Species and Ecosystem',
-    excerpt: 'Understand the three main types of biodiversity with clear examples, a richness and evenness comparison, and questions to ask about nature claims.',
+    title: 'What Is Biodiversity? 3 Types and Examples',
+    excerpt: 'Compare genetic, species and ecosystem diversity with clear examples. Learn how crop varieties, species counts and habitats describe the three levels.',
     date: 'October 8, 2026',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-30',
     readTime: '6',
     img: '/leaf_tree_jpg.jpeg',
     imgAlt: 'A green leaf held beside a tree during a field observation',
     author: 'Mynzo Team',
     content: `
-      <p>Biodiversity means the variety of living organisms and the ecological systems they form. Its three commonly taught levels are <strong>genetic diversity</strong>, the variation within species; <strong>species diversity</strong>, the variety of species and their abundance; and <strong>ecosystem diversity</strong>, the variety of ecological systems across a place. A useful explanation needs all three.</p>
-      <p>The <a href="https://www.cbd.int/convention/articles?a=cbd-02">Convention on Biological Diversity's definition</a> explicitly includes variation within species, between species and among ecosystems. Counting birds or trees can reveal one part of biodiversity, but it cannot describe the whole subject.</p>
+      <p>Biodiversity is the variety of life. Its three main levels are <strong>genetic diversity</strong> within species, <strong>species diversity</strong> among species, and <strong>ecosystem diversity</strong> across habitats and ecological systems.</p>
+      <p>The distinction is about what you compare. Different varieties of one crop, different species in a pond and different ecosystems in a landscape each describe a different level. All three are included in the <a href="https://www.cbd.int/convention/articles?a=cbd-02">Convention on Biological Diversity's definition</a>.</p>
       <nav aria-label="In this guide"><strong>In this guide</strong><ul>
         <li><a href="#biodiversity-types">The three types at a glance</a></li>
         <li><a href="#genetic-diversity">Genetic diversity</a></li>
@@ -115,7 +115,7 @@ export const educationForestPosts: StaticPost[] = [
           <tr><th scope="row">Ecosystem</th><td>Ecological systems across a landscape or region.</td><td>A landscape containing woodland, grassland and wetlands.</td><td>Which systems remain, their extent and condition.</td></tr>
         </tbody>
       </table></div>
-      <p>These are connected levels, not competing definitions. A wetland contains species; those species contain genetic variation; and the wetland forms part of a wider landscape.</p>
+      <p>To tell the levels apart, ask: <strong>variation within one species, differences between species, or variety between ecosystems?</strong> The size of the study area does not decide the answer. Comparing inherited variation in two populations of the same species is still a genetic question, reflected in the CBD's treatment of <a href="https://www.cbd.int/gbf/targets/4">genetic diversity within and between populations</a>.</p>
 
       <h2 id="genetic-diversity">1. Genetic diversity: variation within a species</h2>
       <p>Genetic diversity concerns inherited differences among individuals and populations. Plants can belong to one species while carrying different combinations of genes. Visible differences may offer clues, but appearance alone does not measure genetic diversity: growing conditions can also change how an organism looks.</p>
@@ -133,14 +133,14 @@ export const educationForestPosts: StaticPost[] = [
       <p>An ecosystem includes living communities and the non-living environment with which they interact. Water, soil and climate belong in that picture. Ecosystem diversity asks about the variety of such systems across the area being considered.</p>
       <p>India provides an intuitive way to think about scale: a national discussion can consider deserts, forests, grasslands, rivers, wetlands and coastal systems. A neighbourhood study might distinguish a pond, its wet margin and nearby woodland. The classification and scale should be stated so that readers know what is being compared.</p>
       <p>IFAD's explanation uses ecosystems ranging from steppes to mangrove swamps to show why biodiversity extends beyond species lists. The ecological variety of a landscape cannot be inferred just from how green it looks. Explore <a href="/blog/what-are-wetlands">what makes a wetland</a> and <a href="/blog/mangroves-in-india">mangroves in India</a> for two related examples.</p>
-      <p>It also helps to separate extent from condition. A map showing the same wetland boundary in two years does not, by itself, show whether its organisms, water regime or pressures stayed the same. The boundary answers an area question; condition requires its own evidence.</p>
+      <p>It also helps to separate extent from condition. A <a href="/blog/habitat-mapping">habitat map</a> showing the same wetland boundary in two years does not, by itself, show whether its organisms, water regime or pressures stayed the same. The boundary answers an area question; condition requires its own evidence.</p>
 
-      <h2 id="biodiversity-example">One farming landscape, three different questions</h2>
-      <p>Imagine a village landscape with cropped fields, a pond and patches of woody vegetation. This is an original learning example, not a description of a measured Mynzo site.</p>
+      <h2 id="biodiversity-example">One farming landscape, three examples of biodiversity</h2>
+      <p>Imagine a village with cropped fields, a pond and patches of woodland. Here is how three observations from that landscape would be classified. This is a teaching example, not a measured Mynzo site.</p>
       <ol>
-        <li><strong>At the genetic level:</strong> which varieties of each crop are grown and retained for future sowing?</li>
-        <li><strong>At the species level:</strong> which plants and animals have been recorded, and what do repeat surveys show about their abundance?</li>
-        <li><strong>At the ecosystem level:</strong> which habitat systems are present, and are their extent and condition changing?</li>
+        <li><strong>Genetic diversity:</strong> farmers retain several varieties of the same crop species. The varieties represent inherited variation within that species; their names are useful records, although counting varieties is not a complete genetic assessment.</li>
+        <li><strong>Species diversity:</strong> a survey records several frog species around the pond and how many individuals of each were observed. The comparison concerns species richness and abundance, even though all the observations come from one pond.</li>
+        <li><strong>Ecosystem diversity:</strong> a landscape survey distinguishes the cultivated fields, freshwater pond and woodland. It records the extent and condition of each system, rather than adding their species lists together.</li>
       </ol>
       <p>A change can affect one level without giving a complete answer at the others. Adding another variety of an existing crop does not add a new species. Finding another bird species does not prove that the pond is recovering. Keeping the questions separate makes the evidence more informative.</p>
       <p>For the farming context, continue to <a href="/blog/what-is-regenerative-agriculture">regenerative agriculture</a>. For the organisms and carbon processes beneath the surface, read <a href="/blog/understanding-soil-carbon-the-hidden-climate-solution">the soil carbon guide</a>. Neither crop output nor soil carbon alone represents every aspect of biodiversity.</p>
@@ -148,7 +148,7 @@ export const educationForestPosts: StaticPost[] = [
       <h2 id="biodiversity-observation">How to read a biodiversity claim</h2>
       <p><a href="https://geobon.org/ebvs/what-are-ebvs/">GEO BON's Essential Biodiversity Variables</a> organise observations across multiple dimensions, including genetics, species populations, community composition and ecosystem characteristics. That breadth explains why a tree count is an incomplete biodiversity report.</p>
       <p>When you encounter a claim that biodiversity increased, ask which organisms or systems were assessed, over what area, during which dates and with what method. Ask whether the comparison used similar survey effort and whether uncertain identifications were retained as uncertain.</p>
-      <p>For your own learning, keep a dated observation notebook. Record where you looked, how long you spent, the habitat and what you could identify. A blank entry means you did not record something during that visit; it is not proof that the species never uses the site. A formal project needs a survey method appropriate to its question.</p>
+      <p>For your own learning, keep a dated observation notebook. Record where you looked, how long you spent, the habitat and what you could identify. A blank entry means you did not record something during that visit; it is not proof that the species never uses the site. A formal project needs a survey method appropriate to its question, set out in a <a href="/blog/restoration-monitoring-plan">monitoring plan</a> that makes repeat observations comparable.</p>
 
       <h2 id="biodiversity-questions">Common questions about biodiversity</h2>
       <h3>Does biodiversity include fungi and microorganisms?</h3>
@@ -157,7 +157,7 @@ export const educationForestPosts: StaticPost[] = [
       <p>No. Biodiversity describes life's variety. <a href="/blog/ecosystem-services-types-examples">Ecosystem services</a> describe benefits people obtain from ecosystems. The concepts are connected, but a benefit such as shade is not a complete measure of biodiversity.</p>
       <h3>Is a biodiversity hotspot simply a place with many species?</h3>
       <p>The formal conservation label has specific criteria concerning endemic plants and habitat loss. Our <a href="/blog/biodiversity-hotspots-in-india">India hotspot guide</a> explains those criteria and the four regions that overlap the country.</p>
-      <p><em>Sources checked on 8 October 2026. Examples with invented survey counts are labelled as teaching examples. For practical measurement, see <a href="/blog/biodiversity-metrics-for-restoration-projects">biodiversity metrics for restoration projects</a>.</em></p>
+      <p><em>Definitions and the revised landscape example checked on 30 October 2026. Survey counts are hypothetical. For practical measurement, see <a href="/blog/biodiversity-metrics-for-restoration-projects">biodiversity metrics for restoration projects</a>.</em></p>
     `,
   },
   {
@@ -165,20 +165,20 @@ export const educationForestPosts: StaticPost[] = [
     tag: 'Biodiversity',
     tagBg: '#EBF7F0',
     tagColor: '#1A7A4A',
-    title: 'Biodiversity Hotspots in India: The Four Regions',
-    excerpt: 'Learn the four biodiversity hotspots that overlap India, the two qualifying criteria, and why Andaman and Nicobar belong to different hotspots.',
+    title: 'Biodiversity Hotspots in India: 4 Regions and Criteria',
+    excerpt: 'India has four biodiversity hotspots. Compare their locations and criteria, including why Nicobar belongs to Sundaland and Andaman belongs to Indo-Burma.',
     date: 'October 8, 2026',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-30',
     readTime: '6',
     img: '/height_tree_jpg.jpeg',
     imgAlt: 'Tree trunk and leafy branches against a blue sky',
     author: 'Mynzo Team',
     content: `
-      <p>India overlaps four recognised biodiversity hotspots: <strong>Himalaya, Indo-Burma, Western Ghats and Sri Lanka, and Sundaland</strong>. They are large ecological regions, often extending across countries. The Indian part of Sundaland is the Nicobar Islands; the Andaman Islands belong to Indo-Burma.</p>
-      <p>The four-region list appears in <a href="https://www.cbd.int/countries/profile?country=in">India's Convention on Biological Diversity profile</a>. For the worldwide total, <a href="https://www.conservation.org/learning/biodiversity-hotspots">Conservation International currently recognises 36 hotspots</a>, checked on 8 October 2026. Some older official and educational pages still mention 34 or 35. Their publication context matters.</p>
+      <p>India contains parts of <strong>four biodiversity hotspots: Himalaya, Indo-Burma, Western Ghats and Sri Lanka, and Sundaland</strong>. These are ecological regions that cross national borders. India's Sundaland connection is the Nicobar Islands; the Andaman Islands belong to Indo-Burma.</p>
+      <p>The list appears in <a href="https://www.cbd.int/countries/profile?country=in">India's Convention on Biological Diversity profile</a>. That profile uses an older global total of 34, while <a href="https://www.conservation.org/learning/biodiversity-hotspots">Conservation International recognises 36 worldwide</a> as checked on 30 October 2026. The four regions overlapping India are the same in the national list.</p>
       <nav aria-label="In this guide"><strong>In this guide</strong><ul>
-        <li><a href="#hotspot-criteria">What qualifies as a hotspot?</a></li>
         <li><a href="#india-hotspot-table">India's four regions</a></li>
+        <li><a href="#hotspot-criteria">What qualifies as a hotspot?</a></li>
         <li><a href="#hotspot-himalaya">Himalaya</a></li>
         <li><a href="#hotspot-indo-burma">Indo-Burma</a></li>
         <li><a href="#hotspot-western-ghats">Western Ghats and Sri Lanka</a></li>
@@ -187,16 +187,7 @@ export const educationForestPosts: StaticPost[] = [
         <li><a href="#hotspot-questions">Questions about the list</a></li>
       </ul></nav>
 
-      <h2 id="hotspot-criteria">What qualifies a region as a biodiversity hotspot?</h2>
-      <p>In this conservation framework, both conditions must be met:</p>
-      <ol>
-        <li>The region contains at least <strong>1,500 endemic vascular plant species</strong>.</li>
-        <li>It has lost at least <strong>70% of its original native vegetation</strong>.</li>
-      </ol>
-      <p>These are the criteria recorded with <a href="https://zenodo.org/records/3261807">Conservation International and partners' hotspot dataset</a>. Endemic means naturally restricted to a particular area. The qualifying plant species are endemic to the whole hotspot, not necessarily to India's portion of it.</p>
-      <p>The label therefore combines biological distinctiveness with severe habitat loss. It does not simply mean a place with many animals, a popular wildlife destination or a location currently experiencing hot weather. If you are new to the subject, start with <a href="/blog/what-is-biodiversity">the three types of biodiversity</a>.</p>
-
-      <h2 id="india-hotspot-table">The four biodiversity hotspots that overlap India</h2>
+      <h2 id="india-hotspot-table">The four biodiversity hotspots in India</h2>
       <div class="blog-table-wrap" role="region" aria-label="Biodiversity hotspots overlapping India" tabindex="0"><table>
         <caption>Geographic orientation, not parcel boundaries</caption>
         <thead><tr><th scope="col">Recognised hotspot</th><th scope="col">Indian connection</th><th scope="col">Distinction to remember</th></tr></thead>
@@ -208,6 +199,15 @@ export const educationForestPosts: StaticPost[] = [
         </tbody>
       </table></div>
       <p>The table combines the national list with regional descriptions in <a href="https://www.cbd.int/doc/world/in/in-nr-05-en.pdf">India's Fifth National Report</a> and the island distinction confirmed in <a href="https://www.niti.gov.in/node/2250">NITI Aayog's April 2026 Divya Bharat publication</a>. Use the official boundary dataset for a precise location, rather than colouring entire states from this summary.</p>
+
+      <h2 id="hotspot-criteria">What qualifies a region as a biodiversity hotspot?</h2>
+      <p>In this conservation framework, both conditions must be met:</p>
+      <ol>
+        <li>The region contains at least <strong>1,500 endemic vascular plant species</strong>.</li>
+        <li>It has lost at least <strong>70% of its original native vegetation</strong>.</li>
+      </ol>
+      <p>These are the criteria recorded with <a href="https://zenodo.org/records/3261807">Conservation International and partners' hotspot dataset</a>. Endemic means naturally restricted to a particular area. The qualifying plant species are endemic to the whole hotspot, not necessarily to India's portion of it.</p>
+      <p>The label combines biological distinctiveness with severe habitat loss. A place with many species does not qualify unless it meets both thresholds. For the difference between genetic, species and ecosystem diversity, read <a href="/blog/what-is-biodiversity">the three types of biodiversity</a>.</p>
 
       <h2 id="hotspot-himalaya">1. Himalaya</h2>
       <p>The Himalayan hotspot includes both western and eastern sections of the mountain region. India's Fifth National Report describes a progression from grasslands and forests near the foothills through temperate and coniferous forests to alpine meadows at higher elevations. A single mountain outline therefore contains very different ecological conditions.</p>
@@ -231,6 +231,7 @@ export const educationForestPosts: StaticPost[] = [
 
       <h2 id="hotspot-map">How to read a hotspot map without overinterpreting it</h2>
       <p><a href="https://zenodo.org/records/4311850">Open the labelled map published by Conservation International</a>. Its associated boundary dataset is version 2016.1, the version linked from Conservation International's current explainer when this guide was checked. The dataset date describes the mapping resource; it is not a claim that every habitat was surveyed in 2026.</p>
+      <p>The map's notes explain two details that are easy to miss: its colours distinguish neighbouring hotspots, rather than rank their importance, and offshore outlines group islands belonging to the same hotspot. Those outlines do not turn the surrounding sea into a terrestrial hotspot. When locating India, compare the four hotspot labels with the regional and island distinctions in the table above.</p>
       <p>For a study or project, record the boundary source and version. Then compare it with the actual site outline, habitat evidence and relevant conservation designations. Do not interpret a coarse regional edge as a surveyed property line.</p>
       <p>Consider an imaginary forest patch near a hotspot boundary. Whether it falls inside the polygon answers one regional screening question. Which species use it, whether its habitat is degrading and what local people need remain separate questions. A point outside the polygon does not make those questions disappear.</p>
       <p>Our <a href="/blog/habitat-mapping">habitat mapping guide</a> explains how to move from broad regional context to a useful site map. <a href="/blog/ecosystem-services-types-examples">Ecosystem services</a> adds another perspective: how the ecological system contributes to people's lives.</p>
@@ -242,7 +243,7 @@ export const educationForestPosts: StaticPost[] = [
       <p>No. A hotspot is a broad conservation-priority region. A national park is a designated area with its own boundary and management. The hotspot label alone does not establish the designation of a specific parcel.</p>
       <h3>Is land outside a hotspot less worth protecting?</h3>
       <p>No. The framework selects regions meeting particular endemism and loss thresholds. Conservation International explicitly supports protecting nature beyond hotspots. Local wetlands, grasslands and other habitats can matter even when they are absent from this list.</p>
-      <p><em>Sources and current global count checked on 8 October 2026. Older national reports are used for regional explanation, with their historical totals kept separate. The cover is an illustrative tree photograph, not a mapped hotspot location.</em></p>
+      <p><em>Hotspot count, criteria and map notes checked on 30 October 2026. Older national reports provide regional context; their historical totals are kept separate. The cover is an illustrative tree photograph, not a mapped hotspot location.</em></p>
     `,
   },
   {
@@ -250,17 +251,17 @@ export const educationForestPosts: StaticPost[] = [
     tag: 'Ecology',
     tagBg: '#EBF7F0',
     tagColor: '#1A7A4A',
-    title: 'Ecosystem Services: Four Types and Everyday Examples',
-    excerpt: 'Understand provisioning, regulating, cultural and supporting ecosystem services, with examples from farms, wetlands and cities and a practical comparison.',
+    title: 'Ecosystem Services: 4 Types and Examples Explained',
+    excerpt: 'Learn the four types of ecosystem services with food, pollination, water and soil examples. Compare supporting and regulating services and how to observe them.',
     date: 'October 8, 2026',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-30',
     readTime: '6',
     img: '/tree_trunk_jpg.jpeg',
     imgAlt: 'Measuring tape around a tree trunk',
     author: 'Mynzo Team',
     content: `
-      <p>Ecosystem services are the benefits people obtain from ecosystems. Food, pollination, water regulation and opportunities to learn outdoors are familiar examples. The <a href="https://www.millenniumassessment.org/documents/document.300.aspx.pdf">Millennium Ecosystem Assessment framework</a> groups them into four categories: provisioning, regulating, cultural and supporting services.</p>
-      <p>This framework connects ecology with everyday life. It also prompts useful questions: what benefit is being described, who receives it, and what conditions allow it to continue? A green area can offer several benefits, but those benefits need evidence rather than an assumed value per hectare.</p>
+      <p>Ecosystem services are the benefits people obtain from ecosystems. The four types in the <a href="https://www.millenniumassessment.org/documents/document.300.aspx.pdf">Millennium Ecosystem Assessment</a> are <strong>provisioning, regulating, cultural and supporting services</strong>. Food, pollination, outdoor learning and soil formation are examples of each, respectively.</p>
+      <p>One place can contribute several services. A garden can produce vegetables, provide a place to learn and depend on pollination and nutrient cycling. To understand each contribution, follow what the ecosystem does, who benefits and what evidence would show it.</p>
       <nav aria-label="In this guide"><strong>In this guide</strong><ul>
         <li><a href="#services-four-types">The four categories</a></li>
         <li><a href="#services-provisioning">Provisioning: food and materials</a></li>
@@ -282,7 +283,7 @@ export const educationForestPosts: StaticPost[] = [
           <tr><th scope="row">Supporting</th><td>Processes needed for the other services.</td><td>Soil formation, nutrient cycling and primary production.</td></tr>
         </tbody>
       </table></div>
-      <p>The four-category model is a named framework, not the only way to organise the subject. A report using another classification may arrange the same ecological relationships differently. Always check its definitions before comparing totals or labels.</p>
+      <p><strong>Why do some sources list three types?</strong> The <a href="https://cices.eu/">Common International Classification of Ecosystem Services (CICES)</a> groups services into provisioning, regulation and maintenance, and cultural sections. It focuses on contributions that lead to benefits for people and treats <a href="https://cices.eu/supporting-functions/">underlying supporting processes</a> separately. The difference is the classification being used, not the disappearance of soil formation or nutrient cycling.</p>
 
       <h2 id="services-provisioning">Provisioning services: what people obtain</h2>
       <p>A fish caught for food, a harvested crop or a piece of timber is a tangible product. The ecosystem contributes to producing it, while people may also contribute labour, equipment, knowledge and infrastructure.</p>
@@ -307,20 +308,25 @@ export const educationForestPosts: StaticPost[] = [
       <p>Consider a school nature walk. A species list documents organisms seen; a record of who attended and what they learned addresses the educational experience. If a gate prevents some residents from entering, the existence of the habitat does not demonstrate equal access to its benefits. Ask the people who use or care for a place which relationships matter to them.</p>
 
       <h2 id="services-supporting">Supporting services: the processes beneath the benefits</h2>
-      <p>Supporting services are easy to confuse with regulating services. A <a href="https://www.reddit.com/r/ScienceTeachers/comments/rwpkzs/eli5_difference_between_regulating_and_supporting/">public discussion among science teachers</a> asks how to tell them apart. The difficulty is real: these categories describe connections in a system, not four isolated activities.</p>
-      <p>Under the Millennium Ecosystem Assessment, supporting processes make other services possible, often through indirect pathways or longer time scales. Nutrient cycling and soil formation support plant growth. The resulting crop is a provisioning product; a specific water-quality benefit is regulating. State the pathway you mean instead of classifying a word without context.</p>
+      <p>To distinguish supporting from regulating services, identify the role being described. Soil formation supports future plant growth; water purification describes a regulating benefit to water users. The categories can overlap: the Millennium Ecosystem Assessment notes that erosion control can be supporting or regulating, depending on the timescale and how directly people are affected.</p>
+      <p>Nutrient cycling helps a plant grow; the crop later harvested is a provisioning product. Following that sequence helps you classify the contribution being described.</p>
       <p><a href="https://www.epa.gov/eco-research/national-ecosystem-services-classification-system-plus-frequently-asked-questions">EPA's guidance on ecosystem service classification</a> explains why this matters when valuing benefits. Counting an underlying process and the final product as independent additions can count the same contribution twice. Identify what is being valued and its place in the chain before adding figures together.</p>
       <p>Soil makes this concrete. <a href="/blog/how-to-increase-organic-carbon-in-soil">Managing soil organic carbon</a> may involve processes relevant to several outcomes. A soil carbon measurement is not, by itself, a measurement of nutrient cycling, food production or every other soil benefit.</p>
 
       <h2 id="services-example">A neighbourhood example: follow the benefit to the person</h2>
-      <p>Imagine a pond beside a walking path and several trees. This is a hypothetical teaching example. Before adding up benefits, use a separate question and observation for each:</p>
-      <ul>
-        <li><strong>Rainwater:</strong> where does water enter and leave, and what evidence shows storage or a change in flow?</li>
-        <li><strong>Shade:</strong> which parts of the path are shaded at the hours people use them?</li>
-        <li><strong>Learning:</strong> who visits for study, and what activities can they actually carry out?</li>
-        <li><strong>Habitat:</strong> which organisms and conditions support these processes, and how are they changing?</li>
-      </ul>
-      <p>This exercise produces a more useful description than saying the site delivers every service. It also reveals trade-offs: a design that increases one use can limit another. Discuss alternatives with affected people and retain the evidence for each claimed benefit. The <a href="/blog/urban-rewilding">urban rewilding guide</a> explores related choices about nature and shared space.</p>
+      <p>Imagine a pond beside a community garden, walking path and several trees. This is a hypothetical teaching example. The categories help organise observations; they do not establish that every benefit occurs.</p>
+      <div class="blog-table-wrap" role="region" aria-label="Ecosystem service examples and observations" tabindex="0"><table>
+        <caption>Match each example to an observation</caption>
+        <thead><tr><th scope="col">Example</th><th scope="col">Category</th><th scope="col">What to record</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Vegetables harvested from the garden</th><td>Provisioning</td><td>Crop, harvest amount and period, with the labour, water and other inputs recorded separately.</td></tr>
+          <tr><th scope="row">Temporary storage of rainwater in the pond</th><td>Regulating</td><td>Rainfall, water levels and flow into and out of the pond. Storage alone does not quantify flooding avoided downstream.</td></tr>
+          <tr><th scope="row">Shade along the walking path</th><td>Regulating</td><td>Where shade falls at the hours people use the path; measure air temperature separately if that is the outcome of interest.</td></tr>
+          <tr><th scope="row">School visits for outdoor learning</th><td>Cultural</td><td>Who can access the site, activities undertaken and what participants learn.</td></tr>
+          <tr><th scope="row">Nutrient cycling in the garden soil</th><td>Supporting</td><td>Use a method suited to the process being studied. Crop yield or a single soil carbon result cannot measure the whole cycle.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Trade-offs still matter. More space for crops may leave less room for access or other habitat. Discuss the choices with people who use the site, then keep a record for each outcome. Our <a href="/blog/restoration-monitoring-plan">restoration monitoring guide</a> explains how to plan repeat observations, while <a href="/blog/urban-rewilding">urban rewilding</a> explores decisions about nature and shared space.</p>
 
       <h2 id="services-questions">Common questions about ecosystem services</h2>
       <h3>Is biodiversity itself an ecosystem service?</h3>
@@ -329,7 +335,7 @@ export const educationForestPosts: StaticPost[] = [
       <p>No. Benefits can be described through ecological measurements, use, experience and cultural significance. A monetary estimate answers a particular valuation question; it is not the complete meaning of a place.</p>
       <h3>Does carbon storage make a project carbon neutral?</h3>
       <p>No. A carbon-related ecosystem benefit and an organisation's emissions claim are separate questions. Read <a href="/blog/carbon-neutral-vs-net-zero">carbon neutral versus net zero</a> for the accounting and claim distinctions.</p>
-      <p><em>Sources checked on 8 October 2026. The four categories follow the Millennium Ecosystem Assessment; alternative frameworks are identified where discussed. Examples are educational, not measured Mynzo outcomes.</em></p>
+      <p><em>Classification sources and revised examples checked on 30 October 2026. The four categories follow the Millennium Ecosystem Assessment; CICES is identified where its approach differs. Examples are educational, not measured Mynzo outcomes.</em></p>
     `,
   },
 ];

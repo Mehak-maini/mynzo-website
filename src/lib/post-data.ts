@@ -44,9 +44,10 @@ function displayDate(iso: string | undefined, original: string): string {
 export function normalizePost(raw: Record<string, any>, source: 'cms' | 'static'): Post {
   const originalDate = (source === 'cms' ? raw.publishedAt : raw.date) || '';
   const publishedAt = normalizeDate(originalDate);
+  const author = (typeof raw.author === 'string' && raw.author.trim()) || 'Mynzo Team';
   return {
     slug: raw.slug, title: raw.title, excerpt: raw.excerpt || '', content: typeof raw.content === 'string' ? raw.content : '',
-    author: raw.author || 'Mynzo Team', date: displayDate(publishedAt, originalDate), publishedAt,
+    author: /^mynzo\s+team$/i.test(author) ? 'Mynzo Team' : author, date: displayDate(publishedAt, originalDate), publishedAt,
     updatedAt: normalizeDate(raw.updatedAt), readTime: raw.readTime || '',
     img: source === 'static' ? raw.img : raw.coverImage?.url || raw.coverImageUrl || null,
     imgAlt: source === 'static' ? raw.imgAlt : raw.coverImage?.alt,

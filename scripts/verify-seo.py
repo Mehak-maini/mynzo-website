@@ -13,6 +13,12 @@ education_slugs = {
     'urban-rewilding', 'mangroves-in-india', 'carbon-neutral-vs-net-zero',
     'what-are-wetlands', 'afforestation-vs-reforestation',
 }
+refreshed_slugs = {
+    'what-is-biodiversity', 'biodiversity-hotspots-in-india',
+    'ecosystem-services-types-examples', 'what-are-wetlands',
+    'afforestation-vs-reforestation', 'carbon-neutral-vs-net-zero',
+    'understanding-soil-carbon-the-hidden-climate-solution',
+}
 
 class Page(HTMLParser):
     def __init__(self):
@@ -31,10 +37,15 @@ class Page(HTMLParser):
     def handle_endtag(self,tag):
         if tag=='script' and self.collect:self.schemas.append(json.loads(self.buffer));self.collect=False
 
+fetch_cache = {}
+
 def fetch(path):
+    if path in fetch_cache: return fetch_cache[path]
     try: response=urllib.request.urlopen(base+path,timeout=35)
     except urllib.error.HTTPError as error:response=error
-    return response.status,response.read().decode(),dict(response.headers)
+    result=response.status,response.read().decode(),dict(response.headers)
+    fetch_cache[path]=result
+    return result
 
 status,xml,_=fetch('/sitemap.xml');assert status==200
 root=ET.fromstring(xml); urls=[e.text for e in root.findall('{*}url/{*}loc')]
@@ -58,7 +69,8 @@ for url in urls:
         assert article['url']==url and article['headline'] and article['publisher']
         if path.removeprefix('/blog/') in education_slugs:
             expected_published = '2025-03-10' if path.endswith('/understanding-soil-carbon-the-hidden-climate-solution') else '2026-10-08'
-            assert article['datePublished']==expected_published and article['dateModified']=='2026-10-08',path
+            expected_modified = '2026-10-30' if path.removeprefix('/blog/') in refreshed_slugs else '2026-10-08'
+            assert article['datePublished']==expected_published and article['dateModified']==expected_modified,path
             assert page.h1_count==1 and '/#team' in page.links,path
             assert len(page.ids)==len(set(page.ids)),path
             assert not any('\u2014' in text for text in page.text),path
@@ -71,9 +83,9 @@ for url in urls:
                     assert canonical_base+link.split('#')[0] in urls,(path,link)
                 if link.startswith('/') and '#' in link: educational_links.append((path,link))
             entry=next(e for e in root.findall('{*}url') if e.findtext('{*}loc')==url)
-            assert entry.findtext('{*}lastmod').startswith('2026-10-08'),path
+            assert entry.findtext('{*}lastmod').startswith(expected_modified),path
         if path=='/blog/habitat-mapping':
-            assert article['datePublished']=='2026-10-08' and article['dateModified']=='2026-10-08'
+            assert article['datePublished']=='2026-10-08' and article['dateModified']=='2026-10-30'
             assert page.h1_count==1 and '/#team' in page.links
             assert '/resources/habitat-mapping-brief.txt' in page.links
             assert '/platform/biodiversity-monitoring' in page.links
@@ -123,7 +135,11 @@ for url in urls:
         assert '/get-started' in page.links
         if path in ['/platform/biodiversity-monitoring', '/solutions/project-developers']:
             assert '/blog/habitat-mapping' in page.links
-            assert next(x for x in graph if x['@type']=='WebPage')['dateModified']=='2026-09-18'
+            expected_modified='2026-10-30' if path.startswith('/platform/') else '2026-09-18'
+            assert next(x for x in graph if x['@type']=='WebPage')['dateModified']==expected_modified
+            if path.startswith('/platform/'):
+                entry=next(e for e in root.findall('{*}url') if e.findtext('{*}loc')==url)
+                assert entry.findtext('{*}lastmod').startswith(expected_modified)
             assert '/blog/biodiversity-metrics-for-restoration-projects' in page.links
             interest,source=('biodiversity-monitoring','biodiversity-monitoring') if path.startswith('/platform/') else ('forest-monitoring','project-developers')
             assert page.links.count(f'/get-started?interest={interest}&source={source}')==2
@@ -136,6 +152,8 @@ for url in urls:
     if path=='/blog':
         archive={canonical_base+u for u in page.links if u.startswith('/blog/')}
         assert archive=={u for u in urls if '/blog/' in u}
+        assert 'practical-guides' in page.ids
+        assert '/platform/biodiversity-monitoring' in page.links
     results.append({'path':path,'status':status,'canonical':url,'schema_blocks':len(page.schemas)})
 assert canonical_base+'/platform/forest-monitoring' in urls
 assert canonical_base+'/platform/digital-mrv' in urls

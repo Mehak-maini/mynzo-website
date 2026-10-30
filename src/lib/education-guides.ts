@@ -75,3 +75,21 @@ export const EDUCATION_TOPICS = [
   { label: 'Climate terms', href: '/blog/carbon-neutral-vs-net-zero' },
   { label: 'Wetlands and coasts', href: '/blog/what-are-wetlands' },
 ];
+
+export const PRACTICAL_GUIDES = [
+  {
+    title: 'Map the habitats on a site',
+    text: 'Choose map classes, check them in the field and agree what a habitat map needs to show.',
+    href: '/blog/habitat-mapping',
+  },
+  {
+    title: 'Plan biodiversity monitoring',
+    text: 'Connect forest observations with ecological surveys, responsibilities and repeat measurements.',
+    href: '/platform/biodiversity-monitoring',
+  },
+  {
+    title: 'Understand a soil carbon result',
+    text: 'Read carbon concentration, soil depth and stock estimates before comparing results over time.',
+    href: '/blog/understanding-soil-carbon-the-hidden-climate-solution',
+  },
+];

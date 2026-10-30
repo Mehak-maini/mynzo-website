@@ -97,20 +97,20 @@ export const educationCoastPosts: StaticPost[] = [
     tag: 'Climate Literacy',
     tagBg: '#F0EDF9',
     tagColor: '#62448A',
-    title: 'Carbon Neutral vs Net Zero: What Do the Claims Mean?',
-    excerpt: 'Compare climate claims by gases, boundaries, dates, emission reductions and removals, with clear examples and current standards context.',
+    title: 'Carbon Neutral vs Net Zero: Differences and Examples',
+    excerpt: 'Learn how carbon-neutral and net-zero claims differ, what offsets and removals mean, and how to check a company’s emissions claim.',
     date: 'October 8, 2026',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-30',
     readTime: '6',
     img: '',
     author: 'Mynzo Team',
     content: `
-      <p><strong>Carbon neutral and net zero are related terms whose meaning depends on the accounting context.</strong> In the IPCC’s global scientific terminology, carbon neutrality and net zero carbon dioxide emissions are equivalent. For a company, product or event, the terms can involve different boundaries and rules. A label alone does not reveal which gases are included or how the balance was achieved.</p>
-      <p>The practical test is to ask five questions: what is covered, which gases are counted, over what period, how much was reduced, and what counterbalances the emissions that remain? This guide separates the scientific definitions from the standards used to assess organisational claims.</p>
+      <p><strong>For company claims, the key difference is how emissions are reduced and the remainder is balanced.</strong> Carbon neutrality under <a href="https://www.iso.org/standard/14068">ISO 14068</a> prioritises reductions and removals within the value chain, then permits offsetting the remaining footprint. Net zero under the <a href="https://files.sciencebasedtargets.org/production/files/Net-Zero-Standard.pdf">SBTi Corporate Net-Zero Standard V1.3.1</a> requires deep emissions cuts followed by permanent carbon removals to counterbalance residual emissions.</p>
+      <p>Those are organisational frameworks, not universal definitions of the words. In the IPCC’s global scientific terminology, carbon neutrality and net zero CO₂ emissions are equivalent. To compare two company claims, check the gases, activities, reporting year, actual reductions and remaining balance. A carbon-neutral product and a company-wide net-zero target do not describe the same thing.</p>
       <nav aria-label="In this guide"><strong>In this guide</strong><ul>
         <li><a href="#climate-terms">Start with the scientific definitions</a></li>
         <li><a href="#claims-comparison">Compare the claim’s actual scope</a></li>
-        <li><a href="#reductions-removals">Understand reductions and removals</a></li>
+        <li><a href="#reductions-removals">Distinguish offsets, reductions and removals</a></li>
         <li><a href="#claims-example">Work through an example</a></li>
         <li><a href="#standards-date">Check the framework and its date</a></li>
         <li><a href="#claim-reading">Read a claim in five steps</a></li>
@@ -138,9 +138,10 @@ export const educationCoastPosts: StaticPost[] = [
       </table></div>
       <p>For companies, emissions boundaries often use the <a href="https://ghgprotocol.org/corporate-standard">GHG Protocol</a>. Scope 1 covers direct emissions from owned or controlled sources. Scope 2 concerns purchased electricity, steam, heat and cooling. Scope 3 includes other indirect value-chain emissions, such as purchased goods, transport and use of sold products. These categories explain why an office-only claim may cover much less than a company-wide claim.</p>
 
-      <h2 id="reductions-removals">Emissions reductions, avoided emissions and removals differ</h2>
+      <h2 id="reductions-removals">Carbon offsets, emissions reductions and removals</h2>
+      <p><strong>A carbon removal is a physical process; offsetting is an accounting use.</strong> A removal takes CO₂ out of the air and stores it. An offset credit can represent an emissions reduction or a removal under its programme’s rules, as described in <a href="https://www.canada.ca/en/services/environment/weather/climatechange/climate-plan/net-zero-emissions-2050/challenge/technical-guide.html">Canada’s Net-Zero Challenge glossary</a>. Calling something an offset does not tell you which process occurred.</p>
       <p>A reduction lowers emissions from an activity. A factory using less fuel can reduce emissions compared with its earlier operation. An avoided-emissions estimate instead compares an intervention with a specified alternative or baseline. Its credibility depends in part on what would otherwise have happened.</p>
-      <p>A removal takes CO₂ already in the atmosphere and stores it. <a href="https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-12/">IPCC’s assessment of carbon dioxide removal</a> treats it as a complement to deep emissions cuts. Stopping a release and taking carbon out of the air are both relevant actions, but they are not the same physical process.</p>
+      <p><a href="https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-12/">IPCC’s assessment of carbon dioxide removal</a> treats it as a complement to deep emissions cuts. Stopping a release and taking carbon out of the air are both relevant actions, but they are not the same physical process.</p>
       <p>For example, protecting a forest that would otherwise be cleared can prevent emissions. Additional tree growth can remove atmospheric CO₂. A credit labelled “forest carbon” needs more information before either description can be applied. The forest’s entire existing carbon stock is not a new annual removal.</p>
       <p>Storage also has a timescale. Carbon in vegetation can return to the atmosphere after disturbance. Removals need accounting that addresses durability, monitoring and reversal risk. Counting future hoped-for growth as though it has already occurred obscures both timing and uncertainty.</p>
 
@@ -152,8 +153,8 @@ export const educationCoastPosts: StaticPost[] = [
       <p>The lesson is to preserve the separate numbers: gross emissions, reductions, residual emissions and compensation or removals. A single net figure can conceal changes in any of them.</p>
 
       <h2 id="standards-date">Carbon neutrality does not mean reductions are optional</h2>
-      <p>A common comparison says neutrality relies only on offsets while net zero requires reductions. That is too broad. <a href="https://www.iso.org/standard/14068">ISO 14068:2026</a>, published in September 2026, prioritises reductions and removal enhancements within the value chain before offsetting the remaining footprint. Its public description also distinguishes this carbon-neutrality standard from requirements for net zero greenhouse gas emissions.</p>
-      <p>Corporate net-zero frameworks add their own requirements. As checked on 8 October 2026, the <a href="https://sciencebasedtargets.org/corporate-net-zero-standard-v2">SBTi had published Corporate Net-Zero Standard Version 2.0</a>, with validation under it due to open in early 2027. SBTi directed companies submitting targets during 2026 to Version 1.3.1. Do not describe Version 2.0 as an unpublished draft, or assume every company already uses it.</p>
+      <p>A common comparison says neutrality relies only on offsets while net zero requires reductions. That is too broad. <a href="https://www.iso.org/standard/14068">ISO 14068:2026</a> prioritises reductions and removal enhancements within the value chain before offsetting the remaining footprint. Published in September 2026, it replaces ISO 14068-1:2023; ISO states that this edition changes the title and number while retaining the content. It addresses carbon neutrality rather than establishing net-zero greenhouse-gas requirements.</p>
+      <p>Under <a href="https://files.sciencebasedtargets.org/production/files/Net-Zero-Standard.pdf">SBTi Version 1.3.1</a>, purchased carbon credits do not count as emissions cuts toward near-term or long-term science-based targets. Neutralising residual emissions is a separate step after the long-term reduction target is achieved. As checked on 30 October 2026, <a href="https://sciencebasedtargets.org/corporate-net-zero-standard-v2">Version 2.0 had been published</a>, with validation due to open in early 2027. Version 1.3.1 remains the applicable framework for corporate target validation during 2026.</p>
       <p>A validated target concerns the target-setting framework. It is not evidence that the company has already reached net zero. Always check the date, applicable version and what the assessment actually covers.</p>
 
       <h2 id="claim-reading">Read a climate claim in five steps</h2>
@@ -169,12 +170,14 @@ export const educationCoastPosts: StaticPost[] = [
       <h2 id="neutral-zero-questions">Common questions</h2>
       <h3>Does net zero mean absolutely no emissions?</h3>
       <p>No. A net balance can include remaining emissions counterbalanced by removals. Absolute zero emissions and net zero are different concepts.</p>
+      <h3>Can a company be carbon neutral but not yet net zero?</h3>
+      <p>Yes. A company may meet a carbon-neutrality framework for a stated footprint and year while still working toward the reductions and residual-removal requirements of its net-zero framework. Check whether both claims cover the same operations and gases before comparing them.</p>
       <h3>Can carbon-neutral claims include methane?</h3>
       <p>Yes, some organisational or product frameworks assess a multi-gas footprint in CO₂e. Check the declared gases rather than inferring them from the word carbon.</p>
       <h3>Does buying carbon credits prove net zero?</h3>
       <p>No. Credit purchases alone do not establish the inventory boundary, reductions, eligible removals or compliance with the claimed framework.</p>
       <p>For the ecological side of the balance, read about <a href="/blog/understanding-soil-carbon-the-hidden-climate-solution">carbon held in soil</a>, <a href="/blog/mangroves-in-india">mangrove carbon and coastal habitats</a>, and <a href="/blog/afforestation-vs-reforestation">afforestation and reforestation</a>.</p>
-      <p><em>Definitions and public standards information checked on 8 October 2026. This is an educational comparison, not a certification assessment.</em></p>
+      <p><em>Comparison updated and public ISO, SBTi and offset-definition sources checked on 30 October 2026. This is an educational comparison, not a certification assessment.</em></p>
     `,
   },
   {
@@ -182,16 +185,16 @@ export const educationCoastPosts: StaticPost[] = [
     tag: 'Coasts & Wetlands',
     tagBg: '#E9F4F8',
     tagColor: '#176179',
-    title: 'What Are Wetlands? Types, Benefits and How They Work',
-    excerpt: 'Understand marshes, swamps, peatlands and coastal wetlands, including seasonal water, flood buffering, wildlife and carbon storage.',
+    title: 'What Are Wetlands? Meaning, Types and Examples',
+    excerpt: 'Wetlands have water at or near the soil surface for all or part of the year. Explore their types, seasonal changes, examples and benefits.',
     date: 'October 8, 2026',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-30',
     readTime: '6',
     img: '',
     author: 'Mynzo Team',
     content: `
-      <p><strong>Wetlands are ecosystems in which water at or near the surface strongly shapes the soil and living community.</strong> They include marshes, swamps, peatlands and coastal habitats such as mangroves. Some stay wet throughout the year; others are flooded or saturated only during particular seasons. A dry-looking surface does not automatically mean a place is not a wetland.</p>
-      <p>Water is the starting point, but it is not the only thing to observe. Its source, timing, depth and movement help explain why a reed-filled marsh, a forested swamp and a tidal mudflat look and function differently. The <a href="https://www.epa.gov/wetlands/what-wetland">US EPA’s ecological overview</a> describes this connection between water, soils and adapted vegetation.</p>
+      <p><strong>Wetlands are places where water covers the ground or stays at or near the soil surface for all or part of the year, shaping the soil and the life it supports.</strong> Marshes, swamps, bogs, fens and mangrove forests are examples. A wetland can be freshwater, brackish or salty, and a seasonal wetland can look dry for part of the year.</p>
+      <p>Wetlands matter because they provide wildlife habitat and can store floodwater, retain nutrients and hold carbon. Their benefits depend on the habitat and its condition. The <a href="https://www.epa.gov/wetlands/what-wetland">US EPA’s ecological overview</a> explains how water, soils and adapted vegetation fit together; <a href="https://oceanservice.noaa.gov/facts/wetland.html">NOAA’s wetland guide</a> describes their water and wildlife functions.</p>
       <nav aria-label="In this guide"><strong>In this guide</strong><ul>
         <li><a href="#wetland-water">Follow the water through the year</a></li>
         <li><a href="#wetland-types">Compare the main wetland types</a></li>
@@ -205,7 +208,16 @@ export const educationCoastPosts: StaticPost[] = [
       <h2 id="wetland-water">The water regime explains the habitat</h2>
       <p>The term <strong>hydrology</strong> describes how water occurs and moves. A wetland can receive rainfall, river floodwater, groundwater, tidal water or a combination. Its <strong>hydroperiod</strong> is the pattern of wet and dry conditions through time. Think of it as the wetland’s water calendar.</p>
       <p>A seasonal pool may fill after rain and dry later. A tidal marsh changes with the sea. A groundwater-fed wetland may remain damp when nearby land is dry. These differences affect oxygen in the soil and the organisms able to live there. They also explain why a single photograph is a poor account of a whole year.</p>
-      <p>One <a href="https://www.reddit.com/r/wetlands/comments/1tnkfsi/trying_to_figure_out_if_this_is_wetland/">public wetland-identification discussion</a> centres on exactly this uncertainty: a prospective property buyer could not reproduce earlier wet conditions during a later visit. That is a reader question, not scientific proof about the parcel. The general lesson is to examine seasonal evidence rather than decide from standing water on one day.</p>
+      <div class="blog-table-wrap" role="region" aria-label="Illustrative seasonal wetland changes" tabindex="0"><table>
+        <caption>One hypothetical monsoon-fed wetland across three visits</caption>
+        <thead><tr><th scope="col">When you visit</th><th scope="col">What you might see</th><th scope="col">What to check</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">During the rains</th><td>Shallow standing water and flooded vegetation.</td><td>Where water enters and how far it spreads.</td></tr>
+          <tr><th scope="row">After the rains</th><td>Receding pools and exposed, damp soil.</td><td>How long water remains and which areas stay saturated.</td></tr>
+          <tr><th scope="row">In the dry season</th><td>No standing water in the same low-lying area.</td><td>Whether records show a recurring seasonal cycle or a recent change.</td></tr>
+        </tbody>
+      </table></div>
+      <p>This is an illustration, not a calendar for every wetland. Tidal and groundwater-fed systems may follow very different patterns. <a href="https://www.epa.gov/wetlands/what-wetland">Seasonal wetlands described by the EPA</a> show why one dry-season visit cannot settle the question.</p>
       <p>Definitions also vary by purpose. The <a href="https://www.ramsar.org/sites/default/files/2023-11/Workbook_Introductory%20Course%20to%20the%20Convention%20on%20Wetlands.pdf">Convention on Wetlands uses a broad definition</a> that includes inland and coastal waters and human-made systems such as rice paddies and reservoirs. A conservation classification is not automatically identical to a country’s legal boundary test.</p>
 
       <h2 id="wetland-types">Marsh, swamp, bog or fen?</h2>
@@ -225,7 +237,7 @@ export const educationCoastPosts: StaticPost[] = [
       <p>The categories can overlap in broader descriptions. Peatland refers to the accumulation of partly decomposed organic material, not simply to whether trees grow there. Mangroves can be described as forested coastal wetlands. Start with the actual water, soil and vegetation instead of expecting every site to fit one everyday word perfectly.</p>
       <p>India illustrates this variety. The Sundarbans has tidal mangrove habitat. <a href="https://rsis.ramsar.org/RISapp/files/RISrep/IN463RIS.pdf">Loktak Lake’s Ramsar information record</a> describes floating mats of vegetation and soil known as phumdis. These two systems should not be managed as though they were interchangeable, even though both fall within the wider wetland family.</p>
 
-      <h2 id="wetland-benefits">Why wetlands matter, and where the benefits have limits</h2>
+      <h2 id="wetland-benefits">Why are wetlands important?</h2>
       <h3>They can slow and store floodwater</h3>
       <p>Water spreading across a wetland can be temporarily stored, while vegetation creates resistance to flow. The <a href="https://www.epa.gov/sites/default/files/2021-01/documents/wetlands_protecting_life_and_property_from_flooding.pdf">EPA’s flooding factsheet</a> explains that the effect depends on factors including the wetland’s position in the flood path and how saturated it already is.</p>
       <p>A small, already-full basin cannot absorb unlimited additional rainfall. Nor can a wetland separated from a river by an embankment necessarily store that river’s floodwater. Site shape, connections and the scale of the storm matter. “Reduces flood risk” is therefore a conditional benefit, not a guarantee that nearby homes will never flood.</p>
@@ -263,7 +275,7 @@ export const educationCoastPosts: StaticPost[] = [
       <h3>Is a swamp the same as a marsh?</h3>
       <p>Both are wetlands. In common ecological usage, a swamp is dominated by woody vegetation, while a marsh is dominated by soft-stemmed plants.</p>
       <p>Continue with <a href="/blog/mangroves-in-india">mangroves in India</a>, <a href="/blog/ecosystem-services-types-examples">examples of ecosystem services</a> and <a href="/blog/understanding-soil-carbon-the-hidden-climate-solution">soil carbon</a>.</p>
-      <p><em>Sources checked on 8 October 2026. This guide explains ecological concepts; local legal definitions and site boundaries require their own assessment.</em></p>
+      <p><em>Definition, wetland types and seasonal example reviewed against EPA and NOAA sources on 30 October 2026. This guide explains ecological concepts; local legal definitions and site boundaries require their own assessment.</em></p>
     `,
   },
   {
@@ -272,18 +284,18 @@ export const educationCoastPosts: StaticPost[] = [
     tagBg: '#EBF7F0',
     tagColor: '#1A7A4A',
     title: 'Afforestation vs Reforestation: Differences and Examples',
-    excerpt: 'Learn how land-use history separates afforestation and reforestation, why definitions vary, and when planting trees can harm natural habitats.',
+    excerpt: 'Afforestation creates forest on non-forest land; reforestation re-establishes forest. Compare land-use definitions, examples and restoration choices.',
     date: 'October 8, 2026',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-30',
     readTime: '6',
     img: '',
     author: 'Mynzo Team',
     content: `
-      <p><strong>Afforestation establishes forest on land previously under another land use. Reforestation re-establishes forest, but the precise reporting definition depends on the framework.</strong> The distinction is about land-use history and classification, not simply whether someone plants a tree.</p>
-      <p>In everyday conversation, reforestation often means bringing forest back where it once existed. Technical reporting can be narrower. Understanding that difference helps explain why two apparently similar planting projects receive different labels, and why neither label by itself proves ecological restoration.</p>
+      <p><strong>Afforestation creates forest on land previously under a non-forest use. Reforestation re-establishes forest on land that remains classified as forest.</strong> These are the <a href="https://fra-data.fao.org/definitions/fra/2020/en/tad">FAO reporting meanings</a> used in the comparison below, and both involve planting or deliberate seeding. The main difference is the land-use status before the work begins.</p>
+      <p>For example, converting a crop field to forest and replanting a harvested forest may both start with bare ground. In these hypothetical cases, the first changes land use; the second renews tree cover within an existing forest. Everyday usage and other reporting frameworks can differ, so a site’s history still matters.</p>
       <nav aria-label="In this guide"><strong>In this guide</strong><ul>
-        <li><a href="#forest-definitions">Understand the definitions</a></li>
         <li><a href="#forest-comparison">Compare the activities</a></li>
+        <li><a href="#forest-definitions">Understand the definitions</a></li>
         <li><a href="#forest-examples">Apply the terms to examples</a></li>
         <li><a href="#restoration-difference">Separate planting from restoration</a></li>
         <li><a href="#open-ecosystems">Protect natural grasslands and wetlands</a></li>
@@ -291,15 +303,9 @@ export const educationCoastPosts: StaticPost[] = [
         <li><a href="#afforestation-questions">Common questions</a></li>
       </ul></nav>
 
-      <h2 id="forest-definitions">Begin with a named definition</h2>
-      <p><a href="https://openknowledge.fao.org/server/api/core/bitstreams/a6e225da-4a31-4e06-818d-ca3aeadfd635/content">FAO’s FRA 2025 terms and definitions document</a> describes afforestation as establishing forest by planting or deliberate seeding on land previously under a different use. It is a change from non-forest to forest. Natural succession onto non-forest land is recorded separately as natural expansion of forest.</p>
-      <p>For reforestation, the <a href="https://fra-data.fao.org/definitions/fra/2020/en/tad">FAO FRA 2020 glossary</a> specifies planting or deliberate seeding on land already classified as forest. There is no land-use change in that definition. It includes re-establishing trees on temporarily unstocked forest land. FRA 2025 retains the afforestation definition but does not include the same separate reforestation entry.</p>
-      <p>“Temporarily unstocked” means trees are temporarily absent while the area remains forest for reporting purposes. A harvested stand expected to regenerate can therefore remain forest land. The visible absence of trees does not necessarily make planting there afforestation.</p>
-      <p>Do not turn the distinction into a universal rule that afforestation means land that has never had trees. Some frameworks use specific historical periods or eligibility dates. State the definition and version used, especially when moving from general education to a national inventory or a carbon programme.</p>
-
-      <h2 id="forest-comparison">Afforestation, reforestation and natural regeneration compared</h2>
+      <h2 id="forest-comparison">Afforestation vs reforestation at a glance</h2>
       <div class="blog-table-wrap" role="region" aria-label="Afforestation reforestation and regeneration comparison" tabindex="0"><table>
-        <caption>A practical comparison using the FAO reporting meanings described above</caption>
+        <caption>A practical comparison using the FAO reporting definitions explained below</caption>
         <thead><tr><th scope="col">Activity</th><th scope="col">Starting situation</th><th scope="col">Main distinction</th></tr></thead>
         <tbody>
           <tr><th scope="row">Afforestation</th><td>Land under a non-forest use.</td><td>Planting or deliberate seeding establishes forest and changes land use.</td></tr>
@@ -309,6 +315,12 @@ export const educationCoastPosts: StaticPost[] = [
         </tbody>
       </table></div>
       <p><a href="https://www.fao.org/forestry-fao/anr/97764/en/">FAO explains assisted natural regeneration</a> as a site-dependent option, especially where natural recruits or seed sources remain. It can be combined with enrichment planting. It is a restoration approach, so it should not be treated as a competing land-use category in every accounting system.</p>
+
+      <h2 id="forest-definitions">Begin with a named definition</h2>
+      <p><a href="https://openknowledge.fao.org/server/api/core/bitstreams/a6e225da-4a31-4e06-818d-ca3aeadfd635/content">FAO’s FRA 2025 terms and definitions document</a> describes afforestation as establishing forest by planting or deliberate seeding on land previously under a different use. It is a change from non-forest to forest. Natural succession onto non-forest land is recorded separately as natural expansion of forest.</p>
+      <p>For reforestation, the <a href="https://fra-data.fao.org/definitions/fra/2020/en/tad">FAO FRA 2020 glossary</a> specifies planting or deliberate seeding on land already classified as forest. There is no land-use change in that definition. It includes re-establishing trees on temporarily unstocked forest land. FRA 2025 retains the afforestation definition but does not include the same separate reforestation entry.</p>
+      <p>“Temporarily unstocked” means trees are temporarily absent while the area remains forest for reporting purposes. A harvested stand expected to regenerate can therefore remain forest land. The visible absence of trees does not necessarily make planting there afforestation.</p>
+      <p>Do not turn the distinction into a universal rule that afforestation means land that has never had trees. Some frameworks use specific historical periods or eligibility dates. State the definition and version used, especially when moving from general education to a national inventory or a carbon programme.</p>
 
       <h2 id="forest-examples">Four examples that test the distinction</h2>
       <p>These are hypothetical teaching scenarios. They are not descriptions of Mynzo projects or recommendations for particular parcels.</p>
@@ -351,7 +363,7 @@ export const educationCoastPosts: StaticPost[] = [
       <h3>Can a forest return without planting?</h3>
       <p>Yes, where natural regeneration is feasible. Some sites need assistance or planting because seeds, soil conditions or other recovery processes are inadequate.</p>
       <p>Continue with <a href="/blog/what-is-biodiversity">what biodiversity includes</a>, <a href="/blog/miyawaki-forest-method">the Miyawaki planting method</a> or <a href="/blog/urban-rewilding">urban rewilding</a>.</p>
-      <p><em>Sources checked on 8 October 2026. FAO editions are identified because reporting terminology and programme eligibility are not interchangeable.</em></p>
+      <p><em>Comparison and examples reviewed against FAO’s FRA 2020 definitions and assisted-regeneration guidance on 30 October 2026. FAO editions are identified because reporting terminology and programme eligibility are not interchangeable.</em></p>
     `,
   },
 ];

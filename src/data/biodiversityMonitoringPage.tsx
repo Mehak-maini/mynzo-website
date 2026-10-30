@@ -1,8 +1,9 @@
 import type { PlatformPageData } from '@/components/PlatformPage.types';
+import { PUBLIC_PAGE_UPDATED_AT } from '@/lib/seo';
 
 export const biodiversityMonitoringPage: PlatformPageData = {
   path: '/platform/biodiversity-monitoring',
-  updatedAt: '2026-09-18',
+  updatedAt: PUBLIC_PAGE_UPDATED_AT['/platform/biodiversity-monitoring'],
   metadataTitle: 'Biodiversity Monitoring for Forest Projects | Mynzo Carbon',
   description: 'Plan biodiversity monitoring with forest observations and ecological field evidence. Define habitat baselines, review change and scope your project with Mynzo.',
   eyebrow: 'Biodiversity monitoring',
@@ -23,7 +24,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
       body: (
         <>
           <p>Is a restoration site developing as intended? Which forest patches need closer inspection? What can your team support in its next biodiversity report? These are different questions, with different evidence requirements.</p>
-          <p>Mynzo combines satellite forest observations, machine learning and ground-truth field data. For a biodiversity project, this can contribute the forest-monitoring part of the evidence: canopy condition, changes in forest cover and locations that need investigation. Agree the ecological measurements, survey responsibilities and assessment method separately during scoping.</p>
+          <p>Mynzo combines satellite forest observations, machine learning and ground-truth field data. For a biodiversity project, scope the forest-monitoring contribution around canopy condition, forest-cover change and locations that need investigation. Start with the observations needed from Mynzo, the surveys your ecology team will carry out and the records both teams will use at review.</p>
           <p>The <a href="https://geobon.org/ebvs/working-groups/ecosystem-structure/">GEO BON ecosystem structure framework</a> connects observations of physical ecosystem characteristics with biodiversity monitoring. Structure is one part of that work. A complete biodiversity assessment may also need information about species, ecological processes and pressures on the site.</p>
         </>
       ),
@@ -66,17 +67,23 @@ export const biodiversityMonitoringPage: PlatformPageData = {
     },
     {
       id: 'evidence-for-review',
-      title: 'Ask for findings that another team can review',
+      title: 'Agree the deliverables before monitoring begins',
       body: (
         <>
-          <p>A useful report explains how an observation became a finding. During scoping, agree the maps, records and review process your project needs:</p>
-          <ul>
-            <li>Site and habitat boundaries, with the version used for each comparison.</li>
-            <li>Baseline and follow-up observations, including acquisition dates and survey periods.</li>
-            <li>Definitions, units, classification rules and relevant validation checks.</li>
-            <li>Field references, survey coverage and areas where evidence is missing.</li>
-            <li>Results, uncertainty and the management decisions they can support.</li>
-          </ul>
+          <p>Use these four outputs to discuss the scope with Mynzo and your ecology team. Assign each output to a responsible person, agree its format and record any specialist work needed. The final proposal should state which outputs are included.</p>
+          <div className="platform-table-wrap" role="region" aria-label="Biodiversity monitoring deliverables" tabIndex={0}>
+            <table>
+              <caption>A proposed handover structure for a biodiversity monitoring cycle</caption>
+              <thead><tr><th scope="col">Output to agree</th><th scope="col">What the record should contain</th><th scope="col">Question it helps resolve</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Baseline record</th><td>Boundary version, habitat classes, observation dates, field references and evidence gaps.</td><td>What starting condition can the project actually support?</td></tr>
+                <tr><th scope="row">Change review</th><td>Comparable observations, units, methods, validation and uncertainty for each reported change.</td><td>Which differences need investigation before interpretation?</td></tr>
+                <tr><th scope="row">Field follow-up list</th><td>Mapped locations, the unresolved question, required survey and responsible team.</td><td>Where should the next visit focus, and what must it establish?</td></tr>
+                <tr><th scope="row">Management review note</th><td>Finding, supporting evidence, limitations, agreed action and next review date.</td><td>Is there enough evidence to act, or is more work needed?</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>For example, an apparent canopy reduction can become a mapped field-check request. Keep its cause unresolved until the relevant evidence is reviewed; the observation alone does not establish species loss or a management failure. This is an illustrative review step, not a Mynzo project result.</p>
           <p>For restoration programmes, <a href="https://www.fao.org/sustainable-forest-management/toolbox/tools/tool-detail/en/c/1255095/">FAO&apos;s restoration monitoring guide</a> starts with goals and constraints before selecting indicators. Decide what success would mean at your site before choosing a dashboard measure.</p>
           <p>Our <a href="/blog/biodiversity-metrics-for-restoration-projects">guide to biodiversity metrics for restoration projects</a> explains how to select measurements. If the work also supports a carbon project, keep its carbon accounting and biodiversity findings distinct within the <a href="/platform/digital-mrv">measurement and reporting workflow</a>.</p>
         </>
@@ -125,6 +132,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
     },
   ],
   relatedLinks: [
+    { href: '/blog/habitat-mapping', title: 'Prepare a habitat mapping brief', description: 'Specify map classes, field checks and the evidence needed at handover.' },
     { href: '/blog/restoration-monitoring-plan', title: 'Plan restoration monitoring', description: 'Connect intervention records, field visits and management decisions.' },
     { href: '/blog/biodiversity-metrics-for-restoration-projects', title: 'Choose biodiversity metrics', description: 'Match restoration goals to measurements, baselines and evidence.' },
     { href: '/solutions/project-developers', title: 'Monitoring for project developers', description: 'Plan the site evidence and reporting a project needs.' },

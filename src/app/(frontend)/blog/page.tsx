@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getPublishedPosts } from '@/lib/posts';
 import { pageMetadata } from '@/lib/seo';
-import { EDUCATION_TOPICS } from '@/lib/education-guides';
+import { EDUCATION_TOPICS, PRACTICAL_GUIDES } from '@/lib/education-guides';
 
 export const revalidate = 300;
 export const metadata = pageMetadata('/blog', 'Forests, Biodiversity & Climate Guides | Mynzo Talks', 'Learn about biodiversity, forests, soil carbon, farming, wetlands and climate terms, with practical examples and sources from India and around the world.');
@@ -16,7 +16,7 @@ export default async function BlogPage() {
         <p>Clear guides to forests, biodiversity, soil and climate</p>
       </div>
 
-      <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '64px 64px 100px' }}>
+      <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '64px clamp(20px, 5vw, 64px) 100px' }}>
         <nav aria-label="Explore educational topics" style={{ marginBottom: '36px', display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
           {EDUCATION_TOPICS.map(topic => (
             <Link key={topic.href} href={topic.href} style={{ color: '#3D5A70', background: '#eaf4f7', padding: '10px 16px', borderRadius: '24px', fontFamily: 'var(--font-nunito)', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
@@ -24,6 +24,21 @@ export default async function BlogPage() {
             </Link>
           ))}
         </nav>
+        <section aria-labelledby="practical-guides" style={{ marginBottom: '48px' }}>
+          <h2 id="practical-guides" style={{ fontFamily: 'var(--font-nunito)', color: '#0D1F2D', fontSize: '26px', marginBottom: '12px' }}>Put the ideas to work</h2>
+          <p style={{ color: '#3D5A70', marginBottom: '24px', lineHeight: 1.7 }}>Start with the question your site assessment needs to answer.</p>
+          <div className="blogs2-grid">
+            {PRACTICAL_GUIDES.map(guide => (
+              <Link key={guide.href} href={guide.href} className="blog2-card">
+                <div className="blog2-body">
+                  <h3 className="blog2-title-txt" style={{ margin: 0 }}>{guide.title}</h3>
+                  <p className="blog2-excerpt" style={{ margin: 0 }}>{guide.text}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+        <h2 style={{ fontFamily: 'var(--font-nunito)', color: '#0D1F2D', fontSize: '26px', marginBottom: '24px' }}>All guides and stories</h2>
         <div className="blogs2-grid">
           {docs.map(post => {
             const { slug, tag, tagBg, tagColor, excerpt, date, readTime, img: imgSrc } = post;
