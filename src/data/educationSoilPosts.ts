@@ -6,7 +6,7 @@ export const educationSoilPosts: StaticPost[] = [
     tag: 'Soil Science', tagBg: '#F5F0FF', tagColor: '#5A1A7A',
     title: 'Soil Organic Carbon: Meaning, Stocks and Measurement',
     excerpt: 'Understand soil organic carbon, its difference from organic matter, and how concentration, depth and bulk density determine a soil carbon stock.',
-    date: 'March 10, 2025', updatedAt: '2026-10-08', readTime: '8',
+    date: 'March 10, 2025', updatedAt: '2026-10-30', readTime: '8',
     img: '', author: 'Mynzo Team',
     content: `
       <p>Soil organic carbon is the carbon contained in soil organic matter, including material derived from plants, animals and microorganisms. It matters for soil function and the climate, but a carbon percentage on a laboratory report does not tell you how many tonnes a field stores. You also need the mass of soil represented by that result.</p>
@@ -56,6 +56,19 @@ export const educationSoilPosts: StaticPost[] = [
       <h2 id="soil-carbon-measurement">How soil carbon change is measured</h2>
       <p>Start by defining the area, layers and decision. Separate materially different soils or management histories in the sampling design. Record locations, dates, laboratory methods, bulk-density measurements and treatment of stones and roots. Decide how the sampling design represents the whole field before collecting convenient samples.</p>
       <p><a href="https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-testing">USDA's soil carbon monitoring guidance</a> emphasises measurements before and after a practice change and observation over several years. A small difference between two tests may fall within natural variability or measurement uncertainty. Where density changes, the comparison may require an equivalent-soil-mass approach so that different masses of soil are not mistaken for carbon gain.</p>
+      <h3 id="soil-carbon-comparison-record">Keep a comparison record beside the laboratory reports</h3>
+      <p>Before subtracting two results, check the records below. The <a href="https://www.nrcs.usda.gov/sites/default/files/2024-12/FY25_CEMA%20221_Soil%20Carbon%20Stock%20Monitoring_10-2024.pdf">NRCS soil carbon stock monitoring protocol</a> links sample identifiers, locations, depths, density and laboratory results, and calls for comparable resampling. It is a US programme protocol; a project in India or elsewhere needs a locally appropriate design.</p>
+      <div class="blog-table-wrap" role="region" aria-label="Soil carbon comparison record" tabindex="0"><table>
+        <caption>Checks before interpreting a repeat soil carbon result</caption>
+        <thead><tr><th scope="col">Record for both rounds</th><th scope="col">Check before comparing</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sample IDs, locations and represented area</th><td>Can each result be traced to the sampling design and the same reporting area?</td></tr>
+          <tr><th scope="row">Date, soil layer and field conditions</th><td>Are the sampled depths and timing comparable, with any differences documented?</td></tr>
+          <tr><th scope="row">Organic carbon result and method</th><td>Do the analyte, units and laboratory methods match?</td></tr>
+          <tr><th scope="row">Bulk density and coarse fragments</th><td>Are the stock inputs available for each layer and defined consistently?</td></tr>
+        </tbody>
+      </table></div>
+      <p>For example, a repeat report that supplies only a carbon percentage cannot update the illustrative 35.1 t C/ha stock above without the remaining inputs. Record the new concentration, mark the stock comparison as unresolved and identify the missing measurements. Do not carry the teaching assumptions into a real result.</p>
       <p>Remote observations and models can help organise sampling and estimate spatial patterns. They need appropriate reference data and validation. The <a href="https://www.nrcs.usda.gov/resources/data-and-reports/rapid-carbon-assessment-raca">USDA Rapid Carbon Assessment</a> combined sampled soil profiles, spectroscopy and bulk-density measurements. It is an example of complementary evidence, rather than proof that a satellite alone can directly measure a site's subsurface carbon stock.</p>
 
       <h2 id="soil-carbon-climate">Why a higher stock is not automatically a carbon credit</h2>
@@ -70,7 +83,7 @@ export const educationSoilPosts: StaticPost[] = [
       <p>Colour is a field observation, not the concentration, density and depth measurements needed for a stock estimate. Use laboratory and sampling evidence for quantitative claims.</p>
       <h3>Does adding compost count as carbon removal?</h3>
       <p>Compost supplies organic material. Its application alone does not establish net atmospheric removal: its source, alternative fate, decomposition, transport and related emissions affect the accounting.</p>
-      <p><em>Updated 8 October 2026. Sources checked on that date. The calculation is educational and does not represent project performance.</em></p>
+      <p><em>Updated 30 October 2026 with a comparison-record checklist. NRCS monitoring sources checked on that date; other sources checked 8 October 2026. The calculation is educational and does not represent project performance.</em></p>
     `,
   },
   {

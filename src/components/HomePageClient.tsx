@@ -968,7 +968,10 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
               </article>
             ))}
           </div>
-          <Link href="/get-started" className="plat-detail-link">Discuss your project <span aria-hidden="true">↗</span></Link>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 28px' }}>
+            <Link href="/platform/biodiversity-monitoring" className="plat-detail-link">Explore biodiversity monitoring <span aria-hidden="true">↗</span></Link>
+            <Link href="/get-started" className="plat-detail-link">Discuss your project <span aria-hidden="true">↗</span></Link>
+          </div>
         </div>
       </section>
 

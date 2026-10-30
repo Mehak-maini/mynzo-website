@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeDate, mergePosts } from '../src/lib/post-data';
+import { normalizeDate, normalizePost, mergePosts } from '../src/lib/post-data';
 import { getPublishedPosts, getPost } from '../src/lib/posts';
 import { pageMetadata, serializeJsonLd, SITE_URL } from '../src/lib/seo';
 import { trackLead } from '../src/lib/analytics';
@@ -27,6 +27,13 @@ test('archive retains static posts, lets published CMS override slugs, excludes 
   assert.deepEqual(result.map(p => p.slug), ['newer', 'older', 'retained']);
   assert.equal(result[1].title, 'CMS title');
   assert.equal(result[0].date, 'September 2, 2026');
+});
+
+test('legacy CMS author variants retain the team identity while named authors remain distinct', () => {
+  for (const author of ['Mynzo Team ', 'Mynzo team', 'Mynzo team ', '\nMynzo Team\t', '   ', null, undefined]) {
+    assert.equal(normalizePost({ slug: 'team-story', title: 'Team story', author }, 'cms').author, 'Mynzo Team');
+  }
+  assert.equal(normalizePost({ slug: 'signed-story', title: 'Signed story', author: ' Asha Rao ' }, 'cms').author, 'Asha Rao');
 });
 
 test('fetches every CMS page with published-only query and deduplicates', async t => {
@@ -69,7 +76,10 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   assert.ok(entries.some(p => p.url === `${SITE_URL}/blog/biodiversity-metrics-for-restoration-projects`));
   assert.ok(entries.every(p => p.url.startsWith(SITE_URL)));
   assert.ok(entries.every(p => !/thank-you|\/admin|\/api/.test(p.url)));
-  assert.equal(entries[0].lastModified, undefined);
+  assert.equal(entries[0].lastModified, '2026-10-30');
+  assert.equal(entries.find(p => p.url.endsWith('/platform/forest-monitoring'))?.lastModified, undefined);
+  assert.equal(entries.find(p => p.url.endsWith('/platform/biodiversity-monitoring'))?.lastModified, '2026-10-30');
+  assert.equal(entries.find(p => p.url.endsWith('/blog'))?.lastModified, '2026-10-30');
 });
 
 test('metadata is specific to the page and JSON-LD cannot terminate its script element', () => {

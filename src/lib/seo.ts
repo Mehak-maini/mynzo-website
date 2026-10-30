@@ -17,6 +17,13 @@ export function pageMetadata(path: string, title: string, description: string, i
 
 export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digital-mrv', '/platform/biodiversity-monitoring', '/solutions/project-developers', '/blog', '/get-started', '/privacy-policy', '/terms-of-use', '/data-processing', '/cookie-policy'];
 
+// Record substantive page revisions, never the time a sitemap is requested.
+export const PUBLIC_PAGE_UPDATED_AT: Record<string, string> = {
+  '/': '2026-10-30',
+  '/blog': '2026-10-30',
+  '/platform/biodiversity-monitoring': '2026-10-30',
+};
+
 export function serializeJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, '\\u003c');
 }
