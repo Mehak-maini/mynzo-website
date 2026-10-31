@@ -79,7 +79,7 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   assert.equal(entries[0].lastModified, '2026-10-30');
   assert.equal(entries.find(p => p.url.endsWith('/platform/forest-monitoring'))?.lastModified, undefined);
   assert.equal(entries.find(p => p.url.endsWith('/platform/biodiversity-monitoring'))?.lastModified, '2026-10-30');
-  assert.equal(entries.find(p => p.url.endsWith('/blog'))?.lastModified, '2026-10-30');
+  assert.equal(entries.find(p => p.url.endsWith('/blog'))?.lastModified, '2026-10-31');
 });
 
 test('metadata is specific to the page and JSON-LD cannot terminate its script element', () => {

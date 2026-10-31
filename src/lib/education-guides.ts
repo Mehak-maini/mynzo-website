@@ -12,14 +12,14 @@ const NEXT_READING: Record<string, ReadingLink> = {
     label: 'Explore biodiversity metrics', href: '/blog/biodiversity-metrics-for-restoration-projects',
   },
   'biodiversity-hotspots-in-india': {
-    title: 'Understand the habitats within a landscape',
-    text: 'A regional conservation priority is a starting point. A habitat map answers more local questions.',
-    label: 'Read the habitat mapping guide', href: '/blog/habitat-mapping',
+    title: 'What connects the habitats within a landscape?',
+    text: 'Explore habitat fragmentation, wildlife corridors and the evidence needed to understand movement.',
+    label: 'Read the fragmentation guide', href: '/blog/habitat-fragmentation-wildlife-corridors',
   },
   'ecosystem-services-types-examples': {
-    title: 'Connect ecosystem services with biodiversity',
-    text: 'Explore genetic, species and ecosystem diversity through practical examples.',
-    label: 'Learn about biodiversity', href: '/blog/what-is-biodiversity',
+    title: 'How do restoration projects assess recovery?',
+    text: 'Compare real ecosystem restoration examples and the evidence behind their reported changes.',
+    label: 'Explore restoration examples', href: '/blog/what-is-ecosystem-restoration',
   },
   'understanding-soil-carbon-the-hidden-climate-solution': {
     title: 'Choose soil practices for your conditions',
@@ -27,24 +27,24 @@ const NEXT_READING: Record<string, ReadingLink> = {
     label: 'Read the soil management guide', href: '/blog/how-to-increase-organic-carbon-in-soil',
   },
   'what-is-regenerative-agriculture': {
-    title: 'How do trees fit into a farm?',
-    text: 'Explore agroforestry systems, planning decisions and the evidence needed to assess results.',
-    label: 'Read the agroforestry guide', href: '/blog/agroforestry-the-future-of-sustainable-land-use',
+    title: 'Compare tree and crop systems in India',
+    text: 'Use regional examples to think through water, crop choice, maintenance and monitoring.',
+    label: 'Explore agroforestry in India', href: '/blog/agroforestry-in-india',
   },
   'how-to-increase-organic-carbon-in-soil': {
-    title: 'Check what a soil-carbon result actually measures',
-    text: 'Understand the difference between carbon concentration, stock and change over time.',
-    label: 'Read the soil-carbon explainer', href: '/blog/understanding-soil-carbon-the-hidden-climate-solution',
+    title: 'What else should a soil assessment include?',
+    text: 'Read physical, chemical and biological indicators alongside your carbon result.',
+    label: 'Compare soil health indicators', href: '/blog/soil-health-indicators',
   },
   'urban-rewilding': {
-    title: 'Plan how to track restoration',
-    text: 'Set a baseline, choose indicators and compare repeat observations before claiming recovery.',
-    label: 'Read the restoration monitoring guide', href: '/blog/restoration-monitoring-plan',
+    title: 'Identify the pressures on local biodiversity',
+    text: 'Connect the causes of biodiversity loss with observations and practical responses.',
+    label: 'Read the biodiversity loss guide', href: '/blog/causes-of-biodiversity-loss',
   },
   'mangroves-in-india': {
-    title: 'Explore the wider wetland landscape',
-    text: 'Understand wetland types, water regimes and why restoration depends on the site.',
-    label: 'Read the wetlands guide', href: '/blog/what-are-wetlands',
+    title: 'What should happen before mangrove planting?',
+    text: 'Check the causes of degradation, tidal conditions and the evidence needed for restoration.',
+    label: 'Read the mangrove restoration guide', href: '/blog/mangrove-restoration',
   },
   'carbon-neutral-vs-net-zero': {
     title: 'How is forest carbon measured?',
@@ -52,14 +52,49 @@ const NEXT_READING: Record<string, ReadingLink> = {
     label: 'Read the forest carbon guide', href: '/blog/how-ai-is-revolutionising-forest-carbon-accounting',
   },
   'what-are-wetlands': {
-    title: 'Look closer at India’s mangroves',
-    text: 'Explore where mangroves grow, what they provide and what their restoration requires.',
-    label: 'Read the mangroves guide', href: '/blog/mangroves-in-india',
+    title: 'Where do coastal ecosystems store carbon?',
+    text: 'Compare mangroves, salt marshes and seagrasses, and separate stored carbon from annual uptake.',
+    label: 'Read the blue carbon guide', href: '/blog/what-is-blue-carbon',
   },
   'afforestation-vs-reforestation': {
     title: 'Track what happens after a restoration decision',
     text: 'Move beyond planting counts to survival, condition and recovery over time.',
     label: 'Read the restoration monitoring guide', href: '/blog/restoration-monitoring-plan',
+  },
+  'agroforestry-in-india': {
+    title: 'Plan the records for your chosen system',
+    text: 'Connect planting, crop and field observations with the outcomes your project needs to track.',
+    label: 'Use the agroforestry measurement checklist', href: '/blog/agroforestry-the-future-of-sustainable-land-use#measure-agroforestry-outcomes',
+  },
+  'soil-health-indicators': {
+    title: 'Read a soil-carbon result with its units',
+    text: 'Understand concentration, stock and the sampling assumptions behind comparisons.',
+    label: 'Read the soil-carbon guide', href: '/blog/understanding-soil-carbon-the-hidden-climate-solution',
+  },
+  'mangrove-restoration': {
+    title: 'Choose evidence for ecological recovery',
+    text: 'Compare habitat, species and condition measurements, then adapt the monitoring brief to your site.',
+    label: 'Explore biodiversity measurement methods', href: '/blog/biodiversity-metrics-for-restoration-projects',
+  },
+  'what-is-blue-carbon': {
+    title: 'See what mangrove restoration involves',
+    text: 'Follow the decisions about site conditions, local priorities and repeat observations.',
+    label: 'Read the mangrove restoration guide', href: '/blog/mangrove-restoration',
+  },
+  'habitat-fragmentation-wildlife-corridors': {
+    title: 'Define what a habitat map needs to show',
+    text: 'Agree habitat classes, observation dates and field checks before interpreting connectivity.',
+    label: 'Use the habitat mapping guide', href: '/blog/habitat-mapping',
+  },
+  'causes-of-biodiversity-loss': {
+    title: 'Turn a biodiversity question into a survey',
+    text: 'Choose measurements that can distinguish a pressure, a response and an ecological change.',
+    label: 'Explore biodiversity measurement methods', href: '/blog/biodiversity-metrics-for-restoration-projects',
+  },
+  'what-is-ecosystem-restoration': {
+    title: 'Build a record for the next site visit',
+    text: 'Keep baseline observations, repeat measurements and follow-up actions together.',
+    label: 'Use the restoration monitoring plan', href: '/blog/restoration-monitoring-plan',
   },
 };
 

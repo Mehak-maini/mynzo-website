@@ -14,6 +14,8 @@ const ENQUIRY_SOURCES = {
   'habitat-mapping-guide': 'Habitat mapping guide',
   'restoration-guide': 'Restoration monitoring plan guide',
   'agroforestry-guide': 'Agroforestry guide',
+  'agroforestry-in-india-guide': 'Agroforestry in India guide',
+  'ecosystem-restoration-guide': 'Ecosystem restoration guide',
   'forest-carbon-guide': 'Forest carbon accounting guide',
   'forest-monitoring': 'Forest monitoring page',
   'digital-mrv': 'Digital MRV page',
