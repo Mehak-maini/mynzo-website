@@ -16,6 +16,7 @@ const ENQUIRY_SOURCES = {
   'agroforestry-guide': 'Agroforestry guide',
   'agroforestry-in-india-guide': 'Agroforestry in India guide',
   'ecosystem-restoration-guide': 'Ecosystem restoration guide',
+  'assisted-regeneration-guide': 'Assisted natural regeneration guide',
   'forest-carbon-guide': 'Forest carbon accounting guide',
   'forest-monitoring': 'Forest monitoring page',
   'digital-mrv': 'Digital MRV page',

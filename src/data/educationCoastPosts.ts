@@ -261,7 +261,7 @@ export const educationCoastPosts: StaticPost[] = [
         <li><strong>Record uncertainty.</strong> A dry channel or unidentified plant is an observation to investigate, not proof of absence.</li>
         <li><strong>Compare appropriate seasons.</strong> Repeat observations from the same locations and retain photographs with dates.</li>
       </ol>
-      <p>For example, a hypothetical low-lying area beside a school might have shallow water after the monsoon and dry vegetation later. The first useful question is whether this is its normal seasonal cycle or a recent change. Digging a permanent pond before answering that question could alter the habitat one intended to help.</p>
+      <p>For example, a hypothetical low-lying area beside a school might have shallow water after the monsoon and dry vegetation later. The first useful question is whether this is its normal seasonal cycle or a recent change. Digging a permanent pond before answering that question could alter the habitat one intended to help. For recording the school's water use and choosing practical improvements, see <a href="/blog/water-conservation-methods">water conservation methods</a> and its blank observation sheet.</p>
 
       <h2 id="wetland-restoration">Restoration should repair the reason the system changed</h2>
       <p>A restoration proposal should identify the cause of degradation: altered drainage, blocked connections, pollution, invasive species or another pressure. The desired outcome then needs a suitable measure. Reconnecting water, improving water quality and recovering native vegetation are different objectives.</p>
@@ -361,7 +361,7 @@ export const educationCoastPosts: StaticPost[] = [
       <h3>Does planting one tree count as afforestation?</h3>
       <p>A tree-planting action alone does not establish a change to forest land use. Reporting frameworks apply their own area, cover and land-use criteria.</p>
       <h3>Can a forest return without planting?</h3>
-      <p>Yes, where natural regeneration is feasible. Some sites need assistance or planting because seeds, soil conditions or other recovery processes are inadequate.</p>
+      <p>Yes, where natural regeneration is feasible. Some sites need assistance or planting because seeds, soil conditions or other recovery processes are inadequate. Our <a href="/blog/assisted-natural-regeneration">assisted natural regeneration guide</a> explains how to assess those conditions before choosing an intervention.</p>
       <p>Continue with <a href="/blog/what-is-biodiversity">what biodiversity includes</a>, <a href="/blog/miyawaki-forest-method">the Miyawaki planting method</a> or <a href="/blog/urban-rewilding">urban rewilding</a>.</p>
       <p><em>Comparison and examples reviewed against FAO’s FRA 2020 definitions and assisted-regeneration guidance on 30 October 2026. FAO editions are identified because reporting terminology and programme eligibility are not interchangeable.</em></p>
     `,

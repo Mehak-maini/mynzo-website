@@ -1,6 +1,26 @@
 type ReadingLink = { title: string; text: string; label: string; href: string };
 
 const NEXT_READING: Record<string, ReadingLink> = {
+  'assisted-natural-regeneration': {
+    title: 'Turn a recovery decision into a monitoring plan',
+    text: 'Record the starting conditions, repeat field observations and the findings that would change your approach.',
+    label: 'Use the restoration monitoring plan', href: '/blog/restoration-monitoring-plan',
+  },
+  'water-conservation-methods': {
+    title: 'How does water move through a city?',
+    text: 'Explore the connections between rainfall, urban surfaces and blue-green infrastructure.',
+    label: 'Read Rethinking Water in Cities', href: '/blog/rethinking-water-in-cities',
+  },
+  'deforestation-carbon-cycle': {
+    title: 'Follow the measurements behind a forest carbon estimate',
+    text: 'See how field records, carbon pools and uncertainty shape the calculation.',
+    label: 'Read the forest carbon accounting guide', href: '/blog/how-ai-is-revolutionising-forest-carbon-accounting',
+  },
+  'how-climate-change-affects-animals': {
+    title: 'Can animals reach suitable habitat?',
+    text: 'Understand how fragmentation affects movement and what evidence a wildlife corridor needs.',
+    label: 'Explore habitat fragmentation and corridors', href: '/blog/habitat-fragmentation-wildlife-corridors',
+  },
   'miyawaki-forest-method': {
     title: 'What should you measure after planting?',
     text: 'Follow survival, vegetation condition and site pressures over time.',
