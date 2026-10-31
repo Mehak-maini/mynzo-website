@@ -4,9 +4,9 @@ export const SITE_URL = 'https://www.mynzocarbon.com';
 export const SITE_NAME = 'Mynzo Carbon';
 export const SITE_DESCRIPTION = 'AI-powered satellite forest monitoring for project developers, corporates and institutions. Explore forest health, carbon tracking and ground-truth validation.';
 
-export function pageMetadata(path: string, title: string, description: string, image?: string): Metadata {
+export function pageMetadata(path: string, title: string, description: string, image?: string, imageAlt?: string): Metadata {
   const url = `${SITE_URL}${path}`;
-  const images = [{ url: image || `${SITE_URL}/opengraph-image`, alt: title }];
+  const images = [{ url: image || `${SITE_URL}/opengraph-image`, alt: imageAlt || title }];
   return {
     title, description,
     alternates: { canonical: url },

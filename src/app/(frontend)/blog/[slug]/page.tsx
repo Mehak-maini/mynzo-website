@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) notFound();
-  const metadata = pageMetadata(`/blog/${encodeURIComponent(slug)}`, `${post.title} – Mynzo Talks`, post.excerpt || `Read ${post.title} on Mynzo Talks.`, post.img || undefined);
+  const metadata = pageMetadata(`/blog/${encodeURIComponent(slug)}`, `${post.title} – Mynzo Talks`, post.excerpt || `Read ${post.title} on Mynzo Talks.`, post.img || undefined, post.imgAlt);
   return { ...metadata, openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.publishedAt, modifiedTime: post.updatedAt, authors: [post.author] } };
 }
 
@@ -37,14 +37,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Cover image */}
       {imgSrc && (
-        <div style={{ width: '100%', height: '420px', overflow: 'hidden', position: 'relative' }}>
-          {imgSrc.startsWith('/') ? (
-            <Image src={imgSrc} alt={post.imgAlt || post.title} fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
-          ) : (
-            <img src={imgSrc} alt={post.imgAlt || post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
+        <figure style={{ margin: 0 }}>
+          <div style={{ width: '100%', height: post.imgCredit ? 'clamp(220px, 32vw, 420px)' : '420px', overflow: 'hidden', position: 'relative' }}>
+            {imgSrc.startsWith('/') ? (
+              <Image src={imgSrc} alt={post.imgAlt || post.title} fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: post.imgPosition || (post.imgCredit ? 'center' : 'center 30%') }} />
+            ) : (
+              <img src={imgSrc} alt={post.imgAlt || post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: post.imgPosition || 'center 30%' }} />
+            )}
+            {!post.imgCredit && <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.45))' }} />}
+          </div>
+          {post.imgCredit && (
+            <figcaption style={{ padding: '10px clamp(20px, 5vw, 64px)', color: '#536B7A', fontSize: '12px', lineHeight: 1.6 }}>
+              Photo: <a href={post.imgCredit.sourceUrl} style={{ color: 'inherit', textDecoration: 'underline' }}>{post.imgCredit.title}</a>
+              {' by '}{post.imgCredit.author}
+              {' · '}<a href={post.imgCredit.licenseUrl} style={{ color: 'inherit', textDecoration: 'underline' }}>{post.imgCredit.license}</a>
+              {' · Image adapted for display.'}
+            </figcaption>
           )}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.45))' }} />
-        </div>
+        </figure>
       )}
 
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: `${imgSrc ? '56px' : '120px'} 32px 100px` }}>

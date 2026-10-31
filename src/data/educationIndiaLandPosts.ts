@@ -11,7 +11,9 @@ export const educationIndiaLandPosts: StaticPost[] = [
     date: 'October 31, 2026',
     updatedAt: '2026-10-31',
     readTime: '8',
-    img: '',
+    img: "/images/education/covers/agroforestry-in-india.webp",
+    imgAlt: "Rows of poplar trees growing with wheat in Punjab, India",
+    imgCredit: {"title": "Poplar Trees - panoramio (8)", "author": "vikas bishnoi", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Poplar_Trees_-_panoramio_(8).jpg", "license": "CC BY 3.0", "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"},
     author: 'Mynzo Team',
     content: `
       <p>Agroforestry in India includes trees grown with field crops, fruit trees with intercrops, managed trees and fodder, and gardens with several layers of crops. A suitable system depends on the farm's water supply, existing production, labour and buyers. The most useful comparison is between systems that could work on the same parcel.</p>
@@ -101,7 +103,10 @@ export const educationIndiaLandPosts: StaticPost[] = [
     date: 'October 31, 2026',
     updatedAt: '2026-10-31',
     readTime: '8',
-    img: '',
+    img: "/images/education/covers/soil-health-indicators.webp",
+    imgAlt: "An earthworm on a clod of soil resting on a spade",
+    imgPosition: 'center 60%',
+    imgCredit: {"title": "Singaporean Earthworm", "author": "Ronggy", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Singaporean_Earthworm.jpg", "license": "Public domain, released by the photographer", "licenseUrl": "https://commons.wikimedia.org/wiki/File:Singaporean_Earthworm.jpg#Licensing"},
     author: 'Mynzo Team',
     content: `
       <p>Soil health indicators are observations or measurements that help explain how soil functions. Physical indicators concern structure and water movement; chemical indicators concern properties such as acidity, salts and nutrients; biological indicators concern organisms and their activity. A useful assessment combines evidence from these groups around a specific field problem.</p>

@@ -1,3 +1,11 @@
+export interface PostImageCredit {
+  title: string;
+  author: string;
+  sourceUrl: string;
+  license: string;
+  licenseUrl: string;
+}
+
 export interface Post {
   slug: string;
   title: string;
@@ -10,6 +18,8 @@ export interface Post {
   readTime: string;
   img: string | null;
   imgAlt?: string;
+  imgPosition?: string;
+  imgCredit?: PostImageCredit;
   tag: string;
   tagBg: string;
   tagColor: string;
@@ -51,6 +61,8 @@ export function normalizePost(raw: Record<string, any>, source: 'cms' | 'static'
     updatedAt: normalizeDate(raw.updatedAt), readTime: raw.readTime || '',
     img: source === 'static' ? raw.img : raw.coverImage?.url || raw.coverImageUrl || null,
     imgAlt: source === 'static' ? raw.imgAlt : raw.coverImage?.alt,
+    imgPosition: source === 'static' ? raw.imgPosition : undefined,
+    imgCredit: source === 'static' ? raw.imgCredit : undefined,
     tag: source === 'static' ? raw.tag : raw.category || 'Research',
     tagBg: raw.tagBg || '#EBF7F0', tagColor: raw.tagColor || '#1A7A4A',
   };

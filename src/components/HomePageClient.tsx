@@ -1184,9 +1184,11 @@ export default function HomePageClient({ homePosts }: { homePosts: PostCard[] })
               const { tag, tagBg, tagColor, date, readTime, img: imgSrc } = p;
               return (
                 <Link href={`/blog/${p.slug}`} className="blog2-card" key={i}>
-                  <div className="blog2-img">
+                  <div className="blog2-img" style={{ position: 'relative' }}>
                     {imgSrc
-                      ? <img loading="lazy" decoding="async" src={imgSrc} alt={p.imgAlt || p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      ? imgSrc.startsWith('/')
+                        ? <Image src={imgSrc} alt={p.imgAlt || p.title} fill sizes="(max-width: 900px) 100vw, 340px" style={{ objectFit: 'cover', objectPosition: p.imgPosition || 'center' }} />
+                        : <img loading="lazy" decoding="async" src={imgSrc} alt={p.imgAlt || p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                       : <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg,#d6ebf1,rgba(89,132,147,0.12))' }} />
                     }
                   </div>

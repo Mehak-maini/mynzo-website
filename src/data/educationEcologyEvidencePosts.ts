@@ -6,7 +6,9 @@ export const educationEcologyEvidencePosts: StaticPost[] = [
     tag: 'Biodiversity', tagBg: '#EBF7F0', tagColor: '#1A7A4A',
     title: 'Habitat Fragmentation: Examples and Wildlife Corridors',
     excerpt: 'Understand habitat loss versus fragmentation, compare India and Canada corridor evidence, and learn what a connectivity map can and cannot prove.',
-    date: 'October 31, 2026', updatedAt: '2026-10-31', readTime: '8', img: '', author: 'Mynzo Team',
+    date: 'October 31, 2026', updatedAt: '2026-10-31', readTime: '8', img: "/images/education/covers/habitat-fragmentation-wildlife-corridors.webp",
+    imgAlt: "A vegetated wildlife overpass spanning both carriageways of the Trans-Canada Highway near Banff, Alberta",
+    imgCredit: {"title": "Wildlife overpass Trans-Canada Hwy between Banff and LakeLouise Alberta", "author": "WikiPedant", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wildlife_overpass_Trans-Canada_Hwy_between_Banff_and_LakeLouise_Alberta.jpg", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"}, author: 'Mynzo Team',
     content: `
       <p><strong>Habitat fragmentation is the division of habitat into separate patches.</strong> Habitat loss reduces how much habitat remains; fragmentation describes its arrangement. The two often happen together, but measuring one does not measure the other. A wildlife corridor aims to maintain or restore connections that matter to particular species or ecological processes.</p>
       <p>A green line on a map is a proposal about movement. Evidence that animals use it, survive the journey and reproduce answers progressively different questions. This guide explains those distinctions with a simple diagram, central Indian tiger research and a Canadian wildlife-crossing study.</p>
@@ -90,7 +92,9 @@ export const educationEcologyEvidencePosts: StaticPost[] = [
     tag: 'Biodiversity', tagBg: '#EBF7F0', tagColor: '#1A7A4A',
     title: 'Causes of Biodiversity Loss: Five Drivers and India Examples',
     excerpt: 'Explore five direct drivers of biodiversity loss through Indian research, with practical indicators, conservation responses and limits to each conclusion.',
-    date: 'October 31, 2026', updatedAt: '2026-10-31', readTime: '8', img: '', author: 'Mynzo Team',
+    date: 'October 31, 2026', updatedAt: '2026-10-31', readTime: '8', img: "/images/education/covers/causes-of-biodiversity-loss.webp",
+    imgAlt: "Uprooted tree stumps in cleared land around Pakke Tiger Reserve, India",
+    imgCredit: {"title": "Deforestation around Pakke Tiger Reserve, India", "author": "Nandini Velho", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Deforestation_around_Pakke_Tiger_Reserve,_India.JPG", "license": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"}, author: 'Mynzo Team',
     content: `
       <p>The <strong>five major direct drivers of biodiversity loss</strong> identified by the <a href="https://zenodo.org/records/3553579">IPBES Global Assessment</a> are changes in land and sea use, direct exploitation of organisms, climate change, pollution and invasive alien species. They can occur together. The dominant pressure on a particular forest, reef or species needs local evidence.</p>
       <p>For India, a useful explanation connects these categories to specific observations. A shrinking habitat, a poisoned scavenger and a bleached coral need different responses. Counting more trees cannot answer all three problems.</p>
@@ -165,7 +169,9 @@ export const educationEcologyEvidencePosts: StaticPost[] = [
     tag: 'Restoration', tagBg: '#EBF7F0', tagColor: '#1A7A4A',
     title: 'Ecosystem Restoration: Examples and Evidence of Recovery',
     excerpt: 'Compare restoration in an Indian lagoon, a Florida river and a Scottish peatland. Learn how actions, early responses and ecological recovery differ.',
-    date: 'October 31, 2026', updatedAt: '2026-10-31', readTime: '8', img: '', author: 'Mynzo Team',
+    date: 'October 31, 2026', updatedAt: '2026-10-31', readTime: '8', img: "/images/education/covers/what-is-ecosystem-restoration.webp",
+    imgAlt: "A meandering river channel and wetland vegetation in the Kissimmee River Phase I restoration area",
+    imgCredit: {"title": "Phase I restoration area meandering river channel", "author": "South Florida Water Management District", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kissimmee_River_Restoration_2.jpg", "license": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"}, author: 'Mynzo Team',
     content: `
       <p><strong>Ecosystem restoration helps a degraded ecosystem recover.</strong> The appropriate work depends on what was damaged and what prevents recovery. It may involve restoring water movement, reducing a continuing pressure, supporting natural regeneration or reintroducing missing native organisms.</p>
       <p>The <a href="https://doi.org/10.1111/rec.70441">Society for Ecological Restoration's 2026 international principles</a> describe ecological restoration around assisting recovery, using an appropriate reference and clear goals. A completed intervention is the beginning of an assessment, not automatic evidence that the ecosystem has recovered.</p>
