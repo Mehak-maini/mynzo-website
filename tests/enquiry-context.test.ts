@@ -7,11 +7,31 @@ import {
 import { trackLead } from '../src/lib/analytics';
 import { POST } from '../src/app/api/contact/route';
 import { articleEnquiry } from '../src/lib/article-enquiry';
+import { educationIndiaLandPosts } from '../src/data/educationIndiaLandPosts';
+import { educationEcologyEvidencePosts } from '../src/data/educationEcologyEvidencePosts';
 
 const validEnquiry = {
   first_name: 'Test', last_name: 'Visitor', email: 'visitor@example.com',
   company: 'Example organisation', role: 'Project Developer', message: '',
 };
+
+test('new educational enquiry links retain their actual entry page through validation', () => {
+  const pages = [...educationIndiaLandPosts, ...educationEcologyEvidencePosts];
+  let checked = 0;
+  for (const post of pages) {
+    for (const [, href] of post.content.matchAll(/href="(\/get-started\?[^\"]+)"/g)) {
+      const url = new URL(href.replaceAll('&amp;', '&'), 'https://www.mynzocarbon.com');
+      const context = enquiryContextFromSearch(url.search);
+      assert.equal(context.project_focus, url.searchParams.get('interest'), post.slug);
+      assert.equal(context.enquiry_source, url.searchParams.get('source'), post.slug);
+      const enquiry = validateEnquiry({ ...validEnquiry, ...context });
+      assert.ok(enquiry, post.slug);
+      assert.doesNotMatch(buildEnquiryEmail(enquiry).text, /Entry page: Get started form/);
+      checked++;
+    }
+  }
+  assert.equal(checked, 2);
+});
 
 test('guide links retain their subject through form parsing and the enquiry email', () => {
   for (const [slug, focus, label] of [

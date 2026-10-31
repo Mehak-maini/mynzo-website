@@ -5,6 +5,9 @@ import { habitatMappingPost } from './habitatMappingPost';
 import { educationForestPosts } from './educationForestPosts';
 import { educationSoilPosts } from './educationSoilPosts';
 import { educationCoastPosts } from './educationCoastPosts';
+import { educationIndiaLandPosts } from './educationIndiaLandPosts';
+import { educationCoastalMethodsPosts } from './educationCoastalMethodsPosts';
+import { educationEcologyEvidencePosts } from './educationEcologyEvidencePosts';
 
 export interface StaticPost {
   slug: string;
@@ -23,6 +26,9 @@ export interface StaticPost {
 }
 
 export const STATIC_POSTS: StaticPost[] = [
+  ...educationIndiaLandPosts,
+  ...educationCoastalMethodsPosts,
+  ...educationEcologyEvidencePosts,
   ...educationForestPosts,
   ...educationSoilPosts,
   ...educationCoastPosts,

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="390" viewBox="0 0 680 390" role="img" aria-labelledby="title desc">
+  <title id="title">Same habitat area, different arrangement</title>
+  <desc id="desc">Two imaginary landscapes each contain forty-eight cells, including twenty-four habitat cells. The first has one connected four-by-six block. The second has six separate two-by-two blocks. This shows structural arrangement only, not animal movement.</desc>
+  <defs>
+    <pattern id="cells" width="34" height="34" patternUnits="userSpaceOnUse"><rect width="34" height="34" fill="none" stroke="#ffffff" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="680" height="390" rx="12" fill="#f5f8f5"/>
+  <g font-family="Arial, sans-serif" fill="#102a25">
+    <text x="26" y="36" font-size="22" font-weight="700">Same area, different arrangement</text>
+    <text x="26" y="65" font-size="15">Illustration only. Each square is one equal-area unit.</text>
+    <text x="26" y="101" font-size="17" font-weight="700">A: One habitat patch</text>
+    <text x="370" y="101" font-size="17" font-weight="700">B: Six habitat patches</text>
+    <g transform="translate(26 116)">
+      <rect width="272" height="204" fill="#dce2dd"/>
+      <rect x="68" width="136" height="204" fill="#286b56"/>
+      <rect width="272" height="204" fill="url(#cells)"/>
+    </g>
+    <g transform="translate(370 116)">
+      <rect width="272" height="204" fill="#dce2dd"/>
+      <g fill="#286b56"><rect width="68" height="68"/><rect x="102" width="68" height="68"/><rect x="204" width="68" height="68"/><rect y="136" width="68" height="68"/><rect x="102" y="136" width="68" height="68"/><rect x="204" y="136" width="68" height="68"/></g>
+      <rect width="272" height="204" fill="url(#cells)"/>
+    </g>
+    <text x="26" y="345" font-size="16">24 habitat cells out of 48</text>
+    <text x="370" y="345" font-size="16">24 habitat cells out of 48</text>
+    <rect x="26" y="363" width="13" height="13" fill="#286b56"/><text x="47" y="375" font-size="14">Habitat</text>
+    <rect x="160" y="363" width="13" height="13" fill="#dce2dd" stroke="#a6b0a9"/><text x="181" y="375" font-size="14">Other land cover</text>
+    <text x="370" y="375" font-size="14">Movement is not measured here.</text>
+  </g>
+</svg>

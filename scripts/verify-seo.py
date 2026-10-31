@@ -13,6 +13,12 @@ education_slugs = {
     'urban-rewilding', 'mangroves-in-india', 'carbon-neutral-vs-net-zero',
     'what-are-wetlands', 'afforestation-vs-reforestation',
 }
+next_education_slugs = {
+    'agroforestry-in-india', 'soil-health-indicators',
+    'mangrove-restoration', 'what-is-blue-carbon',
+    'habitat-fragmentation-wildlife-corridors',
+    'causes-of-biodiversity-loss', 'what-is-ecosystem-restoration',
+}
 refreshed_slugs = {
     'what-is-biodiversity', 'biodiversity-hotspots-in-india',
     'ecosystem-services-types-examples', 'what-are-wetlands',
@@ -67,9 +73,10 @@ for url in urls:
     if path.startswith('/blog/'):
         graph=page.schemas[0]['@graph'];article=next(x for x in graph if x['@type']=='BlogPosting')
         assert article['url']==url and article['headline'] and article['publisher']
-        if path.removeprefix('/blog/') in education_slugs:
-            expected_published = '2025-03-10' if path.endswith('/understanding-soil-carbon-the-hidden-climate-solution') else '2026-10-08'
-            expected_modified = '2026-10-30' if path.removeprefix('/blog/') in refreshed_slugs else '2026-10-08'
+        if path.removeprefix('/blog/') in education_slugs | next_education_slugs:
+            is_new = path.removeprefix('/blog/') in next_education_slugs
+            expected_published = '2026-10-31' if is_new else ('2025-03-10' if path.endswith('/understanding-soil-carbon-the-hidden-climate-solution') else '2026-10-08')
+            expected_modified = '2026-10-31' if is_new else ('2026-10-30' if path.removeprefix('/blog/') in refreshed_slugs else '2026-10-08')
             assert article['datePublished']==expected_published and article['dateModified']==expected_modified,path
             assert page.h1_count==1 and '/#team' in page.links,path
             assert len(page.ids)==len(set(page.ids)),path
@@ -101,7 +108,7 @@ for url in urls:
             assert not any(claim in html for claim in ['IPCC\'s 2023 guidelines', 'across every forest on the planet'])
         if path=='/blog/biodiversity-metrics-for-restoration-projects':
             assert article['datePublished']=='2026-09-18'
-            assert article['dateModified']=='2026-09-18'
+            assert article['dateModified']=='2026-10-31'
             assert page.h1_count==1
             assert '/platform/biodiversity-monitoring' in page.links
             assert page.links.count('/get-started?interest=biodiversity-monitoring&source=biodiversity-guide')==2
@@ -162,7 +169,7 @@ assert canonical_base+'/solutions/project-developers' in urls
 assert canonical_base+'/blog/biodiversity-metrics-for-restoration-projects' in urls
 assert canonical_base+'/blog/restoration-monitoring-plan' in urls
 assert canonical_base+'/blog/habitat-mapping' in urls
-assert {canonical_base+'/blog/'+slug for slug in education_slugs} <= set(urls)
+assert {canonical_base+'/blog/'+slug for slug in education_slugs | next_education_slugs} <= set(urls)
 # Check cross-page section references rather than accepting a valid page alone.
 for source,link in set(educational_links):
     target=urllib.parse.urlsplit(link)

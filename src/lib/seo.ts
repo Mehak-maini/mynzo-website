@@ -20,7 +20,7 @@ export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digi
 // Record substantive page revisions, never the time a sitemap is requested.
 export const PUBLIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/': '2026-10-30',
-  '/blog': '2026-10-30',
+  '/blog': '2026-10-31',
   '/platform/biodiversity-monitoring': '2026-10-30',
 };
 
