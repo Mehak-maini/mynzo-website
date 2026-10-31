@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getPublishedPosts } from '@/lib/posts';
 import { pageMetadata } from '@/lib/seo';
 import { EDUCATION_TOPICS, PRACTICAL_GUIDES } from '@/lib/education-guides';
@@ -45,9 +46,11 @@ export default async function BlogPage() {
 
             return (
               <Link href={`/blog/${slug}`} className="blog2-card" key={slug}>
-                <div className="blog2-img">
+                <div className="blog2-img" style={{ position: 'relative' }}>
                   {imgSrc
-                    ? <img loading="lazy" decoding="async" src={imgSrc} alt={post.imgAlt || post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    ? imgSrc.startsWith('/')
+                      ? <Image src={imgSrc} alt={post.imgAlt || post.title} fill sizes="(max-width: 900px) 100vw, 340px" style={{ objectFit: 'cover', objectPosition: post.imgPosition || 'center' }} />
+                      : <img loading="lazy" decoding="async" src={imgSrc} alt={post.imgAlt || post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                     : <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg,#d6ebf1,rgba(89,132,147,0.12))' }} />
                   }
                 </div>

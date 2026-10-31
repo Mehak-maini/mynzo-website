@@ -8,6 +8,7 @@ import { educationCoastPosts } from './educationCoastPosts';
 import { educationIndiaLandPosts } from './educationIndiaLandPosts';
 import { educationCoastalMethodsPosts } from './educationCoastalMethodsPosts';
 import { educationEcologyEvidencePosts } from './educationEcologyEvidencePosts';
+import type { PostImageCredit } from '@/lib/post-data';
 
 export interface StaticPost {
   slug: string;
@@ -21,6 +22,8 @@ export interface StaticPost {
   readTime: string;
   img: string;
   imgAlt?: string;
+  imgPosition?: string;
+  imgCredit?: PostImageCredit;
   author: string;
   content: string;
 }

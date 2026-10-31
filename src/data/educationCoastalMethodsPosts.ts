@@ -11,7 +11,9 @@ export const educationCoastalMethodsPosts: StaticPost[] = [
     date: 'October 31, 2026',
     updatedAt: '2026-10-31',
     readTime: '8',
-    img: '',
+    img: "/images/education/covers/mangrove-restoration.webp",
+    imgAlt: "Young mangrove plants standing in shallow coastal water.",
+    imgCredit: {"title": "Young mangroves (halophytes)", "author": "Queen Asali", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_mangroves_%28halophytes%29.jpg", "license": "CC BY 4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"},
     author: 'Mynzo Team',
     content: `
       <p><strong>Mangrove restoration helps a degraded mangrove ecosystem recover by addressing the conditions that prevent recovery.</strong> Those conditions can include blocked tidal exchange, unsuitable sediment, continued damage or unresolved land use. Planting may be part of the work, but the starting point is a site assessment and an agreement with the people who use and manage the coast.</p>
@@ -105,7 +107,9 @@ export const educationCoastalMethodsPosts: StaticPost[] = [
     date: 'October 31, 2026',
     updatedAt: '2026-10-31',
     readTime: '7',
-    img: '',
+    img: "/images/education/covers/what-is-blue-carbon.webp",
+    imgAlt: "Mangrove trunks and tangled roots above water, with white birds among the branches.",
+    imgCredit: {"title": "Roots of the mangrove swamp", "author": "RealGatba", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roots_of_the_mangrove_swamp.jpg", "license": "CC0 1.0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"},
     author: 'Mynzo Team',
     content: `
       <p><strong>Blue carbon is carbon captured and stored by ocean and coastal ecosystems.</strong> In coastal conservation, the term commonly refers to mangroves, tidal salt marshes and seagrass meadows. Carbon occurs in their living plants and below ground in soils or sediments. A large existing carbon stock is different from new carbon taken up during a year.</p>
