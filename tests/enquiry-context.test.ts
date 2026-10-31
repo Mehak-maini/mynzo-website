@@ -9,6 +9,7 @@ import { POST } from '../src/app/api/contact/route';
 import { articleEnquiry } from '../src/lib/article-enquiry';
 import { educationIndiaLandPosts } from '../src/data/educationIndiaLandPosts';
 import { educationEcologyEvidencePosts } from '../src/data/educationEcologyEvidencePosts';
+import { educationRegenerationPost } from '../src/data/educationRegenerationPost';
 
 const validEnquiry = {
   first_name: 'Test', last_name: 'Visitor', email: 'visitor@example.com',
@@ -16,7 +17,7 @@ const validEnquiry = {
 };
 
 test('new educational enquiry links retain their actual entry page through validation', () => {
-  const pages = [...educationIndiaLandPosts, ...educationEcologyEvidencePosts];
+  const pages = [...educationIndiaLandPosts, ...educationEcologyEvidencePosts, educationRegenerationPost];
   let checked = 0;
   for (const post of pages) {
     for (const [, href] of post.content.matchAll(/href="(\/get-started\?[^\"]+)"/g)) {
@@ -30,7 +31,7 @@ test('new educational enquiry links retain their actual entry page through valid
       checked++;
     }
   }
-  assert.equal(checked, 2);
+  assert.equal(checked, 3);
 });
 
 test('guide links retain their subject through form parsing and the enquiry email', () => {

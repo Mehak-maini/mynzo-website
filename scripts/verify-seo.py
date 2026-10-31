@@ -14,6 +14,8 @@ education_slugs = {
     'what-are-wetlands', 'afforestation-vs-reforestation',
 }
 next_education_slugs = {
+    'assisted-natural-regeneration', 'water-conservation-methods',
+    'deforestation-carbon-cycle', 'how-climate-change-affects-animals',
     'agroforestry-in-india', 'soil-health-indicators',
     'mangrove-restoration', 'what-is-blue-carbon',
     'habitat-fragmentation-wildlife-corridors',

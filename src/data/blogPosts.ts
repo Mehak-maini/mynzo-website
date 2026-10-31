@@ -8,6 +8,9 @@ import { educationCoastPosts } from './educationCoastPosts';
 import { educationIndiaLandPosts } from './educationIndiaLandPosts';
 import { educationCoastalMethodsPosts } from './educationCoastalMethodsPosts';
 import { educationEcologyEvidencePosts } from './educationEcologyEvidencePosts';
+import { educationRegenerationPost } from './educationRegenerationPost';
+import { educationWaterPost } from './educationWaterPost';
+import { educationClimateImpactsPosts } from './educationClimateImpactsPosts';
 import type { PostImageCredit } from '@/lib/post-data';
 
 export interface StaticPost {
@@ -29,6 +32,9 @@ export interface StaticPost {
 }
 
 export const STATIC_POSTS: StaticPost[] = [
+  educationRegenerationPost,
+  educationWaterPost,
+  ...educationClimateImpactsPosts,
   ...educationIndiaLandPosts,
   ...educationCoastalMethodsPosts,
   ...educationEcologyEvidencePosts,
@@ -110,7 +116,7 @@ export const STATIC_POSTS: StaticPost[] = [
       <p>It can extend coverage and help target surveys. A biomass estimate still needs a defensible reference and validation strategy for its intended use. Ask what local evidence exists, what is borrowed from other regions and how that affects uncertainty.</p>
       <h3 id="missing-carbon-observations">Does an empty map cell mean there is no carbon?</h3>
       <p>No. It may mean observations were unavailable or failed quality checks. Reports should distinguish observed zero values, missing observations and modelled values so users do not treat them as interchangeable.</p>
-      <p>For the operational side, explore Mynzo's <a href="/platform/forest-monitoring">forest monitoring</a> and <a href="/platform/digital-mrv">digital MRV</a> pages. Bring your boundary, project type, available field data and reporting purpose to the discussion.</p>
+      <p>For the processes behind a stock change, read <a href="/blog/deforestation-carbon-cycle">how deforestation changes the carbon cycle</a>. For the operational side, explore Mynzo's <a href="/platform/forest-monitoring">forest monitoring</a> and <a href="/platform/digital-mrv">digital MRV</a> pages. Bring your boundary, project type, available field data and reporting purpose to the discussion.</p>
       <p><em>Editorial update: 13 September 2026. References were checked for this revision. The IPCC source is the <a href="https://www.ipcc-nggip.iges.or.jp/public/2019rf/index.html">2019 Refinement to the 2006 Guidelines</a>, used alongside the original guidelines.</em></p>
     `,
   },
