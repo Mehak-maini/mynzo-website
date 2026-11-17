@@ -30,6 +30,9 @@ header.site-nav.scrolled {
   border-bottom-color: rgba(255,255,255,0.07);
   box-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
+/* Inner pages: transparent at the top, with a soft dark fade so the white menu stays readable on light page tops */
+header.site-nav.inner:not(.scrolled):not(.menu-open) { background: linear-gradient(to bottom, rgba(6,23,41,0.62), rgba(6,23,41,0)); }
+header.site-nav.menu-open { background: #061729; }
 .nav-logo { display: flex; align-items: center; }
 .nav-logo img { height: 24px; width: auto; display: block; }
 .nav-sep { width: 1px; height: 39px; background: rgba(255,255,255,0.25); flex-shrink: 0; }
@@ -473,8 +476,8 @@ footer { background: var(--dark); display: flex; align-items: center; justify-co
   .nav-sep  { display: none; }
   .nav-cta  { display: none; }
   .nav-hamburger { display: flex; }
-  /* Ensure header is always dark on mobile so hamburger stays visible */
-  header.site-nav { background: #061729 !important; }
+  /* On mobile the header is transparent at the top and solid once scrolled or when the menu is open */
+  header.site-nav.scrolled, header.site-nav.menu-open { background: #061729 !important; }
 
   /* Stats: clean vertical stack, hide odd dividers */
   .stats {

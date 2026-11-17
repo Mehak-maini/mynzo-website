@@ -10,7 +10,7 @@ type Section = 'platform' | 'reni' | 'blogs' | null;
 export default function Nav() {
   const pathname = usePathname();
   const isHome = pathname === '/';
-  const [scrolled, setScrolled] = useState(!isHome); // solid immediately on sub-pages
+  const [scrolled, setScrolled] = useState(false); // transparent at the top of every page, solid once scrolled
   const [activeSection, setActiveSection] = useState<Section>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
@@ -18,17 +18,16 @@ export default function Nav() {
   const platformButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    // On sub-pages the nav is always solid — no scroll listener needed
-    if (!isHome) {
-      setScrolled(true);
-      setActiveSection(null);
-      return;
-    }
-
-    // ── Home: transparent → solid on scroll ──
+    // Transparent at the top of every page → solid on scroll
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+
+    // Section highlighting only applies on the homepage
+    if (!isHome) {
+      setActiveSection(null);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
 
     // ── Home: highlight section in view ──
     const visible = new Set<string>();
@@ -96,7 +95,7 @@ export default function Nav() {
   const closeMenu = () => { setMenuOpen(false); setPlatformOpen(false); };
 
   return (
-    <header className={`site-nav${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`} id="site-nav">
+    <header className={`site-nav${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}${isHome ? '' : ' inner'}`} id="site-nav">
       {/* Logo — always links back to home */}
       <Link href="/" className="nav-logo" style={{ textDecoration: 'none' }} onClick={closeMenu}>
         <Image
