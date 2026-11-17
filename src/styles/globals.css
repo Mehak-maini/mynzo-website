@@ -53,6 +53,10 @@ nav.links a:hover, nav.links a.active { color: #b2edff; }
 .nav-platform { position: relative; }
 .nav-platform-toggle { display: inline-flex; align-items: center; gap: 5px; background: none; border: none; color: #fff; font: inherit; font-size: 16px; font-weight: 800; letter-spacing: 1.44px; cursor: pointer; padding: 8px 0; }
 .nav-platform-toggle.active, .nav-platform-toggle:hover { color: #b2edff; }
+.nav-platform-chevron { flex-shrink: 0; margin-top: 1px; transition: transform .2s ease; }
+.nav-platform-toggle[aria-expanded="true"] { color: #b2edff; }
+.nav-platform-toggle[aria-expanded="true"] .nav-platform-chevron { transform: rotate(180deg); }
+.nav-platform-panel::before { content: ''; position: absolute; top: -6px; left: 34px; width: 10px; height: 10px; background: #061729; border-left: 1px solid #3a5666; border-top: 1px solid #3a5666; transform: rotate(45deg); }
 .nav-platform-toggle:focus-visible { outline: 2px solid #b2edff; outline-offset: 5px; }
 .nav-platform-panel { position: absolute; top: calc(100% + 13px); left: -20px; min-width: 238px; padding: 10px; border: 1px solid #3a5666; border-radius: 8px; background: #061729; box-shadow: 0 15px 35px #06172940; }
 .nav-platform-panel a { display: block; padding: 13px 12px; font-size: 14px !important; letter-spacing: .2px !important; text-transform: none !important; border-radius: 4px; }

@@ -117,7 +117,8 @@ export default function Nav() {
           if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPlatformOpen(false);
         }}>
           <button ref={platformButtonRef} className={`nav-platform-toggle ${pathname.startsWith('/platform/') || pathname.startsWith('/solutions/') ? 'active' : cls('platform')}`} aria-expanded={platformOpen} aria-controls="platform-navigation" onClick={() => setPlatformOpen(open => !open)}>
-            PLATFORM <span aria-hidden="true">⌄</span>
+            PLATFORM
+            <svg className="nav-platform-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" /></svg>
           </button>
           <div className="nav-platform-panel" id="platform-navigation" hidden={!platformOpen}>
             <Link href="/#platform" onClick={closeMenu}>Platform overview</Link>

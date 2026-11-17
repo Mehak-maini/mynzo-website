@@ -19,7 +19,7 @@ export default function Footer() {
               Revolutionizing forest and biodiversity monitoring with AI-powered satellite and field technology to create a more transparent and sustainable future.
             </p>
           </div>
-          <p className="foot-copy">© 2025 mynzo. All rights reserved.</p>
+          <p className="foot-copy">© 2026 mynzo. All rights reserved.</p>
         </div>
         <div className="foot-nav">
           <nav className="foot-col" aria-label="Platform and insights">
