@@ -8,7 +8,7 @@ export default function DataProcessingPage() {
     <LegalPage
       title="Data Processing Agreement"
       subtitle="Last updated: January 2025"
-      intro="This Data Processing Agreement ('DPA') forms part of the contract for services between Mynzo Carbon Pvt. Ltd. ('Processor') and the customer ('Controller'). It sets out the terms under which Mynzo processes personal data on behalf of customers."
+      intro="This Data Processing Agreement ('DPA') forms part of the contract for services between Mynzo Carbon Inc. ('Processor') and the customer ('Controller'). It sets out the terms under which Mynzo processes personal data on behalf of customers."
       sections={[
         { title: '1. Definitions', content: '"Personal Data" means any information relating to an identified or identifiable natural person. "Processing" means any operation performed on Personal Data. "Controller" means the entity that determines the purposes and means of processing. "Processor" means Mynzo, which processes data on behalf of the Controller.' },
         { title: '2. Processing Instructions', content: 'Mynzo will process Personal Data only on documented instructions from the Controller, unless required to do so by applicable law. Mynzo will inform the Controller if any instruction infringes applicable data protection laws.' },
