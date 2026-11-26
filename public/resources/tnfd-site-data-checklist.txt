@@ -1,0 +1,59 @@
+TNFD SITE DATA CHECKLIST
+Mynzo Carbon | 26 November 2026
+
+Use this working checklist to prepare site records for your nature assessment team. Copy the site block per location and repeat the observation and question blocks as needed. Use the same site ID to link records. Keep source files in a controlled shared folder and review what may be shared externally.
+
+ASSESSMENT BRIEF
+Decision or question [ ]
+Business activities and value-chain stages in scope [ ]
+Assessment and reporting periods [ ]
+Assessment lead and review date [ ]
+Known exclusions and why [ ]
+
+SITE RECORD
+Site ID and name [ ]
+Activity and relationship to the organisation [ ]
+Country, local area and relevant dates [ ]
+Site register owner [ ]
+Location evidence (surveyed polygon / facility point / approximate region / untraced) [ ]
+Geometry file or reference, version, effective date and source [ ]
+Coordinate system and known location precision [ ]
+Separate assessment or catchment boundary and reason for including it [ ]
+Ecosystem or habitat classes, classification method, source and date [ ]
+Context requiring confirmation (such as a mapped stream or habitat edge) [ ]
+
+OBSERVATION RECORD
+Observation ID and linked site ID [ ]
+What was observed and why it matters to the assessment [ ]
+Value or description, units and dates [ ]
+Method, scale or survey effort, and area covered [ ]
+Source file and version, provider and original purpose [ ]
+Direct measurement, modelled result or proxy [ ]
+If proxy, the variable it approximates and why it is being used [ ]
+Uncertainty, missing coverage and restrictions on comparison [ ]
+Evidence owner and sharing restrictions [ ]
+
+DEPENDENCY OR IMPACT QUESTION
+Question ID, site ID and linked observation IDs [ ]
+Activity and ecosystem service relied on or possible effect on nature [ ]
+Relevant date or period [ ]
+Evidence supporting the question and other possible drivers [ ]
+What is missing and which decision the gap affects [ ]
+Next check, owner, status and due date [ ]
+
+HANDOVER CHECK
+[ ] Trace one finding back to the original record, site and measurement dates.
+[ ] Show sites without evidence and keep the coverage denominator visible.
+[ ] Record boundary, method or unit changes before comparing periods.
+[ ] Document where a location or result is approximate.
+[ ] Verify the owners and due dates for follow-up checks.
+[ ] Agree who can access confidential data and sensitive location records.
+
+See TNFD LEAP guidance v2.0 (October 2026) for the full assessment process.
+https://tnfd.global/publication/additional-guidance-on-assessment-of-nature-related-issues-the-leap-approach/
+
+See the TNFD Recommendations (October 2026) when preparing disclosures.
+https://tnfd.global/publication/recommendations-of-the-taskforce-on-nature-related-financial-disclosures/
+
+Guide
+https://www.mynzocarbon.com/blog/tnfd-site-data-checklist

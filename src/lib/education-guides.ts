@@ -152,4 +152,14 @@ export const PRACTICAL_GUIDES = [
     text: 'Read carbon concentration, soil depth and stock estimates before comparing results over time.',
     href: '/blog/understanding-soil-carbon-the-hidden-climate-solution',
   },
+  {
+    title: 'Prepare site data for TNFD',
+    text: 'Put site boundaries, ecosystem context and evidence gaps in a register your team can review.',
+    href: '/blog/tnfd-site-data-checklist',
+  },
+  {
+    title: 'Check survival at CSR plantation sites',
+    text: 'Record planting dates, original trees and replacements so the next visit can answer a useful question.',
+    href: '/blog/csr-plantation-monitoring',
+  },
 ];

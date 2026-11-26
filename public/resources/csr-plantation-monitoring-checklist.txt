@@ -1,0 +1,47 @@
+CSR PLANTATION MONITORING CHECKLIST
+
+Complete one copy for each site and planting batch. Keep dated versions so
+the next field crew can reconcile changes across visits.
+
+1. PLANTING REGISTER
+[ ] Project, implementing partner, site ID and boundary version:
+[ ] Plot or row IDs and the map file or sketch used to find them:
+[ ] Planting batch ID and dates:
+[ ] Species and counts actually planted, with source register reference:
+[ ] Differences between nursery dispatch, distribution and planting:
+[ ] Person responsible for reviewing the register:
+
+2. VISIT AND COVERAGE
+[ ] Visit date, observers and days or months since the batch was planted:
+[ ] Full count or sample, with the selection method and its version:
+[ ] Plots or rows planned and checked:
+[ ] Original trees in the group being assessed:
+[ ] Original trees alive, confirmed dead and unresolved:
+[ ] Locations missed, unconfirmed identities and reason:
+[ ] Geotagged photo references, dates, direction and observation IDs:
+[ ] Access rules for coordinates, photographs and other sensitive records:
+
+3. REPORTING CALCULATION
+[ ] Original survival numerator and denominator:
+[ ] Resolved checks and unresolved checks shown beside the percentage:
+[ ] Result described as a full count, a sample result or a supported estimate:
+[ ] How missing checks or a change in the sample affect comparison:
+[ ] If reporting an estimate, the calculation and its uncertainty:
+
+4. MAINTENANCE AND REPLACEMENT
+[ ] Watering, weeding, protection or other work, with date and plot IDs:
+[ ] Issues observed and evidence linked to each location:
+[ ] Replacement batch ID, planting date, species and number planted:
+[ ] Replacement survival checked and reported against its own batch:
+[ ] Natural recruits recorded separately if the project tracks them:
+
+5. HANDOVER AND NEXT VISIT
+[ ] Field register, map and photo references retained together:
+[ ] Place each unresolved observation on the follow-up list:
+[ ] Decision, responsible person and due date for each action:
+[ ] Next visit window and what it should confirm:
+[ ] Which ecological or community outcomes need separate evidence:
+
+Before sending the report, reconcile alive, confirmed dead and unresolved
+original trees against the original count covered by the assessment.
+Review one field observation against the source register and the map.
