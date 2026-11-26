@@ -1,14 +1,15 @@
 import React from 'react';
 import type { PlatformPageData } from '@/components/PlatformPage.types';
+import { PUBLIC_PAGE_UPDATED_AT } from '@/lib/seo';
 
 export const projectDevelopersPage: PlatformPageData = {
   path: '/solutions/project-developers',
   metadataTitle: 'Forest Monitoring for Project Developers | Mynzo Carbon',
-  description: 'Scope forest monitoring for carbon and restoration projects. Review boundaries, field data, reporting needs and evidence gaps with Mynzo Carbon.',
+  description: 'Scope forest monitoring for your carbon or restoration project. See what to bring for site screening, a baseline or your next monitoring report.',
   eyebrow: 'For project developers',
   title: 'Forest monitoring for project developers',
-  summary: 'Know what is happening across your sites and what evidence your next project decision needs. Mynzo supports forest and carbon monitoring with satellite analysis and field data, from an initial site review to monitoring an established project.',
-  updatedAt: '2026-09-18',
+  summary: 'Bring your site boundaries, available field records and next reporting date. Mynzo helps project developers decide what satellite and field evidence they need for a site review, a baseline or ongoing monitoring.',
+  updatedAt: PUBLIC_PAGE_UPDATED_AT['/solutions/project-developers'],
   breadcrumbParent: { name: 'Who we serve', href: '/#who-we-serve' },
   heroImage: '/Asset_analysis.png',
   heroImageFit: 'contain',
@@ -21,11 +22,14 @@ export const projectDevelopersPage: PlatformPageData = {
   sections: [
     {
       id: 'project-stage',
-      title: 'Start with the decision in front of you',
+      title: 'Choose monitoring inputs for your project stage',
       body: <>
-        <p>For a new project, the immediate question may be whether the available land records and observations are enough to plan further work. For an established project, it may be where conditions have changed or which measurements need updating before a report.</p>
-        <p>Agree the intended use before commissioning analysis. A site screening, an operational update and evidence for a crediting programme have different requirements. Ask Mynzo to confirm which questions the available data can answer, which need fieldwork and which sit outside the engagement.</p>
-        <p>One developer in Assam asked, <q>do we need to get some sort of verification first?</q> in a <a href="https://www.reddit.com/r/CarbonCredits/comments/1lk5kj6/how_to_get_started_with_project_development_need/">public project-development discussion</a>. In the <a href="https://verra.org/programs/verified-carbon-standard/project-description-and-monitoring-report/">VCS process</a>, validation assesses the project design; verification assesses monitored outcomes. They are distinct assessments, although a project may combine them in one review.</p>
+        <ol className="platform-steps">
+          <li><h3>Site screening</h3><p>Bring provisional boundaries, what you know about prior land use and the decision you need to make. Review which parcels have enough information to plan a field visit and which need better boundaries or records first.</p></li>
+          <li><h3>Establishing a baseline</h3><p>Bring the version of the boundary you intend to use, any dated imagery and field records, and the project methodology if you have selected one. Agree which starting conditions can be documented and which observations still need to be collected.</p></li>
+          <li><h3>Ongoing monitoring</h3><p>Bring the previous report, current boundary and field identifiers, planned activities and reporting dates. Check which earlier observations can be compared with new records and which gaps need follow-up.</p></li>
+        </ol>
+        <p>For projects using the Verified Carbon Standard, the project proponent develops the project description and reports monitored outcomes. An approved body assesses project design during validation and the reported outcomes during verification. <a href="https://verra.org/programs/verified-carbon-standard/project-description-and-monitoring-report/">Verra project description and monitoring report guidance</a></p>
       </>,
     },
     {
@@ -42,7 +46,7 @@ export const projectDevelopersPage: PlatformPageData = {
       title: 'Make the evidence useful to the next person',
       body: <>
         <p>A map is more useful when the field team, analyst and reporting lead can identify the records behind it. Use this checklist to discuss the required handover with Mynzo. Confirm the available formats and outputs in the proposal.</p>
-        <div className="platform-table-wrap"><table>
+        <div className="platform-table-wrap" role="region" aria-label="Project monitoring handover" tabIndex={0}><table>
           <caption>Questions to resolve before monitoring begins</caption>
           <thead><tr><th scope="col">Evidence</th><th scope="col">What to agree</th></tr></thead>
           <tbody>
@@ -53,6 +57,8 @@ export const projectDevelopersPage: PlatformPageData = {
             <tr><th scope="row">Reporting handover</th><td>Reporting period, reviewer needs, delivery format and responsibility for resolving questions.</td></tr>
           </tbody>
         </table></div>
+        <h3>Illustrative handover for a monitoring pilot</h3>
+        <p>Suppose a pilot covers three parcels. Two have field records that match the mapped plots. On parcel P-04, the planting register uses older plot names and the team cannot match every record to a location. In the handover, list the two parcels ready for repeat checks and give P-04 its own action. The field lead can confirm the old plot names before the reporting lead includes that parcel in a comparison.</p>
         <p>The <a href="/platform/digital-mrv">digital MRV guide</a> explains how observations, calculations and review fit together. This checklist helps specify what your project team needs from that work.</p>
       </>,
     },
@@ -62,7 +68,7 @@ export const projectDevelopersPage: PlatformPageData = {
       body: <>
         <p>Include different site conditions in a pilot: a small parcel, an older planting, a recently disturbed area and a site with incomplete records, where these occur in your project. Define what a useful result must show and compare it with appropriate reference observations.</p>
         <p>For biomass work, field locations and dates matter. <a href="https://gedi.umd.edu/science/calibration-validation/">GEDI’s calibration guidance</a>, for example, pairs forest inventory with lidar observations and records plot geometry and geolocation accuracy. It illustrates why a reference dataset needs more than a total tree count; its specifications are not a universal project protocol.</p>
-        <p>Ask which estimates can be supported now and what additional measurements would change the assessment. Read about <a href="/platform/forest-monitoring">satellite forest monitoring</a> before deciding the coverage and revisit schedule.</p>
+        <p>Agree what will justify expanding the pilot. Check whether the team can match field records to the right sites, compare observations over the intended dates and resolve the gaps that could affect the next report. Use those findings to set the coverage and revisit schedule with the <a href="/platform/forest-monitoring">forest monitoring team</a>.</p>
       </>,
     },
     {
@@ -95,7 +101,7 @@ export const projectDevelopersPage: PlatformPageData = {
           <li><strong>Records:</strong> available field measurements, previous assessments and major data gaps.</li>
           <li><strong>Method:</strong> selected programme or methodology, if any, and the people responsible for reporting and review.</li>
         </ul>
-        <p>Request a scope covering assumptions, fieldwork, deliverables, costs and exclusions. Confirm how unresolved data issues will be handled before relying on a result in a project report.</p>
+        <p>The number and spread of parcels, condition of existing records, field visits and reporting frequency all affect the scope. Agree which outputs you need for the first review and which can wait until the pilot has answered the main questions. Ask the proposal to specify who will resolve any outstanding gaps.</p>
       </>,
     },
   ],
@@ -124,9 +130,9 @@ export const projectDevelopersPage: PlatformPageData = {
     { href: '/platform/biodiversity-monitoring', title: 'Biodiversity monitoring', description: 'Connect habitat observations with the ecological questions your project asks.' },
   ],
   cta: {
-    title: 'Discuss your project’s monitoring needs',
-    text: 'Tell us where your sites are, what records you have and the decision or report you are preparing for.',
-    label: 'Share your project brief',
+    title: 'Scope monitoring for your project',
+    text: 'Share your project stage, site locations and the report or decision you are preparing for. We’ll discuss the available evidence and what to include in the monitoring brief.',
+    label: 'Discuss your project brief',
     href: '/get-started?interest=forest-monitoring&source=project-developers',
   },
 };

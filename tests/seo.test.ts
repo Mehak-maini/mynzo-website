@@ -77,8 +77,9 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   assert.ok(entries.every(p => p.url.startsWith(SITE_URL)));
   assert.ok(entries.every(p => !/thank-you|\/admin|\/api/.test(p.url)));
   assert.equal(entries[0].lastModified, '2026-10-30');
-  assert.equal(entries.find(p => p.url.endsWith('/platform/forest-monitoring'))?.lastModified, undefined);
-  assert.equal(entries.find(p => p.url.endsWith('/platform/biodiversity-monitoring'))?.lastModified, '2026-10-30');
+  for (const path of ['/platform/forest-monitoring', '/platform/digital-mrv', '/platform/biodiversity-monitoring', '/solutions/project-developers']) {
+    assert.equal(entries.find(p => p.url.endsWith(path))?.lastModified, '2026-11-26');
+  }
   assert.equal(entries.find(p => p.url.endsWith('/blog'))?.lastModified, '2026-10-31');
 });
 

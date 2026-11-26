@@ -21,7 +21,10 @@ export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digi
 export const PUBLIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/': '2026-10-30',
   '/blog': '2026-10-31',
-  '/platform/biodiversity-monitoring': '2026-10-30',
+  '/platform/forest-monitoring': '2026-11-26',
+  '/platform/digital-mrv': '2026-11-26',
+  '/platform/biodiversity-monitoring': '2026-11-26',
+  '/solutions/project-developers': '2026-11-26',
 };
 
 export function serializeJsonLd(data: unknown) {

@@ -8,13 +8,14 @@ export const habitatMappingPost: StaticPost = {
   title: 'Habitat Mapping: A Practical Guide for Project Teams',
   excerpt: 'Commission a useful habitat map. Choose the right data, boundaries and seasons, request field validation, and review the results with an editable project brief.',
   date: 'October 8, 2026',
-  updatedAt: '2026-10-30',
+  updatedAt: '2026-11-26',
   readTime: '10',
   img: '/height_tree_jpg.jpeg',
   author: 'Mynzo Team',
   content: `
     <p>Habitat mapping identifies the types of habitat present within a defined area and records their locations and extent. A useful map includes a classification, observation dates and evidence about its reliability. For a project team, the first question is what decision the map must support: planning a survey, locating restoration work, comparing sites or assessing a change.</p>
     <p>This guide covers terrestrial habitat mapping for site and portfolio planning. It explains what to request from a mapping team and how to review the delivery. For choosing ecological measurements after mapping, use our <a href="/blog/biodiversity-metrics-for-restoration-projects">biodiversity metrics guide</a>.</p>
+    <p>Writing a specification now? <a href="/resources/habitat-mapping-brief.txt" download>Download the editable habitat mapping brief</a> and start with the decision, boundary and features your team needs to distinguish.</p>
 
     <nav aria-label="In this guide"><strong>In this guide</strong><ul>
       <li><a href="#habitat-map-purpose">Define what the map must show</a></li>
@@ -89,6 +90,15 @@ export const habitatMappingPost: StaticPost = {
       <li><strong>Review record:</strong> corrections, acceptance decisions, remaining work and the person responsible for each follow-up.</li>
     </ol>
     <p>Keep proposed, predicted and field-checked classifications distinguishable. If you later monitor interventions within these mapped areas, connect the feature IDs to the <a href="/blog/restoration-monitoring-plan">restoration monitoring record</a>.</p>
+    <h3 id="habitat-map-review-example">A worked map acceptance check</h3>
+    <p>In the illustrative review below, the project lead receives a map with a tree-cover polygon labelled H-01. The older field note refers to the same site, but the boundary was redrawn after the visit. Before using that note to accept the label, the lead checks whether the observation still falls inside H-01 and whether it describes the area that the polygon represents.</p>
+    <ul>
+      <li><strong>Where:</strong> record H-01, the boundary version and the field observation ID together.</li>
+      <li><strong>When:</strong> keep the imagery window and field visit date in separate fields.</li>
+      <li><strong>What the evidence supports:</strong> keep tree cover as the preliminary label and leave habitat type unresolved until the reviewer sees enough ecological evidence.</li>
+      <li><strong>Decision:</strong> use the polygon to plan a survey. Hold its area out of any total for confirmed native woodland until the label is checked.</li>
+    </ul>
+    <p>Ask the mapping team to show this review trail on one feature before commissioning the whole site. Agree which narrow features must be kept, who supplies reference observations, and how many revisions are included. Those choices help explain differences between quotes for the same area. The <a href="https://www.usgs.gov/centers/eros/science/reference-and-validation">USGS reference and validation programme</a> shows how maps and their reference records can be documented separately.</p>
 
     <h2 id="habitat-mapping-example">A hypothetical site briefing in India</h2>
     <p>Suppose a team manages 120 hectares containing wooded patches, planted areas, open vegetation and narrow streamside strips. It needs to decide where a detailed restoration survey should begin. These figures and features are an illustration, not Mynzo project results.</p>
@@ -119,6 +129,6 @@ export const habitatMappingPost: StaticPost = {
     <h2 id="habitat-mapping-brief">Prepare a habitat mapping brief</h2>
     <p><a href="/resources/habitat-mapping-brief.txt" download>Download the editable habitat mapping brief</a>. It covers the decision, boundary, classification, dates, validation and delivery requirements, with no registration required.</p>
     <p>Bring your region, project boundary, purpose, existing maps and surveys, and the mapping decision you need to make. Read about <a href="/platform/biodiversity-monitoring">biodiversity monitoring</a>, <a href="/platform/forest-monitoring">Mynzo's forest monitoring approach</a> and <a href="/solutions/project-developers">support for project developers</a>, or <a href="/get-started?interest=biodiversity-monitoring&amp;source=habitat-mapping-guide">discuss your habitat mapping requirements</a>. Confirm suitable observations and any specialist ecological work during scoping.</p>
-    <p><em>Sources checked on 8 October 2026; WorldCover comparison and classification-validation guidance rechecked on 30 October 2026. The commissioning workflow is planning guidance; the hypothetical example is not a delivery or outcome claim.</em></p>
+    <p><em>Originally published on 8 October 2026. Map acceptance example added on 26 November 2026. The examples use hypothetical sites.</em></p>
   `,
 };

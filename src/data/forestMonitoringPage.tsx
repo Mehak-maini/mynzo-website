@@ -1,9 +1,11 @@
 import type { PlatformPageData } from '@/components/PlatformPage.types';
+import { PUBLIC_PAGE_UPDATED_AT } from '@/lib/seo';
 
 export const forestMonitoringPage: PlatformPageData = {
   path: '/platform/forest-monitoring',
   metadataTitle: 'Satellite Forest Monitoring Software | Mynzo Carbon',
   description: 'Assess forest change, canopy condition and carbon with satellite imagery and field data. Explore Mynzo forest monitoring for forest and agroforestry projects.',
+  updatedAt: PUBLIC_PAGE_UPDATED_AT['/platform/forest-monitoring'],
   eyebrow: 'Forest monitoring',
   title: 'Satellite forest monitoring',
   summary: 'Understand what is changing across your forest sites, where field checks are needed, and what the evidence can support.',
@@ -57,6 +59,21 @@ export const forestMonitoringPage: PlatformPageData = {
             </table>
           </div>
           <p>If your team works in GIS or a reporting system, describe the files and fields it needs at the outset. Confirm export and integration requirements as part of the scope.</p>
+          <h3>Illustrative monitoring note: where to send a field team</h3>
+          <p>Suppose two observations show a change in canopy cover near a forest boundary. A review note like this gives the field crew a location and a question to investigate.</p>
+          <div className="platform-table-wrap" role="region" aria-label="Illustrative forest monitoring record" tabIndex={0}>
+            <table>
+              <caption>Example review record for Plot A</caption>
+              <thead><tr><th scope="col">Record</th><th scope="col">Example note</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Observation</th><td>A patch near the northern boundary shows a canopy difference between two observations.</td></tr>
+                <tr><th scope="row">Evidence to retain</th><td>The mapped patch, boundary version, image acquisition dates and any gaps in coverage.</td></tr>
+                <tr><th scope="row">Unresolved question</th><td>Does the difference reflect a management activity, seasonal conditions or damage?</td></tr>
+                <tr><th scope="row">Next action</th><td>Check site records and the affected area before assigning a cause. Record the field observation against the same location.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Agree the level of detail needed for your own review. A map should help the field team investigate a change without presenting its cause as settled.</p>
         </>
       ),
     },
@@ -89,6 +106,22 @@ export const forestMonitoringPage: PlatformPageData = {
       ),
     },
     {
+      id: 'scope-and-cost',
+      title: 'What determines the monitoring scope and cost?',
+      body: (
+        <>
+          <p>Begin with the decision and the evidence needed to make it. Area alone does not describe the work: a single forest block and many scattered plots can need different observation and field plans.</p>
+          <ul>
+            <li><strong>Sites and observations:</strong> boundaries, plot sizes, historical periods and the detail needed to identify change.</li>
+            <li><strong>Field work:</strong> usable records already held, additional measurements, site access and who collects them.</li>
+            <li><strong>Measurements:</strong> land cover and canopy change, or a separately scoped biomass or carbon assessment.</li>
+            <li><strong>Delivery:</strong> monitoring frequency, review dates, output formats and follow-up analysis.</li>
+          </ul>
+          <p>Ask the proposal to separate the initial assessment from repeat monitoring and to state what happens when observations are missing. Confirm any imagery, fieldwork or specialist analysis costs, as well as what is excluded.</p>
+        </>
+      ),
+    },
+    {
       id: 'project-brief',
       title: 'Bring a clear brief to the first discussion',
       body: (
@@ -102,6 +135,7 @@ export const forestMonitoringPage: PlatformPageData = {
             <li>Required reporting dates and how the results will be reviewed.</li>
           </ul>
           <p>If the work will support carbon reporting, also describe the project&apos;s methodology and evidence requirements. See how monitoring connects to <a href="/platform/digital-mrv">Mynzo&apos;s digital MRV workflow</a>.</p>
+          <p><a href="/get-started?interest=forest-monitoring&source=forest-monitoring">Discuss the monitoring scope for your sites</a>. A location, approximate area and the decision you need to make are enough to start the conversation.</p>
         </>
       ),
     },
@@ -124,6 +158,10 @@ export const forestMonitoringPage: PlatformPageData = {
       answer: 'The useful reporting interval depends on available observations, cloud conditions, processing and field checks. A satellite revisit does not guarantee a usable image or a completed report. Agree a schedule for the project and how gaps will be reported.',
     },
     {
+      question: 'What should a forest monitoring proposal include?',
+      answer: 'It should identify the sites, measurements, observation periods, field responsibilities, delivery formats and review schedule. Ask for the initial assessment and repeat monitoring to be distinguished, with costs, exclusions and a plan for missing data. Confirm the scope before treating a proposed output as a supported deliverable.',
+    },
+    {
       question: 'How do I check the accuracy of a forest monitoring result?',
       answer: 'Ask which measurement was tested, which reference data were used, how independent the checks were and whether the test represents your forest type and plot size. Ask for uncertainty as well as an explanation of missing observations and known failure conditions.',
     },
@@ -134,9 +172,9 @@ export const forestMonitoringPage: PlatformPageData = {
     { href: '/platform/biodiversity-monitoring', title: 'Biodiversity monitoring', description: 'Connect forest habitat observations with ecological evidence.' },
   ],
   cta: {
-    title: 'Discuss your forest monitoring project',
-    text: 'Tell us where your sites are and what you need to measure. We can discuss the data, field work and reporting needed to assess the project.',
-    label: 'Discuss your project',
+    title: 'Define the monitoring scope for your sites',
+    text: 'Share the location, approximate area and decision you need to make. Discuss which observations, field checks and outputs the work would require.',
+    label: 'Discuss monitoring scope',
     href: '/get-started?interest=forest-monitoring&source=forest-monitoring',
   },
 };

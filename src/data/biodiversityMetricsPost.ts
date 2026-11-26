@@ -8,7 +8,7 @@ export const biodiversityMetricsPost: StaticPost = {
   title: 'How to Measure Biodiversity: Methods and Examples',
   excerpt: 'Compare biodiversity monitoring methods and work through a species richness and Shannon diversity example. Choose useful field measures and record their limits.',
   date: 'September 18, 2026',
-  updatedAt: '2026-10-31',
+  updatedAt: '2026-11-26',
   readTime: '10',
   img: '/leaf_tree_jpg.jpeg',
   author: 'Mynzo Team',
@@ -117,6 +117,18 @@ export const biodiversityMetricsPost: StaticPost = {
 
     <h2 id="monitoring-brief">A brief your monitoring team can work from</h2>
     <p>For each proposed metric, complete one row with: the decision, ecological objective, definition, unit, baseline, method, timing, responsible person, quality check and action threshold. Mark anything unknown instead of filling the gap with an assumption. Have the ecological team review the design before setting targets.</p>
+    <h3 id="indicator-selection-example">Choose a metric for the decision it will support</h3>
+    <p>In this illustrative worksheet, the site team wants to know whether native seedlings are establishing after invasive-plant control. It gives each measure a unit, a limit and a decision.</p>
+    <div class="blog-table-wrap" role="region" aria-label="Illustrative indicator worksheet" tabindex="0"><table>
+      <caption>Three indicators for checking native regeneration after treatment</caption>
+      <thead><tr><th scope="col">Indicator and unit</th><th scope="col">Evidence to retain</th><th scope="col">Decision it supports</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Native seedlings per square metre</th><td>Fixed plot IDs, area actually checked, counts by species and comparable survey dates. Flag identifications that still need review.</td><td>Review plots with low establishment for likely causes before deciding where to intervene.</td></tr>
+        <tr><th scope="row">Target invasive cover, percent of surveyed plot</th><td>The same cover method and plot boundaries at every visit. Record unvisited plots separately.</td><td>Prioritise follow-up control where field evidence confirms regrowth.</td></tr>
+        <tr><th scope="row">Mapped tree-cover extent, hectares</th><td>Map version, observation dates, usable area and field references for ambiguous patches.</td><td>Identify larger changes that warrant a site check. Use plot records for the seedling assessment.</td></tr>
+      </tbody>
+    </table></div>
+    <p>If 18 of 20 planned plots were surveyed, show the 18-plot coverage beside the result and list the two missed plots. For a repeat comparison, use the same plots where possible and explain any coverage difference. A pooled density uses the seedling count divided by the area actually checked. A site-wide estimate needs a sampling design that supports it. Record the method and effort with the counts, as described in <a href="https://docs.gbif.org/guide-publishing-survey-data/en/">GBIF's guide to survey and monitoring data</a>.</p>
     <p>If a selected metric depends on habitat area, first agree how that habitat will be mapped. Use the <a href="/blog/habitat-mapping">habitat mapping guide</a> to define classes, observation dates and independent checks before interpreting mapped change.</p>
     <p><a href="/resources/biodiversity-monitoring-brief.txt" download>Download the biodiversity monitoring brief</a>. It is an editable text template with no registration required.</p>
     <p>Explore <a href="/platform/biodiversity-monitoring">biodiversity monitoring with Mynzo</a>, the underlying <a href="/platform/forest-monitoring">forest monitoring approach</a>, or our work with <a href="/solutions/project-developers">project developers</a>. To discuss a site, <a href="/get-started?interest=biodiversity-monitoring&amp;source=biodiversity-guide">share your monitoring question and available evidence</a>.</p>
@@ -128,6 +140,6 @@ export const biodiversityMetricsPost: StaticPost = {
     <h3 id="shannon-good-score">What is a good Shannon diversity score?</h3>
     <p>There is no universal pass mark for restoration. Interpret the value using the organisms, habitat, sampling design and reference conditions. Keep the logarithm base and method consistent when comparing results, and check whether a higher value reflects the ecological outcome your project seeks.</p>
     <p>For the broader ecological context, read <a href="/blog/causes-of-biodiversity-loss">the causes of biodiversity loss</a> and <a href="/blog/habitat-fragmentation-wildlife-corridors">how habitat fragmentation affects connectivity</a>.</p>
-    <p><em>Worked example and references reviewed on 31 October 2026. Originally published on 18 September 2026. This guide separates general ecological methods from Mynzo's product scope and from framework-specific requirements.</em></p>
+    <p><em>Originally published on 18 September 2026. Indicator worksheet added on 26 November 2026.</em></p>
   `,
 };
