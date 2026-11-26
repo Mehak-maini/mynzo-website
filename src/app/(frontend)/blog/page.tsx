@@ -8,7 +8,7 @@ export const revalidate = 300;
 export const metadata = pageMetadata('/blog', 'Forests, Biodiversity & Climate Guides | Mynzo Talks', 'Learn about biodiversity, forests, soil carbon, farming, wetlands and climate terms, with practical examples and sources from India and around the world.');
 
 export default async function BlogPage() {
-  const docs = await getPublishedPosts();
+  const docs = await getPublishedPosts('blog');
 
   return (
     <div style={{ background: '#fff' }}>

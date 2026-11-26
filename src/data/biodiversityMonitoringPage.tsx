@@ -115,7 +115,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
       body: (
         <>
           <p>Share the country, approximate area, habitat type and the change you need to understand. Include any existing surveys, boundary files, restoration plans and reporting dates. Explain whether the work is for site management, a funder&apos;s review, corporate reporting or another purpose.</p>
-          <p>If you manage several sites for a corporate programme, bring the list of locations and the indicators the programme needs to report. If you are an ecology consultant, bring your survey method and the map or field records you need for the handover. Project developers can use the <a href="/solutions/project-developers">project-stage checklist</a> to prepare for the discussion.</p>
+          <p>If you manage several sites for a company or CSR programme, use the <a href="/solutions/corporate-nature-monitoring">corporate monitoring brief</a> to prepare a site list and reporting questions. If you are an ecology consultant, use the <a href="/solutions/environmental-consultants">consultant handover guide</a> to agree how maps will fit with your surveys. Project developers can use the <a href="/solutions/project-developers">project-stage checklist</a>.</p>
           <p>Confirm the number and size of sites, observation dates, field checks and outputs before asking for a quote. Those choices shape the amount of work. The <a href="/platform/forest-monitoring">forest monitoring workflow</a> explains the imagery and ground checks to consider.</p>
         </>
       ),
@@ -140,6 +140,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
     },
   ],
   relatedLinks: [
+    { href: '/blog/biodiversity-baseline-assessment', title: 'Commission a biodiversity baseline', description: 'Agree the starting condition, survey coverage and records your team needs to receive.' },
     { href: '/blog/habitat-mapping', title: 'Prepare a habitat mapping brief', description: 'Specify map classes, field checks and the evidence needed at handover.' },
     { href: '/blog/restoration-monitoring-plan', title: 'Plan restoration monitoring', description: 'Connect intervention records, field visits and management decisions.' },
     { href: '/blog/biodiversity-metrics-for-restoration-projects', title: 'Choose biodiversity metrics', description: 'Match restoration goals to measurements, baselines and evidence.' },

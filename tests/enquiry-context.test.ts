@@ -41,6 +41,7 @@ test('guide links retain their subject through form parsing and the enquiry emai
     ['agroforestry-the-future-of-sustainable-land-use', 'forest-monitoring', 'Agroforestry guide'],
     ['how-ai-is-revolutionising-forest-carbon-accounting', 'digital-mrv', 'Forest carbon accounting guide'],
     ['biodiversity-metrics-for-restoration-projects', 'biodiversity-monitoring', 'Biodiversity monitoring guide'],
+    ['biodiversity-baseline-assessment', 'biodiversity-monitoring', 'Biodiversity baseline assessment guide'],
   ]) {
     const link = new URL(articleEnquiry(slug).href, 'https://www.mynzocarbon.com');
     const context = enquiryContextFromSearch(link.search);
@@ -63,6 +64,11 @@ test('page-to-form context accepts only known interests and entry pages', () => 
   }
   assert.deepEqual(enquiryContextFromSearch('?source=biodiversity-guide'), { enquiry_source: 'biodiversity-guide' });
   assert.deepEqual(enquiryContextFromSearch('?source=project-developers'), { enquiry_source: 'project-developers' });
+  for (const value of ['corporate-nature-monitoring', 'environmental-consultants']) {
+    assert.deepEqual(enquiryContextFromSearch(`?interest=biodiversity-monitoring&source=${value}`), {
+      project_focus: 'biodiversity-monitoring', enquiry_source: value,
+    });
+  }
   assert.deepEqual(enquiryContextFromSearch('?interest=visitor@example.com&source=https://example.com/private'), {});
   assert.deepEqual(enquiryContextFromSearch('?interest=other&source=constructor'), {});
   assert.deepEqual(enquiryContextFromSearch(''), {});

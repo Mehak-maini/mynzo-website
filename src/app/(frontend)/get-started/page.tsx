@@ -109,6 +109,7 @@ export default function GetStartedPage() {
                   <option>Project Developer</option>
                   <option>Government / Institution</option>
                   <option>Investor / Fund Manager</option>
+                  <option>Environmental Consultant / Ecologist</option>
                   <option>Researcher / Academic</option>
                   <option>Other</option>
                 </select>
