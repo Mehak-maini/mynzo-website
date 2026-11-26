@@ -15,16 +15,18 @@ export function pageMetadata(path: string, title: string, description: string, i
   };
 }
 
-export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digital-mrv', '/platform/biodiversity-monitoring', '/solutions/project-developers', '/blog', '/get-started', '/privacy-policy', '/terms-of-use', '/data-processing', '/cookie-policy'];
+export const PUBLIC_PATHS = ['/', '/platform/forest-monitoring', '/platform/digital-mrv', '/platform/biodiversity-monitoring', '/solutions/project-developers', '/solutions/corporate-nature-monitoring', '/solutions/environmental-consultants', '/blog', '/get-started', '/privacy-policy', '/terms-of-use', '/data-processing', '/cookie-policy'];
 
 // Record substantive page revisions, never the time a sitemap is requested.
 export const PUBLIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/': '2026-10-30',
-  '/blog': '2026-10-31',
+  '/blog': '2026-11-26',
   '/platform/forest-monitoring': '2026-11-26',
   '/platform/digital-mrv': '2026-11-26',
   '/platform/biodiversity-monitoring': '2026-11-26',
   '/solutions/project-developers': '2026-11-26',
+  '/solutions/corporate-nature-monitoring': '2026-11-26',
+  '/solutions/environmental-consultants': '2026-11-26',
 };
 
 export function serializeJsonLd(data: unknown) {

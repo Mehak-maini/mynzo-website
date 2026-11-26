@@ -7,7 +7,7 @@ export const revalidate = 300;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Do not publish a partial sitemap on a CMS outage: let regeneration fail
   // so Next can retain the previously generated successful response.
-  const posts = await getPublishedPosts();
+  const posts = await getPublishedPosts('blog');
   return [
     ...PUBLIC_PATHS.map(path => ({ url: `${SITE_URL}${path}`, ...(PUBLIC_PAGE_UPDATED_AT[path] ? { lastModified: PUBLIC_PAGE_UPDATED_AT[path] } : {}) })),
     ...posts.map(post => ({ url: `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`, ...(post.updatedAt || post.publishedAt ? { lastModified: post.updatedAt || post.publishedAt } : {}) })),

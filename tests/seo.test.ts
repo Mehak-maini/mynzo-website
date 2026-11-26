@@ -59,6 +59,7 @@ test('CMS outage does not publish a partial sitemap or turn unknown articles int
   await assert.rejects(sitemap, /503/);
   await assert.rejects(() => getPost('existing-cms-slug'), /503/);
   assert.ok(await getPost('how-ai-is-revolutionising-forest-carbon-accounting'));
+  assert.equal((await getPost('biodiversity-baseline-assessment'))?.slug, 'biodiversity-baseline-assessment');
 });
 
 test('empty healthy CMS retains bundled content and returns null for a truly missing slug', async t => {
@@ -68,7 +69,7 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   assert.equal((await getPublishedPosts()).length, STATIC_POSTS.length);
   assert.equal(await getPost('does-not-exist'), null);
   const entries = await sitemap();
-  assert.equal(entries.length, PUBLIC_PATHS.length + STATIC_POSTS.length);
+  assert.equal(entries.length, PUBLIC_PATHS.length + STATIC_POSTS.length + 1);
   assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/forest-monitoring`));
   assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/digital-mrv`));
   assert.ok(entries.some(p => p.url === `${SITE_URL}/platform/biodiversity-monitoring`));
@@ -80,7 +81,25 @@ test('empty healthy CMS retains bundled content and returns null for a truly mis
   for (const path of ['/platform/forest-monitoring', '/platform/digital-mrv', '/platform/biodiversity-monitoring', '/solutions/project-developers']) {
     assert.equal(entries.find(p => p.url.endsWith(path))?.lastModified, '2026-11-26');
   }
-  assert.equal(entries.find(p => p.url.endsWith('/blog'))?.lastModified, '2026-10-31');
+  for (const path of ['/blog', '/solutions/corporate-nature-monitoring', '/solutions/environmental-consultants', '/blog/biodiversity-baseline-assessment']) {
+    assert.equal(entries.find(p => p.url === SITE_URL + path)?.lastModified, '2026-11-26');
+  }
+});
+
+test('the new baseline guide is available in the blog without changing homepage cards', async t => {
+  const original = globalThis.fetch;
+  t.after(() => { globalThis.fetch = original; });
+  const slug = 'biodiversity-baseline-assessment';
+  const currentCms = [{ slug: 'current-cms-story', title: 'Current story', status: 'published', publishedAt: '2026-11-25' }];
+  const baselineCms = { slug, title: 'CMS baseline title', status: 'published', publishedAt: '2026-11-26' };
+  globalThis.fetch = async () => Response.json({ docs: currentCms, hasNextPage: false });
+  const expectedCards = mergePosts(currentCms, STATIC_POSTS).slice(0, 3);
+  assert.deepEqual((await getPublishedPosts()).slice(0, 3), expectedCards);
+  assert.equal((await getPublishedPosts('blog'))[0].slug, slug);
+
+  globalThis.fetch = async () => Response.json({ docs: [...currentCms, baselineCms], hasNextPage: false });
+  assert.deepEqual((await getPublishedPosts()).slice(0, 3), expectedCards);
+  assert.equal((await getPost(slug))?.title, baselineCms.title);
 });
 
 test('metadata is specific to the page and JSON-LD cannot terminate its script element', () => {

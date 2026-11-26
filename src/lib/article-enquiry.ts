@@ -9,6 +9,12 @@ type ArticleEnquiry = {
 };
 
 const ARTICLE_ENQUIRIES: Record<string, ArticleEnquiry> = {
+  'biodiversity-baseline-assessment': {
+    title: 'Discuss the evidence your baseline needs',
+    text: 'Share your site locations, planned work and the records you already have. Tell us when the assessment needs to be ready.',
+    label: 'Discuss your baseline brief',
+    interest: 'biodiversity-monitoring', source: 'biodiversity-baseline-guide',
+  },
   'habitat-mapping': {
     title: 'Scope the monitoring behind your habitat map',
     text: 'Share your site boundaries, existing maps and surveys, and the decision your team needs to make.',

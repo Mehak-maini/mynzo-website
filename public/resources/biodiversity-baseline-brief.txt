@@ -1,0 +1,44 @@
+BIODIVERSITY BASELINE ASSESSMENT BRIEF
+
+Complete this checklist before requesting quotes. Share the same version with
+each team. Mark unknowns and agree who will resolve them.
+
+1. DECISION
+[ ] Project, client and main contact:
+[ ] Decision the baseline has to inform:
+[ ] Intended use and any funder or assessment requirements:
+[ ] Date of planned work or dates of activity already under way:
+
+2. SITE
+[ ] Parcel names, locations and versioned boundary files:
+[ ] Footprint, wider study area and reasons for including it:
+[ ] Known habitats, sensitive areas and target species groups:
+[ ] Land access, permissions and other survey constraints:
+
+3. AVAILABLE EVIDENCE
+[ ] Imagery, maps and previous visits, with their dates and methods:
+[ ] Earlier field data and coverage:
+[ ] Changes since the available observations:
+[ ] Records for comparison, records for context and unresolved gaps:
+
+4. FIELDWORK
+[ ] Questions that need field checks and who will lead them:
+[ ] Proposed surveys, coverage, effort, date windows and repeat visits:
+[ ] Plan for inaccessible areas, unsuitable weather and missed visits:
+[ ] Who checks identifications and confirms map classes:
+
+5. QUOTE AND TIMING
+[ ] Desk review, travel, fieldwork, specialist work and reporting:
+[ ] Assumptions, included visits, exclusions and rates for extra work:
+[ ] Expected dates for interim findings and final review:
+[ ] Who approves additional work:
+
+6. HANDOVER
+[ ] Boundary, habitat files, surveyed area and gaps:
+[ ] Field tables with location IDs, dates, methods and effort:
+[ ] Findings and limits, with links to the supporting evidence:
+[ ] File formats, ownership or reuse terms, and access to sensitive records:
+[ ] Follow-up decisions, responsible people and due dates:
+
+Review one mapped feature and one field record together. Check that each
+finding can be traced to its original observation and date.

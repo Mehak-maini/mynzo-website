@@ -133,6 +133,11 @@ export const EDUCATION_TOPICS = [
 
 export const PRACTICAL_GUIDES = [
   {
+    title: 'Commission a biodiversity baseline',
+    text: 'Decide what to record before work starts and give everyone the same brief when you ask for a quote.',
+    href: '/blog/biodiversity-baseline-assessment',
+  },
+  {
     title: 'Map the habitats on a site',
     text: 'Choose map classes, check them in the field and agree what a habitat map needs to show.',
     href: '/blog/habitat-mapping',
