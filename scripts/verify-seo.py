@@ -57,6 +57,7 @@ def fetch(path):
 
 status,xml,_=fetch('/sitemap.xml');assert status==200
 root=ET.fromstring(xml); urls=[e.text for e in root.findall('{*}url/{*}loc')]
+lastmods={e.findtext('{*}loc'): e.findtext('{*}lastmod') for e in root.findall('{*}url')}
 assert len(urls)==len(set(urls))
 assert not any('/thank-you' in u or '/admin' in u or '/api/' in u for u in urls)
 results=[]
@@ -75,6 +76,8 @@ for url in urls:
     if path.startswith('/blog/'):
         graph=page.schemas[0]['@graph'];article=next(x for x in graph if x['@type']=='BlogPosting')
         assert article['url']==url and article['headline'] and article['publisher']
+        if path in ['/blog/habitat-mapping', '/blog/biodiversity-metrics-for-restoration-projects', '/blog/restoration-monitoring-plan']:
+            assert lastmods[url].startswith(article['dateModified']),path
         if path.removeprefix('/blog/') in education_slugs | next_education_slugs:
             is_new = path.removeprefix('/blog/') in next_education_slugs
             expected_published = '2026-10-31' if is_new else ('2025-03-10' if path.endswith('/understanding-soil-carbon-the-hidden-climate-solution') else '2026-10-08')
@@ -94,7 +97,7 @@ for url in urls:
             entry=next(e for e in root.findall('{*}url') if e.findtext('{*}loc')==url)
             assert entry.findtext('{*}lastmod').startswith(expected_modified),path
         if path=='/blog/habitat-mapping':
-            assert article['datePublished']=='2026-10-08' and article['dateModified']=='2026-10-30'
+            assert article['datePublished']=='2026-10-08' and article['dateModified']=='2026-11-26'
             assert page.h1_count==1 and '/#team' in page.links
             assert '/resources/habitat-mapping-brief.txt' in page.links
             assert '/platform/biodiversity-monitoring' in page.links
@@ -110,7 +113,7 @@ for url in urls:
             assert not any(claim in html for claim in ['IPCC\'s 2023 guidelines', 'across every forest on the planet'])
         if path=='/blog/biodiversity-metrics-for-restoration-projects':
             assert article['datePublished']=='2026-09-18'
-            assert article['dateModified']=='2026-10-31'
+            assert article['dateModified']=='2026-11-26'
             assert page.h1_count==1
             assert '/platform/biodiversity-monitoring' in page.links
             assert page.links.count('/get-started?interest=biodiversity-monitoring&source=biodiversity-guide')==2
@@ -118,7 +121,7 @@ for url in urls:
         if path in ['/blog/restoration-monitoring-plan', '/blog/agroforestry-the-future-of-sustainable-land-use']:
             is_restoration=path.endswith('/restoration-monitoring-plan')
             assert article['datePublished']==('2026-09-23' if is_restoration else '2025-03-28')
-            assert article['dateModified']=='2026-09-23'
+            assert article['dateModified']==('2026-11-26' if is_restoration else '2026-09-23')
             interest,source=('restoration-monitoring','restoration-guide') if is_restoration else ('forest-monitoring','agroforestry-guide')
             assert page.links.count(f'/get-started?interest={interest}&source={source}')==2
             assert page.h1_count==1 and '/#team' in page.links
@@ -129,7 +132,9 @@ for url in urls:
     if path.startswith(('/platform/', '/solutions/')):
         assert page.h1_count==1,(path,page.h1_count)
         graph=page.schemas[0]['@graph']
-        assert next(x for x in graph if x['@type']=='WebPage')['url']==url
+        web_page=next(x for x in graph if x['@type']=='WebPage')
+        assert web_page['url']==url
+        assert web_page['dateModified']=='2026-11-26' and lastmods[url].startswith(web_page['dateModified']),path
         crumbs=next(x for x in graph if x['@type']=='BreadcrumbList')['itemListElement']
         assert crumbs[-1]['item']==url
         faqs=next(x for x in graph if x['@type']=='FAQPage')['mainEntity']
@@ -144,11 +149,6 @@ for url in urls:
         assert '/get-started' in page.links
         if path in ['/platform/biodiversity-monitoring', '/solutions/project-developers']:
             assert '/blog/habitat-mapping' in page.links
-            expected_modified='2026-10-30' if path.startswith('/platform/') else '2026-09-18'
-            assert next(x for x in graph if x['@type']=='WebPage')['dateModified']==expected_modified
-            if path.startswith('/platform/'):
-                entry=next(e for e in root.findall('{*}url') if e.findtext('{*}loc')==url)
-                assert entry.findtext('{*}lastmod').startswith(expected_modified)
             assert '/blog/biodiversity-metrics-for-restoration-projects' in page.links
             interest,source=('biodiversity-monitoring','biodiversity-monitoring') if path.startswith('/platform/') else ('forest-monitoring','project-developers')
             assert page.links.count(f'/get-started?interest={interest}&source={source}')==2

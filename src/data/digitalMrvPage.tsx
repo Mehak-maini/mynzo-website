@@ -1,10 +1,12 @@
 import React from 'react';
 import type { PlatformPageData } from '@/components/PlatformPage.types';
+import { PUBLIC_PAGE_UPDATED_AT } from '@/lib/seo';
 
 export const digitalMrvPage: PlatformPageData = {
   path: '/platform/digital-mrv',
   metadataTitle: 'Digital MRV for Forest Carbon Projects | Mynzo Carbon',
   description: 'Connect satellite observations, field evidence and carbon reporting. Explore Mynzo’s digital MRV approach and prepare your project for a technical discussion.',
+  updatedAt: PUBLIC_PAGE_UPDATED_AT['/platform/digital-mrv'],
   eyebrow: 'Digital MRV',
   title: 'Digital MRV for forest carbon projects',
   summary: 'A carbon estimate needs a record of how it was produced. Mynzo combines satellite analysis with ground-truth validation to help project teams understand their forests and the evidence behind their carbon reporting.',
@@ -38,6 +40,19 @@ export const digitalMrvPage: PlatformPageData = {
           <li><h3>Prepare the reporting evidence</h3><p>Agree which maps, calculations and supporting records the reporting team needs. Specify the reporting period, data sources, method versions and known limitations. Confirm delivery formats and access requirements with Mynzo during scoping.</p></li>
           <li><h3>Support independent review</h3><p>Make the source evidence and explanations available to the appointed reviewer. Resolve questions about measurements and calculations. A monitoring output does not, by itself, establish project eligibility or authorize the issue of credits.</p></li>
         </ol>
+        <h3>Illustrative handover for comparing two reports</h3>
+        <p>Suppose a project team revises a plot boundary between reporting periods. The reviewer needs both versions to determine how much of the difference comes from a change in assessed area.</p>
+        <div className="platform-table-wrap" role="region" aria-label="Illustrative digital MRV handover" tabIndex={0}><table>
+          <caption>Example evidence record for Plot A</caption>
+          <thead><tr><th scope="col">Review item</th><th scope="col">What the handover should show</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Area assessed</th><td>The earlier and revised boundaries, the reason for the revision and the area used in each calculation.</td></tr>
+            <tr><th scope="row">Estimate compared</th><td>The same stated carbon pool and units, with observation dates, method versions and field references.</td></tr>
+            <tr><th scope="row">Open question</th><td>Whether the two estimates are comparable, or the earlier assessment needs to be recalculated for a consistent area.</td></tr>
+            <tr><th scope="row">Review status</th><td>The unresolved question and the person responsible for answering it before the intended reporting use.</td></tr>
+          </tbody>
+        </table></div>
+        <p>Confirm which records Mynzo will provide and which remain with the project team. Agree the file formats and access arrangements before the work begins.</p>
       </>,
     },
     {
@@ -77,6 +92,20 @@ export const digitalMrvPage: PlatformPageData = {
       </div>,
     },
     {
+      id: 'scope-and-cost',
+      title: 'Agree the work behind the MRV proposal',
+      body: <>
+        <p>A forest inventory, an internal carbon update and evidence for independent verification are different scopes. Define the intended use first so the proposal can state which analysis and supporting records are included.</p>
+        <ul>
+          <li><strong>Existing evidence:</strong> which boundaries, field records and previous calculations can be used, and what needs checking or collecting.</li>
+          <li><strong>Analysis:</strong> the sites, time periods, carbon pools, methods and checks required for the assessment.</li>
+          <li><strong>Handover:</strong> maps, calculations, method notes and supporting records to be supplied, in agreed formats.</li>
+          <li><strong>Review support:</strong> who answers technical questions, how revisions are handled and whether later monitoring periods are included.</li>
+        </ul>
+        <p>Ask for the costs and responsibilities for analysis, fieldwork and repeat monitoring to be stated separately. Confirm any independent verification and programme fees with the parties responsible for that work; a monitoring proposal should not imply they are included.</p>
+      </>,
+    },
+    {
       id: 'project-brief',
       title: 'Bring a project brief to the first discussion',
       body: <>
@@ -89,6 +118,7 @@ export const digitalMrvPage: PlatformPageData = {
           <li><strong>Delivery needs:</strong> review dates, reporting formats, access permissions and who will answer technical questions.</li>
         </ul>
         <p>Ask Mynzo to confirm supported measurements, geography, field responsibilities, reporting outputs and costs for that scope. A proposal should make those decisions explicit before work begins.</p>
+        <p><a href="/get-started?interest=digital-mrv&source=digital-mrv">Discuss your forest-carbon evidence requirements</a>. Start with the project location, the records you already have and who needs to review the results.</p>
       </>,
     },
   ],
@@ -105,6 +135,14 @@ export const digitalMrvPage: PlatformPageData = {
       question: 'Can the same digital MRV setup be used for every project?',
       answer: 'The required evidence depends on the project activity, geography, carbon pools, methodology and reporting purpose. Reusing a reporting structure can help, but data suitability and validation need to be assessed for each project.',
     },
+    {
+      question: 'What should be included in a digital MRV handover?',
+      answer: 'Agree the scope with the reporting team before work starts. For a forest-carbon assessment, this may include boundaries, observation and field-measurement dates, the carbon pools and units assessed, method and calculation versions, uncertainty and unresolved data gaps. Confirm file formats, access and who will answer review questions. The appointed verifier makes its own assessment of the evidence.',
+    },
+    {
+      question: 'What determines the cost of digital MRV for a forest project?',
+      answer: 'The work depends on the sites and reporting purpose, the quality of existing records, additional fieldwork, the analysis required and the monitoring and review schedule. Ask for those items and exclusions to be clear in the proposal. Confirm verification and programme fees separately with the responsible parties.',
+    },
   ],
   relatedLinks: [
     { href: '/platform/forest-monitoring', title: 'Satellite forest monitoring', description: 'Explore the observations that inform a forest monitoring programme.' },
@@ -113,8 +151,8 @@ export const digitalMrvPage: PlatformPageData = {
   ],
   cta: {
     title: 'Define the evidence your project needs',
-    text: 'Share your project location, available data and reporting requirements. Discuss the analysis and field evidence needed with Mynzo.',
-    label: 'Discuss your MRV requirements',
+    text: 'Share the project location, records already available and intended reporting use. Discuss the analysis, evidence handover and responsibilities for that scope.',
+    label: 'Discuss MRV evidence',
     href: '/get-started?interest=digital-mrv&source=digital-mrv',
   },
 };

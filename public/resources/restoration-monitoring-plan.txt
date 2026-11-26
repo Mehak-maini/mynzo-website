@@ -1,5 +1,5 @@
 RESTORATION MONITORING PLAN: VISIT AND ACTION CHECKLIST
-Mynzo Carbon | 23 September 2026
+Mynzo Carbon | 26 November 2026
 
 Use this editable record with the team responsible for the site's ecology and
 management. It is a planning aid, not a survey protocol, certification or
@@ -24,6 +24,8 @@ Expected response and review question:
 Relevant ecological objective:
 Evidence needed and method reference:
 Planned revisit window and reason:
+Evidence that would trigger an extra visit:
+Who reviews the finding and decides when to return:
 
 PLANTING COHORT RECORD, IF RELEVANT
 Cohort ID and planting date:

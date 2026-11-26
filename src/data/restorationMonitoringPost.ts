@@ -8,7 +8,7 @@ export const restorationMonitoringPost: StaticPost = {
   title: 'Restoration Monitoring Plan: From Visits to Decisions',
   excerpt: 'Keep restoration work connected across field visits. Record treatments, tree cohorts, changes and the next action with a practical monitoring checklist.',
   date: 'September 23, 2026',
-  updatedAt: '2026-09-23',
+  updatedAt: '2026-11-26',
   readTime: '7',
   img: '/tree_trunk_jpg.jpeg',
   author: 'Mynzo Team',
@@ -63,6 +63,18 @@ export const restorationMonitoringPost: StaticPost = {
     <p>Use two kinds of visit: planned comparisons under suitable seasonal conditions, and additional checks when an event or unresolved finding warrants attention. A planting-establishment check, a review after flooding and a repeat habitat survey answer different questions. One fixed calendar interval will not serve every purpose.</p>
     <p>In <a href="https://forum.inaturalist.org/t/how-to-efficiently-revisit-locations-of-numerous-observations/17969">a post-fire research discussion</a>, an observer needed to find earlier observation locations in a changed landscape at the same time of year. Keep plot IDs, location uncertainty, access notes and photo-point directions available to the visiting crew. Record a missed visit and its reason.</p>
     <p>For a hypothetical India programme, organise revisits around each site's planting date and local wet and dry seasons. For a portfolio across countries, keep the same record fields while allowing different ecological windows and access constraints. A reporting deadline should not disguise an unsuitable or incomplete field comparison.</p>
+    <h3 id="restoration-visit-schedule">A worked schedule for one treatment area</h3>
+    <p>Imagine a project clearing invasive plants from the edge of a woodland to help native seedlings establish. Its field lead can plan three checks and agree what evidence would trigger a return visit. The local growing season and access conditions determine the dates.</p>
+    <div class="blog-table-wrap" role="region" aria-label="Illustrative restoration visit schedule" tabindex="0"><table>
+      <caption>Example schedule for invasive-plant control and follow-up</caption>
+      <thead><tr><th scope="col">When</th><th scope="col">Record</th><th scope="col">Who acts and why</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Before treatment</th><td>Mark the treatment boundary, set fixed photo points and record invasive cover and native seedlings in the agreed plots.</td><td>The ecology lead confirms the baseline and approves the method for repeat visits.</td></tr>
+        <tr><th scope="row">First suitable visit after treatment</th><td>Confirm the work area and date, document untouched patches and record access gaps.</td><td>The field lead follows up on missed work and carries forward areas still to check.</td></tr>
+        <tr><th scope="row">Comparable growing season</th><td>Revisit the same plots and record regrowth, native establishment and changes in survey coverage.</td><td>The site manager reviews the evidence with the ecology lead and assigns follow-up work where warranted.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Between visits, add a check if imagery shows an unexpected change large enough to investigate. Attach the observation date and location to the work record. The field crew can then check for treatment, seasonal change or disturbance and record what it finds. Use the <a href="/blog/biodiversity-metrics-for-restoration-projects#indicator-selection-example">indicator worksheet</a> to agree the units and evidence before the work begins.</p>
 
     <h2 id="management-response">Review the finding, then close the action</h2>
     <p>Suppose a hypothetical follow-up finds poor establishment in one treatment area. First check the records and extent of the problem. Ask the field team to investigate plausible causes before ordering more seedlings. Record the chosen response, who approved it and what the next visit must establish.</p>
@@ -82,6 +94,6 @@ export const restorationMonitoringPost: StaticPost = {
     <h2 id="monitoring-plan-checklist">Prepare your next monitoring visit</h2>
     <p><a href="/resources/restoration-monitoring-plan.txt" download>Download the editable restoration monitoring checklist</a>. It includes a repeatable visit record and an action handover with no registration required.</p>
     <p>For a monitoring discussion, bring your boundaries, intervention history, existing surveys and the decision you need to make. Explore <a href="/solutions/project-developers">monitoring for project developers</a> and <a href="/platform/forest-monitoring">Mynzo's forest monitoring approach</a>, or <a href="/get-started?interest=restoration-monitoring&amp;source=restoration-guide">discuss your restoration monitoring needs</a>. Confirm the suitable observations and any specialist field work during scoping.</p>
-    <p><em>Sources checked on 23 September 2026. Examples labelled hypothetical are planning illustrations, not project results.</em></p>
+    <p><em>Originally published on 23 September 2026. Worked visit schedule added on 26 November 2026. The examples use hypothetical sites.</em></p>
   `,
 };

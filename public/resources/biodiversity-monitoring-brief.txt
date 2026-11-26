@@ -1,5 +1,5 @@
 MYNZO | BIODIVERSITY MONITORING BRIEF
-Version: 18 September 2026
+Version: 26 November 2026
 
 Use this editable brief to prepare a discussion with your monitoring and ecology teams.
 It is a planning aid, not a survey protocol, certification or regulatory assessment.
@@ -37,6 +37,8 @@ Baseline value, date and evidence source:
 Observed or modelled:
 Field or remote observation method:
 Sampling area, number of visits and effort per visit:
+Denominator and unit used in the calculation:
+Planned versus actual coverage and reasons for missed plots:
 Season and proposed repeat schedule:
 Person or team collecting the data:
 Quality and identification checks:

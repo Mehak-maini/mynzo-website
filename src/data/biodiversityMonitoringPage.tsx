@@ -5,10 +5,10 @@ export const biodiversityMonitoringPage: PlatformPageData = {
   path: '/platform/biodiversity-monitoring',
   updatedAt: PUBLIC_PAGE_UPDATED_AT['/platform/biodiversity-monitoring'],
   metadataTitle: 'Biodiversity Monitoring for Forest Projects | Mynzo Carbon',
-  description: 'Plan biodiversity monitoring with forest observations and ecological field evidence. Define habitat baselines, review change and scope your project with Mynzo.',
+  description: 'Scope biodiversity monitoring for a forest or restoration site. See what habitat maps show, what needs a field survey and what to include in a baseline.',
   eyebrow: 'Biodiversity monitoring',
   title: 'Biodiversity monitoring for forest projects',
-  summary: 'Connect changes in forest habitat to the ecological evidence your project needs. Know what the map shows, what needs a survey, and where to act.',
+  summary: 'Use forest observations to establish a habitat baseline, review changes and decide where to send a field team. Mynzo helps scope the mapping alongside the ecological surveys your project needs.',
   heroImage: '/remote_ecosytem_mangrooves.png',
   heroImageFit: 'contain',
   heroAlt: 'Mangrove trees with branching roots and a dense green canopy',
@@ -25,7 +25,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
         <>
           <p>Is a restoration site developing as intended? Which forest patches need closer inspection? What can your team support in its next biodiversity report? These are different questions, with different evidence requirements.</p>
           <p>Mynzo combines satellite forest observations, machine learning and ground-truth field data. For a biodiversity project, scope the forest-monitoring contribution around canopy condition, forest-cover change and locations that need investigation. Start with the observations needed from Mynzo, the surveys your ecology team will carry out and the records both teams will use at review.</p>
-          <p>The <a href="https://geobon.org/ebvs/working-groups/ecosystem-structure/">GEO BON ecosystem structure framework</a> connects observations of physical ecosystem characteristics with biodiversity monitoring. Structure is one part of that work. A complete biodiversity assessment may also need information about species, ecological processes and pressures on the site.</p>
+          <p><a href="https://geobon.org/ebvs/what-are-ebvs/">GEO BON’s Essential Biodiversity Variables</a> distinguish ecosystem structure from species populations and other measures. That distinction helps you decide what belongs in the map and what your ecologists need to measure separately.</p>
         </>
       ),
     },
@@ -35,7 +35,7 @@ export const biodiversityMonitoringPage: PlatformPageData = {
       body: (
         <>
           <p>Specify the question before choosing a dataset. The following distinctions help project teams commission work and interpret the result.</p>
-          <div className="platform-table-wrap">
+          <div className="platform-table-wrap" role="region" aria-label="Habitat and field survey evidence" tabIndex={0}>
             <table>
               <caption>Evidence to discuss when defining a biodiversity monitoring scope</caption>
               <thead><tr><th scope="col">Project question</th><th scope="col">Useful evidence</th><th scope="col">What still needs checking</th></tr></thead>
@@ -43,12 +43,13 @@ export const biodiversityMonitoringPage: PlatformPageData = {
                 <tr><th scope="row">Has the habitat area changed?</th><td>Comparable land-cover maps, boundaries, dates and a stated classification method.</td><td>Whether mapped classes correspond to the habitat of interest and how classification errors affect the result.</td></tr>
                 <tr><th scope="row">Is the habitat becoming more fragmented?</th><td>Changes in the size and arrangement of mapped patches.</td><td>Whether those changes affect the species or ecological processes your project is concerned with.</td></tr>
                 <tr><th scope="row">Are native species recovering?</th><td>Repeat ecological surveys using suitable methods for the target species or groups.</td><td>Survey effort, season, identification quality and the likelihood of detecting the species.</td></tr>
+                <tr><th scope="row">Is soil or water condition affecting recovery?</th><td>Site measurements or samples suited to the question, such as soil compaction or water quality.</td><td>Sampling locations, dates, methods and any laboratory work needed.</td></tr>
                 <tr><th scope="row">Is management improving site condition?</th><td>Habitat observations, field assessments, intervention records and a defined reference.</td><td>Other possible causes of change and evidence gaps before attributing improvement to the intervention.</td></tr>
               </tbody>
             </table>
           </div>
-          <p><a href="https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Four_ways_that_space_is_changing_ecosystem_monitoring">ESA&apos;s ecosystem-monitoring projects</a> demonstrate satellite measures such as habitat fragmentation, vegetation seasonality and canopy chlorophyll. These describe particular ecosystem characteristics. They are not interchangeable with a count of species living at a site.</p>
-          <p>More tree cover can be useful evidence for a forest project, but it does not by itself show that native species have returned. Assess the ecological outcome against the project&apos;s stated goal.</p>
+          <p>Satellite measures can describe fragmentation, vegetation seasonality and canopy characteristics. To assess native species recovery, pair those observations with surveys suited to the organisms your project aims to support. <a href="https://www.esa.int/articles/four-ways-that-space-is-changing-ecosystem-monitoring">ESA ecosystem-monitoring examples</a></p>
+          <p>Include soil or water observations when they bear on the restoration goal. Give those records their own sampling method and dates alongside the habitat map and species survey. <a href="https://pubs.usgs.gov/of/2017/1091/ofr20171091.pdf">USGS riparian and watershed restoration case studies</a></p>
           <p>Before commissioning a baseline, use our <a href="/blog/habitat-mapping">habitat mapping guide</a> to define the map classes, observation dates and field checks. It includes an editable brief for agreeing what the delivered map needs to show.</p>
         </>
       ),
@@ -83,7 +84,13 @@ export const biodiversityMonitoringPage: PlatformPageData = {
               </tbody>
             </table>
           </div>
-          <p>For example, an apparent canopy reduction can become a mapped field-check request. Keep its cause unresolved until the relevant evidence is reviewed; the observation alone does not establish species loss or a management failure. This is an illustrative review step, not a Mynzo project result.</p>
+          <h3>Illustrative field follow-up at a forest edge</h3>
+          <p>Suppose two satellite observations show a possible canopy change along the edge of a restoration site. The example below shows how that observation could become a field task and a review note.</p>
+          <ul>
+            <li><strong>Map record.</strong> Mark the patch on the current boundary and include both image dates. Record any gaps in usable imagery.</li>
+            <li><strong>Field task.</strong> Ask the site team to check the patch, attach a dated location photo and record any visible disturbance. Ask the ecologist to specify a separate survey if the project needs evidence of native plant recovery.</li>
+            <li><strong>Review note.</strong> Keep the cause open until the visit is complete. Record the finding, the supporting observation and the next action under the same patch identifier.</li>
+          </ul>
           <p>For restoration programmes, <a href="https://www.fao.org/sustainable-forest-management/toolbox/tools/tool-detail/en/c/1255095/">FAO&apos;s restoration monitoring guide</a> starts with goals and constraints before selecting indicators. Decide what success would mean at your site before choosing a dashboard measure.</p>
           <p>Our <a href="/blog/biodiversity-metrics-for-restoration-projects">guide to biodiversity metrics for restoration projects</a> explains how to select measurements. If the work also supports a carbon project, keep its carbon accounting and biodiversity findings distinct within the <a href="/platform/digital-mrv">measurement and reporting workflow</a>.</p>
         </>
@@ -108,7 +115,8 @@ export const biodiversityMonitoringPage: PlatformPageData = {
       body: (
         <>
           <p>Share the country, approximate area, habitat type and the change you need to understand. Include any existing surveys, boundary files, restoration plans and reporting dates. Explain whether the work is for site management, a funder&apos;s review, corporate reporting or another purpose.</p>
-          <p>Mynzo can then discuss the forest observations that fit the brief and the field evidence needed alongside them. Confirm the deliverables and any specialist input before work begins. For larger programmes, see our approach for <a href="/solutions/project-developers">project developers</a> and the underlying <a href="/platform/forest-monitoring">forest monitoring workflow</a>.</p>
+          <p>If you manage several sites for a corporate programme, bring the list of locations and the indicators the programme needs to report. If you are an ecology consultant, bring your survey method and the map or field records you need for the handover. Project developers can use the <a href="/solutions/project-developers">project-stage checklist</a> to prepare for the discussion.</p>
+          <p>Confirm the number and size of sites, observation dates, field checks and outputs before asking for a quote. Those choices shape the amount of work. The <a href="/platform/forest-monitoring">forest monitoring workflow</a> explains the imagery and ground checks to consider.</p>
         </>
       ),
     },
@@ -139,9 +147,9 @@ export const biodiversityMonitoringPage: PlatformPageData = {
     { href: '/platform/forest-monitoring', title: 'Satellite forest monitoring', description: 'Understand canopy observations, forest change and field validation.' },
   ],
   cta: {
-    title: 'Discuss your biodiversity monitoring needs',
-    text: 'Tell us about your sites, ecological goals and existing surveys. We will discuss where forest monitoring can contribute and what evidence the project needs.',
-    label: 'Discuss your biodiversity project',
+    title: 'Plan a biodiversity monitoring brief',
+    text: 'Share your site locations, ecological question and any surveys you already have. We’ll discuss which habitat observations could help and what field evidence to plan alongside them.',
+    label: 'Discuss your monitoring brief',
     href: '/get-started?interest=biodiversity-monitoring&source=biodiversity-monitoring',
   },
 };

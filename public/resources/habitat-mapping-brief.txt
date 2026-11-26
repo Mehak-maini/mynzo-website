@@ -1,5 +1,5 @@
 HABITAT MAPPING: PROJECT BRIEF
-Mynzo Carbon | 8 October 2026
+Mynzo Carbon | 26 November 2026
 
 Use this editable brief to prepare a discussion with your mapping and ecology
 teams. It is a planning aid, not a survey protocol or a statement of services
@@ -63,6 +63,15 @@ Data ownership, access and handover arrangements:
 Sensitive locations or community information requiring restricted access:
 Specialist input, cost and timetable to confirm:
 Open decisions before commissioning:
+
+6. FEATURE REVIEW (COPY FOR EACH FEATURE TO CHECK)
+Feature ID and boundary version:
+Provisional class and mapped area:
+Imagery observation dates:
+Field evidence ID, date and location:
+What does the reference evidence confirm?
+What still needs review, and who will check it?
+Allowed use of this feature until the review is complete:
 
 Keep mapped habitat extent separate from habitat condition and species
 observations. Confirm which findings the evidence can support before using
