@@ -1,9 +1,11 @@
 import { cache } from 'react';
 import { STATIC_POSTS } from '@/data/blogPosts';
 import { biodiversityBaselinePost } from '@/data/biodiversityBaselinePost';
+import { csrPlantationMonitoringPost } from '@/data/csrPlantationMonitoringPost';
+import { tnfdSiteDataPost } from '@/data/tnfdSiteDataPost';
 import { mergePosts, normalizePost } from './post-data';
 
-const blogOnlyPosts = [biodiversityBaselinePost];
+const blogOnlyPosts = [biodiversityBaselinePost, csrPlantationMonitoringPost, tnfdSiteDataPost];
 const blogOnlySlugs = new Set(blogOnlyPosts.map(post => post.slug));
 const allStaticPosts = [...STATIC_POSTS, ...blogOnlyPosts];
 

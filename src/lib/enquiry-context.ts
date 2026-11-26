@@ -14,6 +14,8 @@ const ENQUIRY_SOURCES = {
   'environmental-consultants': 'Environmental consultants page',
   'biodiversity-guide': 'Biodiversity monitoring guide',
   'biodiversity-baseline-guide': 'Biodiversity baseline assessment guide',
+  'tnfd-site-data-guide': 'TNFD site data checklist',
+  'csr-plantation-guide': 'CSR plantation monitoring guide',
   'habitat-mapping-guide': 'Habitat mapping guide',
   'restoration-guide': 'Restoration monitoring plan guide',
   'agroforestry-guide': 'Agroforestry guide',

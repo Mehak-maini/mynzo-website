@@ -60,6 +60,7 @@ export const corporateNatureMonitoringPage: PlatformPageData = {
           <div>
             <h3>Planting across several districts in India</h3>
             <p>A CSR team has planting records from two partners. It asks each partner for parcel boundaries, planting dates, species and the number planted by cohort. On follow-up visits, the partners record the trees checked, those found alive and any replacements. The CSR team can then review survival within the surveyed cohort and decide where to focus maintenance. It keeps areas awaiting a visit visible in its programme report.</p>
+            <p>Use the <a href="/blog/csr-plantation-monitoring">CSR plantation monitoring guide</a> to agree the visit records and survival calculation with your partners.</p>
           </div>
           <div>
             <h3>Forest and restoration sites across countries</h3>
@@ -75,6 +76,7 @@ export const corporateNatureMonitoringPage: PlatformPageData = {
       body: <>
         <p>For corporate reporting, retain the site records behind any summary. Include the original observation period, its units and the distinction between mapped changes, field findings and questions still open. Agree who can approve the interpretation before it enters an external report.</p>
         <p>Site locations and ecosystem context can inform an assessment using the Taskforce on Nature-related Financial Disclosures (TNFD) LEAP approach. A wider assessment also considers the organisation’s dependencies, impacts, risks and opportunities. Your reporting and assurance teams retain responsibility for the conclusions and disclosures. <a href="https://tnfd.global/publication/additional-guidance-on-assessment-of-nature-related-issues-the-leap-approach/">TNFD LEAP guidance</a></p>
+        <p>Start with the <a href="/blog/tnfd-site-data-checklist">TNFD site data checklist</a> if you need to gather those records from several sites.</p>
         <p>Ask your ecology team to specify surveys when the decision depends on species or habitat condition. The <a href="/platform/biodiversity-monitoring">biodiversity monitoring approach</a> explains how to pair forest observations with this field evidence. If a CSR programme also needs to assess outcomes for people, plan a separate evaluation suited to those outcomes.</p>
       </>,
     },

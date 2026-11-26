@@ -42,6 +42,8 @@ test('guide links retain their subject through form parsing and the enquiry emai
     ['how-ai-is-revolutionising-forest-carbon-accounting', 'digital-mrv', 'Forest carbon accounting guide'],
     ['biodiversity-metrics-for-restoration-projects', 'biodiversity-monitoring', 'Biodiversity monitoring guide'],
     ['biodiversity-baseline-assessment', 'biodiversity-monitoring', 'Biodiversity baseline assessment guide'],
+    ['tnfd-site-data-checklist', 'biodiversity-monitoring', 'TNFD site data checklist'],
+    ['csr-plantation-monitoring', 'restoration-monitoring', 'CSR plantation monitoring guide'],
   ]) {
     const link = new URL(articleEnquiry(slug).href, 'https://www.mynzocarbon.com');
     const context = enquiryContextFromSearch(link.search);

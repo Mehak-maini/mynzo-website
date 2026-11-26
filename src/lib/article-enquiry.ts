@@ -9,6 +9,18 @@ type ArticleEnquiry = {
 };
 
 const ARTICLE_ENQUIRIES: Record<string, ArticleEnquiry> = {
+  'tnfd-site-data-checklist': {
+    title: 'Discuss the site evidence your team needs',
+    text: 'Share the sites you need to assess, the records you already have and the gaps you need to investigate.',
+    label: 'Discuss site monitoring',
+    interest: 'biodiversity-monitoring', source: 'tnfd-site-data-guide',
+  },
+  'csr-plantation-monitoring': {
+    title: 'Plan the next checks for your plantation sites',
+    text: 'Bring your planting records, site locations and the decisions your next field visit should support.',
+    label: 'Discuss plantation monitoring',
+    interest: 'restoration-monitoring', source: 'csr-plantation-guide',
+  },
   'biodiversity-baseline-assessment': {
     title: 'Discuss the evidence your baseline needs',
     text: 'Share your site locations, planned work and the records you already have. Tell us when the assessment needs to be ready.',
