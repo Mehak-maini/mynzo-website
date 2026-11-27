@@ -14,7 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPost(slug);
   if (!post) notFound();
   const metadata = pageMetadata(`/blog/${encodeURIComponent(slug)}`, `${post.title} – Mynzo Talks`, post.excerpt || `Read ${post.title} on Mynzo Talks.`, post.img || undefined, post.imgAlt);
-  return { ...metadata, openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.publishedAt, modifiedTime: post.updatedAt, authors: [post.author] } };
+  return {
+    ...metadata,
+    title: post.seoTitle ?? metadata.title,
+    openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.publishedAt, modifiedTime: post.updatedAt, authors: [post.author] },
+  };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
