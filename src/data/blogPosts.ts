@@ -19,6 +19,7 @@ export interface StaticPost {
   tagBg: string;
   tagColor: string;
   title: string;
+  seoTitle?: string;
   excerpt: string;
   date: string;
   updatedAt?: string;

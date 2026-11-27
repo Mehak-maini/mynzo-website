@@ -6,6 +6,7 @@ export const csrPlantationMonitoringPost: StaticPost = {
   tagBg: '#EBF7F0',
   tagColor: '#1A7A4A',
   title: 'CSR Plantation Monitoring: Survival Counts and Field Records',
+  seoTitle: 'CSR Plantation Monitoring Guide | Mynzo Talks',
   excerpt: 'Track original plantings, replacements and unresolved checks across visits. Use a worked survival example and an editable CSR plantation checklist.',
   date: 'November 26, 2026',
   updatedAt: '2026-11-26',
